@@ -1,4 +1,5 @@
 import Image from "next/image";
+
 import styles from "./TestPage.module.css";
 
 export const TestPage: React.FC = () => {
@@ -53,13 +54,13 @@ export const TestPage: React.FC = () => {
           </div>
         </div>
       </section>
-
       <section className={styles.section_bg_second}>
         <div className="container">
           <h2 className="text-[64px] font-semibold text-center mb-20">
             Items section
           </h2>
-          <ul className="flex flex-wrap gap-5">
+
+          <ul id="list-animation" className="flex flex-wrap gap-5">
             <li className={styles.text_item}>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -140,7 +141,6 @@ export const TestPage: React.FC = () => {
           </ul>
         </div>
       </section>
-
       <section className={styles.section_bg_third}>
         <div className="container">
           <Image
