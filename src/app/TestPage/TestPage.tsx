@@ -3,6 +3,7 @@ import Image from "next/image";
 import styles from "./TestPage.module.css";
 import {MWrap} from "./MWrap";
 import {TestText} from "./TestText";
+import {MCounter} from "./MCounter";
 
 export const TestPage: React.FC = () => {
   return (
@@ -12,6 +13,11 @@ export const TestPage: React.FC = () => {
           <h1 className="text-[72px] text-center font-semibold mb-20">
             Hello! This is an animation test page!
           </h1>
+
+          <p className="text-center text-[100px] font-bold">
+            <span className="visually-hidden">100</span>
+            Conter: <MCounter value={100} className="text-indigo-600" />
+          </p>
 
           <p className="text-[40px]/[1.2] mb-10">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore
@@ -56,6 +62,7 @@ export const TestPage: React.FC = () => {
           </div>
         </div>
       </section>
+
       <section className={styles.section_bg_second}>
         <div className="container">
           <h2 className="text-[64px] font-semibold text-center mb-20">
@@ -147,6 +154,7 @@ export const TestPage: React.FC = () => {
           </MWrap>
         </div>
       </section>
+
       <section className={styles.section_bg_third}>
         <div className="container">
           <Image
