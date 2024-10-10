@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import styles from "./TestPage.module.css";
+import {MWrap} from "./MWrap";
 
 export const TestPage: React.FC = () => {
   return (
@@ -60,85 +61,87 @@ export const TestPage: React.FC = () => {
             Items section
           </h2>
 
-          <ul id="list-animation" className="flex flex-wrap gap-5">
-            <li className={styles.text_item}>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Quisquam, sequi!
-              </p>
-            </li>
-            <li className={styles.text_item}>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Dignissimos rerum est blanditiis quo ad excepturi dicta labore
-                suscipit. Deserunt, accusamus?
-              </p>
-            </li>
-            <li className={styles.text_item}>
-              <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias
-                dolorum fuga labore fugit quis beatae.
-              </p>
-            </li>
-            <li className={styles.text_item}>
-              <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Officia pariatur minus error fugit delectus illo debitis
-                molestias.
-              </p>
-            </li>
-            <li className={styles.text_item}>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Expedita adipisci maxime nulla.
-              </p>
-            </li>
-            <li className={styles.text_item}>
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Fugiat, consectetur deserunt impedit aliquid autem reiciendis?
-              </p>
-            </li>
-            <li className={styles.text_item}>
-              <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Laboriosam nisi nesciunt sequi ducimus debitis voluptatum porro
-                ab aspernatur? Consequatur?
-              </p>
-            </li>
-            <li className={styles.text_item}>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Accusamus voluptas laborum laudantium deleniti atque
-                voluptatibus, sapiente saepe.
-              </p>
-            </li>
-            <li className={styles.text_item}>
-              <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam
-                quae debitis esse culpa mollitia.
-              </p>
-            </li>
-            <li className={styles.text_item}>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Officiis, maxime a.
-              </p>
-            </li>
-            <li className={styles.text_item}>
-              <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Repellendus quam cum sint sequi assumenda vitae quo ipsum?
-              </p>
-            </li>
-            <li className={styles.text_item}>
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Recusandae officiis fugit magnam tenetur quibusdam voluptates
-                accusantium, tempora commodi cum.
-              </p>
-            </li>
-          </ul>
+          <MWrap>
+            <ul id="list-animation" className="flex flex-wrap gap-5">
+              <li className={styles.text_item}>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Quisquam, sequi!
+                </p>
+              </li>
+              <li className={styles.text_item}>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Dignissimos rerum est blanditiis quo ad excepturi dicta labore
+                  suscipit. Deserunt, accusamus?
+                </p>
+              </li>
+              <li className={styles.text_item}>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Alias dolorum fuga labore fugit quis beatae.
+                </p>
+              </li>
+              <li className={styles.text_item}>
+                <p>
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Officia pariatur minus error fugit delectus illo debitis
+                  molestias.
+                </p>
+              </li>
+              <li className={styles.text_item}>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Expedita adipisci maxime nulla.
+                </p>
+              </li>
+              <li className={styles.text_item}>
+                <p>
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Fugiat, consectetur deserunt impedit aliquid autem reiciendis?
+                </p>
+              </li>
+              <li className={styles.text_item}>
+                <p>
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Laboriosam nisi nesciunt sequi ducimus debitis voluptatum
+                  porro ab aspernatur? Consequatur?
+                </p>
+              </li>
+              <li className={styles.text_item}>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Accusamus voluptas laborum laudantium deleniti atque
+                  voluptatibus, sapiente saepe.
+                </p>
+              </li>
+              <li className={styles.text_item}>
+                <p>
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Ullam quae debitis esse culpa mollitia.
+                </p>
+              </li>
+              <li className={styles.text_item}>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Officiis, maxime a.
+                </p>
+              </li>
+              <li className={styles.text_item}>
+                <p>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Repellendus quam cum sint sequi assumenda vitae quo ipsum?
+                </p>
+              </li>
+              <li className={styles.text_item}>
+                <p>
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Recusandae officiis fugit magnam tenetur quibusdam voluptates
+                  accusantium, tempora commodi cum.
+                </p>
+              </li>
+            </ul>
+          </MWrap>
         </div>
       </section>
       <section className={styles.section_bg_third}>
