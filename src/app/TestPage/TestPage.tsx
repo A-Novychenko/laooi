@@ -2,6 +2,7 @@ import Image from "next/image";
 
 import styles from "./TestPage.module.css";
 import {MWrap} from "./MWrap";
+import {TestText} from "./TestText";
 
 export const TestPage: React.FC = () => {
   return (
@@ -62,6 +63,8 @@ export const TestPage: React.FC = () => {
           </h2>
 
           <MWrap>
+            <TestText />
+
             <ul id="list-animation" className="flex flex-wrap gap-5">
               <li className={styles.text_item}>
                 <p>
