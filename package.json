@@ -7,11 +7,11 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-     "lint:fix" :  "next lint --fix" , 
-    "lint:strict" :  "next lint '*/**/*.{js,jsx,ts,tsx}'" , 
-    "prettier" :  "prettier --write */**/*.{js,jsx,json,ts,tsx,scss,css,md}" , 
-    "prepare" :  "husky install" ,
-     "test": "eslint ."
+    "lint:fix": "next lint --fix",
+    "lint:strict": "next lint '*/**/*.{js,jsx,ts,tsx}'",
+    "prettier": "prettier --write */**/*.{js,jsx,json,ts,tsx,scss,css,md}",
+    "prepare": "husky install",
+    "test": "eslint ."
   },
   "dependencies": {
     "@formatjs/intl-localematcher": "^0.5.4",
@@ -33,6 +33,7 @@
     "sanity": "^3.57.4",
     "styled-components": "^6.1",
     "swiper": "^11.1.14",
+    "typescript": "^5.5.4",
     "zod": "^3.23.8"
   },
   "devDependencies": {
@@ -51,7 +52,6 @@
     "postcss": "^8",
     "prettier": "^3.3.3",
     "prettier-plugin-tailwindcss": "^0.6.8",
-    "tailwindcss": "^3.4.1",
-    "typescript": "^5"
+    "tailwindcss": "^3.4.1"
   }
 }
