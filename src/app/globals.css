@@ -2,28 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+  @apply bg-slate-300 font-nunito leading-normal text-textPrimary;
 }
 
 .visually-hidden {
@@ -36,10 +16,4 @@ body {
   padding: 0;
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
-}
-
-.container {
-  width: 1440px;
-  padding: 0 20px;
-  margin: 0 auto;
 }

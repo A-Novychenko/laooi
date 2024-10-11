@@ -1,0 +1,32 @@
+{
+  "meta": {
+    "title": "LAOOI",
+    "description": "Our goal: to unite hearts and efforts to create a society of equal opportunities, where every person has the right to a dignified life, support and development. Even in the most difficult times, we build a world of hope, inclusion and accessibility"
+  },
+  "common": {
+    "logoAlt": "Company logo",
+    "searchInput": { "placeholder": "Search" },
+    "mainNav": [
+      {
+        "name": "Home",
+        "href": "/"
+      },
+      {
+        "name": "About Us",
+        "href": "/about"
+      },
+      {
+        "name": "Main Directions",
+        "href": "/main-directions"
+      },
+      {
+        "name": "News",
+        "href": "/news"
+      },
+      {
+        "name": "Contacts",
+        "href": "/contacts"
+      }
+    ]
+  }
+}
