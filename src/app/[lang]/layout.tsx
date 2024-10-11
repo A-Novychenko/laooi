@@ -17,7 +17,7 @@ export async function generateMetadata({
 }: {
   params: { lang: string };
 }) {
-  const dictionary = await getDictionary(lang);
+  const dictionary: IDictionary = await getDictionary(lang);
 
   return {
     title: dictionary.meta.title,

@@ -14,7 +14,7 @@ export const SearchInput: React.FC<SearchInputProps> = ({ placeholder }) => {
       <SearchIcon
         width="12"
         height="12"
-        className="absolute left-3 top-1/2 translate-y-[-50%]"
+        className="absolute left-3 top-1/2 translate-y-1/2"
       />
     </div>
   );

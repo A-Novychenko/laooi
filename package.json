@@ -11,7 +11,13 @@
     "lint:strict": "next lint '*/**/*.{js,jsx,ts,tsx}'",
     "prettier": "prettier --write */**/*.{js,jsx,json,ts,tsx,scss,css,md}",
     "prepare": "husky install",
-    "test": "eslint ."
+    "test": "eslint .",
+    "check-types": "tsc --pretty --noEmit",
+    "check-format": "prettier --check .",
+    "check-lint": "eslint . --ext ts --ext tsx --ext js",
+    "format": "prettier --write .",
+    "fix": "npm run format && npm run lint --fix",
+    "test-all": "npm run check-format && npm run check-lint && npm run check-types && npm run build"
   },
   "dependencies": {
     "@formatjs/intl-localematcher": "^0.5.4",
@@ -22,6 +28,7 @@
     "@sanity/ui": "^2.8.9",
     "@sanity/vision": "3",
     "@types/negotiator": "^0.6.3",
+    "autoprefixer": "^10.4.20",
     "clsx": "^2.1.1",
     "framer-motion": "^11.11.7",
     "negotiator": "^0.6.3",
@@ -31,8 +38,10 @@
     "react-dom": "^18",
     "react-hook-form": "^7.53.0",
     "sanity": "^3.57.4",
+    "sharp": "^0.33.5",
     "styled-components": "^6.1",
     "swiper": "^11.1.14",
+    "tailwind-merge": "^2.5.3",
     "typescript": "^5.5.4",
     "zod": "^3.23.8"
   },
@@ -47,6 +56,7 @@
     "eslint-config-next": "^14.2.15",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-tailwindcss": "^3.17.5",
     "husky": "^9.1.6",
     "lint-staged": "^15.2.10",
     "postcss": "^8",
