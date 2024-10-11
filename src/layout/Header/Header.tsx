@@ -5,7 +5,7 @@ import {
   SearchInput,
 } from '@/components/ui';
 
-import { getDictionary } from '@/app/[lang]/dictionaries';
+import { getDictionary } from '@/utils/dictionaries';
 import staticData from '@/data/common.json';
 
 import { HeaderProps } from './types';

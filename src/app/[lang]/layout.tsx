@@ -1,8 +1,6 @@
 import { Nunito } from 'next/font/google';
 
-import { Footer, Header } from '@/layout';
-
-import { getDictionary } from './dictionaries';
+import { getDictionary } from '../../utils/dictionaries';
 
 import '../globals.css';
 
@@ -38,13 +36,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang={params.lang} className="scroll-smooth">
-      <body className={`${nunito.variable} antialiased`}>
-        <Header lang={params.lang} />
-
-        {children}
-
-        <Footer />
-      </body>
+      <body className={`${nunito.variable} antialiased`}>{children}</body>
     </html>
   );
 }
