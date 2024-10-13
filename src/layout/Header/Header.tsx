@@ -9,6 +9,7 @@ import { getDictionary } from '@/utils/dictionaries';
 import staticData from '@/data/common.json';
 
 import { HeaderProps } from './types';
+import AccessibilityMenu from '@/components/ui/AccesabilityMenu/AccesabilityMenu';
 
 export const Header: React.FC<HeaderProps> = async ({ lang }) => {
   const {
@@ -29,6 +30,7 @@ export const Header: React.FC<HeaderProps> = async ({ lang }) => {
             <LangSwitcher lang={lang} langCode={langCode} />
 
             <AccessButton />
+            <AccessibilityMenu />
           </div>
         </div>
       </div>

@@ -2,6 +2,8 @@ import { Nunito } from 'next/font/google';
 
 import { getDictionary } from '../../utils/dictionaries';
 
+import { AccessibilityProvider } from '../../context/AccesabilityContext';
+
 import '../globals.css';
 
 const nunito = Nunito({
@@ -35,8 +37,10 @@ export default function RootLayout({
   params: { lang: string };
 }>) {
   return (
-    <html lang={params.lang} className="scroll-smooth">
-      <body className={`${nunito.variable} antialiased`}>{children}</body>
-    </html>
+    <AccessibilityProvider>
+      <html lang={params.lang} className="scroll-smooth">
+        <body className={`${nunito.variable} antialiased`}>{children}</body>
+      </html>
+    </AccessibilityProvider>
   );
 }

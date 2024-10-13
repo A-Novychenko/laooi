@@ -21,7 +21,7 @@ export const MainNavList: React.FC<MainNavListProps> = ({
             <li key={idx}>
               <Link
                 href={`/${lang}${href}`}
-                className="p-[10px] text-[18px] font-semibold transition-colors hover:text-textAccent focus:text-textAccent"
+                className="text-medium p-[10px] font-semibold transition-colors hover:text-textAccent focus:text-textAccent"
               >
                 {name}
               </Link>
