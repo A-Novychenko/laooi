@@ -1,10 +1,9 @@
 import { Nunito } from 'next/font/google';
 
-import { getDictionary } from '../../utils/dictionaries';
-
 import { AccessibilityProvider } from '../../context/AccesabilityContext';
 
 import '../globals.css';
+import makeMetaData from '@/data/meta';
 
 const nunito = Nunito({
   subsets: ['cyrillic', 'latin'],
@@ -17,16 +16,13 @@ export async function generateMetadata({
 }: {
   params: { lang: string };
 }) {
-  const dictionary: IDictionary = await getDictionary(lang);
+  const meta = await makeMetaData(lang, 'main');
 
-  return {
-    title: dictionary.meta.title,
-    description: dictionary.meta.description,
-  };
+  return meta;
 }
 
 export async function generateStaticParams() {
-  return [{ lang: 'uk' }, { lang: 'uk' }];
+  return [{ lang: 'uk' }, { lang: 'en' }];
 }
 
 export default function RootLayout({

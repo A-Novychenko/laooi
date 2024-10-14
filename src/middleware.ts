@@ -5,7 +5,7 @@ import { match } from '@formatjs/intl-localematcher';
 const locales = ['en', 'uk'];
 const defaultLocale = 'uk';
 
-const cookieName = 'i18nlang';
+const cookieName = 'locale';
 
 // // Получить предпочтительную локаль, аналогично приведенному выше или с помощью библиотеки
 // function getLocale(request: NextRequest) {
@@ -28,7 +28,7 @@ function getLocale(request: NextRequest) {
 
   const headers = { 'accept-language': acceptLang };
   const languages = new Negotiator({ headers }).languages();
-  const replaceRussianWithUkrainian =
+  const replaceRussianWithUkrainianLanguages =
     languages &&
     languages.map(el => {
       if (el === 'ru-RU') {
@@ -40,11 +40,12 @@ function getLocale(request: NextRequest) {
       return el;
     });
 
-  return match(replaceRussianWithUkrainian, locales, defaultLocale);
+  return match(replaceRussianWithUkrainianLanguages, locales, defaultLocale);
 }
 
 export function middleware(request: NextRequest) {
   if (request.nextUrl.pathname.startsWith('/_next')) return NextResponse.next();
+  if (request.nextUrl.pathname.startsWith('/meta')) return NextResponse.next();
   // Проверить, есть ли поддерживаемая локаль в имени пути
   const { pathname } = request.nextUrl;
   const pathnameHasLocale = locales.some(

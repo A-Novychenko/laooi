@@ -1,8 +1,8 @@
 {
-    "name": "ProjectName",
-    "short_name": "ProjectName_short_name",
-    "title": "ProjectTitle",
-    "description": "ProjectDescr",
+    "name": "LAOOI",
+    "short_name": "LAOOI",
+    "title": "LAOOI",
+    "description": "LAOOI",
     "start_url": "/",
     "locale": "uk_UA",
     "keywords": "keywords",
@@ -12,7 +12,7 @@
       "url": "/meta/og-image.jpg",
       "width": 1200,
       "height": 630,
-      "alt": "image_descr"
+      "alt": "LAOOI_logo"
      }
   ],
     "background_color": "#ffffff",

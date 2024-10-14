@@ -1,8 +1,5 @@
 interface IDictionary {
-  meta: {
-    title: string;
-    description: string;
-  };
+  meta: IMeta;
   common: {
     logoAlt: string;
     searchInput: { placeholder: string };
@@ -11,4 +8,20 @@ interface IDictionary {
       href: string;
     }[];
   };
+}
+
+interface IMeta {
+  main: IMetaDataPage;
+}
+
+interface IMetaDataPage {
+  title: string;
+  description: string;
+  keywords: string;
+  images: {
+    url: string;
+    width: number;
+    height: number;
+    alt: string;
+  }[];
 }
