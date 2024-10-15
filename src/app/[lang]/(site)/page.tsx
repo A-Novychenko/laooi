@@ -1,9 +1,16 @@
 import { TestPage } from '@/components/base/TestPage/TestPage';
+import { getDictionary } from '@/utils/dictionaries';
 
-export default function Home() {
+export default async function Home({
+  params: { lang },
+}: {
+  params: { lang: string };
+}) {
+  const dict = await getDictionary(lang);
+
   return (
     <>
-      <TestPage />
+      <TestPage textTest={dict.common.logoAlt} />
     </>
   );
 }

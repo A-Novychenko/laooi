@@ -3,8 +3,9 @@ import Image from 'next/image';
 import { MCounter, MWrap } from '@/components/ui/animateComponents';
 
 import styles from './TestPage.module.css';
+import { TestPageProps } from './types';
 
-export const TestPage: React.FC = () => {
+export const TestPage: React.FC<TestPageProps> = ({ textTest }) => {
   return (
     <>
       <section className={styles.section_bg_first}>
@@ -162,6 +163,10 @@ export const TestPage: React.FC = () => {
             className="shrink-0"
           />
         </div>
+      </section>
+
+      <section className="text-[100px]">
+        <div className="container">{textTest}</div>
       </section>
     </>
   );
