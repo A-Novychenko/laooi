@@ -2,8 +2,9 @@ import { Nunito } from 'next/font/google';
 
 import { AccessibilityProvider } from '../../context/AccesabilityContext';
 
-import '../globals.css';
 import makeMetaData from '@/data/meta';
+
+import '../globals.css';
 
 const nunito = Nunito({
   subsets: ['cyrillic', 'latin'],
