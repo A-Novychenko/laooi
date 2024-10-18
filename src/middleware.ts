@@ -46,6 +46,11 @@ function getLocale(request: NextRequest) {
 export function middleware(request: NextRequest) {
   if (request.nextUrl.pathname.startsWith('/_next')) return NextResponse.next();
   if (request.nextUrl.pathname.startsWith('/meta')) return NextResponse.next();
+
+  if (request.nextUrl.pathname.startsWith('/studio')) {
+    return NextResponse.next();
+  }
+
   // Проверить, есть ли поддерживаемая локаль в имени пути
   const { pathname } = request.nextUrl;
   const pathnameHasLocale = locales.some(
