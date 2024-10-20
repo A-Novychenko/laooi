@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "@formatjs/intl-localematcher": "^0.5.4",
+    "@headlessui/react": "^2.1.10",
     "@sanity/client": "^6.21.3",
     "@sanity/icons": "^3.4.0",
     "@sanity/image-url": "1",

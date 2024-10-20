@@ -4,10 +4,25 @@ import { MCounter, MWrap } from '@/components/ui/animateComponents';
 
 import styles from './TestPage.module.css';
 import { TestPageProps } from './types';
+import { Button } from '@/components/ui';
 
 export const TestPage: React.FC<TestPageProps> = ({ textTest }) => {
   return (
     <>
+      <section className={styles.section_pure}>
+        <div className="container">
+          <div className="flex justify-center gap-10 p-10">
+            <Button type="primary">Click me!</Button>
+            <br />
+            <Button type="secondary">Click me!</Button>
+            <br />
+            <Button type="light">Click me!</Button>
+            <br />
+            <Button>Click me!</Button>
+          </div>
+        </div>
+      </section>
+
       <section className={styles.section_bg_first}>
         <div className="container">
           <h1 className="mb-20 text-center text-[72px] font-semibold">

@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { useAccessibility } from '@/context/AccesabilityContext';
+import { useAccessibility } from '@/context/AccessibilityProvider';
 
 type AccessibilitySettings = {
   textSize: 'text-medium' | 'text-large';

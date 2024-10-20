@@ -1,6 +1,6 @@
 import { Nunito } from 'next/font/google';
 
-import { AccessibilityProvider } from '../../context/AccesabilityContext';
+import { AccessibilityProvider } from '../../context/AccessibilityProvider';
 
 import makeMetaData from '@/data/meta';
 
