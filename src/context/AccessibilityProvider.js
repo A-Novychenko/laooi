@@ -1,4 +1,5 @@
 'use client';
+
 import { createContext, useContext, useState, useEffect } from 'react';
 
 const AccessibilityContext = createContext(null);
@@ -21,6 +22,8 @@ export const AccessibilityProvider = ({ children }) => {
     largeCursor: false,
   });
 
+  console.log('largeCursor', settings.largeCursor);
+
   useEffect(() => {
     const savedSettings = JSON.parse(
       localStorage.getItem('accessibilitySettings') || '{}',
@@ -39,6 +42,8 @@ export const AccessibilityProvider = ({ children }) => {
     const paragraphs = document.querySelectorAll('p');
     const links = document.querySelectorAll('a');
 
+    console.log('newSettings', newSettings.largeCursor);
+
     paragraphs.forEach(p => {
       p.className = `${newSettings.textSize} transition-font-size`; // Додайте клас анімації до всіх <p>
     });
@@ -53,7 +58,7 @@ export const AccessibilityProvider = ({ children }) => {
 
     document.body.classList.toggle('high-contrast', newSettings.highContrast);
     document.documentElement.style.cursor = newSettings.largeCursor
-      ? 'url("../../public/images/pointer.png")'
+      ? 'url("/images/largeCursor.png"), auto'
       : 'auto';
 
     document.querySelectorAll('a').forEach(link => {

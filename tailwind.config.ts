@@ -39,6 +39,7 @@ const config: Config = {
         textAccent: '#003399',
         textSlate: '#666666',
         textLight: '#ffffff',
+        textMenuAccent: '#062365',
 
         bgLight: '#ffffff',
         bgSlate: '#EAEDF4',

@@ -26,12 +26,14 @@ export type DropdownMenuProps = {
 
 type DataForButtons = {
   action: (e: React.MouseEvent<HTMLButtonElement>) => void;
-  className: string;
+  className?: string;
   text: string;
+  icon?: ReactNode;
 };
 
 type DataForLinks = {
   href: string;
-  className: string;
+  className?: string;
   text: string;
+  icon?: ReactNode;
 };

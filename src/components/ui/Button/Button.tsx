@@ -1,6 +1,8 @@
-import ArrowBtnIcon from '~/icons/arrowBtnIcon.svg';
-import { ButtonProps } from './types';
 import { cn } from '@/utils/cn';
+
+import ArrowBtnIcon from '~/icons/arrowBtnIcon.svg';
+
+import { ButtonProps } from './types';
 
 export const Button: React.FC<ButtonProps> = ({
   children,

@@ -1,19 +1,22 @@
 'use client';
 
 import { useAccessibility } from '@/context/AccessibilityProvider';
-
 import { DropdownMenu } from '../../ui/DropdownMenu';
 
-import EyeIcon from '~/icons/eye.svg';
+import {
+  EyeIcon,
+  PlusIcon,
+  MinusIcon,
+  LeftToggleIcon,
+  RightToggleIcon,
+  LinkIcon,
+  CursorIcon,
+  TrashIcon,
+} from './icons';
 
-type AccessibilitySettings = {
-  textSize: 'text-medium' | 'text-large';
-  highContrast: boolean;
-  highlightLinks: boolean;
-  largeCursor: boolean;
-};
+import { AccessButtonProps, AccessibilitySettings } from './types';
 
-export const AccessButton: React.FC = () => {
+export const AccessButton: React.FC<AccessButtonProps> = ({ dict }) => {
   const { settings, setSettings } = useAccessibility() as {
     settings: AccessibilitySettings;
     setSettings: React.Dispatch<React.SetStateAction<AccessibilitySettings>>;
@@ -46,37 +49,56 @@ export const AccessButton: React.FC = () => {
   const items = [
     {
       action: handleTextSizeChange,
-      className: 'mb-2 block rounded bg-blue-500 p-2 text-white',
-
+      icon:
+        settings.textSize === 'text-medium' ? (
+          <PlusIcon width={16} height={16} />
+        ) : (
+          <MinusIcon width={16} height={16} />
+        ),
       text:
         settings.textSize === 'text-medium'
-          ? 'Збільшити текст'
-          : 'Зменшити текст',
+          ? dict.textSize.increase
+          : dict.textSize.decrease,
     },
     {
       action: toggleHighContrast,
-      className: `mb-2 block rounded p-2 ${settings.highlightLinks ? 'bg-yellow-500' : 'bg-gray-500'} text-white`,
-      text: settings.highContrast ? 'Вимкнути контраст' : 'Увімкнути контраст',
+      text: dict.grayscale,
+      icon: settings.highContrast ? (
+        <RightToggleIcon width={16} height={16} />
+      ) : (
+        <LeftToggleIcon width={16} height={16} />
+      ),
     },
     {
       action: toggleHighlightLinks,
-      className: `mb-2 block rounded p-2 ${settings.highlightLinks ? 'bg-yellow-500' : 'bg-gray-500'} text-white`,
-
+      icon: <LinkIcon width={16} height={16} />,
       text: settings.highlightLinks
-        ? 'Вимкнути підсвічування'
-        : 'Підсвітити посилання',
+        ? dict.highlightLink.off
+        : dict.highlightLink.on,
     },
     {
       action: toggleLargeCursor,
-      className: `mb-2 block rounded p-2 ${settings.largeCursor ? 'bg-yellow-500' : 'bg-gray-500'} text-white`,
-
-      text: settings.largeCursor ? 'Зменшити курсор' : 'Збільшити курсор',
+      icon: <CursorIcon width={16} height={16} />,
+      text: settings.largeCursor ? dict.cursor.decrease : dict.cursor.increase,
+    },
+    {
+      action: () => {
+        document.body.innerHTML =
+          '<img src="/images/image.webp" alt="text" width="100%" height="100%">';
+      },
+      icon: <TrashIcon width={16} height={16} />,
+      text: dict.reset,
     },
   ];
 
   return (
     <DropdownMenu dataForButtons={items}>
-      <EyeIcon width="16" height="16" />
+      <button
+        type="button"
+        className="flex size-8 items-center justify-center rounded-[40px] bg-bgSlate data-[active]:bg-bgIconEyeDark data-[active]:text-textLight"
+      >
+        <EyeIcon width="16" height="16" />
+      </button>
     </DropdownMenu>
   );
 };
