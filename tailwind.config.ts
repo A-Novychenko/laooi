@@ -38,9 +38,15 @@ const config: Config = {
         textSecondary: '#000000',
         textAccent: '#003399',
         textSlate: '#666666',
+        textLight: '#ffffff',
 
         bgLight: '#ffffff',
         bgSlate: '#EAEDF4',
+        bgDark: '#051D35',
+        bgLightSlate: '#F5F7FA',
+        bgAccentLight: '#039',
+        bgAccentDark: '#062365',
+        bgIconEyeDark: '#424666',
       },
       transitionDuration: {
         DEFAULT: '300ms',
