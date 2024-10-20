@@ -7,6 +7,7 @@ interface IDictionary {
       name: string;
       href: string;
     }[];
+    accessibilityMenu: IAccessibilityMenu;
   };
 }
 
@@ -24,4 +25,18 @@ interface IMetaDataPage {
     height: number;
     alt: string;
   }[];
+}
+
+interface IAccessibilityMenu {
+  textSize: {
+    increase: string;
+    decrease: string;
+  };
+  grayscale: string;
+  highlightLink: { on: string; off: string };
+  cursor: {
+    increase: string;
+    decrease: string;
+  };
+  reset: string;
 }

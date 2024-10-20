@@ -8,7 +8,7 @@ import { HeaderProps } from './types';
 
 export const Header: React.FC<HeaderProps> = async ({ lang }) => {
   const {
-    common: { mainNav, logoAlt, searchInput },
+    common: { mainNav, logoAlt, searchInput, accessibilityMenu },
   } = await getDictionary(lang);
 
   const { langCode } = staticData;
@@ -24,7 +24,7 @@ export const Header: React.FC<HeaderProps> = async ({ lang }) => {
 
             <LangSwitcher lang={lang} langCode={langCode} />
 
-            <AccessButton />
+            <AccessButton dict={accessibilityMenu} />
           </div>
         </div>
       </div>

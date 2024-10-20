@@ -1,17 +1,20 @@
 import Image from 'next/image';
 
 import { MCounter, MWrap } from '@/components/ui/animateComponents';
+import { Button } from '@/components/ui';
+
+import { TestPageProps } from './types';
 
 import styles from './TestPage.module.css';
-import { TestPageProps } from './types';
-import { Button } from '@/components/ui';
+
+import TrashIcon from '~/icons/trash.svg';
 
 export const TestPage: React.FC<TestPageProps> = ({ textTest }) => {
   return (
     <>
       <section className={styles.section_pure}>
         <div className="container">
-          <div className="flex justify-center gap-10 p-10">
+          <div className="flex flex-wrap justify-center gap-10 p-10">
             <Button type="primary">Click me!</Button>
             <br />
             <Button type="secondary">Click me!</Button>
@@ -19,6 +22,11 @@ export const TestPage: React.FC<TestPageProps> = ({ textTest }) => {
             <Button type="light">Click me!</Button>
             <br />
             <Button>Click me!</Button>
+            <br />
+
+            <Button icon={false}>
+              Click me! <TrashIcon width={24} height={24} className="ml-10" />
+            </Button>
           </div>
         </div>
       </section>
