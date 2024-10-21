@@ -32,7 +32,7 @@ interface IAccessibilityMenu {
     increase: string;
     decrease: string;
   };
-  grayscale: string;
+  grayscale: { on: string; off: string };
   highlightLink: { on: string; off: string };
   cursor: {
     increase: string;

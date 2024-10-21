@@ -62,7 +62,7 @@ export const AccessButton: React.FC<AccessButtonProps> = ({ dict }) => {
     },
     {
       action: toggleHighContrast,
-      text: dict.grayscale,
+      text: settings.highContrast ? dict.grayscale.off : dict.grayscale.on,
       icon: settings.highContrast ? (
         <RightToggleIcon width={16} height={16} />
       ) : (
@@ -92,7 +92,7 @@ export const AccessButton: React.FC<AccessButtonProps> = ({ dict }) => {
   ];
 
   return (
-    <DropdownMenu dataForButtons={items}>
+    <DropdownMenu dataForButtons={items} menuPosition="bottom">
       <button
         type="button"
         className="flex size-8 items-center justify-center rounded-[40px] bg-bgSlate data-[active]:bg-bgIconEyeDark data-[active]:text-textLight"

@@ -42,18 +42,21 @@
     "accessibilityMenu": {
       "textSize": {
         "increase": "Increase text size",
-        "decrease": "Decrease text size"
+        "decrease": "Reduce text size"
       },
-      "grayscale": "Shades of gray",
+      "grayscale": {
+        "on": "Grayscale",
+        "off": "Remove grayscale"
+      },
       "highlightLink": {
-        "on": "Underline the link",
-        "off": "Ununderline the link"
+        "on": "Underline links",
+        "off": "Remove underline"
       },
       "cursor": {
         "increase": "Increase cursor size",
         "decrease": "Decrease cursor size"
       },
-      "reset": "Cast"
+      "reset": "Reset"
     }
   }
 }
