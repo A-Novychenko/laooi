@@ -25,6 +25,7 @@ body {
 
 .grayscale {
   filter: grayscale(100%);
+  background-color: #808080;
 }
 
 .text-medium {
