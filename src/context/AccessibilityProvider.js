@@ -56,7 +56,8 @@ export const AccessibilityProvider = ({ children }) => {
         : 'none';
     });
 
-    document.body.classList.toggle('high-contrast', newSettings.highContrast);
+    // document.body.classList.toggle('high-contrast', newSettings.highContrast);
+    document.body.classList.toggle('grayscale', newSettings.highContrast);
     document.documentElement.style.cursor = newSettings.largeCursor
       ? 'url("/images/largeCursor.png"), auto'
       : 'auto';
