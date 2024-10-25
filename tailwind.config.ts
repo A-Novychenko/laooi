@@ -11,7 +11,7 @@ const config: Config = {
     screens: {
       sm: '480px',
       md: '768px',
-      xl: '1280px',
+      xl: '1360px',
 
       smOnly: { max: '767.98px' },
       mdOnly: { min: '768px', max: '1279.98px' },
@@ -22,7 +22,7 @@ const config: Config = {
       padding: {
         DEFAULT: '16px',
         sm: '16px',
-        md: '42px',
+        md: '40px',
         xl: '40px',
       },
     },
