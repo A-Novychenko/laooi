@@ -1,3 +1,32 @@
+import { Accordeon } from '@/components/ui/Accordeon/Accordeon';
+
+const testData = [
+  {
+    title: 'Що таке Луганська Асоціація організацій осіб з інвалідністю?',
+    text: 'ЛАООІ є добровільним громадським об’єднанням, членами якого є фізичні особи та юридичні особи приватного права, створеним для здійснення та захисту прав i свобод людини та громадянина, задоволення суспільних, зокрема, економічних, соціальних, культурних та інших інтересів своїх членів та/або інших осіб',
+  },
+  {
+    title: 'уганська Асоціація організацій осіб',
+    text: 'sdaasdasdasdasdsadasdasdasddasd',
+  },
+  {
+    title: 'уганська Асоціація організацій осіб',
+    text: 'sdaasdasdasdasdsadasdasdasddasd',
+  },
+  {
+    title: 'уганська Асоціація організацій осіб',
+    text: 'sdaasdasdasdasdsadasdasdasddasd',
+  },
+  {
+    title: 'уганська Асоціація організацій осіб',
+    text: 'sdaasdasdasdasdsadasdasdasddasd',
+  },
+];
+
 export const Footer: React.FC = () => {
-  return <footer>Footer</footer>;
+  return (
+    <footer>
+      <Accordeon data={testData} />
+    </footer>
+  );
 };
