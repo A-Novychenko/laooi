@@ -7,9 +7,9 @@ import { Button } from '@/components/ui';
 
 import { TestPageProps } from './types';
 
-import styles from './TestPage.module.css';
-
 import TrashIcon from '~/icons/trash.svg';
+
+import styles from './TestPage.module.css';
 
 export const TestPage: React.FC<TestPageProps> = ({ textTest }) => {
   return (

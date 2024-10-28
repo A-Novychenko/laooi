@@ -3,10 +3,10 @@ import {
   DisclosureButton,
   DisclosurePanel,
 } from '@headlessui/react';
-import React from 'react';
+
+import { AccordeonProps } from './types';
 
 import ArrowIcon from '~/icons/arrowDown.svg';
-import { AccordeonProps } from './types';
 
 export const Accordeon: React.FC<AccordeonProps> = ({ data }) => {
   return (
@@ -23,12 +23,14 @@ export const Accordeon: React.FC<AccordeonProps> = ({ data }) => {
                 <strong className="text-start font-[600] sm:w-[224px] sm:text-base md:w-[600px] xl:text-lg">
                   {item.title}
                 </strong>
+
                 <ArrowIcon
                   width={24}
                   heigth={24}
                   className="transition-transform group-data-[open]:rotate-180"
                 />
               </DisclosureButton>
+
               <DisclosurePanel transition className="mt-[8px] xl:mt-[16px]">
                 <p className="text-sm font-[400] text-textMenuAccent xl:text-base">
                   {item.text}

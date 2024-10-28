@@ -25,9 +25,11 @@ export const Header: React.FC<HeaderProps> = async ({ lang }) => {
             <SearchInput placeholder={searchInput.placeholder} />
 
             <LangSwitcher lang={lang} langCode={langCode} />
+
             <CircleButton>
               <SearchIcon width={16} height={16} />
             </CircleButton>
+
             <AccessButton dict={accessibilityMenu} />
           </div>
         </div>

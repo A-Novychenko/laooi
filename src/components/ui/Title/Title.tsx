@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { TitleProps } from './types';
 
 export const Title: React.FC<TitleProps> = ({ children, type }) => {

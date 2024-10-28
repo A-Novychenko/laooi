@@ -1,15 +1,10 @@
 'use client';
-import React from 'react';
+
+import { AccessibilitySettings } from './types';
+
 import { useAccessibility } from '@/context/AccessibilityProvider';
 
-type AccessibilitySettings = {
-  textSize: 'text-medium' | 'text-large';
-  highContrast: boolean;
-  highlightLinks: boolean;
-  largeCursor: boolean;
-};
-
-const AccessibilityMenu = () => {
+export const AccessibilityMenu = () => {
   const { settings, setSettings } = useAccessibility() as {
     settings: AccessibilitySettings;
     setSettings: React.Dispatch<React.SetStateAction<AccessibilitySettings>>;
@@ -73,5 +68,3 @@ const AccessibilityMenu = () => {
     </div>
   );
 };
-
-export default AccessibilityMenu;

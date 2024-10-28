@@ -1,7 +1,10 @@
 'use client';
 
+import { DropdownMenu } from '@/components/ui';
+
+import { AccessButtonProps, AccessibilitySettings } from './types';
+
 import { useAccessibility } from '@/context/AccessibilityProvider';
-import { DropdownMenu } from '../../ui/DropdownMenu';
 
 import {
   EyeIcon,
@@ -13,8 +16,6 @@ import {
   CursorIcon,
   TrashIcon,
 } from './icons';
-
-import { AccessButtonProps, AccessibilitySettings } from './types';
 
 export const AccessButton: React.FC<AccessButtonProps> = ({ dict }) => {
   const { settings, setSettings } = useAccessibility() as {
