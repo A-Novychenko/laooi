@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { MainTitleProps } from './types';
 
 export const MainTitle: React.FC<MainTitleProps> = ({ children }) => {

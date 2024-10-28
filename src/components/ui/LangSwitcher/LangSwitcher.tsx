@@ -1,10 +1,10 @@
 import Link from 'next/link';
 
+import { LangSwitcherProps } from './types';
+
 import { cn } from '@/utils/cn';
 
 import LineIcon from '~/icons/line.svg';
-
-import { LangSwitcherProps } from './types';
 
 export const LangSwitcher: React.FC<LangSwitcherProps> = ({
   lang,

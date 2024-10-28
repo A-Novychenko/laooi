@@ -1,6 +1,6 @@
-import SearchIcon from '~/icons/search.svg';
-
 import { SearchInputProps } from './types';
+
+import SearchIcon from '~/icons/search.svg';
 
 export const SearchInput: React.FC<SearchInputProps> = ({ placeholder }) => {
   return (
@@ -11,6 +11,7 @@ export const SearchInput: React.FC<SearchInputProps> = ({ placeholder }) => {
         name="header-search-input"
         placeholder={placeholder}
       />
+
       <SearchIcon
         width="12"
         height="12"

@@ -1,4 +1,5 @@
 import { TestPage } from '@/components/base/TestPage/TestPage';
+
 import { getDictionary } from '@/utils/dictionaries';
 
 export default async function Home({

@@ -1,6 +1,6 @@
 'use client';
 
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import { createContext, useContext, useState, useEffect } from 'react';
 
 import {
   AccessibilityProviderProps,
@@ -50,10 +50,8 @@ export const AccessibilityProvider: React.FC<AccessibilityProviderProps> = ({
     const paragraphs = document.querySelectorAll('p');
     const links = document.querySelectorAll('a');
 
-    console.log('newSettings', newSettings.largeCursor);
-
     paragraphs.forEach(p => {
-      p.className = `${newSettings.textSize} transition-font-size`; // Додайте клас анімації до всіх <p>
+      p.className = `${newSettings.textSize} transition-font-size`;
     });
 
     links.forEach(link => {
