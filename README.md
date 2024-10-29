@@ -161,17 +161,19 @@ is a list of more common components and their API.
 
 <br/>
 
-- #### Button
+- #### ButtonLink
 
 A button component styled as a button but capable of rendering either as a
 button or a link, depending on the settings.
 
-| Prop        | Default     | Description                                                                                  |
-| ----------- | ----------- | -------------------------------------------------------------------------------------------- |
-| `children`  | `undefined` | required, Built-in ReactNode components, an button content                                   |
-| `type`      | `primary`   | optional, can take the value `primary` `secondary` `light`, changes the design of the button |
-| `icon`      | `true`      | optional, `boolean`, display arrow icon                                                      |
-| `className` | `undefined` | optional, `string`, adds custom css class to the Button component.                           |
+| Prop        | Default     | Description                                                                                                                                               |
+| ----------- | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `children`  | `undefined` | required, Built-in ReactNode components, an button content                                                                                                |
+| `typeStyle` | `primary`   | optional, can take the value `primary` `secondary` `light` `transparent`, changes the design of the button                                                |
+| `icon`      | `true`      | optional, `boolean`, display arrow icon                                                                                                                   |
+| `type`      | `undefined` | required, `link` or `button`, Specifies which tag to render                                                                                               |
+| `settings`  | `undefined` | required, `Object`, Settings for link `{href: required string, external: required string}` or button `{action: required function}` depending on prop type |
+| `className` | `undefined` | optional, `string`, adds custom css class to the Button component.                                                                                        |
 
 ### 🚧 Technology stack
 

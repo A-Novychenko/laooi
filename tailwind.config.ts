@@ -43,10 +43,12 @@ const config: Config = {
 
         bgLight: '#ffffff',
         bgSlate: '#EAEDF4',
+        bgDarkSlate: '#D4DAE9',
         bgDark: '#051D35',
         bgLightSlate: '#F5F7FA',
         bgAccentLight: '#039',
         bgAccentDark: '#062365',
+        bgAccentStrongDark: '#010C3B',
         bgIconEyeDark: '#424666',
       },
       transitionDuration: {
