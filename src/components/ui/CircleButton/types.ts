@@ -2,6 +2,6 @@ import { ReactNode } from 'react';
 
 export type CircleButtonProps = {
   children: ReactNode;
-  action?: () => void;
+  action: () => void;
   className?: string;
 };
