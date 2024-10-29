@@ -11,11 +11,11 @@ import {
   PlusIcon,
   MinusIcon,
   LeftToggleIcon,
-  RightToggleIcon,
   LinkIcon,
   CursorIcon,
   TrashIcon,
 } from './icons';
+import { cn } from '@/utils/cn';
 
 export const AccessButton: React.FC<AccessButtonProps> = ({ dict }) => {
   const { settings, setSettings } = useAccessibility() as {
@@ -27,8 +27,7 @@ export const AccessButton: React.FC<AccessButtonProps> = ({ dict }) => {
     e.preventDefault();
     setSettings(prevSize => ({
       ...prevSize,
-      textSize:
-        prevSize.textSize === 'text-medium' ? 'text-large' : 'text-medium',
+      textSize: prevSize.textSize === '16px' ? '24px' : '16px',
     }));
   };
 
@@ -51,23 +50,25 @@ export const AccessButton: React.FC<AccessButtonProps> = ({ dict }) => {
     {
       action: handleTextSizeChange,
       icon:
-        settings.textSize === 'text-medium' ? (
+        settings.textSize === '16px' ? (
           <PlusIcon width={16} height={16} />
         ) : (
           <MinusIcon width={16} height={16} />
         ),
       text:
-        settings.textSize === 'text-medium'
+        settings.textSize === '16px'
           ? dict.textSize.increase
           : dict.textSize.decrease,
     },
     {
       action: toggleHighContrast,
       text: settings.highContrast ? dict.grayscale.off : dict.grayscale.on,
-      icon: settings.highContrast ? (
-        <RightToggleIcon width={16} height={16} />
-      ) : (
-        <LeftToggleIcon width={16} height={16} />
+      icon: (
+        <LeftToggleIcon
+          width={16}
+          height={16}
+          className={cn({ 'rotate-180': settings.highContrast })}
+        />
       ),
     },
     {
@@ -98,7 +99,7 @@ export const AccessButton: React.FC<AccessButtonProps> = ({ dict }) => {
         type="button"
         className="flex size-8 items-center justify-center rounded-[40px] bg-bgSlate data-[active]:bg-bgIconEyeDark data-[active]:text-textLight"
       >
-        <EyeIcon width="16" height="16" />
+        <EyeIcon width={16} height={16} />
       </button>
     </DropdownMenu>
   );

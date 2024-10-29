@@ -1,5 +1,5 @@
 export type AccessibilitySettings = {
-  textSize: 'text-medium' | 'text-large';
+  textSize: '16px' | '24px';
   highContrast: boolean;
   highlightLinks: boolean;
   largeCursor: boolean;

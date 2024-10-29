@@ -1,6 +1,12 @@
 'use client';
 
-import { createContext, useContext, useState, useEffect } from 'react';
+import {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  useCallback,
+} from 'react';
 
 import {
   AccessibilityProviderProps,
@@ -26,11 +32,29 @@ export const AccessibilityProvider: React.FC<AccessibilityProviderProps> = ({
   children,
 }) => {
   const [settings, setSettings] = useState({
-    textSize: 'text-medium',
+    textSize: '16px',
     highContrast: false,
     highlightLinks: false,
     largeCursor: false,
   });
+
+  const memoizedApplySettings = useCallback(
+    (newSettings: AccessibilitySettings) => {
+      document.documentElement.style.fontSize = settings.textSize;
+      document.documentElement.classList.toggle(
+        'grayscale',
+        newSettings.highContrast,
+      );
+      document.body.classList.toggle(
+        'underline-links',
+        newSettings.highlightLinks,
+      );
+      document.documentElement.style.cursor = newSettings.largeCursor
+        ? 'url("/images/largeCursor.png"), auto'
+        : 'auto';
+    },
+    [settings.textSize],
+  );
 
   useEffect(() => {
     const savedSettings = JSON.parse(
@@ -43,37 +67,8 @@ export const AccessibilityProvider: React.FC<AccessibilityProviderProps> = ({
 
   useEffect(() => {
     localStorage.setItem('accessibilitySettings', JSON.stringify(settings));
-    applySettings(settings);
-  }, [settings]);
-
-  const applySettings = (newSettings: AccessibilitySettings) => {
-    const paragraphs = document.querySelectorAll('p');
-    const links = document.querySelectorAll('a');
-
-    paragraphs.forEach(p => {
-      p.className = `${newSettings.textSize} transition-font-size`;
-    });
-
-    links.forEach(link => {
-      link.className = `${newSettings.textSize} transition-font-size`;
-      link.style.backgroundColor = newSettings.highlightLinks ? 'yellow' : '';
-      link.style.textDecoration = newSettings.highlightLinks
-        ? 'underline'
-        : 'none';
-    });
-
-    document.body.classList.toggle('grayscale', newSettings.highContrast);
-    document.documentElement.style.cursor = newSettings.largeCursor
-      ? 'url("/images/largeCursor.png"), auto'
-      : 'auto';
-
-    document.querySelectorAll('a').forEach(link => {
-      link.style.backgroundColor = newSettings.highlightLinks ? 'yellow' : '';
-      link.style.textDecoration = newSettings.highlightLinks
-        ? 'underline'
-        : 'none';
-    });
-  };
+    memoizedApplySettings(settings);
+  }, [memoizedApplySettings, settings]);
 
   return (
     <AccessibilityContext.Provider value={{ settings, setSettings }}>

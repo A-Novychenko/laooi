@@ -3,13 +3,12 @@ import Image from 'next/image';
 import { MCounter, MWrap } from '@/components/ui/animateComponents';
 import { MainTitle } from '@/components/ui/MainTitle/MainTitle';
 import { Title } from '@/components/ui/Title/Title';
-import { Button } from '@/components/ui';
+import { ButtonLink } from '@/components/ui';
 
 import { TestPageProps } from './types';
 
-import TrashIcon from '~/icons/trash.svg';
-
 import styles from './TestPage.module.css';
+import { TestBtn } from './TestBtn';
 
 export const TestPage: React.FC<TestPageProps> = ({ textTest }) => {
   return (
@@ -17,18 +16,65 @@ export const TestPage: React.FC<TestPageProps> = ({ textTest }) => {
       <section className={styles.section_pure}>
         <div className="container">
           <div className="flex flex-wrap justify-center gap-10 p-10">
-            <Button type="primary">Click me!</Button>
+            <ButtonLink
+              type="link"
+              typeStyle="primary"
+              settings={{ href: '/', externalLink: true }}
+            >
+              primary!
+            </ButtonLink>
             <br />
-            <Button type="secondary">Click me!</Button>
+            <ButtonLink
+              type="link"
+              typeStyle="secondary"
+              settings={{ href: '/', externalLink: true }}
+            >
+              secondary!
+            </ButtonLink>
             <br />
-            <Button type="light">Click me!</Button>
+            <ButtonLink
+              typeStyle="light"
+              type="link"
+              settings={{ href: '/test', externalLink: false }}
+            >
+              light!
+            </ButtonLink>
             <br />
-            <Button>Click me!</Button>
+            <div>
+              <ButtonLink
+                typeStyle="transparent"
+                type="link"
+                settings={{ href: '/test', externalLink: false }}
+              >
+                transparent!
+              </ButtonLink>
+            </div>
             <br />
-
-            <Button icon={false}>
-              Click me! <TrashIcon width={24} height={24} className="ml-10" />
-            </Button>
+            <ButtonLink
+              type="link"
+              settings={{ href: '/', externalLink: true }}
+            >
+              Not style!
+            </ButtonLink>
+            <br />
+            <ButtonLink
+              type="link"
+              settings={{ href: '/', externalLink: true }}
+              className="bg-amber-200 text-red-700"
+            >
+              Custom style!
+            </ButtonLink>
+            <br />
+            <ButtonLink
+              type="link"
+              icon={false}
+              settings={{ href: '/', externalLink: true }}
+              className="bg-amber-200 text-red-700"
+            >
+              Custom style w/o icon!
+            </ButtonLink>
+            <br />
+            <TestBtn />
           </div>
         </div>
       </section>
