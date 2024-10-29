@@ -2,5 +2,8 @@ import { ReactNode } from 'react';
 
 export type TitleProps = {
   children: ReactNode;
-  type: 'second' | 'third';
+  tag: string;
+  style: string;
+  className?: string;
+  hidden: boolean;
 };
