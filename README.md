@@ -175,6 +175,19 @@ button or a link, depending on the settings.
 | `settings`  | `undefined` | required, `Object`, Settings for link `{href: required string, external: required string}` or button `{action: required function}` depending on prop type |
 | `className` | `undefined` | optional, `string`, adds custom css class to the Button component.                                                                                        |
 
+- #### CircleButton
+
+A circular button component designed to display content within a round button
+and handle click actions.
+
+| Prop        | Default     | Description                                                                                      |
+| ----------- | ----------- | ------------------------------------------------------------------------------------------------ |
+| `children`  | `undefined` | required, `ReactNode`, defines the content inside the button                                     |
+| `action`    | `undefined` | required, `() => void`, function triggered when the button is clicked                            |
+| `className` | `undefined` | optional, `string`, adds a custom CSS class to the CircleButton component for additional styling |
+
+                                                                               |
+
 ### 🚧 Technology stack
 
 - **Main technologies**:

@@ -1,6 +1,6 @@
 import { LangSwitcher, MainNavList, SearchInput } from '@/components/ui';
 import { AccessButton } from '@/components/base';
-import { CircleButton } from '@/components/ui/CircleButton/CircleButton';
+
 import SearchIcon from '~/icons/search.svg';
 
 import { getDictionary } from '@/utils/dictionaries';
@@ -26,9 +26,7 @@ export const Header: React.FC<HeaderProps> = async ({ lang }) => {
 
             <LangSwitcher lang={lang} langCode={langCode} />
 
-            <CircleButton>
-              <SearchIcon width={16} height={16} />
-            </CircleButton>
+            <SearchIcon width={16} height={16} />
 
             <AccessButton dict={accessibilityMenu} />
           </div>
