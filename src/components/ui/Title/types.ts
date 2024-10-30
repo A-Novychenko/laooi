@@ -5,5 +5,5 @@ export type TitleProps = {
   tag: string;
   style: string;
   className?: string;
-  hidden: boolean;
+  hidden?: boolean;
 };
