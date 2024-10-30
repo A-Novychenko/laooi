@@ -1,8 +1,6 @@
 import Image from 'next/image';
 
 import { MCounter, MWrap } from '@/components/ui/animateComponents';
-import { MainTitle } from '@/components/ui/MainTitle/MainTitle';
-import { Title } from '@/components/ui/Title/Title';
 import { ButtonLink } from '@/components/ui';
 
 import { TestPageProps } from './types';
@@ -81,7 +79,7 @@ export const TestPage: React.FC<TestPageProps> = ({ textTest }) => {
 
       <section className={styles.section_bg_first}>
         <div className="container">
-          <MainTitle>Hello! This is an animation test page!</MainTitle>
+          <h1>Hello! This is an animation test page!</h1>
 
           <p className="text-center text-[100px] font-bold">
             <span className="visually-hidden">100</span>
@@ -134,7 +132,7 @@ export const TestPage: React.FC<TestPageProps> = ({ textTest }) => {
 
       <section className={styles.section_bg_second}>
         <div className="container">
-          <Title type={'third'}>Items section</Title>
+          <h2>Items section</h2>
 
           <MWrap>
             <ul id="list-animation" className="flex flex-wrap gap-5">
