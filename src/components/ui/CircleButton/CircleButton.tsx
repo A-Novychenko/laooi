@@ -8,7 +8,7 @@ export const CircleButton: React.FC<CircleButtonProps> = ({
 }) => {
   return (
     <button
-      className="flex size-11 items-center justify-center rounded-full bg-bgSlate p-2"
+      className="flex size-11 items-center justify-center rounded-full bg-bgSlate p-2 transition-colors hover:bg-bgDarkSlate focus:bg-bgDarkSlate"
       type="button"
       onClick={action}
     >

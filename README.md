@@ -239,6 +239,16 @@ change languages ​​to Ukrainian or English
 | `lang`     | `undefined` | required, `string`, current site language      |
 | `langCode` | `undefined` | required, `string`, static data, language code |
 
+- #### SearchInput
+
+A component for entering search queries on a website. It has a separate state
+for desktop devices, a button that appears when clicked.
+
+| Prop          | Default     | Description                                                      |
+| ------------- | ----------- | ---------------------------------------------------------------- |
+| `placeholder` | `undefined` | required, `string`, placeholder                                  |
+| `desktop`     | `undefined` | optional, `boolean` or `undefined`, enables desktop version mode |
+
 </details>
 
 ### 🚧 Technology stack
