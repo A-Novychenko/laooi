@@ -1,9 +1,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { LogoProps } from './types';
-
 import LogoIcon from '~/logo.png';
+
+import { LogoProps } from './types';
 
 export const Logo: React.FC<LogoProps> = ({ lang, logoAlt }) => {
   return (
