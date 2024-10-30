@@ -196,8 +196,8 @@ with customizable styles based on provided props.
 | Prop        | Default     | Description                                                                                                                                   |
 | ----------- | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
 | `children`  | `undefined` | required, `ReactNode`, content displayed inside the title                                                                                     |
-| `tag`       | `'h2'`      | optional, `string`, specifies the HTML tag to render as (`h1`, `h2`, `h3`, etc.)                                                              |
-| `style`     | `'second'`  | optional, can take values `main`, `second`, or `third`, each representing different text styles for the title                                 |
+| `tag`       | `'h2'`      | required, `string`, specifies the HTML tag to render as (`h1`, `h2`, `h3`, etc.)                                                              |
+| `style`     | `'second'`  | required, can take values `main`, `second`, or `third`, each representing different text styles for the title                                 |
 | `className` | `undefined` | optional, `string`, adds custom CSS classes for additional styling on the title component                                                     |
 | `hidden`    | `false`     | optional, `boolean`, if `true`, applies the `visually-hidden` class to hide the title visually while keeping it accessible for screen readers |
 
