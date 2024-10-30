@@ -208,6 +208,16 @@ magnification, using grayscale, and underlining links throughout the site.
 | ------ | ----------- | -------------------------------------------------------------- |
 | `dict` | `undefined` | required, `IDictionary`, data stored in the project dictionary |
 
+- #### Logo
+
+Company Logo component, the logo image is wrapped in a link that leads to the
+main page of the site
+
+| Prop      | Default     | Description                                                            |
+| --------- | ----------- | ---------------------------------------------------------------------- |
+| `lang`    | `undefined` | required, `string`, current site language                              |
+| `logoAlt` | `undefined` | required, `string`, static data, description of the company logo image |
+
 </details>
 
 ### 🚧 Technology stack
