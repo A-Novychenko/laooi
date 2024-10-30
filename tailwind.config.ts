@@ -30,6 +30,9 @@ const config: Config = {
       fontFamily: {
         nunito: ['var(--font-nunito)'],
       },
+      fontSize: {
+        xs10: '0.625rem',
+      },
       lineHeight: {
         normal: '1.15',
       },
