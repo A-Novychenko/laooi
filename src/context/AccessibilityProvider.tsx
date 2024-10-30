@@ -41,6 +41,7 @@ export const AccessibilityProvider: React.FC<AccessibilityProviderProps> = ({
   const memoizedApplySettings = useCallback(
     (newSettings: AccessibilitySettings) => {
       document.documentElement.style.fontSize = settings.textSize;
+      document.documentElement.classList.add('text-size-animated');
       document.documentElement.classList.toggle(
         'grayscale',
         newSettings.highContrast,
@@ -52,7 +53,12 @@ export const AccessibilityProvider: React.FC<AccessibilityProviderProps> = ({
       document.documentElement.style.cursor = newSettings.largeCursor
         ? 'url("/images/largeCursor.png"), auto'
         : 'auto';
+      setTimeout(
+        () => document.documentElement.classList.remove('text-size-animated'),
+        500,
+      );
     },
+
     [settings.textSize],
   );
 
@@ -70,8 +76,21 @@ export const AccessibilityProvider: React.FC<AccessibilityProviderProps> = ({
     memoizedApplySettings(settings);
   }, [memoizedApplySettings, settings]);
 
+  const resetSettings = () => {
+    const defaultSettings = {
+      textSize: '16px',
+      highContrast: false,
+      highlightLinks: false,
+      largeCursor: false,
+    };
+
+    setSettings(defaultSettings);
+  };
+
   return (
-    <AccessibilityContext.Provider value={{ settings, setSettings }}>
+    <AccessibilityContext.Provider
+      value={{ settings, setSettings, resetSettings }}
+    >
       {children}
     </AccessibilityContext.Provider>
   );
