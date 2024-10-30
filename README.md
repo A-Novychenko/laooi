@@ -199,6 +199,17 @@ with customizable styles based on provided props.
 | `className` | `undefined` | optional, `string`, adds custom CSS classes for additional styling on the title component                                                     |
 | `hidden`    | `false`     | optional, `boolean`, if `true`, applies the `visually-hidden` class to hide the title visually while keeping it accessible for screen readers |
 
+- #### DropdownMenu
+
+The component is a drop-down menu that can contain button or link elements.
+
+| Prop             | Default        | Description                                                                             |
+| ---------------- | -------------- | --------------------------------------------------------------------------------------- |
+| `children`       | `undefined`    | required, `ReactNode`, accepts a button component that will open a menu when clicked    |
+| `dataForButtons` | `undefined`    | optional, `Array`, array of objects with settings and data of menu button elements      |
+| `dataForLinks`   | `undefined`    | optional, `Array`, array of objects with settings and data of menu link items           |
+| `menuPosition`   | `bottom start` | optional, `string`, a line with a list of pages from which the menu location is counted |
+
 - #### AccessMenu
 
 The component is a drop-down menu that contains buttons for controlling text
@@ -217,6 +228,16 @@ main page of the site
 | --------- | ----------- | ---------------------------------------------------------------------- |
 | `lang`    | `undefined` | required, `string`, current site language                              |
 | `logoAlt` | `undefined` | required, `string`, static data, description of the company logo image |
+
+- #### LangSwitcher
+
+A component that displays the current site language and provides the ability to
+change languages ​​to Ukrainian or English
+
+| Prop       | Default     | Description                                    |
+| ---------- | ----------- | ---------------------------------------------- |
+| `lang`     | `undefined` | required, `string`, current site language      |
+| `langCode` | `undefined` | required, `string`, static data, language code |
 
 </details>
 
