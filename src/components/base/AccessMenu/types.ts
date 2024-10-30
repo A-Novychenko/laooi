@@ -5,4 +5,4 @@ export type AccessibilitySettings = {
   largeCursor: boolean;
 };
 
-export type AccessButtonProps = { dict: IAccessibilityMenu };
+export type AccessMenuProps = { dict: IAccessibilityMenu };

@@ -15,9 +15,9 @@ import {
   TrashIcon,
 } from './icons';
 
-import { AccessButtonProps, AccessibilitySettings } from './types';
+import { AccessMenuProps, AccessibilitySettings } from './types';
 
-export const AccessButton: React.FC<AccessButtonProps> = ({ dict }) => {
+export const AccessMenu: React.FC<AccessMenuProps> = ({ dict }) => {
   const { settings, setSettings } = useAccessibility() as {
     settings: AccessibilitySettings;
     setSettings: React.Dispatch<React.SetStateAction<AccessibilitySettings>>;

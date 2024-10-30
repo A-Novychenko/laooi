@@ -186,8 +186,6 @@ and handle click actions.
 | `action`    | `undefined` | required, `() => void`, function triggered when the button is clicked                            |
 | `className` | `undefined` | optional, `string`, adds a custom CSS class to the CircleButton component for additional styling |
 
-                                                                               |
-
 - #### Title
 
 A versatile title component that renders a styled heading (`h1`, `h2`, etc.)
@@ -200,6 +198,17 @@ with customizable styles based on provided props.
 | `style`     | `second`    | optional, can take values `main`, `second`, or `third`, each representing different text styles for the title                                 |
 | `className` | `undefined` | optional, `string`, adds custom CSS classes for additional styling on the title component                                                     |
 | `hidden`    | `false`     | optional, `boolean`, if `true`, applies the `visually-hidden` class to hide the title visually while keeping it accessible for screen readers |
+
+- #### AccessMenu
+
+The component is a drop-down menu that contains buttons for controlling text
+magnification, using grayscale, and underlining links throughout the site.
+
+| Prop   | Default     | Description                                                    |
+| ------ | ----------- | -------------------------------------------------------------- |
+| `dict` | `undefined` | required, `IDictionary`, data stored in the project dictionary |
+
+</details>
 
 ### 🚧 Technology stack
 

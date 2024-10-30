@@ -1,10 +1,10 @@
 import { LangSwitcher, MainNavList, SearchInput } from '@/components/ui';
-import { AccessButton } from '@/components/base';
-
-import SearchIcon from '~/icons/search.svg';
+import { AccessMenu } from '@/components/base';
 
 import { getDictionary } from '@/utils/dictionaries';
 import staticData from '@/data/common.json';
+
+import SearchIcon from '~/icons/search.svg';
 
 import { HeaderProps } from './types';
 
@@ -28,7 +28,7 @@ export const Header: React.FC<HeaderProps> = async ({ lang }) => {
 
             <SearchIcon width={16} height={16} />
 
-            <AccessButton dict={accessibilityMenu} />
+            <AccessMenu dict={accessibilityMenu} />
           </div>
         </div>
       </div>
