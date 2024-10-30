@@ -9,11 +9,13 @@ export default function Layout({
 }>) {
   return (
     <>
-      <Header lang={params.lang} />
+      <div className="flex min-h-screen flex-col">
+        <Header lang={params.lang} />
 
-      <main>{children}</main>
+        <main className="grow">{children}</main>
 
-      <Footer />
+        <Footer />
+      </div>
     </>
   );
 }

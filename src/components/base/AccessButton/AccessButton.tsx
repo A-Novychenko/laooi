@@ -2,9 +2,8 @@
 
 import { DropdownMenu } from '@/components/ui';
 
-import { AccessButtonProps, AccessibilitySettings } from './types';
-
 import { useAccessibility } from '@/context/AccessibilityProvider';
+import { cn } from '@/utils/cn';
 
 import {
   EyeIcon,
@@ -15,7 +14,8 @@ import {
   CursorIcon,
   TrashIcon,
 } from './icons';
-import { cn } from '@/utils/cn';
+
+import { AccessButtonProps, AccessibilitySettings } from './types';
 
 export const AccessButton: React.FC<AccessButtonProps> = ({ dict }) => {
   const { settings, setSettings } = useAccessibility() as {
@@ -97,7 +97,7 @@ export const AccessButton: React.FC<AccessButtonProps> = ({ dict }) => {
     <DropdownMenu dataForButtons={items} menuPosition="bottom">
       <button
         type="button"
-        className="flex size-8 items-center justify-center rounded-[40px] bg-bgSlate data-[active]:bg-bgIconEyeDark data-[active]:text-textLight"
+        className="flex size-11 items-center justify-center rounded-[40px] bg-bgSlate data-[active]:bg-bgIconEyeDark data-[active]:text-textLight"
       >
         <EyeIcon width={16} height={16} />
       </button>

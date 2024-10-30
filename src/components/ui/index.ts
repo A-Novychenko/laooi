@@ -4,3 +4,4 @@ export * from './SearchInput';
 export * from './LangSwitcher';
 export * from './ButtonLink';
 export * from './DropdownMenu';
+export * from './CircleButton';
