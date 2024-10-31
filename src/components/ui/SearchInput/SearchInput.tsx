@@ -4,7 +4,7 @@ import { useEffect, useRef, useState, ChangeEvent } from 'react';
 
 import { Transition } from '@headlessui/react';
 
-import { CircleButton } from '../CircleButton';
+import { CircleButton } from '@/components/ui';
 
 import { cn } from '@/utils/cn';
 
@@ -92,7 +92,7 @@ export const SearchInput: React.FC<SearchInputProps> = ({
         <div className="relative xl:hidden">
           <input
             className={cn(
-              'h-[44px] w-full rounded-[40px] bg-bgLightSlate py-2 pl-10 pr-4 text-xs10/normal font-semibold placeholder:text-textSlate md:h-[48px] md:text-xs/normal',
+              'h-[44px] w-full rounded-[40px] bg-bgLightSlate py-2 pl-10 pr-4 text-[10px]/normal font-semibold placeholder:text-textSlate md:h-[48px] md:text-xs/normal',
               styles.input,
             )}
             type="search"

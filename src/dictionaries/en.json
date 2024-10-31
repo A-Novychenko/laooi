@@ -24,15 +24,51 @@
       },
       {
         "name": "About Us",
-        "href": "/about"
+        "href": "",
+        "embedded": [
+          {
+            "name": "Strategy",
+            "href": "/strategy"
+          },
+          {
+            "name": "Team",
+            "href": "/team"
+          },
+          {
+            "name": "Projects",
+            "href": "/projects"
+          }
+        ]
       },
       {
-        "name": "Main Directions",
-        "href": "/main-directions"
+        "name": "Activities",
+        "href": "",
+        "embedded": [
+          {
+            "name": "Main areas",
+            "href": "/main-areas"
+          },
+          {
+            "name": "Counselors",
+            "href": "/counselors"
+          },
+          {
+            "name": "Media about us",
+            "href": "/media-about-us"
+          },
+          {
+            "name": "Documents",
+            "href": "/documents"
+          }
+        ]
       },
       {
         "name": "News",
         "href": "/news"
+      },
+      {
+        "name": "Tenders",
+        "href": "/tenders"
       },
       {
         "name": "Contacts",
