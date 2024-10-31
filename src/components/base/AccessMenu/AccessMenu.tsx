@@ -18,9 +18,10 @@ import {
 import { AccessMenuProps, AccessibilitySettings } from './types';
 
 export const AccessMenu: React.FC<AccessMenuProps> = ({ dict }) => {
-  const { settings, setSettings } = useAccessibility() as {
+  const { settings, setSettings, resetSettings } = useAccessibility() as {
     settings: AccessibilitySettings;
     setSettings: React.Dispatch<React.SetStateAction<AccessibilitySettings>>;
+    resetSettings: () => void;
   };
 
   const handleTextSizeChange = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -84,10 +85,7 @@ export const AccessMenu: React.FC<AccessMenuProps> = ({ dict }) => {
       text: settings.largeCursor ? dict.cursor.decrease : dict.cursor.increase,
     },
     {
-      action: () => {
-        document.body.innerHTML =
-          '<img src="/images/image.webp" alt="text" width="100%" height="100%">';
-      },
+      action: resetSettings,
       icon: <TrashIcon width={16} height={16} />,
       text: dict.reset,
     },

@@ -10,6 +10,7 @@ export type AccessibilitySettings = {
 export type AccessibilityContextType = {
   settings: AccessibilitySettings;
   setSettings: React.Dispatch<React.SetStateAction<AccessibilitySettings>>;
+  resetSettings: () => void;
 };
 
 export type AccessibilityProviderProps = {

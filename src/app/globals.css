@@ -6,6 +6,10 @@ body {
   @apply m-0 bg-slate-300 font-nunito leading-normal text-textPrimary;
 }
 
+html {
+  transition: font-size 250ms ease-in-out;
+}
+
 .visually-hidden {
   position: absolute;
   white-space: nowrap;
