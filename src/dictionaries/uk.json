@@ -93,6 +93,34 @@
         "decrease": "Зменшити курсор"
       },
       "reset": "Скинути"
+    },
+    "footerNav": {
+      "footerAbout": {
+        "title": "Про нас",
+        "embedded": [
+          { "name": "Стратегія", "href": "/strategy" },
+          { "name": "Команда", "href": "/team" },
+          { "name": "Проєкти", "href": "/projects" }
+        ]
+      },
+      "footerActivities": {
+        "title": "Діяльність",
+        "embedded": [
+          { "name": "Основні напрямки", "href": "/main-areas" },
+          { "name": "Радники", "href": "/advisors" },
+          { "name": "Медіа про нас", "href": "/media-about-us" },
+          { "name": "Документи", "href": "/documents" }
+        ]
+      },
+      "footerOther": {
+        "title": "Інше",
+        "embedded": [
+          { "name": "Новини", "href": "/news" },
+          { "name": "Вакансії", "href": "/vacancies" },
+          { "name": "Тендери", "href": "/tenders" },
+          { "name": "Контакти", "href": "/contacts" }
+        ]
+      }
     }
   }
 }
