@@ -51,9 +51,9 @@ interface IMainNavEmbedded {
 }
 
 interface IFooterNav {
-  footerAbout: IFooterAbout;
-  footerActivities: IFooterActivities;
-  footerOther: IFooterOther;
+  footerAbout: IFooterNavItem;
+  footerActivities: IFooterNavItem;
+  footerOther: IFooterNavItem;
 }
 
 interface IFooterNavEmbedded {
@@ -61,17 +61,7 @@ interface IFooterNavEmbedded {
   href: string;
 }
 
-interface IFooterAbout {
-  title: string;
-  embedded: IFooterNavEmbedded[];
-}
-
-interface IFooterActivities {
-  title: string;
-  embedded: IFooterNavEmbedded[];
-}
-
-interface IFooterOther {
+interface IFooterNavItem {
   title: string;
   embedded: IFooterNavEmbedded[];
 }

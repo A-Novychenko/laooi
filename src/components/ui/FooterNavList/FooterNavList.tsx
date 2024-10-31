@@ -18,7 +18,7 @@ export const FooterNavList: React.FC<FooterNavListProps> = ({
             return (
               <li key={idx}>
                 <Link
-                  className="block py-1 text-sm/normal font-semibold text-textLight xl:text-base"
+                  className="block py-1 text-sm/normal font-semibold text-textLight hover:text-textFooterAccent active:text-textActive xl:text-base"
                   href={item.href}
                 >
                   {item.name}
