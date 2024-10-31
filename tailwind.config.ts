@@ -30,9 +30,6 @@ const config: Config = {
       fontFamily: {
         nunito: ['var(--font-nunito)'],
       },
-      fontSize: {
-        xs10: '0.625rem',
-      },
       lineHeight: {
         normal: '1.15',
       },
@@ -53,6 +50,9 @@ const config: Config = {
         bgAccentDark: '#062365',
         bgAccentStrongDark: '#010C3B',
         bgIconEyeDark: '#424666',
+      },
+      boxShadow: {
+        mobMenuHeader: '0px 0px 40px 0px rgba(0, 0, 0, 0.10)',
       },
       transitionDuration: {
         DEFAULT: '300ms',

@@ -1,0 +1,18 @@
+.tooltipCustom {
+  background: transparent !important;
+  padding: 0 !important;
+  opacity: 1 !important;
+}
+
+.menuWrap {
+  box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.1);
+}
+
+.menuLink:hover,
+.menuLink:focus {
+  @apply text-textAccent;
+}
+.menuLink:hover svg,
+.menuLink:focus svg {
+  @apply text-textAccent;
+}

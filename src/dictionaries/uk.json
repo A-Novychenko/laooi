@@ -24,15 +24,51 @@
       },
       {
         "name": "Про нас",
-        "href": "/about"
+        "href": "",
+        "embedded": [
+          {
+            "name": "Стратегія",
+            "href": "/strategy"
+          },
+          {
+            "name": "Команда",
+            "href": "/team"
+          },
+          {
+            "name": "Проєкти",
+            "href": "/projects"
+          }
+        ]
       },
       {
-        "name": "Основні напрямки",
-        "href": "/main-directions"
+        "name": "Діяльність",
+        "href": "",
+        "embedded": [
+          {
+            "name": "Основні напрямки",
+            "href": "/main-areas"
+          },
+          {
+            "name": "Радники",
+            "href": "/counselors"
+          },
+          {
+            "name": "Медіa про нас",
+            "href": "/media-about-us"
+          },
+          {
+            "name": "Документи",
+            "href": "/documents"
+          }
+        ]
       },
       {
         "name": "Новини",
         "href": "/news"
+      },
+      {
+        "name": "Тендери",
+        "href": "/tenders"
       },
       {
         "name": "Контакти",

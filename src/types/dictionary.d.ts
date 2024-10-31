@@ -3,10 +3,7 @@ interface IDictionary {
   common: {
     logoAlt: string;
     searchInput: { placeholder: string };
-    mainNav: {
-      name: string;
-      href: string;
-    }[];
+    mainNav: IMainNav[];
     accessibilityMenu: IAccessibilityMenu;
   };
 }
@@ -39,4 +36,15 @@ interface IAccessibilityMenu {
     decrease: string;
   };
   reset: string;
+}
+
+interface IMainNav {
+  name: string;
+  href: string;
+  embedded?: IMainNavEmbedded[];
+}
+
+interface IMainNavEmbedded {
+  name: string;
+  href: string;
 }

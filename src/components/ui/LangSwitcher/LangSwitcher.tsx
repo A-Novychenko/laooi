@@ -16,7 +16,7 @@ export const LangSwitcher: React.FC<LangSwitcherProps> = ({
         href="/uk"
         type="button"
         className={cn(
-          'text-xs10/normal font-bold transition-colors xl:text-sm/normal',
+          'text-[10px]/normal font-bold transition-colors xl:text-sm/normal',
           lang === 'uk'
             ? 'text-textAccent'
             : 'text-textSlate hover:text-textPrimary focus:text-textPrimary',
@@ -33,7 +33,7 @@ export const LangSwitcher: React.FC<LangSwitcherProps> = ({
         href="/en"
         type="button"
         className={cn(
-          'text-xs10/normal font-bold transition-colors xl:text-sm/normal',
+          'text-[10px]/normal font-bold transition-colors xl:text-sm/normal',
           lang === 'en'
             ? 'text-textAccent'
             : 'text-textSlate hover:text-textPrimary focus:text-textPrimary',
