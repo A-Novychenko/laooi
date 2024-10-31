@@ -1,4 +1,4 @@
-import { Accordeon } from '@/components/ui/Accordeon/Accordeon';
+import { Accordion } from '@/components/ui/Accordion/Accordion';
 
 const testData = [
   {
@@ -26,7 +26,7 @@ const testData = [
 export const AccordionTest = () => {
   return (
     <div className="flex justify-center">
-      <Accordeon data={testData} />
+      <Accordion data={testData} />
     </div>
   );
 };

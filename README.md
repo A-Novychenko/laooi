@@ -249,6 +249,26 @@ for desktop devices, a button that appears when clicked.
 | `placeholder` | `undefined` | required, `string`, placeholder                                  |
 | `desktop`     | `undefined` | optional, `boolean` or `undefined`, enables desktop version mode |
 
+- #### Accordion
+
+A component that renders a list of collapsible accordion items, allowing users
+to expand or collapse content sections.
+
+| Prop   | Default     | Description                                                                                                                     |
+| ------ | ----------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| `data` | `undefined` | required, `Array<{ title: string; text: string }>` - an array of objects containing `title` and `text` for each accordion item. |
+
+- #### AccordionItem
+
+A component that represents an individual item in an accordion. It displays a
+title and collapsible content, with an arrow icon indicating the open/close
+default first item.
+
+| Prop          | Default     | Description                                                                                                    |
+| ------------- | ----------- | -------------------------------------------------------------------------------------------------------------- |
+| `item`        | `undefined` | required, `{ title: string; text: string }`, an object containing the `title` and `text` content for the item. |
+| `defaultOpen` | `false`     | optional, `boolean`, determines whether the accordion item is open by default.                                 |
+
 </details>
 
 ### 🚧 Technology stack
