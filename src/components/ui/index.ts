@@ -10,3 +10,5 @@ export * from './MobileMenu';
 export * from './NavEmbeddedLink';
 export * from './AccordionMenu';
 export * from './Title';
+export * from './FooterSocialList';
+export * from './FooterNavList';

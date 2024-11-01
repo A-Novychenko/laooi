@@ -1,10 +1,12 @@
 import { AccordionItem } from './AccordionItem';
 
+import { cn } from '@/utils/cn';
+
 import { AccordionProps } from './types';
 
-export const Accordion: React.FC<AccordionProps> = ({ data }) => {
+export const Accordion: React.FC<AccordionProps> = ({ data, className }) => {
   return (
-    <ul className="flex max-w-[288px] flex-col gap-4 md:max-w-[688px] xl:max-w-[848px]">
+    <ul className={cn('flex flex-col gap-4', className)}>
       {data &&
         data.map((item: { title: string; text: string }, idx: number) => {
           return (
