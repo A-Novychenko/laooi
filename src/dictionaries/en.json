@@ -124,15 +124,18 @@
     },
     "socialLinks": [
       {
-        "name": "facebook",
-        "settings": { "href": "https://facebook.com", "externalLink": true }
-      },
-      {
         "name": "youtube",
+        "label": "YouTube",
         "settings": { "href": "https://youtube.com", "externalLink": true }
       },
       {
+        "name": "facebook",
+        "label": "Facebook",
+        "settings": { "href": "https://facebook.com", "externalLink": true }
+      },
+      {
         "name": "instagram",
+        "label": "Instagram",
         "settings": { "href": "https://instagram.com", "externalLink": true }
       }
     ],
@@ -225,5 +228,11 @@
         "answer": "You can find more information about our programs and events on our website in the 'News' section or by following us on our social media"
       }
     ]
+  },
+  "socialSection": {
+    "title": "We are on social media",
+    "descr": "The 'Luhansk Association of Organizations of Persons with Disabilities,' founded on May 25, 2018, assists people with disabilities and ensures equal opportunities for them. We are a leading organization in eastern Ukraine for social integration and the protection of the rights of people with disabilities, striving to improve their lives",
+    "videoUrl": "https://www.youtube.com/watch?v=u35WWrYws_c",
+    "poster": "/images/poster.jpg"
   }
 }

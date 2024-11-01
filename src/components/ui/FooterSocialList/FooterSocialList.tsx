@@ -1,6 +1,6 @@
 import { FooterSocialListLink } from './FooterSocialListLink';
 
-import InstaIcon from '~/icons/insta.svg';
+import InstagramIcon from '~/icons/instagram.svg';
 import FacebookIcon from '~/icons/facebook.svg';
 import YouTubeIcon from '~/icons/youtube.svg';
 
@@ -10,7 +10,7 @@ export const FooterSocialList: React.FC<FooterSocialListProps> = ({
   title,
   data,
 }) => {
-  const icons = [YouTubeIcon, FacebookIcon, InstaIcon];
+  const icons = [YouTubeIcon, FacebookIcon, InstagramIcon];
 
   return (
     <div className="text-center">
