@@ -1,4 +1,4 @@
-export type AboutSectionProps = {
+interface ISectionProps {
   dict: IDictionary;
   lang: string;
-};
+}

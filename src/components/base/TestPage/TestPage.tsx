@@ -7,7 +7,6 @@ import { TestPageProps } from './types';
 
 import styles from './TestPage.module.css';
 import { TestBtn } from './TestBtn';
-import { AccordionTest } from './AccordionTest';
 
 export const TestPage: React.FC<TestPageProps> = ({ textTest }) => {
   return (
@@ -233,12 +232,6 @@ export const TestPage: React.FC<TestPageProps> = ({ textTest }) => {
 
       <section className="text-[100px]">
         <div className="container">{textTest}</div>
-      </section>
-
-      <section className="bg-orange-300 py-28">
-        <div className="container">
-          <AccordionTest />
-        </div>
       </section>
     </>
   );

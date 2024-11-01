@@ -15,7 +15,7 @@ export const ButtonLink: React.FC<ButtonProps> = ({
   className,
 }) => {
   const baseStyles =
-    'flex items-center justify-center gap-2 rounded-[32px] px-8 py-4 text-base/normal font-semibold transition-colors xl:text-lg/normal text-textLight pointer';
+    'flex items-center justify-center gap-2 rounded-[32px] px-8 py-[10px] md:py-[12px] xl:py-4 text-base/normal font-semibold transition-colors xl:text-lg/normal text-textLight pointer';
 
   const stylesVariants = {
     primary:

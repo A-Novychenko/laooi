@@ -1,5 +1,10 @@
 // import { TestPage } from '@/components/base/TestPage/TestPage';
-import { AboutSection, ActivitiesSection, FAQSection } from '@/sections';
+import {
+  AboutSection,
+  ActivitiesSection,
+  FAQSection,
+  HeroSection,
+} from '@/sections';
 
 import { getDictionary } from '@/utils/dictionaries';
 
@@ -12,11 +17,14 @@ export default async function Home({
 
   return (
     <>
+      <HeroSection dict={dict} lang={lang} />
+
       <AboutSection dict={dict} lang={lang} />
 
       <ActivitiesSection dict={dict} lang={lang} />
 
-      <FAQSection />
+      <FAQSection dict={dict} />
+
       {/* <TestPage textTest={dict.common.logoAlt} /> */}
     </>
   );

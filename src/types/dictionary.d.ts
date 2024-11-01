@@ -11,6 +11,8 @@ interface IDictionary {
   };
   aboutSection: IAboutSection;
   activitiesSection: IActivitiesSection;
+  heroSection: IHeroSection;
+  FAQSection: IFAQSection;
 }
 
 interface IMeta {
@@ -107,4 +109,28 @@ interface IActivitiesSection {
 interface IActivitiesSectionItems {
   quantity: string;
   text: string;
+}
+
+interface IHeroSection {
+  title: string;
+  descr: string;
+  link: {
+    label: string;
+    settings: {
+      href: string;
+      externalLink: boolean;
+    };
+  };
+  img: {
+    src: string;
+    alt: string;
+  };
+}
+
+interface IFAQSection {
+  title: string;
+  items: {
+    question: string;
+    answer: string;
+  }[];
 }

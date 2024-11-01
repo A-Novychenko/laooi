@@ -181,5 +181,49 @@
         "text": "inclusive public advisors are providing ongoing assistance"
       }
     ]
+  },
+  "heroSection": {
+    "title": "Luhansk Association of Organizations of Persons with Disabilities",
+    "descr": "We’re doing everything to show that even in the most challenging times, together we can achieve the incredible",
+    "link": {
+      "label": "Learn more",
+      "settings": {
+        "href": "/",
+        "externalLink": false
+      }
+    },
+    "img": {
+      "src": "/images/hero.webp",
+      "alt": "photos of organization members"
+    }
+  },
+  "FAQSection": {
+    "title": "Поширені запитання",
+    "items": [
+      {
+        "question": "What is the Luhansk Association of organizations of persons with disabilities?",
+        "answer": "LAOOI is a voluntary public association consisting of individuals and private legal entities, established to uphold and protect human and civil rights and freedoms, meeting the social, economic, cultural, and other needs of its members and/or others"
+      },
+      {
+        "question": "How can I support your work?",
+        "answer": "You can support us by becoming a volunteer, donating funds or materials, or helping to spread information about our association and our projects"
+      },
+      {
+        "question": "How can I receive assistance from the association?",
+        "answer": "To get help, you can contact us using the contact information on our website or fill out the help request form available on the site"
+      },
+      {
+        "question": "Can I become a volunteer/partner?",
+        "answer": "Yes, we are always happy to welcome new volunteers and partners! You can fill out the volunteer application form on our website, and we will get in touch with you to discuss collaboration opportunities"
+      },
+      {
+        "question": "Do you provide legal or psychological support?",
+        "answer": "Yes, we provide psychological support. The psychologists of the NGO Luhansk Association of Organizations of Persons with Disabilities actively work with people experiencing traumatic events and stress during crisis situations. Our organization understands the importance of helping those facing emotional and psychological difficulties. We offer therapeutic consultations and organize group sessions aimed at supporting psychological well-being. Participants can discuss their experiences in a safe environment, exchange experiences, and find new ways to overcome challenges. Our team of qualified psychologists and social workers provides professional assistance to help everyone restore their inner balance and strengthen their emotional health. We believe that together we can overcome all difficulties and provide reliable support for those in need"
+      },
+      {
+        "question": "Where can I find more information about your programs and activities?",
+        "answer": "You can find more information about our programs and events on our website in the 'News' section or by following us on our social media"
+      }
+    ]
   }
 }
