@@ -22,6 +22,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
               width={1006}
               height={669}
               className="size-full object-cover"
+              priority
             />
           </div>
 
