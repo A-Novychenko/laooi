@@ -6,6 +6,8 @@ interface IDictionary {
     mainNav: IMainNav[];
     accessibilityMenu: IAccessibilityMenu;
     footerNav: IFooterNav;
+    socialListTitle: string;
+    socialLinks: ISocialLinksItem[];
   };
 }
 
@@ -64,4 +66,9 @@ interface IFooterNavEmbedded {
 interface IFooterNavItem {
   title: string;
   embedded: IFooterNavEmbedded[];
+}
+
+interface ISocialLinksItem {
+  name: string;
+  settings: { href: string; externalLink: boolean };
 }

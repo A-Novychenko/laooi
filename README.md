@@ -285,6 +285,33 @@ item.
 | `children` | `undefined` | **required**, `ReactNode`, the title displayed for the navigation list.                                                                                             |
 | `data`     | `[]`        | **required**, `IFooterNavEmbedded[]`, an array of objects containing the navigation links. Each object must include `name` (string) and `href` (string) properties. |
 
+Certainly! Here’s the documentation for the `FooterSocialList` and
+`FooterSocialListLink` components in the specified format:
+
+---
+
+- #### FooterSocialList
+
+A component that displays a list of social media icons in the footer section. It
+presents a title for the social media group and renders each icon as a clickable
+item linked to the corresponding social media platform.
+
+| Prop    | Default     | Description                                                                                                                                                                 |
+| ------- | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `title` | `undefined` | **required**, `string`, the title displayed for the social media list.                                                                                                      |
+| `data`  | `[]`        | **required**, `Array<{ settings: { href: string } }>` an array of objects containing the social media links. Each object must include a `settings` property with an `href`. |
+
+- #### FooterSocialListLink
+
+A component that wraps a social media link in an anchor element. It ensures that
+the link opens in a new tab and prevents the original tab from being affected by
+the link.
+
+| Prop       | Default     | Description                                                             |
+| ---------- | ----------- | ----------------------------------------------------------------------- |
+| `children` | `undefined` | **required**, `ReactNode`, the content to be displayed within the link. |
+| `href`     | `undefined` | **required**, `string`, the URL that the link points to.                |
+
 </details>
 
 ### 🚧 Technology stack

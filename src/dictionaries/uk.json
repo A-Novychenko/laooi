@@ -121,6 +121,21 @@
           { "name": "Контакти", "href": "/contacts" }
         ]
       }
-    }
+    },
+    "socialLinks": [
+      {
+        "name": "facebook",
+        "settings": { "href": "https://facebook.com", "externalLink": true }
+      },
+      {
+        "name": "youtube",
+        "settings": { "href": "https://youtube.com", "externalLink": true }
+      },
+      {
+        "name": "instagram",
+        "settings": { "href": "https://instagram.com", "externalLink": true }
+      }
+    ],
+    "socialListTitle": "Соціальні мережі"
   }
 }
