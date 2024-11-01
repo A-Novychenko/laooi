@@ -4,18 +4,21 @@ import { Title, ButtonLink } from '@/components/ui';
 
 import { AboutSectionProps } from './types';
 
-export const AboutSection: React.FC<AboutSectionProps> = ({ dict }) => {
-  console.log('dict', dict);
+export const AboutSection: React.FC<AboutSectionProps> = ({
+  dict: { aboutSection },
+  lang,
+}) => {
+  const { title, img, text, link } = aboutSection;
   return (
     <section className="section">
       <div className="container">
-        <Title className="mb-4">Про огранізацію</Title>
+        <Title className="mb-4">{title}</Title>
 
         <div className="xl:flex xl:gap-4">
           <div className="mb-2 shrink-0 overflow-hidden rounded-2xl md:mb-4 md:h-[688px] md:rounded-[20px] xl:mb-0 xl:h-[394px] xl:w-[632px] xl:rounded-3xl">
             <Image
-              src="/images/about.webp"
-              alt="photo"
+              src={img.src}
+              alt={img.alt}
               width={1006}
               height={669}
               className="size-full object-cover"
@@ -24,26 +27,17 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ dict }) => {
 
           <div className="rounded-2xl bg-bgLightSlate p-6 md:rounded-[20px] md:p-8 xl:flex xl:flex-col xl:justify-between xl:rounded-3xl xl:p-10">
             <p className="mb-4 text-base/normal text-textPrimary xl:text-lg/normal">
-              <span className="mb-2 inline-block">
-                «Луганська асоціація організацій осіб з інвалідністю», заснована
-                25 травня 2018 року, допомагає людям з інвалідністю та
-                забезпечує їм рівні можливості. Ми є провідною організацією на
-                сході України в питаннях соціальної інтеграції та захисту прав
-                людей з інвалідністю, прагнучи покращити їхнє життя
-              </span>
-              Громадська спілка забезпечує соціальну підтримку, захищає права
-              людей з інвалідністю, сприяє їхній соціальній інтеграції, розвитку
-              доступної інфраструктури, просвітленню суспільства, розвитку
-              професійних навичок і залученню осіб з інвалідністю до діяльності.
+              <span className="mb-2 inline-block">{text.first}</span>
+              {text.second}
             </p>
 
             <div className="mr-auto inline-block">
               <ButtonLink
                 type="link"
                 typeStyle="transparent"
-                settings={{ href: '', externalLink: false }}
+                settings={{ href: `${lang}${link.href}`, externalLink: false }}
               >
-                Дізнатися більше
+                {link.label}
               </ButtonLink>
             </div>
           </div>

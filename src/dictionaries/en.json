@@ -137,5 +137,20 @@
       }
     ],
     "socialListTitle": "Social networks"
+  },
+  "aboutSection": {
+    "title": "About the organization",
+    "img": {
+      "src": "/images/about.webp",
+      "alt": "photos of organization members"
+    },
+    "text": {
+      "first": "The 'Luhansk Association of Organizations of Persons with Disabilities', established on May 25, 2018, supports people with disabilities and ensures equal opportunities for them. We are a leading organization in Eastern Ukraine focused on social integration and the protection of the rights of persons with disabilities, working to improve their quality of life",
+      "second": "The public union provides social support, protects the rights of people with disabilities, fosters social inclusion, advocates for accessible infrastructure, raises awareness, promotes skill development, and actively involves persons with disabilities in activities"
+    },
+    "link": {
+      "label": "Learn more",
+      "href": "/about"
+    }
   }
 }

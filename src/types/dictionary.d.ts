@@ -9,6 +9,7 @@ interface IDictionary {
     socialListTitle: string;
     socialLinks: ISocialLinksItem[];
   };
+  aboutSection: IAboutSection;
 }
 
 interface IMeta {
@@ -71,4 +72,20 @@ interface IFooterNavItem {
 interface ISocialLinksItem {
   name: string;
   settings: { href: string; externalLink: boolean };
+}
+
+interface IAboutSection {
+  title: string;
+  img: {
+    src: string;
+    alt: string;
+  };
+  text: {
+    first: string;
+    second: string;
+  };
+  link: {
+    label: string;
+    href: string;
+  };
 }

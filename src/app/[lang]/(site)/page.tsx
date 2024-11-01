@@ -12,7 +12,7 @@ export default async function Home({
 
   return (
     <>
-      <AboutSection dict={dict} />
+      <AboutSection dict={dict} lang={lang} />
       {/* <TestPage textTest={dict.common.logoAlt} /> */}
     </>
   );
