@@ -13,6 +13,7 @@ interface IDictionary {
   activitiesSection: IActivitiesSection;
   heroSection: IHeroSection;
   FAQSection: IFAQSection;
+  socialSection: ISocialSection;
 }
 
 interface IMeta {
@@ -74,6 +75,7 @@ interface IFooterNavItem {
 
 interface ISocialLinksItem {
   name: string;
+  label: string;
   settings: { href: string; externalLink: boolean };
 }
 
@@ -133,4 +135,11 @@ interface IFAQSection {
     question: string;
     answer: string;
   }[];
+}
+
+interface ISocialSection {
+  title: string;
+  descr: string;
+  videoUrl: string;
+  poster: string;
 }

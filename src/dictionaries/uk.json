@@ -124,15 +124,18 @@
     },
     "socialLinks": [
       {
-        "name": "facebook",
-        "settings": { "href": "https://facebook.com", "externalLink": true }
-      },
-      {
         "name": "youtube",
+        "label": "YouTube",
         "settings": { "href": "https://youtube.com", "externalLink": true }
       },
       {
+        "name": "facebook",
+        "label": "Facebook",
+        "settings": { "href": "https://facebook.com", "externalLink": true }
+      },
+      {
         "name": "instagram",
+        "label": "Instagram",
         "settings": { "href": "https://instagram.com", "externalLink": true }
       }
     ],
@@ -225,5 +228,11 @@
         "answer": "Ви можете знайти більше інформації про наші програми та заходи на нашому сайті в розділі 'Новини; або підписавшись на наші соціальні мережі"
       }
     ]
+  },
+  "socialSection": {
+    "title": "Ми в соціальних мережах",
+    "descr": "«Луганська асоціація організацій осіб з інвалідністю», заснована 25 травня 2018 року, допомагає людям з інвалідністю та забезпечує їм рівні можливості. Ми є провідною організацією на сході України в питаннях соціальної інтеграції та захисту прав людей з інвалідністю, прагнучи покращити їхнє життя",
+    "videoUrl": "https://www.youtube.com/watch?v=u35WWrYws_c",
+    "poster": "/images/poster.jpg"
   }
 }
