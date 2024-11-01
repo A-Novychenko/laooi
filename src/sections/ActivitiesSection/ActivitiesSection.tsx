@@ -2,11 +2,9 @@ import { ButtonLink, Title } from '@/components/ui';
 
 import { cn } from '@/utils/cn';
 
-import { ActivitiesSectionProps } from './types';
-
 import styles from './ActivitiesSection.module.css';
 
-export const ActivitiesSection: React.FC<ActivitiesSectionProps> = ({
+export const ActivitiesSection: React.FC<ISectionProps> = ({
   dict: { activitiesSection },
   lang,
 }) => {

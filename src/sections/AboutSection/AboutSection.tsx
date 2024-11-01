@@ -2,9 +2,7 @@ import Image from 'next/image';
 
 import { Title, ButtonLink } from '@/components/ui';
 
-import { AboutSectionProps } from './types';
-
-export const AboutSection: React.FC<AboutSectionProps> = ({
+export const AboutSection: React.FC<ISectionProps> = ({
   dict: { aboutSection },
   lang,
 }) => {

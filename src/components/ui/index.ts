@@ -12,3 +12,4 @@ export * from './AccordionMenu';
 export * from './Title';
 export * from './FooterSocialList';
 export * from './FooterNavList';
+export * from './Accordion';
