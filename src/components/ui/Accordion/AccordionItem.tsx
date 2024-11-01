@@ -15,11 +15,11 @@ export const AccordionItem: React.FC<AccordionItemProps> = ({
   return (
     <Disclosure
       as="li"
-      className="w-[288px] rounded-3xl bg-bgLightSlate px-4 py-4 md:w-[688px] md:px-6 xl:w-[846px] xl:py-6"
+      className="max-w-[448px] rounded-3xl bg-bgLightSlate p-4 md:w-[688px] md:max-w-full md:px-6 md:py-4 xl:w-[846px] xl:py-6"
       defaultOpen={defaultOpen}
     >
       <DisclosureButton className="group flex w-full justify-between">
-        <span className="w-[224px] text-start text-base/normal font-semibold md:w-auto xl:text-lg">
+        <span className="text-start text-base/normal font-semibold md:w-auto xl:text-lg">
           {title}
         </span>
 
