@@ -152,5 +152,34 @@
       "label": "Learn more",
       "href": "/about"
     }
+  },
+  "activitiesSection": {
+    "title": "LAOOI's activities in numbers",
+    "description": "From the very beginning, our organization has strived for a great goal: to improve the quality of life and protect the rights of people with disabilities, promote social inclusion, and support the awareness of the importance of a barrier-free environment",
+    "link": {
+      "label": "Key directions",
+      "settings": {
+        "href": "/activities",
+        "externalLink": false
+      }
+    },
+    "items": [
+      {
+        "quantity": "1 900",
+        "text": "beneficiaries received a cash assistance of 3,600 UAH per person for 3 months"
+      },
+      {
+        "quantity": "735",
+        "text": "households received a one-time assistance of 26,000 UAH for winter preparation"
+      },
+      {
+        "quantity": "920",
+        "text": "individuals received psychological counseling or legal assistance"
+      },
+      {
+        "quantity": "7",
+        "text": "inclusive public advisors are providing ongoing assistance"
+      }
+    ]
   }
 }

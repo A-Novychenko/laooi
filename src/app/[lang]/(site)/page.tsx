@@ -1,5 +1,5 @@
 // import { TestPage } from '@/components/base/TestPage/TestPage';
-import { AboutSection } from '@/sections';
+import { AboutSection, ActivitiesSection } from '@/sections';
 
 import { getDictionary } from '@/utils/dictionaries';
 
@@ -13,6 +13,8 @@ export default async function Home({
   return (
     <>
       <AboutSection dict={dict} lang={lang} />
+
+      <ActivitiesSection dict={dict} lang={lang} />
       {/* <TestPage textTest={dict.common.logoAlt} /> */}
     </>
   );
