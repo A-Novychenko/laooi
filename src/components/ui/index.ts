@@ -9,3 +9,4 @@ export * from './TooltipMenu';
 export * from './MobileMenu';
 export * from './NavEmbeddedLink';
 export * from './AccordionMenu';
+export * from './Title';

@@ -137,5 +137,49 @@
       }
     ],
     "socialListTitle": "Social networks"
+  },
+  "aboutSection": {
+    "title": "About the organization",
+    "img": {
+      "src": "/images/about.webp",
+      "alt": "photos of organization members"
+    },
+    "text": {
+      "first": "The 'Luhansk Association of Organizations of Persons with Disabilities', established on May 25, 2018, supports people with disabilities and ensures equal opportunities for them. We are a leading organization in Eastern Ukraine focused on social integration and the protection of the rights of persons with disabilities, working to improve their quality of life",
+      "second": "The public union provides social support, protects the rights of people with disabilities, fosters social inclusion, advocates for accessible infrastructure, raises awareness, promotes skill development, and actively involves persons with disabilities in activities"
+    },
+    "link": {
+      "label": "Learn more",
+      "href": "/about"
+    }
+  },
+  "activitiesSection": {
+    "title": "LAOOI's activities in numbers",
+    "description": "From the very beginning, our organization has strived for a great goal: to improve the quality of life and protect the rights of people with disabilities, promote social inclusion, and support the awareness of the importance of a barrier-free environment",
+    "link": {
+      "label": "Key directions",
+      "settings": {
+        "href": "/activities",
+        "externalLink": false
+      }
+    },
+    "items": [
+      {
+        "quantity": "1 900",
+        "text": "beneficiaries received a cash assistance of 3,600 UAH per person for 3 months"
+      },
+      {
+        "quantity": "735",
+        "text": "households received a one-time assistance of 26,000 UAH for winter preparation"
+      },
+      {
+        "quantity": "920",
+        "text": "individuals received psychological counseling or legal assistance"
+      },
+      {
+        "quantity": "7",
+        "text": "inclusive public advisors are providing ongoing assistance"
+      }
+    ]
   }
 }

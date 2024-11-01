@@ -9,6 +9,8 @@ interface IDictionary {
     socialListTitle: string;
     socialLinks: ISocialLinksItem[];
   };
+  aboutSection: IAboutSection;
+  activitiesSection: IActivitiesSection;
 }
 
 interface IMeta {
@@ -71,4 +73,38 @@ interface IFooterNavItem {
 interface ISocialLinksItem {
   name: string;
   settings: { href: string; externalLink: boolean };
+}
+
+interface IAboutSection {
+  title: string;
+  img: {
+    src: string;
+    alt: string;
+  };
+  text: {
+    first: string;
+    second: string;
+  };
+  link: {
+    label: string;
+    href: string;
+  };
+}
+
+interface IActivitiesSection {
+  title: string;
+  description: string;
+  link: {
+    label: string;
+    settings: {
+      href: string;
+      externalLink: boolean;
+    };
+  };
+  items: IActivitiesSectionItems[];
+}
+
+interface IActivitiesSectionItems {
+  quantity: string;
+  text: string;
 }
