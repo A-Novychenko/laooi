@@ -5,6 +5,7 @@ interface IDictionary {
     searchInput: { placeholder: string };
     mainNav: IMainNav[];
     accessibilityMenu: IAccessibilityMenu;
+    footerNav: IFooterNav;
   };
 }
 
@@ -47,4 +48,20 @@ interface IMainNav {
 interface IMainNavEmbedded {
   name: string;
   href: string;
+}
+
+interface IFooterNav {
+  footerAbout: IFooterNavItem;
+  footerActivities: IFooterNavItem;
+  footerOther: IFooterNavItem;
+}
+
+interface IFooterNavEmbedded {
+  name: string;
+  href: string;
+}
+
+interface IFooterNavItem {
+  title: string;
+  embedded: IFooterNavEmbedded[];
 }

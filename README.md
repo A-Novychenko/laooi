@@ -269,6 +269,22 @@ default first item.
 | `item`        | `undefined` | required, `{ title: string; text: string }`, an object containing the `title` and `text` content for the item. |
 | `defaultOpen` | `false`     | optional, `boolean`, determines whether the accordion item is open by default.                                 |
 
+Certainly! Here’s the documentation for the `FooterNavList` component in the
+specified format:
+
+---
+
+- #### FooterNavList
+
+A component that displays a list of navigation links in the footer section. It
+presents a title for the navigation group and renders each link as a clickable
+item.
+
+| Prop       | Default     | Description                                                                                                                                                         |
+| ---------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `children` | `undefined` | **required**, `ReactNode`, the title displayed for the navigation list.                                                                                             |
+| `data`     | `[]`        | **required**, `IFooterNavEmbedded[]`, an array of objects containing the navigation links. Each object must include `name` (string) and `href` (string) properties. |
+
 </details>
 
 ### 🚧 Technology stack

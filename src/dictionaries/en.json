@@ -93,6 +93,34 @@
         "decrease": "Decrease cursor size"
       },
       "reset": "Reset"
+    },
+    "footerNav": {
+      "footerAbout": {
+        "title": "About us",
+        "embedded": [
+          { "name": "Strategy", "href": "/strategy" },
+          { "name": "Team", "href": "/team" },
+          { "name": "Projects", "href": "/projects" }
+        ]
+      },
+      "footerActivities": {
+        "title": "Activities",
+        "embedded": [
+          { "name": "Main areas", "href": "/main-areas" },
+          { "name": "Advisors", "href": "/advisors" },
+          { "name": "Media about us", "href": "/media-about-us" },
+          { "name": "Documents", "href": "/documents" }
+        ]
+      },
+      "footerOther": {
+        "title": "Other",
+        "embedded": [
+          { "name": "News", "href": "/news" },
+          { "name": "Vacancies", "href": "/vacancies" },
+          { "name": "Tenders", "href": "/tenders" },
+          { "name": "Contacts", "href": "/contacts" }
+        ]
+      }
     }
   }
 }

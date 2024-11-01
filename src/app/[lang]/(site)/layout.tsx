@@ -14,7 +14,7 @@ export default function Layout({
 
         <main className="grow">{children}</main>
 
-        <Footer />
+        <Footer lang={params.lang} />
       </div>
     </>
   );
