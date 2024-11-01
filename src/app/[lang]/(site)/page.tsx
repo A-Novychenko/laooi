@@ -1,4 +1,5 @@
-import { TestPage } from '@/components/base/TestPage/TestPage';
+// import { TestPage } from '@/components/base/TestPage/TestPage';
+import { AboutSection } from '@/sections';
 
 import { getDictionary } from '@/utils/dictionaries';
 
@@ -11,7 +12,8 @@ export default async function Home({
 
   return (
     <>
-      <TestPage textTest={dict.common.logoAlt} />
+      <AboutSection dict={dict} />
+      {/* <TestPage textTest={dict.common.logoAlt} /> */}
     </>
   );
 }
