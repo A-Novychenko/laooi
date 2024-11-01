@@ -5,6 +5,7 @@ import { FooterNavListProps } from './types';
 export const FooterNavList: React.FC<FooterNavListProps> = ({
   children,
   data,
+  lang,
 }) => {
   return (
     <div>
@@ -19,7 +20,7 @@ export const FooterNavList: React.FC<FooterNavListProps> = ({
               <li key={idx}>
                 <Link
                   className="block py-1 text-sm/normal font-semibold text-textLight hover:text-textFooterAccent active:text-textActive xl:text-base"
-                  href={item.href}
+                  href={`/${lang}${item.href}`}
                 >
                   {item.name}
                 </Link>
