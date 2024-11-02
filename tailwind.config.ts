@@ -42,6 +42,8 @@ const config: Config = {
         textMenuAccent: '#062365',
         textFooterAccent: '#D4DAE9',
         textActive: '#C7C7D0',
+        textFooterLink: '#FDE047',
+        textFooterActive: '#EAC608',
 
         bgLight: '#ffffff',
         bgSlate: '#EAEDF4',

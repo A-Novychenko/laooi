@@ -1,14 +1,18 @@
+import Link from 'next/link';
+
 import { FooterSocialListLink } from './FooterSocialListLink';
 
 import InstagramIcon from '~/icons/instagram.svg';
 import FacebookIcon from '~/icons/facebook.svg';
 import YouTubeIcon from '~/icons/youtube.svg';
+import ArrowBtnIcon from '~/icons/arrowBtnIcon.svg';
 
 import { FooterSocialListProps } from './types';
 
 export const FooterSocialList: React.FC<FooterSocialListProps> = ({
   title,
   data,
+  linkTitle,
 }) => {
   const icons = [YouTubeIcon, FacebookIcon, InstagramIcon];
 
@@ -18,7 +22,7 @@ export const FooterSocialList: React.FC<FooterSocialListProps> = ({
         {title}
       </p>
 
-      <ul className="flex items-center justify-center gap-2">
+      <ul className="mb-6 flex items-center justify-center gap-2 md:mb-14 xl:mb-[80px]">
         {data &&
           data.map((item, idx) => {
             const IconComponent = icons[idx];
@@ -35,6 +39,15 @@ export const FooterSocialList: React.FC<FooterSocialListProps> = ({
             );
           })}
       </ul>
+      <Link
+        className="flex items-center justify-center text-sm/normal font-bold uppercase text-textFooterLink transition-colors duration-300 hover:text-textFooterActive focus:text-textFooterActive xl:text-lg xl:font-semibold"
+        href="/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {linkTitle}
+        <ArrowBtnIcon width={24} height={24} />
+      </Link>
     </div>
   );
 };

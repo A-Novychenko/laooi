@@ -8,6 +8,8 @@ interface IDictionary {
     footerNav: IFooterNav;
     socialListTitle: string;
     socialLinks: ISocialLinksItem[];
+    footerBasement: IFooterBasement;
+    footerLinkTitle: string;
   };
   aboutSection: IAboutSection;
   activitiesSection: IActivitiesSection;
@@ -142,4 +144,9 @@ interface ISocialSection {
   descr: string;
   videoUrl: string;
   poster: string;
+}
+
+interface IFooterBasement {
+  policy: string;
+  developers: string;
 }

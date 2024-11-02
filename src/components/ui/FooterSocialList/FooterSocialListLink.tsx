@@ -1,4 +1,5 @@
 import Link from 'next/link';
+
 import { FooterSocialListLinkProps } from './types';
 
 export const FooterSocialListLink: React.FC<FooterSocialListLinkProps> = ({
