@@ -312,6 +312,24 @@ the link.
 | `children` | `undefined` | **required**, `ReactNode`, the content to be displayed within the link. |
 | `href`     | `undefined` | **required**, `string`, the URL that the link points to.                |
 
+Here's documentation for the `FooterBasement` component in the requested format:
+
+---
+
+- #### FooterBasement
+
+A component that displays the footer's bottom section with customizable policy
+text, copyright information, and developer credits. This component is
+responsive, arranging content in a column layout on small screens and switching
+to a row layout on larger screens.
+
+| Prop   | Type              | Default     | Description                                                                                               |
+| ------ | ----------------- | ----------- | --------------------------------------------------------------------------------------------------------- |
+| `data` | `IFooterBasement` | `undefined` | **required**, an object containing `policy` and `developers` text content for the footer.                 |
+| `name` | `string`          | `undefined` | **required**, the name or title to be displayed as copyright text, preceded by a copyright symbol (`©`). |
+
+---
+
 </details>
 
 ### 🚧 Technology stack

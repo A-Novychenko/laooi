@@ -139,8 +139,14 @@
         "settings": { "href": "https://instagram.com", "externalLink": true }
       }
     ],
-    "socialListTitle": "Social networks"
+    "socialListTitle": "Social networks",
+    "footerLinkTitle": "Become a Partner",
+    "footerBasement": {
+      "policy": "Terms of service & privacy policy",
+      "developers": "Designed by JK and developed by WDS"
+    }
   },
+
   "aboutSection": {
     "title": "About the organization",
     "img": {

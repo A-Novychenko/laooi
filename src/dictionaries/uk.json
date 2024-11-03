@@ -139,7 +139,12 @@
         "settings": { "href": "https://instagram.com", "externalLink": true }
       }
     ],
-    "socialListTitle": "Соціальні мережі"
+    "socialListTitle": "Соціальні мережі",
+    "footerLinkTitle": "Стати партнером",
+    "footerBasement": {
+      "policy": "Terms of service & privacy policy",
+      "developers": "Designed by JK and developed by WDS"
+    }
   },
   "aboutSection": {
     "title": "Про огранізацію",
