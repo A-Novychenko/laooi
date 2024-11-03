@@ -8,7 +8,7 @@ import styles from './FooterBasement.module.css';
 
 export const FooterBasement: React.FC<FooterBasementProps> = ({
   data,
-  name,
+  staticData: { organization, designUrl, developUrl, policyUrl },
   lang,
 }) => {
   const currentYear = new Date().getFullYear();
@@ -16,7 +16,7 @@ export const FooterBasement: React.FC<FooterBasementProps> = ({
   return (
     <div className="flex flex-col items-center justify-center gap-3 bg-textSecondary py-3 text-textLight md:flex-row md:justify-between md:px-4">
       <Link
-        href={`${lang}/term`}
+        href={`${lang}/${policyUrl}`}
         className={cn(
           'relative py-1 text-[10px]/normal font-semibold transition-colors hover:text-textFooterAccent focus:text-textFooterAccent md:text-xs xl:text-sm',
           styles.link,
@@ -26,13 +26,13 @@ export const FooterBasement: React.FC<FooterBasementProps> = ({
       </Link>
 
       <p className="text-[10px]/normal font-semibold md:text-xs xl:text-sm">
-        &copy;{name}&nbsp;
+        &copy;{organization}&nbsp;
         {currentYear}
       </p>
 
       <p className="text-[10px]/normal font-semibold md:text-xs xl:text-sm">
         <Link
-          href={'https://www.behance.net/juliakopytko'}
+          href={designUrl}
           className={cn(
             'relative py-1 transition-colors hover:text-textFooterAccent focus:text-textFooterAccent',
             styles.link,
@@ -42,7 +42,7 @@ export const FooterBasement: React.FC<FooterBasementProps> = ({
         </Link>
         &nbsp;and&nbsp;
         <Link
-          href={'https://www.webdevsynergy.com.ua'}
+          href={developUrl}
           className={cn(
             'relative py-1 transition-colors hover:text-textFooterAccent focus:text-textFooterAccent',
             styles.link,
