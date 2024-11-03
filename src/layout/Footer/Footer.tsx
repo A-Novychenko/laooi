@@ -64,7 +64,7 @@ export const Footer: React.FC<FooterProps> = async ({ lang }) => {
           />
         </div>
 
-        <FooterBasement data={footerBasement} name={organization} />
+        <FooterBasement data={footerBasement} name={organization} lang={lang} />
       </div>
     </footer>
   );

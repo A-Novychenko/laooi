@@ -149,4 +149,5 @@ interface ISocialSection {
 interface IFooterBasement {
   policy: string;
   developers: string;
+  designer: string;
 }
