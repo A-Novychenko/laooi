@@ -1,5 +1,9 @@
-import { Logo, FooterSocialList, FooterNavList } from '@/components/ui';
-import { FooterBasement } from '@/components/ui/FooterBasement/FooterBasement';
+import {
+  Logo,
+  FooterSocialList,
+  FooterNavList,
+  FooterBasement,
+} from '@/components/ui';
 
 import { getDictionary } from '@/utils/dictionaries';
 
@@ -52,12 +56,14 @@ export const Footer: React.FC<FooterProps> = async ({ lang }) => {
               </li>
             </ul>
           </nav>
+
           <FooterSocialList
             data={socialLinks}
             title={socialListTitle}
             linkTitle={footerLinkTitle}
           />
         </div>
+
         <FooterBasement data={footerBasement} name={organization} />
       </div>
     </footer>

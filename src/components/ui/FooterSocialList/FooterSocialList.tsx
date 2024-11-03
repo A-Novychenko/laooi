@@ -1,7 +1,5 @@
 import Link from 'next/link';
 
-import { FooterSocialListLink } from './FooterSocialListLink';
-
 import InstagramIcon from '~/icons/instagram.svg';
 import FacebookIcon from '~/icons/facebook.svg';
 import YouTubeIcon from '~/icons/youtube.svg';
@@ -30,17 +28,23 @@ export const FooterSocialList: React.FC<FooterSocialListProps> = ({
             return (
               <li
                 key={idx}
-                className="overflow:hidden flex h-10 w-10 rounded-full bg-bgSocialIcon text-textLight transition-colors hover:bg-bgSlate hover:text-bgDark focus:bg-bgSlate focus:text-bgDark active:bg-bgDarkSlate"
+                className="flex size-10 overflow-hidden rounded-full bg-bgSocialIcon text-textLight transition-colors hover:bg-bgSlate hover:text-bgDark focus:bg-bgSlate focus:text-bgDark active:bg-bgDarkSlate"
               >
-                <FooterSocialListLink href={item.settings.href}>
+                <Link
+                  href={item.settings.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex size-full items-center justify-center"
+                >
                   <IconComponent width={24} height={24} />
-                </FooterSocialListLink>
+                </Link>
               </li>
             );
           })}
       </ul>
+
       <Link
-        className="flex items-center justify-center text-sm/normal font-bold uppercase text-textFooterLink transition-colors duration-300 hover:text-textFooterActive focus:text-textFooterActive xl:text-lg xl:font-semibold"
+        className="flex items-center justify-center text-sm/normal font-bold uppercase text-textFooterLink transition-colors hover:text-textFooterActive focus:text-textFooterActive xl:text-lg xl:font-semibold"
         href="/"
         target="_blank"
         rel="noopener noreferrer"

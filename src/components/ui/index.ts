@@ -14,3 +14,4 @@ export * from './FooterSocialList';
 export * from './FooterNavList';
 export * from './Accordion';
 export * from './VideoPlayer';
+export * from './FooterBasement';
