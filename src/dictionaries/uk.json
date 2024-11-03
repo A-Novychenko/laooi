@@ -143,7 +143,8 @@
     "footerLinkTitle": "Стати партнером",
     "footerBasement": {
       "policy": "Terms of service & privacy policy",
-      "developers": "Designed by JK and developed by WDS"
+      "developers": "developed by WDS",
+      "designer": "Designed by JK"
     }
   },
   "aboutSection": {
