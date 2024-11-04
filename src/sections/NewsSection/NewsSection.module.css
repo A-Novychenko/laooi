@@ -1,0 +1,18 @@
+@media (max-width: 768px) {
+  .card {
+    display: none;
+  }
+  .card:nth-child(1) {
+    display: block;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .card {
+    display: none;
+  }
+  .card:nth-child(1),
+  .card:nth-child(2) {
+    display: block;
+  }
+}
