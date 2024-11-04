@@ -4,6 +4,7 @@ import {
   ActivitiesSection,
   FAQSection,
   HeroSection,
+  NewsSection,
   SocialsSection,
 } from '@/sections';
 
@@ -25,6 +26,8 @@ export default async function Home({
       <ActivitiesSection dict={dict} lang={lang} />
 
       <SocialsSection dict={dict} />
+
+      <NewsSection dict={dict} lang={lang} />
 
       <FAQSection dict={dict} />
 

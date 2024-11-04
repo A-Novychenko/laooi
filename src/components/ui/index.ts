@@ -15,3 +15,4 @@ export * from './FooterNavList';
 export * from './Accordion';
 export * from './VideoPlayer';
 export * from './FooterBasement';
+export * from './PostCard';

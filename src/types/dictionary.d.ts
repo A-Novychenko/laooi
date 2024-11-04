@@ -16,6 +16,7 @@ interface IDictionary {
   heroSection: IHeroSection;
   FAQSection: IFAQSection;
   socialSection: ISocialSection;
+  newsSection: INewSection;
 }
 
 interface IMeta {
@@ -150,4 +151,19 @@ interface IFooterBasement {
   policy: string;
   developers: string;
   designer: string;
+}
+
+interface INewsPosts {
+  type: string;
+  image: string;
+  title: string;
+  text: string;
+  date: string;
+  newsUrl: string;
+  linkTitle: string;
+}
+
+interface INewSection {
+  sectionTitle: string;
+  posts: INewsPosts[];
 }
