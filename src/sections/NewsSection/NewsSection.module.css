@@ -1,18 +1,25 @@
-@media (max-width: 768px) {
-  .card {
-    display: none;
-  }
-  .card:nth-child(1) {
-    display: block;
-  }
+.card {
+  display: none;
 }
 
-@media (min-width: 769px) and (max-width: 1024px) {
+.card:nth-child(1) {
+  display: block;
+}
+
+@media (min-width: 768px) {
   .card {
     display: none;
+    width: calc((100% - 16px) / 2);
   }
   .card:nth-child(1),
   .card:nth-child(2) {
     display: block;
+  }
+}
+
+@media screen and (min-width: 1360px) {
+  .card {
+    display: block;
+    width: calc((100% - 32px) / 3);
   }
 }

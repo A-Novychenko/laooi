@@ -166,4 +166,5 @@ interface INewsPosts {
 interface INewSection {
   sectionTitle: string;
   posts: INewsPosts[];
+  link: { label: string; settings: { href: string; externalLink: boolean } };
 }
