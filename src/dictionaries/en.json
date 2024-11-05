@@ -238,12 +238,19 @@
   },
   "newsSection": {
     "sectionTitle": "News and events",
+    "link": {
+      "label": "All publications",
+      "settings": {
+        "href": "/",
+        "externalLink": false
+      }
+    },
     "posts": [
       {
         "type": "News",
         "image": "/images/image_news_first.webp",
         "title": "Resilience during wartime: LOOOI's participation in a public discussion in Lviv",
-        "text": "The LAOOI participated in the public discussion 'which took place on Thursday, October 17, 2024. During the event,adsfdsfsdfdsfdsfdsfdsfdsf",
+        "text": "The LAOOI participated in the public discussion 'which took place on Thursday, October 17, 2024. During the event",
         "date": "17.10.2024",
         "newsUrl": "/",
         "linkTitle": "Read more"
@@ -252,7 +259,7 @@
         "type": "Articles",
         "image": "/images/image_news_second.webp",
         "title": "LOOOI and Solidar Suisse Ukraine in Kharkiv: support for affected families",
-        "text": "Recently, a delegation from the Public Union 'Luhansk Association of Organizations of Persons with Disabilities' visited Kharkiv along with our partners from Solidar Suisse Ukraine. The sdfsdfsdfdsfdsfdsfdsf",
+        "text": "Recently, a delegation from the Public Union 'Luhansk Association of Organizations of Persons with Disabilities' visited Kharkiv along with our partners from Solidar Suisse Ukraine. The",
         "date": "16.10.2024",
         "newsUrl": "/",
         "linkTitle": "Read more"
@@ -261,7 +268,7 @@
         "type": "Events",
         "image": "/images/image_news_third.webp",
         "title": "Thank you to our international partners: support that changes lives",
-        "text": "We, the team of the Public Union 'Luhansk Association of Organizations of Persons with Disabilities', extend our heartfelt thanks to our international partners and friends who help us The sdfsdfsdfdsfdsfdsfdsf",
+        "text": "We, the team of the Public Union 'Luhansk Association of Organizations of Persons with Disabilities', extend our heartfelt thanks to our international partners and friends who help us The",
         "date": "11.10.2024",
         "newsUrl": "/",
         "linkTitle": "Read more"
