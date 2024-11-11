@@ -280,5 +280,57 @@
     "descr": "The 'Luhansk Association of Organizations of Persons with Disabilities,' founded on May 25, 2018, assists people with disabilities and ensures equal opportunities for them. We are a leading organization in eastern Ukraine for social integration and the protection of the rights of people with disabilities, striving to improve their lives",
     "videoUrl": "https://www.youtube.com/watch?v=u35WWrYws_c",
     "poster": "/images/poster.jpg"
+  },
+  "targetSection": {
+    "title": "Our target groups",
+    "targetGroups": [
+      { "text": "Persons with disabilities" },
+      { "text": "Families and caregivers of persons with disabilities" },
+      { "text": "Civil and non-governmental organizations" },
+      { "text": "State and local authorities" },
+      { "text": "Educational institutions" },
+      { "text": "Employers" },
+      { "text": "The general public" },
+      { "text": "Media" },
+      { "text": "International organizations and donors" }
+    ],
+    "photos": [
+      {
+        "img": {
+          "src": "/images/targetSection/target-1.webp",
+          "alt": "photos of participants"
+        }
+      },
+      {
+        "img": {
+          "src": "/images/targetSection/target-2.webp",
+          "alt": "photos of participants"
+        }
+      },
+      {
+        "img": {
+          "src": "/images/targetSection/target-3.webp",
+          "alt": "photos of participants"
+        }
+      },
+      {
+        "img": {
+          "src": "/images/targetSection/target-4.webp",
+          "alt": "photos of participants"
+        }
+      },
+      {
+        "img": {
+          "src": "/images/targetSection/target-5.webp",
+          "alt": "photos of participants"
+        }
+      },
+      {
+        "img": {
+          "src": "/images/targetSection/target-6.webp",
+          "alt": "photos of participants"
+        }
+      }
+    ]
   }
 }
