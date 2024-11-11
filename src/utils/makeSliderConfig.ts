@@ -4,7 +4,7 @@ import { SliderProps } from '@/components/ui/Slider/types';
 
 enum Sections {
   TARGET = 'target',
-  CERTIFICATES = 'partners',
+  PARTNERS = 'partners',
 }
 
 export const makeSliderConfig = ({
@@ -16,7 +16,7 @@ export const makeSliderConfig = ({
   const spaceBetweenBase = 16;
 
   const autoplayBase =
-    section === Sections.TARGET
+    section === Sections.TARGET || section === Sections.PARTNERS
       ? { delay: 2000, disableOnInteraction: false }
       : false;
 
@@ -36,6 +36,17 @@ export const makeSliderConfig = ({
       spaceBetweenTab = 16;
 
       slidesPerViewDesk = 5;
+      spaceBetweenDesk = 16;
+
+      break;
+
+    case Sections.PARTNERS:
+      loopBase = true;
+
+      slidesPerViewTab = 2;
+      spaceBetweenTab = 16;
+
+      slidesPerViewDesk = 3;
       spaceBetweenDesk = 16;
 
       break;

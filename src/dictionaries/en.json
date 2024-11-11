@@ -332,5 +332,50 @@
         }
       }
     ]
+  },
+  "partnersSection": {
+    "title": "Our supporters",
+    "partners": [
+      {
+        "img": "/images/partners/partners-1.webp",
+        "name": "Department of Social Protection of the Population of Luhansk Oblast"
+      },
+      {
+        "img": "/images/partners/partners-2.webp",
+        "name": "United Nations Development Programme in Ukraine (UNDP Ukraine)"
+      },
+      {
+        "img": "/images/partners/partners-3.webp",
+        "name": "Charity Foundation 'Trust.Ukraine'"
+      },
+      {
+        "img": "/images/partners/partners-4.webp",
+        "name": "Fund for Social Protection of Persons with Disabilities"
+      },
+      {
+        "img": "/images/partners/partners-5.webp",
+        "name": "US Agency for International Development (USAID Ukraine) "
+      },
+      {
+        "img": "/images/partners/partners-6.webp",
+        "name": "Solidar Suisse"
+      },
+      {
+        "img": "/images/partners/partners-7.webp",
+        "name": "The Norwegian Refugee Council in Ukraine"
+      },
+      {
+        "img": "/images/partners/partners-8.webp",
+        "name": "Bevar Ukraine"
+      },
+      {
+        "img": "/images/partners/partners-9.webp",
+        "name": "Avalist Ngo"
+      },
+      {
+        "img": "/images/partners/partners-10.webp",
+        "name": "Mother Acts"
+      }
+    ]
   }
 }
