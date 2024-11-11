@@ -18,6 +18,7 @@ interface IDictionary {
   socialSection: ISocialSection;
   newsSection: INewSection;
   targetSection: ITargetSection;
+  partnersSection: IPartnersSection;
 }
 
 interface IMeta {
@@ -174,4 +175,12 @@ interface ITargetSection {
   title: string;
   targetGroups: { text: string }[];
   photos: { img: { src: string; alt: string } }[];
+}
+
+interface IPartnersSection {
+  title: string;
+  partners: {
+    img: string;
+    name: string;
+  }[];
 }

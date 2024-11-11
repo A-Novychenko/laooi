@@ -19,3 +19,4 @@ export * from './PostCard';
 export * from './TargetCard';
 export * from './Slider';
 export * from './Gallery';
+export * from './PartnersCard';
