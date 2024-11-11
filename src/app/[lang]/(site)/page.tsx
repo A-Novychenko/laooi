@@ -6,6 +6,7 @@ import {
   HeroSection,
   NewsSection,
   SocialsSection,
+  TargetSection,
 } from '@/sections';
 
 import { getDictionary } from '@/utils/dictionaries';
@@ -24,6 +25,8 @@ export default async function Home({
       <AboutSection dict={dict} lang={lang} />
 
       <ActivitiesSection dict={dict} lang={lang} />
+
+      <TargetSection dict={dict} lang={lang} />
 
       <SocialsSection dict={dict} />
 
