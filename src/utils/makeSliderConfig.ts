@@ -17,7 +17,7 @@ export const makeSliderConfig = ({
 
   const autoplayBase =
     section === Sections.TARGET || section === Sections.PARTNERS
-      ? { delay: 2000, disableOnInteraction: false }
+      ? { delay: 0, disableOnInteraction: false }
       : false;
 
   let loopBase: boolean;
@@ -36,6 +36,7 @@ export const makeSliderConfig = ({
       spaceBetweenTab = 16;
 
       slidesPerViewDesk = 5;
+
       spaceBetweenDesk = 16;
 
       break;
@@ -66,7 +67,7 @@ export const makeSliderConfig = ({
     updateOnWindowResize: true,
     wrapperTag: 'ul',
     modules: [Navigation, Autoplay, Pagination],
-    speed: 800,
+    speed: 5000,
     lazyPreloadPrevNext: 1,
     navigation: {
       prevEl: `.slider-prev-btn-${section}`,
@@ -77,6 +78,9 @@ export const makeSliderConfig = ({
     spaceBetween: spaceBetweenBase,
     slidesPerView: slidesPerViewBase,
     autoplay: autoplayBase,
+
+    centeredSlides: true,
+    freeMode: true,
 
     breakpoints: {
       768: {

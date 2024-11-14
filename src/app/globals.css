@@ -33,3 +33,9 @@ html {
 .section {
   @apply py-8 md:py-12 xl:py-16;
 }
+
+.swiper-wrapper {
+  transition-timing-function: linear !important;
+
+  cursor: grab !important;
+}
