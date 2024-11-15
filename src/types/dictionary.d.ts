@@ -10,6 +10,8 @@ interface IDictionary {
     socialLinks: ISocialLinksItem[];
     footerBasement: IFooterBasement;
     footerLinkTitle: string;
+    errorPage: IPlaceholder;
+    devPage: IPlaceholder;
   };
   aboutSection: IAboutSection;
   activitiesSection: IActivitiesSection;
@@ -183,4 +185,16 @@ interface IPartnersSection {
     img: string;
     name: string;
   }[];
+}
+
+interface IPlaceholder {
+  title: string;
+  description: string;
+  link: {
+    label: string;
+    settings: {
+      href: string;
+      externalLink: boolean;
+    };
+  };
 }

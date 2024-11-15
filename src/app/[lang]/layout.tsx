@@ -5,6 +5,7 @@ import { AccessibilityProvider } from '../../context/AccessibilityProvider';
 import makeMetaData from '@/data/meta';
 
 import '../globals.css';
+import { Footer, Header } from '@/layout';
 
 const nunito = Nunito({
   subsets: ['cyrillic', 'latin'],
@@ -36,7 +37,15 @@ export default function RootLayout({
   return (
     <AccessibilityProvider>
       <html lang={params.lang} className="scroll-smooth">
-        <body className={`${nunito.variable} antialiased`}>{children}</body>
+        <body className={`${nunito.variable} antialiased`}>
+          <div className="flex min-h-screen flex-col">
+            <Header lang={params.lang} />
+
+            {children}
+
+            <Footer lang={params.lang} />
+          </div>
+        </body>
       </html>
     </AccessibilityProvider>
   );

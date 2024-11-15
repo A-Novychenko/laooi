@@ -28,15 +28,15 @@
         "embedded": [
           {
             "name": "Стратегія",
-            "href": "/strategy"
+            "href": "/in-progress"
           },
           {
             "name": "Команда",
-            "href": "/team"
+            "href": "/in-progress"
           },
           {
             "name": "Проєкти",
-            "href": "/projects"
+            "href": "/in-progress"
           }
         ]
       },
@@ -46,33 +46,33 @@
         "embedded": [
           {
             "name": "Основні напрямки",
-            "href": "/main-areas"
+            "href": "/in-progress"
           },
           {
             "name": "Радники",
-            "href": "/counselors"
+            "href": "/in-progress"
           },
           {
             "name": "Медіa про нас",
-            "href": "/media-about-us"
+            "href": "/in-progress"
           },
           {
             "name": "Документи",
-            "href": "/documents"
+            "href": "/in-progress"
           }
         ]
       },
       {
         "name": "Новини",
-        "href": "/news"
+        "href": "/in-progress"
       },
       {
         "name": "Тендери",
-        "href": "/tenders"
+        "href": "/in-progress"
       },
       {
         "name": "Контакти",
-        "href": "/contacts"
+        "href": "/in-progress"
       }
     ],
     "accessibilityMenu": {
@@ -145,6 +145,28 @@
       "policy": "Terms of service & privacy policy",
       "developers": "developed by WDS",
       "designer": "Designed by JK"
+    },
+    "errorPage": {
+      "title": "Щось пішло не так...",
+      "description": "Сторінку не знайдено",
+      "link": {
+        "label": "Головна",
+        "settings": {
+          "href": "/",
+          "externalLink": false
+        }
+      }
+    },
+    "devPage": {
+      "title": "В процесі розробки...",
+      "description": "Ця сторінка ще в розробці, але ми працюємо над цим. Незабаром усе буде доступно!",
+      "link": {
+        "label": "Головна",
+        "settings": {
+          "href": "/",
+          "externalLink": false
+        }
+      }
     }
   },
   "aboutSection": {

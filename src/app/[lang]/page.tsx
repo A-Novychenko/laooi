@@ -20,7 +20,7 @@ export default async function Home({
   const dict = await getDictionary(lang);
 
   return (
-    <>
+    <main className="grow">
       <HeroSection dict={dict} lang={lang} />
 
       <AboutSection dict={dict} lang={lang} />
@@ -38,6 +38,6 @@ export default async function Home({
       <FAQSection dict={dict} />
 
       {/* <TestPage textTest={dict.common.logoAlt} /> */}
-    </>
+    </main>
   );
 }
