@@ -1,4 +1,6 @@
-import Link from 'next/link';
+'use client';
+
+import { useRouter, usePathname } from 'next/navigation';
 
 import { cn } from '@/utils/cn';
 
@@ -10,10 +12,26 @@ export const LangSwitcher: React.FC<LangSwitcherProps> = ({
   lang,
   langCode,
 }) => {
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const processPathname = (pathname: string) => {
+    if (pathname.startsWith('/uk') || pathname.startsWith('/en')) {
+      return pathname.replace(/^\/(uk|en)/, '');
+    }
+
+    return pathname;
+  };
+
+  const switchLocale = (locale: string) => {
+    const newPath = `/${locale}${processPathname(pathname)}`;
+
+    router.push(newPath);
+  };
+
   return (
     <div className="flex items-center gap-4 p-2">
-      <Link
-        href="/uk"
+      <button
         type="button"
         className={cn(
           'text-[10px]/normal font-bold transition-colors xl:text-sm/normal',
@@ -21,16 +39,16 @@ export const LangSwitcher: React.FC<LangSwitcherProps> = ({
             ? 'text-textAccent'
             : 'text-textSlate hover:text-textPrimary focus:text-textPrimary',
         )}
+        onClick={() => switchLocale('uk')}
       >
         {langCode.ua}
-      </Link>
+      </button>
 
       <div className="xl:py-1">
         <LineIcon width="2" height="18" className="block h-[18px] w-[2px]" />
       </div>
 
-      <Link
-        href="/en"
+      <button
         type="button"
         className={cn(
           'text-[10px]/normal font-bold transition-colors xl:text-sm/normal',
@@ -38,9 +56,10 @@ export const LangSwitcher: React.FC<LangSwitcherProps> = ({
             ? 'text-textAccent'
             : 'text-textSlate hover:text-textPrimary focus:text-textPrimary',
         )}
+        onClick={() => switchLocale('en')}
       >
         {langCode.en}
-      </Link>
+      </button>
     </div>
   );
 };

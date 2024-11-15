@@ -28,15 +28,15 @@
         "embedded": [
           {
             "name": "Strategy",
-            "href": "/strategy"
+            "href": "/in-progress"
           },
           {
             "name": "Team",
-            "href": "/team"
+            "href": "/in-progress"
           },
           {
             "name": "Projects",
-            "href": "/projects"
+            "href": "/in-progress"
           }
         ]
       },
@@ -46,33 +46,33 @@
         "embedded": [
           {
             "name": "Main areas",
-            "href": "/main-areas"
+            "href": "/in-progress"
           },
           {
             "name": "Counselors",
-            "href": "/counselors"
+            "href": "/in-progress"
           },
           {
             "name": "Media about us",
-            "href": "/media-about-us"
+            "href": "/in-progress"
           },
           {
             "name": "Documents",
-            "href": "/documents"
+            "href": "/in-progress"
           }
         ]
       },
       {
         "name": "News",
-        "href": "/news"
+        "href": "/in-progress"
       },
       {
         "name": "Tenders",
-        "href": "/tenders"
+        "href": "/in-progress"
       },
       {
         "name": "Contacts",
-        "href": "/contacts"
+        "href": "/in-progress"
       }
     ],
     "accessibilityMenu": {
@@ -145,9 +145,30 @@
       "policy": "Terms of service & privacy policy",
       "developers": "developed by WDS",
       "designer": "Designed by JK"
+    },
+    "errorPage": {
+      "title": "Something went wrong...",
+      "description": "This page is still under development, but we are working on it. Everything will be available soon!",
+      "link": {
+        "label": "Home",
+        "settings": {
+          "href": "/",
+          "externalLink": false
+        }
+      }
+    },
+    "devPage": {
+      "title": "In Progress…",
+      "description": "Page not found",
+      "link": {
+        "label": "Home",
+        "settings": {
+          "href": "/",
+          "externalLink": false
+        }
+      }
     }
   },
-
   "aboutSection": {
     "title": "About the organization",
     "img": {
