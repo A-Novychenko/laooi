@@ -1,0 +1,7 @@
+.overlay {
+  @apply bg-gradient-to-b from-transparent to-black;
+}
+
+.link:hover .overlay {
+  @apply from-bgAccentDark/0 to-bgAccentDark;
+}

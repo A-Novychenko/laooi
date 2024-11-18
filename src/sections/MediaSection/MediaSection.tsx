@@ -1,13 +1,26 @@
 import { MediaList } from '@/components/base';
-import { Title } from '@/components/ui';
+import { ButtonLink, Title } from '@/components/ui';
 
-export const MediaSection: React.FC = () => {
+export const MediaSection: React.FC<ISectionProps> = ({ dict }) => {
+  const { title, link, items } = dict.mediaSection;
+
   return (
     <section className="section">
       <div className="container">
-        <Title>MediaSection</Title>
+        <div className="mb-4 md:flex md:justify-between">
+          <Title className="mb-2 md:mb-0">{title}</Title>
 
-        <MediaList />
+          <ButtonLink
+            type="link"
+            typeStyle="light"
+            settings={link.settings}
+            className="mx-auto max-w-[237px] shrink-0 md:mx-0 md:w-[219px] md:max-w-full xl:w-[308px]"
+          >
+            {link.label}
+          </ButtonLink>
+        </div>
+
+        <MediaList items={items} />
       </div>
     </section>
   );

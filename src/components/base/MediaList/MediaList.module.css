@@ -1,0 +1,15 @@
+@media screen and (min-width: 768px) {
+  .item {
+    flex-basis: calc((100% - 16px) / 3);
+  }
+}
+
+@media screen and (min-width: 1360px) {
+  .item {
+    flex-basis: calc((100% - 16px) / 5);
+  }
+}
+
+.item:nth-child(-n + 3) {
+  @apply md:block;
+}

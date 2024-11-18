@@ -21,6 +21,7 @@ interface IDictionary {
   newsSection: INewSection;
   targetSection: ITargetSection;
   partnersSection: IPartnersSection;
+  mediaSection: IMediaSection;
 }
 
 interface IMeta {
@@ -197,4 +198,22 @@ interface IPlaceholder {
       externalLink: boolean;
     };
   };
+}
+
+interface IMediaSection {
+  title: string;
+  link: {
+    label: string;
+    settings: {
+      href: string;
+      externalLink: boolean;
+    };
+  };
+  items: {
+    img: { src: string; alt: string };
+    cardLink: {
+      href: string;
+      labelCardLink: string;
+    };
+  }[];
 }
