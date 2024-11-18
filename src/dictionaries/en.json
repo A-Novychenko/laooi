@@ -398,5 +398,67 @@
         "name": "Mother Acts"
       }
     ]
+  },
+  "mediaSection": {
+    "title": "Media about us",
+    "link": {
+      "label": "All publications",
+      "settings": {
+        "href": "/in-progress",
+        "externalLink": false
+      }
+    },
+    "items": [
+      {
+        "img": {
+          "src": "/images/media-section/media-1.webp",
+          "alt": "Ukrinform"
+        },
+        "cardLink": {
+          "href": "/in-progress",
+          "labelCardLink": "Ukrinform"
+        }
+      },
+      {
+        "img": {
+          "src": "/images/media-section/media-2.webp",
+          "alt": "Undp.org"
+        },
+        "cardLink": {
+          "href": "/in-progress",
+          "labelCardLink": "Undp.org"
+        }
+      },
+      {
+        "img": {
+          "src": "/images/media-section/media-3.webp",
+          "alt": "Suspilne Donbas"
+        },
+        "cardLink": {
+          "href": "/in-progress",
+          "labelCardLink": "Suspilne Donbas"
+        }
+      },
+      {
+        "img": {
+          "src": "/images/media-section/media-4.webp",
+          "alt": "Holos Ukrayiny"
+        },
+        "cardLink": {
+          "href": "/in-progress",
+          "labelCardLink": "Holos Ukrayiny"
+        }
+      },
+      {
+        "img": {
+          "src": "/images/media-section/media-5.webp",
+          "alt": "Espreso"
+        },
+        "cardLink": {
+          "href": "/in-progress",
+          "labelCardLink": "Espreso"
+        }
+      }
+    ]
   }
 }

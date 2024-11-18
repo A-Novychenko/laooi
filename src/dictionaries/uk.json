@@ -398,5 +398,67 @@
         "name": "Мама Діє"
       }
     ]
+  },
+  "mediaSection": {
+    "title": "Медіа про нас",
+    "link": {
+      "label": "Всі публікації",
+      "settings": {
+        "href": "/in-progress",
+        "externalLink": false
+      }
+    },
+    "items": [
+      {
+        "img": {
+          "src": "/images/media-section/media-1.webp",
+          "alt": "Укрінформ"
+        },
+        "cardLink": {
+          "href": "/in-progress",
+          "labelCardLink": "Укрінформ"
+        }
+      },
+      {
+        "img": {
+          "src": "/images/media-section/media-2.webp",
+          "alt": "Undp.org"
+        },
+        "cardLink": {
+          "href": "/in-progress",
+          "labelCardLink": "Undp.org"
+        }
+      },
+      {
+        "img": {
+          "src": "/images/media-section/media-3.webp",
+          "alt": "Суспільне Донбас"
+        },
+        "cardLink": {
+          "href": "/in-progress",
+          "labelCardLink": "Суспільне Донбас"
+        }
+      },
+      {
+        "img": {
+          "src": "/images/media-section/media-4.webp",
+          "alt": "Голос України"
+        },
+        "cardLink": {
+          "href": "/in-progress",
+          "labelCardLink": "Голос України"
+        }
+      },
+      {
+        "img": {
+          "src": "/images/media-section/media-5.webp",
+          "alt": "Espreso"
+        },
+        "cardLink": {
+          "href": "/in-progress",
+          "labelCardLink": "Espreso"
+        }
+      }
+    ]
   }
 }
