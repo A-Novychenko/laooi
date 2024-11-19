@@ -32,7 +32,7 @@ export const ScrollToTopButton = () => {
   return (
     <CircleButton
       action={scrollToTop}
-      className={`scroll-to-top group ${isVisible ? 'visible' : ''} ml-auto mt-3`}
+      className={`${isVisible ? 'flex' : 'visually-hidden'} absolute bottom-[10px] right-4 ml-auto md:bottom-[26px] md:right-10 xl:bottom-[42px]`}
     >
       <Arrow className="-rotate-45" width={24} height={24} />
     </CircleButton>
