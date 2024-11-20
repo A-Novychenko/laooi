@@ -41,7 +41,10 @@ export const ScrollToTopButton = () => {
         },
       )}
     >
-      <CircleButton action={scrollToTop} className="ml-auto">
+      <CircleButton
+        action={scrollToTop}
+        className="absolute right-0 top-0 ml-auto md:-right-4"
+      >
         <Arrow className="-rotate-45" width={24} height={24} />
       </CircleButton>
     </div>

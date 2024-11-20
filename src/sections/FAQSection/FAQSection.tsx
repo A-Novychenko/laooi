@@ -1,5 +1,4 @@
 import { Accordion, Title } from '@/components/ui';
-import { ScrollToTopButton } from '@/components/ui/ScrollToTopBtn';
 
 import { FAQSectionProps } from './types';
 
@@ -14,7 +13,6 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ dict }) => {
             <Title className="mb-4 xl:w-full">{title}</Title>
 
             <Accordion data={items} />
-            <ScrollToTopButton />
           </div>
         </div>
       </div>
