@@ -1,6 +1,8 @@
 import { Nunito } from 'next/font/google';
 
-import { AccessibilityProvider } from '../../context/AccessibilityProvider';
+import { AccessibilityProvider } from '@/context/AccessibilityProvider';
+
+import { ScrollToTopButton } from '@/components/ui/ScrollToTopBtn';
 
 import makeMetaData from '@/data/meta';
 
@@ -44,6 +46,8 @@ export default function RootLayout({
             {children}
 
             <Footer lang={params.lang} />
+
+            <ScrollToTopButton />
           </div>
         </body>
       </html>
