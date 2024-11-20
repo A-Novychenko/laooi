@@ -44,6 +44,9 @@ const config: Config = {
         textActive: '#C7C7D0',
         textFooterLink: '#FDE047',
         textFooterActive: '#EAC608',
+        textBlue: '#039',
+        textGreen: '#093',
+        textRed: '#f00',
 
         bgLight: '#ffffff',
         bgSlate: '#EAEDF4',
