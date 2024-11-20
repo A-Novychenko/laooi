@@ -24,7 +24,7 @@ export const ButtonLink: React.FC<ButtonProps> = ({
     light:
       'text-sm/normal xl:text-base/normal text-textPrimary bg-bgSlate hover:bg-bgDarkSlate focus:bg-bgDarkSlate',
     transparent:
-      'gap-2 p-0 rounded-none text-textMenuAccent border-b border-solid border-transparent hover:border-textAccent focus:border-textAccent hover:text-textAccent focus:text-textAccent',
+      'gap-2 p-0 rounded-none text-textMenuAccent hover:text-textAccent focus:text-textAccent',
   };
 
   const resultStyle = cn(baseStyles, stylesVariants[typeStyle], className);

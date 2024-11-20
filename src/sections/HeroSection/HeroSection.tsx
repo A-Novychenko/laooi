@@ -10,7 +10,9 @@ export const HeroSection: React.FC<ISectionProps> = ({ dict, lang }) => {
       <div className="container">
         <div className="xl:flex xl:items-center xl:gap-4">
           <div className="mb-4 xl:mb-0">
-            <Title className="mb-1 md:mb-2">{title}</Title>
+            <Title style="main" tag="h1" className="mb-1 md:mb-2">
+              {title}
+            </Title>
 
             <p className="mb-2 md:mb-4 xl:max-w-[506px] xl:text-lg/normal">
               {descr}

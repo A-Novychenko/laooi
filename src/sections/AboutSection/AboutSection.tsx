@@ -24,7 +24,7 @@ export const AboutSection: React.FC<ISectionProps> = ({
             />
           </div>
 
-          <div className="rounded-2xl bg-bgLightSlate p-6 md:rounded-[20px] md:p-8 xl:flex xl:flex-col xl:justify-between xl:rounded-3xl xl:p-10">
+          <div className="rounded-2xl bg-bgLightSlate p-6 md:rounded-[20px] md:p-8 xl:flex xl:flex-col xl:rounded-3xl xl:p-10">
             <p className="mb-4 text-base/normal text-textPrimary xl:text-lg/normal">
               <span className="mb-2 inline-block">{text.first}</span>
               {text.second}
