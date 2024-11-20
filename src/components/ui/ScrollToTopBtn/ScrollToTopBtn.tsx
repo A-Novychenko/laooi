@@ -1,7 +1,8 @@
 'use client';
+
 import { useEffect, useState } from 'react';
 
-import { CircleButton } from '../CircleButton';
+import { CircleButton } from '@/components/ui';
 
 import Arrow from '~/icons/arrowBtnIcon.svg';
 
@@ -18,7 +19,9 @@ export const ScrollToTopButton = () => {
         setIsVisible(false);
       }
     };
+
     window.addEventListener('scroll', toggleVisibility);
+
     return () => {
       window.removeEventListener('scroll', toggleVisibility);
     };
