@@ -15,8 +15,8 @@ export const Logo: React.FC<LogoProps> = ({
     <Link href={`/${lang}/`} className={classNameLink}>
       <Image
         src={LogoIcon}
-        width={56}
-        height={56}
+        width={80}
+        height={80}
         alt={logoAlt}
         priority
         className={classNameImage}
