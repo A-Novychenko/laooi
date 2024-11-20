@@ -14,7 +14,7 @@ export const Title: React.FC<TitleProps> = ({
   const { main, second, third } = {
     main:
       style === 'main'
-        ? 'text-textSecondary text-[32px]/[1.25] font-bold md:text-4xl/[1.26] xl:text-[54px]/[1.18]'
+        ? 'text-textSecondary text-[32px]/[1.25] font-bold md:text-[38px]/[1.26] xl:text-[54px]/[1.18]'
         : '',
     second:
       style === 'second'
