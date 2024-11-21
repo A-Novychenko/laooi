@@ -8,4 +8,5 @@ export type MobileMenuProps = {
   };
   lang: string;
   logoAlt: string;
+  mainNav: IMainNav[];
 };

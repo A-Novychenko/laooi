@@ -23,9 +23,9 @@ export const Header: React.FC<HeaderProps> = async ({ lang }) => {
   return (
     <header>
       <div className="container">
-        <div className="my-4 flex items-center justify-between rounded-[120px] bg-bgLight px-10 shadow-mobMenuHeader md:py-1 xl:my-6 xl:py-2">
+        <div className="my-4 flex items-center justify-between rounded-[120px] bg-bgLight px-4 shadow-mobMenuHeader md:py-1 xl:my-6 xl:px-10 xl:py-2">
           <div className="order-2 xl:-order-none">
-            <Logo lang={lang} logoAlt={logoAlt} />
+            <Logo lang={lang} logoAlt={logoAlt} classNameImage="size-[56px]" />
           </div>
 
           <div className="hidden xl:block">
@@ -54,10 +54,11 @@ export const Header: React.FC<HeaderProps> = async ({ lang }) => {
               }}
               lang={lang}
               logoAlt={logoAlt}
+              mainNav={mainNav}
             >
-              <div className="grow overflow-y-auto">
+              {/* <div className="grow overflow-y-auto">
                 <MainNavList lang={lang} mainNav={mainNav} />
-              </div>
+              </div> */}
 
               <LangSwitcher langCode={langCode} lang={lang} />
             </MobileMenu>

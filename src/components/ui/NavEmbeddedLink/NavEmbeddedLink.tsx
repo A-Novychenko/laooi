@@ -8,7 +8,10 @@ import { NavEmbeddedLinkProps } from './types';
 
 import styles from './NavEmbeddedLink.module.css';
 
-export const NavEmbeddedLink: React.FC<NavEmbeddedLinkProps> = ({ data }) => {
+export const NavEmbeddedLink: React.FC<NavEmbeddedLinkProps> = ({
+  data,
+  handleClose,
+}) => {
   return (
     <>
       {data &&
@@ -17,10 +20,12 @@ export const NavEmbeddedLink: React.FC<NavEmbeddedLinkProps> = ({ data }) => {
           <li key={idx} className="flex">
             <Link
               href={href}
+              onClick={handleClose}
               className={cn(
-                'flex grow items-center justify-between rounded-2xl bg-bgLight p-[10px] text-[10px]/normal font-semibold text-textPrimary transition-colors md:text-xs/normal xl:p-4 xl:text-base/normal',
+                'whitespace-nowrap rounded-2xl bg-bgLight p-[10px] text-[12px]/normal font-semibold text-textPrimary',
+                'flex grow items-center justify-between md:text-xs/normal xl:p-4 xl:text-base/normal',
                 'data-[focus]:bg-bgSlate data-[hover]:bg-bgSlate data-[focus]:text-textAccent data-[hover]:text-textAccent',
-                'hover:bg-bgSlate hover:text-textAccent focus:bg-bgSlate focus:text-textAccent',
+                'transition-colors hover:bg-bgSlate hover:text-textAccent focus:bg-bgSlate focus:text-textAccent',
                 styles.menuLink,
               )}
             >

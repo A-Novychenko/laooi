@@ -9,6 +9,7 @@ import { CircleButton } from '@/components/ui';
 import { cn } from '@/utils/cn';
 
 import SearchIcon from '~/icons/search.svg';
+import CloseIcon from '~/icons/close.svg';
 
 import { SearchInputProps } from './types';
 
@@ -70,7 +71,7 @@ export const SearchInput: React.FC<SearchInputProps> = ({
             >
               <input
                 className={cn(
-                  'h-[48px] w-[500px] rounded-[40px] border py-2 pl-10 pr-4 text-[14px] font-semibold placeholder:text-textSlate',
+                  'h-[48px] w-[500px] rounded-[40px] border py-2 pl-10 pr-4 text-base/normal font-semibold outline-textFooterAccent placeholder:text-textSlate',
                   styles.input,
                 )}
                 type="search"
@@ -79,12 +80,23 @@ export const SearchInput: React.FC<SearchInputProps> = ({
                 value={inputValue}
                 onChange={handleInputChange}
               />
-
               <SearchIcon
                 width="16"
                 height="16"
                 className="absolute left-4 top-1/2 -translate-y-1/2 text-textPrimary"
               />
+
+              {inputValue.length < 1 && (
+                <button
+                  type="button"
+                  onClick={() => {
+                    setOpen(false);
+                  }}
+                  className="absolute right-4 top-1/2 block -translate-y-1/2 border-none bg-transparent text-textPrimary"
+                >
+                  <CloseIcon width={16} height={16} />
+                </button>
+              )}
             </div>
           </Transition>
         </div>
@@ -92,7 +104,7 @@ export const SearchInput: React.FC<SearchInputProps> = ({
         <div className="relative xl:hidden">
           <input
             className={cn(
-              'h-[44px] w-full rounded-[40px] bg-bgLightSlate py-2 pl-10 pr-4 text-[10px]/normal font-semibold placeholder:text-textSlate md:h-[48px] md:text-xs/normal',
+              'h-[44px] w-full rounded-[40px] bg-bgLightSlate py-2 pl-10 pr-4 text-base/normal font-semibold text-textPrimary outline-textFooterAccent placeholder:text-textSlate md:h-[48px]',
               styles.input,
             )}
             type="search"
