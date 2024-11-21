@@ -14,7 +14,7 @@ export const MediaSection: React.FC<ISectionProps> = ({ dict }) => {
             type="link"
             typeStyle="light"
             settings={link.settings}
-            className="mx-auto max-w-[237px] shrink-0 md:mx-0 md:w-[219px] md:max-w-full xl:w-[308px]"
+            className="mx-auto shrink-0 md:mx-0 md:w-[219px] md:max-w-full xl:w-[308px]"
           >
             {link.label}
           </ButtonLink>

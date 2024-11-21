@@ -29,7 +29,7 @@ export const SocialsSection: React.FC<SocialsSectionProps> = ({ dict }) => {
                   const IconComponent = icons[idx];
 
                   return (
-                    <li key={idx} className="w-full max-w-[240px]">
+                    <li key={idx} className="w-full md:max-w-[240px]">
                       <ButtonLink
                         type="link"
                         settings={settings}
