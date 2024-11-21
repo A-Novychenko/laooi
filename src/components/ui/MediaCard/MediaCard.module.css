@@ -1,7 +1,17 @@
 .overlay {
+  @media screen and (max-width: 479px) {
+    width: calc(100vw - 32px);
+  }
+
   @apply bg-gradient-to-b from-transparent to-black;
 }
 
-.link:hover .overlay {
+.link:hover .overlay,
+.link:focus .overlay {
   @apply from-bgAccentDark/0 to-bgAccentDark;
+}
+
+.link:hover img,
+.link:focus img {
+  @apply scale-110;
 }
