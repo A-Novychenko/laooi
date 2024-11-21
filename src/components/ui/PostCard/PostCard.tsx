@@ -1,8 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { Title } from '../Title';
-import { PostLabel } from '../PostLabel';
+import { Title, PostLabel } from '@/components/ui';
 
 import ArrowIcon from '~/icons/arrowBtnIcon.svg';
 
@@ -16,7 +15,10 @@ export const PostCard: React.FC<PostCardProps> = ({ post, lang }) => {
   const { image, title, text, date, newsUrl, linkTitle, type } = post;
 
   return (
-    <div className="rounded-[20px] bg-bgLightSlate">
+    <Link
+      href={`/${lang}/${newsUrl}`}
+      className={cn('block rounded-[20px] bg-bgLightSlate', styles.link)}
+    >
       <div className="relative h-[264px] w-full overflow-hidden rounded-2xl md:w-[336px] xl:w-[416px]">
         <PostLabel label={type}>{type}</PostLabel>
         <Image
@@ -40,18 +42,12 @@ export const PostCard: React.FC<PostCardProps> = ({ post, lang }) => {
         <div className="flex items-center justify-between">
           <p className="text-xs/5 font-normal xl:text-sm">{date}</p>
 
-          <Link
-            href={`/${lang}/${newsUrl}`}
-            className={cn(
-              'flex items-center justify-center gap-2 text-sm/normal font-semibold hover:text-bgAccentLight xl:text-base',
-              styles.underline,
-            )}
-          >
+          <p className="flex items-center justify-center gap-2 text-sm/normal font-semibold hover:text-bgAccentLight xl:text-base">
             {linkTitle}
             <ArrowIcon width={24} height={24} />
-          </Link>
+          </p>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
