@@ -18,7 +18,7 @@ export const ActivitiesSection: React.FC<ISectionProps> = ({
         <div className="xl:mb-4 xl:flex xl:gap-4">
           <p className="mb-2 xl:mb-0">{description}</p>
 
-          <div className="mx-auto mb-4 max-w-[237px] md:mx-0 xl:mb-0 xl:w-full xl:max-w-[308px]">
+          <div className="mx-auto mb-4 md:mx-0 md:max-w-[237px] xl:mb-0 xl:w-full xl:max-w-[308px]">
             <ButtonLink
               type="link"
               typeStyle="secondary"

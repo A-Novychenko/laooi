@@ -25,7 +25,7 @@ export const PlaceholderSection: React.FC<PlaceholderSectionProps> = ({
             {description}
           </p>
 
-          <div className="w-full max-w-[288px]">
+          <div className="w-full md:max-w-[288px]">
             <ButtonLink type="link" settings={settings}>
               {label}
             </ButtonLink>
