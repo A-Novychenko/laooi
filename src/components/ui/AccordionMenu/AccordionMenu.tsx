@@ -11,6 +11,7 @@ import { AccordionMenuProps } from './types';
 export const AccordionMenu: React.FC<AccordionMenuProps> = ({
   children,
   data,
+  handleClose,
 }) => {
   return (
     <Disclosure as="li">
@@ -19,7 +20,7 @@ export const AccordionMenu: React.FC<AccordionMenuProps> = ({
       </DisclosureButton>
 
       <DisclosurePanel className="ml-4" as="ul">
-        <NavEmbeddedLink data={data} />
+        <NavEmbeddedLink data={data} handleClose={handleClose} />
       </DisclosurePanel>
     </Disclosure>
   );

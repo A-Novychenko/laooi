@@ -1,1 +1,4 @@
-export type NavEmbeddedLinkProps = { data: IMainNavEmbedded[] };
+export type NavEmbeddedLinkProps = {
+  data: IMainNavEmbedded[];
+  handleClose?: () => void;
+};

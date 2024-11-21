@@ -6,7 +6,11 @@ import ArrowDownIcon from '~/icons/arrowDown.svg';
 
 import { MainNavListProps } from './types';
 
-export const MainNavList: React.FC<MainNavListProps> = ({ lang, mainNav }) => {
+export const MainNavList: React.FC<MainNavListProps> = ({
+  lang,
+  mainNav,
+  handleClose,
+}) => {
   return (
     <nav>
       <ul className="flex flex-col gap-4 xl:flex-row xl:items-center">
@@ -21,6 +25,7 @@ export const MainNavList: React.FC<MainNavListProps> = ({ lang, mainNav }) => {
                 {!data && (
                   <Link
                     href={`/${lang}${href}`}
+                    onClick={handleClose}
                     className="p-[10px] text-sm font-semibold transition-colors hover:text-textAccent focus:text-textAccent xl:text-lg"
                   >
                     {name}
@@ -30,14 +35,20 @@ export const MainNavList: React.FC<MainNavListProps> = ({ lang, mainNav }) => {
                 {data && (
                   <>
                     <div className="hidden xl:block">
-                      <TooltipMenu data={data}>
-                        {name} <ArrowDownIcon width={24} height={24} />
+                      <TooltipMenu data={data} handleClose={handleClose}>
+                        {name}
+                        <ArrowDownIcon
+                          width={24}
+                          height={24}
+                          className="mt-[2px]"
+                        />
                       </TooltipMenu>
                     </div>
 
                     <ul className="block xl:hidden">
-                      <AccordionMenu data={data}>
-                        {name} <ArrowDownIcon width={19} height={19} />
+                      <AccordionMenu data={data} handleClose={handleClose}>
+                        {name}
+                        <ArrowDownIcon width={19} height={19} />
                       </AccordionMenu>
                     </ul>
                   </>
