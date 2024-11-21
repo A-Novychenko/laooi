@@ -27,13 +27,13 @@ export const MediaCard: React.FC<MediaCardProps> = ({ img, cardLink }) => {
           alt={img.src}
           width={288}
           height={288}
-          className="size-full object-cover"
+          className="size-full object-cover transition-transform"
         />
       </div>
 
       <p
         className={cn(
-          'absolute bottom-0 left-0 flex h-[64px] w-full items-center justify-between',
+          'absolute bottom-0 left-0 z-[9999] flex h-[64px] w-full items-center justify-between',
           'overflow-hidden rounded-b-[16px] px-4 text-base/normal text-textLight',
           'md:rounded-b-[20px]',
           'xl:rounded-b-[24px] xl:text-lg/normal',
