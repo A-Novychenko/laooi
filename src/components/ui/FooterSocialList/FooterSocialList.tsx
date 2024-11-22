@@ -45,9 +45,10 @@ export const FooterSocialList: React.FC<FooterSocialListProps> = ({
 
       <Link
         className="flex items-center justify-center text-sm/normal font-bold uppercase text-textFooterLink transition-colors hover:text-textFooterActive focus:text-textFooterActive xl:text-lg xl:font-semibold"
-        href="/"
-        target="_blank"
-        rel="noopener noreferrer"
+        href="/in-progress"
+        // target="_blank"
+        // rel="noopener noreferrer"
+        //!!! записати в словник або статичні дані!
       >
         {linkTitle}
         <ArrowBtnIcon width={24} height={24} />

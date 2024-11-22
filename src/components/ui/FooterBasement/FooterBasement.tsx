@@ -16,7 +16,7 @@ export const FooterBasement: React.FC<FooterBasementProps> = ({
   return (
     <div className="flex flex-col items-center justify-center gap-3 bg-textSecondary py-3 text-textLight md:flex-row md:justify-between md:px-4">
       <Link
-        href={`${lang}/${policyUrl}`}
+        href={`/${lang}${policyUrl}`}
         className={cn(
           'relative py-1 text-[10px]/normal font-semibold transition-colors md:text-xs xl:text-sm',
           styles.link,
@@ -33,6 +33,8 @@ export const FooterBasement: React.FC<FooterBasementProps> = ({
       <p className="text-[10px]/normal font-semibold md:text-xs xl:text-sm">
         <Link
           href={designUrl}
+          target="_blank"
+          rel="noopener noreferrer"
           className={cn('relative py-1 transition-colors', styles.link)}
         >
           {data.designer}
@@ -40,6 +42,8 @@ export const FooterBasement: React.FC<FooterBasementProps> = ({
         &nbsp;and&nbsp;
         <Link
           href={developUrl}
+          target="_blank"
+          rel="noopener noreferrer"
           className={cn('relative py-1 transition-colors', styles.link)}
         >
           {data.developers}

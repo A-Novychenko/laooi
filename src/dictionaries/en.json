@@ -98,27 +98,27 @@
       "footerAbout": {
         "title": "About us",
         "embedded": [
-          { "name": "Strategy", "href": "/strategy" },
-          { "name": "Team", "href": "/team" },
-          { "name": "Projects", "href": "/projects" }
+          { "name": "Strategy", "href": "/in-progress" },
+          { "name": "Team", "href": "/in-progress" },
+          { "name": "Projects", "href": "/in-progress" }
         ]
       },
       "footerActivities": {
         "title": "Activities",
         "embedded": [
-          { "name": "Main areas", "href": "/main-areas" },
-          { "name": "Advisors", "href": "/advisors" },
-          { "name": "Media about us", "href": "/media-about-us" },
-          { "name": "Documents", "href": "/documents" }
+          { "name": "Main areas", "href": "/in-progress" },
+          { "name": "Advisors", "href": "/in-progress" },
+          { "name": "Media about us", "href": "/in-progress" },
+          { "name": "Documents", "href": "/in-progress" }
         ]
       },
       "footerOther": {
         "title": "Other",
         "embedded": [
           { "name": "News", "href": "/news" },
-          { "name": "Vacancies", "href": "/vacancies" },
-          { "name": "Tenders", "href": "/tenders" },
-          { "name": "Contacts", "href": "/contacts" }
+          { "name": "Vacancies", "href": "/in-progress" },
+          { "name": "Tenders", "href": "/in-progress" },
+          { "name": "Contacts", "href": "/in-progress" }
         ]
       }
     },
@@ -126,17 +126,26 @@
       {
         "name": "youtube",
         "label": "YouTube",
-        "settings": { "href": "https://youtube.com", "externalLink": true }
+        "settings": {
+          "href": "https://www.youtube.com/@LAOOI_2018",
+          "externalLink": true
+        }
       },
       {
         "name": "facebook",
         "label": "Facebook",
-        "settings": { "href": "https://facebook.com", "externalLink": true }
+        "settings": {
+          "href": "https://www.facebook.com/luhanskLAOLI/",
+          "externalLink": true
+        }
       },
       {
         "name": "instagram",
         "label": "Instagram",
-        "settings": { "href": "https://instagram.com", "externalLink": true }
+        "settings": {
+          "href": "https://www.instagram.com/laooi2022",
+          "externalLink": true
+        }
       }
     ],
     "socialListTitle": "Social networks",
@@ -152,7 +161,7 @@
       "link": {
         "label": "Home",
         "settings": {
-          "href": "/",
+          "href": "/en/",
           "externalLink": false
         }
       }
@@ -163,7 +172,7 @@
       "link": {
         "label": "Home",
         "settings": {
-          "href": "/",
+          "href": "/en/",
           "externalLink": false
         }
       }
@@ -181,7 +190,7 @@
     },
     "link": {
       "label": "Learn more",
-      "href": "/about"
+      "href": "/in-progress"
     }
   },
   "activitiesSection": {
@@ -190,7 +199,7 @@
     "link": {
       "label": "Key directions",
       "settings": {
-        "href": "/activities",
+        "href": "/in-progress",
         "externalLink": false
       }
     },
@@ -219,7 +228,7 @@
     "link": {
       "label": "Learn more",
       "settings": {
-        "href": "/",
+        "href": "/in-progress",
         "externalLink": false
       }
     },
@@ -262,7 +271,7 @@
     "link": {
       "label": "All publications",
       "settings": {
-        "href": "/",
+        "href": "/in-progress",
         "externalLink": false
       }
     },
@@ -273,7 +282,7 @@
         "title": "Resilience during wartime: LOOOI's participation in a public discussion in Lviv",
         "text": "The LAOOI participated in the public discussion 'which took place on Thursday, October 17, 2024. During the event",
         "date": "17.10.2024",
-        "newsUrl": "/",
+        "newsUrl": "/in-progress",
         "linkTitle": "Read more"
       },
       {
@@ -282,7 +291,7 @@
         "title": "LOOOI and Solidar Suisse Ukraine in Kharkiv: support for affected families",
         "text": "Recently, a delegation from the Public Union 'Luhansk Association of Organizations of Persons with Disabilities' visited Kharkiv along with our partners from Solidar Suisse Ukraine. The",
         "date": "16.10.2024",
-        "newsUrl": "/",
+        "newsUrl": "/in-progress",
         "linkTitle": "Read more"
       },
       {
@@ -291,7 +300,7 @@
         "title": "Thank you to our international partners: support that changes lives",
         "text": "We, the team of the Public Union 'Luhansk Association of Organizations of Persons with Disabilities', extend our heartfelt thanks to our international partners and friends who help us The",
         "date": "11.10.2024",
-        "newsUrl": "/",
+        "newsUrl": "/in-progress",
         "linkTitle": "Read more"
       }
     ]
@@ -299,7 +308,7 @@
   "socialSection": {
     "title": "We are on social media",
     "descr": "The 'Luhansk Association of Organizations of Persons with Disabilities,' founded on May 25, 2018, assists people with disabilities and ensures equal opportunities for them. We are a leading organization in eastern Ukraine for social integration and the protection of the rights of people with disabilities, striving to improve their lives",
-    "videoUrl": "https://www.youtube.com/watch?v=u35WWrYws_c",
+    "videoUrl": "https://www.youtube.com/watch?v=Gk4l7UIyz8c",
     "poster": "/images/poster.jpg"
   },
   "targetSection": {
@@ -359,43 +368,53 @@
     "partners": [
       {
         "img": "/images/partners/partners-1.jpg",
-        "name": "Department of Social Protection of the Population of Luhansk Oblast"
+        "name": "Department of Social Protection of the Population of Luhansk Oblast",
+        "link": "https://www.facebook.com/p/Департамент-соціального-захисту-населення-Луганської-ОДА-100064321647025/"
       },
       {
         "img": "/images/partners/partners-2.jpg",
-        "name": "United Nations Development Programme in Ukraine (UNDP Ukraine)"
+        "name": "United Nations Development Programme in Ukraine (UNDP Ukraine)",
+        "link": "https://www.facebook.com/UNDPUkraine/"
       },
       {
         "img": "/images/partners/partners-3.jpg",
-        "name": "Charity Foundation 'Trust.Ukraine'"
+        "name": "Charity Foundation 'Trust.Ukraine'",
+        "link": "https://www.facebook.com/doviraua.org"
       },
       {
         "img": "/images/partners/partners-4.jpg",
-        "name": "Fund for Social Protection of Persons with Disabilities"
+        "name": "Fund for Social Protection of Persons with Disabilities",
+        "link": "https://www.facebook.com/fszoiukraine/"
       },
       {
         "img": "/images/partners/partners-5.jpg",
-        "name": "US Agency for International Development (USAID Ukraine) "
+        "name": "US Agency for International Development (USAID Ukraine) ",
+        "link": "https://www.facebook.com/USAIDUkraine"
       },
       {
         "img": "/images/partners/partners-6.jpg",
-        "name": "Solidar Suisse"
+        "name": "Solidar Suisse",
+        "link": "https://www.facebook.com/ua.nrc.no/"
       },
       {
         "img": "/images/partners/partners-7.jpg",
-        "name": "The Norwegian Refugee Council in Ukraine"
+        "name": "The Norwegian Refugee Council in Ukraine",
+        "link": "https://www.facebook.com/solidar.ch"
       },
       {
         "img": "/images/partners/partners-8.jpg",
-        "name": "Bevar Ukraine"
+        "name": "Bevar Ukraine",
+        "link": "https://www.facebook.com/BevarUkraine.dk/"
       },
       {
         "img": "/images/partners/partners-9.jpg",
-        "name": "Avalist Ngo"
+        "name": "Avalist Ngo",
+        "link": "https://www.facebook.com/people/Аваліст-Нго/100051478537126/"
       },
       {
         "img": "/images/partners/partners-10.jpg",
-        "name": "Mother Acts"
+        "name": "Mother Acts",
+        "link": "https://www.facebook.com/mamadiye"
       }
     ]
   },
@@ -415,7 +434,7 @@
           "alt": "Ukrinform"
         },
         "cardLink": {
-          "href": "/in-progress",
+          "href": "https://t.ly/uCvE6",
           "labelCardLink": "Ukrinform"
         }
       },
@@ -425,7 +444,7 @@
           "alt": "Undp.org"
         },
         "cardLink": {
-          "href": "/in-progress",
+          "href": "https://www.undp.org/uk/ukraine/news/zabezpechennya-inklyuzyvnosti-pid-chas-viyny-istoriya-mykoly",
           "labelCardLink": "Undp.org"
         }
       },
@@ -435,7 +454,7 @@
           "alt": "Suspilne Donbas"
         },
         "cardLink": {
-          "href": "/in-progress",
+          "href": "https://suspilne.media/donbas/762291-na-doneccini-ta-harkivsini-kostom-donoriv-vidremontuut-200-budinkiv-poskodzenih-obstrilami-armii-rf-ak-pracue-proekt/",
           "labelCardLink": "Suspilne Donbas"
         }
       },
@@ -445,7 +464,7 @@
           "alt": "Holos Ukrayiny"
         },
         "cardLink": {
-          "href": "/in-progress",
+          "href": "http://www.golos.com.ua/article/301378",
           "labelCardLink": "Holos Ukrayiny"
         }
       },
@@ -455,7 +474,7 @@
           "alt": "Espreso"
         },
         "cardLink": {
-          "href": "/in-progress",
+          "href": "https://espreso.tv/asotsiatsiya-organizatsiy-osib-z-invalidnistyu-dopravila-na-luganshchinu-35-tonn-gumanitarnoi-dopomogi-gayday",
           "labelCardLink": "Espreso"
         }
       }

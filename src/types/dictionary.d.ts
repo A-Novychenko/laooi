@@ -185,6 +185,7 @@ interface IPartnersSection {
   partners: {
     img: string;
     name: string;
+    link: string;
   }[];
 }
 

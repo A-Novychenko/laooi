@@ -1,7 +1,7 @@
 import { MediaList } from '@/components/base';
 import { ButtonLink, Title } from '@/components/ui';
 
-export const MediaSection: React.FC<ISectionProps> = ({ dict }) => {
+export const MediaSection: React.FC<ISectionProps> = ({ dict, lang }) => {
   const { title, link, items } = dict.mediaSection;
 
   return (
@@ -13,7 +13,10 @@ export const MediaSection: React.FC<ISectionProps> = ({ dict }) => {
           <ButtonLink
             type="link"
             typeStyle="light"
-            settings={link.settings}
+            settings={{
+              ...link.settings,
+              href: `${lang}${link.settings.href}`,
+            }}
             className="mx-auto shrink-0 md:mx-0 md:w-[219px] md:max-w-full xl:w-[308px]"
           >
             {link.label}
