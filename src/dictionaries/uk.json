@@ -98,7 +98,7 @@
       "footerAbout": {
         "title": "Про нас",
         "embedded": [
-          { "name": "Стратегія", "href": ".in-progress" },
+          { "name": "Стратегія", "href": "/in-progress" },
           { "name": "Команда", "href": "/in-progress" },
           { "name": "Проєкти", "href": "/in-progress" }
         ]
