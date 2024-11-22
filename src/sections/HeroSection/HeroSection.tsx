@@ -22,7 +22,7 @@ export const HeroSection: React.FC<ISectionProps> = ({ dict, lang }) => {
               <ButtonLink
                 type="link"
                 settings={{
-                  href: `${lang}${link.settings.href}`,
+                  href: `${lang}/${link.settings.href}`,
                   externalLink: false,
                 }}
               >

@@ -23,7 +23,6 @@ export const Footer: React.FC<FooterProps> = async ({ lang }) => {
     },
   } = await getDictionary(lang);
 
-  // const { organization, policyUrl,  } = staticData;
   return (
     <footer>
       <div className="container">

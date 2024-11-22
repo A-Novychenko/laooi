@@ -13,6 +13,8 @@ export const MediaCard: React.FC<MediaCardProps> = ({ img, cardLink }) => {
   return (
     <Link
       href={cardLink.href}
+      target="_blank"
+      rel="noopener noreferrer"
       className={cn('relative overflow-hidden', styles.link)}
     >
       <div

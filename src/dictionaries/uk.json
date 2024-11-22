@@ -98,27 +98,27 @@
       "footerAbout": {
         "title": "Про нас",
         "embedded": [
-          { "name": "Стратегія", "href": "/strategy" },
-          { "name": "Команда", "href": "/team" },
-          { "name": "Проєкти", "href": "/projects" }
+          { "name": "Стратегія", "href": ".in-progress" },
+          { "name": "Команда", "href": "/in-progress" },
+          { "name": "Проєкти", "href": "/in-progress" }
         ]
       },
       "footerActivities": {
         "title": "Діяльність",
         "embedded": [
-          { "name": "Основні напрямки", "href": "/main-areas" },
-          { "name": "Радники", "href": "/advisors" },
-          { "name": "Медіа про нас", "href": "/media-about-us" },
-          { "name": "Документи", "href": "/documents" }
+          { "name": "Основні напрямки", "href": "/in-progress" },
+          { "name": "Радники", "href": "/in-progress" },
+          { "name": "Медіа про нас", "href": "/in-progress" },
+          { "name": "Документи", "href": "/in-progress" }
         ]
       },
       "footerOther": {
         "title": "Інше",
         "embedded": [
-          { "name": "Новини", "href": "/news" },
-          { "name": "Вакансії", "href": "/vacancies" },
-          { "name": "Тендери", "href": "/tenders" },
-          { "name": "Контакти", "href": "/contacts" }
+          { "name": "Новини", "href": "/in-progress" },
+          { "name": "Вакансії", "href": "/in-progress" },
+          { "name": "Тендери", "href": "/in-progress" },
+          { "name": "Контакти", "href": "/in-progress" }
         ]
       }
     },
@@ -126,17 +126,26 @@
       {
         "name": "youtube",
         "label": "YouTube",
-        "settings": { "href": "https://youtube.com", "externalLink": true }
+        "settings": {
+          "href": "https://www.youtube.com/@LAOOI_2018",
+          "externalLink": true
+        }
       },
       {
         "name": "facebook",
         "label": "Facebook",
-        "settings": { "href": "https://facebook.com", "externalLink": true }
+        "settings": {
+          "href": "https://www.facebook.com/luhanskLAOLI/",
+          "externalLink": true
+        }
       },
       {
         "name": "instagram",
         "label": "Instagram",
-        "settings": { "href": "https://instagram.com", "externalLink": true }
+        "settings": {
+          "href": "https://www.instagram.com/laooi2022",
+          "externalLink": true
+        }
       }
     ],
     "socialListTitle": "Соціальні мережі",
@@ -152,7 +161,7 @@
       "link": {
         "label": "Головна",
         "settings": {
-          "href": "/",
+          "href": "/uk/",
           "externalLink": false
         }
       }
@@ -163,7 +172,7 @@
       "link": {
         "label": "Головна",
         "settings": {
-          "href": "/",
+          "href": "/uk/",
           "externalLink": false
         }
       }
@@ -181,7 +190,7 @@
     },
     "link": {
       "label": "Дізнатися більше",
-      "href": "/about"
+      "href": "/in-progress"
     }
   },
   "activitiesSection": {
@@ -190,7 +199,7 @@
     "link": {
       "label": "Основні напрямки",
       "settings": {
-        "href": "/activities",
+        "href": "/in-progress",
         "externalLink": false
       }
     },
@@ -219,7 +228,7 @@
     "link": {
       "label": "Дізнатися більше",
       "settings": {
-        "href": "/",
+        "href": "/in-progress",
         "externalLink": false
       }
     },
@@ -262,7 +271,7 @@
     "link": {
       "label": "Всі публікації",
       "settings": {
-        "href": "/",
+        "href": "/in-progress",
         "externalLink": false
       }
     },
@@ -273,7 +282,7 @@
         "title": "Стійкість під час війни: участь ГС ЛАООІ у публічній дискусії у Львові",
         "text": "ГС ЛАООІ прийняла участь у публічній дискусії 'Львівщина в умовах війни: виклики і джерела стійкості', яка відбулася у четвер, 17 жовтня 2024 року. Під час заходу обговорювалися",
         "date": "17.10.2024",
-        "newsUrl": "/",
+        "newsUrl": "/in-progress",
         "linkTitle": "Читати далі"
       },
       {
@@ -282,7 +291,7 @@
         "title": "ЛАООІ та Solidar Suisse Ukraine в Харкові: підтримка для постраждалих родин",
         "text": "Днями Харків відвідала делегація громадської спілки 'Луганська асоціація організацій осіб з інвалідністю' разом із нашими партнерами з Solidar Suisse Ukraine. До складу делегації",
         "date": "16.10.2024",
-        "newsUrl": "/",
+        "newsUrl": "/in-progress",
         "linkTitle": "Читати далі"
       },
       {
@@ -291,7 +300,7 @@
         "title": "Дякуємо нашим міжнародним партнерам: підтримка, що змінює життя",
         "text": "Ми, команда ЛАООІ, висловлюємо щиру подяку нашим міжнародним партнерам і друзям, які допомагають нам втілювати наші ініціативи та підтримувати людей з",
         "date": "11.10.2024",
-        "newsUrl": "/",
+        "newsUrl": "/in-progress",
         "linkTitle": "Читати далі"
       }
     ]
@@ -299,7 +308,7 @@
   "socialSection": {
     "title": "Ми в соціальних мережах",
     "descr": "«Луганська асоціація організацій осіб з інвалідністю», заснована 25 травня 2018 року, допомагає людям з інвалідністю та забезпечує їм рівні можливості. Ми є провідною організацією на сході України в питаннях соціальної інтеграції та захисту прав людей з інвалідністю, прагнучи покращити їхнє життя",
-    "videoUrl": "https://www.youtube.com/watch?v=u35WWrYws_c",
+    "videoUrl": "https://www.youtube.com/watch?v=Gk4l7UIyz8c",
     "poster": "/images/poster.jpg"
   },
   "targetSection": {
@@ -359,43 +368,53 @@
     "partners": [
       {
         "img": "/images/partners/partners-1.jpg",
-        "name": "Департамент соціального захисту населення Луганської ОДА"
+        "name": "Департамент соціального захисту населення Луганської ОДА",
+        "link": "https://www.facebook.com/p/Департамент-соціального-захисту-населення-Луганської-ОДА-100064321647025/"
       },
       {
         "img": "/images/partners/partners-2.jpg",
-        "name": "Програма розвитку ООН в Україні (ПРООН в Україні)"
+        "name": "Програма розвитку ООН в Україні (ПРООН в Україні)",
+        "link": "https://www.facebook.com/UNDPUkraine/"
       },
       {
         "img": "/images/partners/partners-3.jpg",
-        "name": "Благодійний Фонд «Довіра.Україна»"
+        "name": "Благодійний Фонд «Довіра.Україна»",
+        "link": "https://www.facebook.com/doviraua.org"
       },
       {
         "img": "/images/partners/partners-4.jpg",
-        "name": "Фонд соціального захисту осіб з інвалідністю"
+        "name": "Фонд соціального захисту осіб з інвалідністю",
+        "link": "https://www.facebook.com/fszoiukraine/"
       },
       {
         "img": "/images/partners/partners-5.jpg",
-        "name": "Агентство США з міжнародного розвитку (USAID Україна)"
+        "name": "Агентство США з міжнародного розвитку (USAID Україна)",
+        "link": "https://www.facebook.com/USAIDUkraine"
       },
       {
         "img": "/images/partners/partners-6.jpg",
-        "name": "Норвезька рада у справах біженців в Україні"
+        "name": "Норвезька рада у справах біженців в Україні",
+        "link": "https://www.facebook.com/ua.nrc.no/"
       },
       {
         "img": "/images/partners/partners-7.jpg",
-        "name": "Норвезька рада у справах біженців в Україні"
+        "name": "Норвезька рада у справах біженців в Україні",
+        "link": "https://www.facebook.com/solidar.ch"
       },
       {
         "img": "/images/partners/partners-8.jpg",
-        "name": "Норвезька рада у справах біженців в Україні"
+        "name": "Норвезька рада у справах біженців в Україні",
+        "link": "https://www.facebook.com/BevarUkraine.dk/"
       },
       {
         "img": "/images/partners/partners-9.jpg",
-        "name": "Аваліст Нго"
+        "name": "Аваліст Нго",
+        "link": "https://www.facebook.com/people/Аваліст-Нго/100051478537126/"
       },
       {
         "img": "/images/partners/partners-10.jpg",
-        "name": "Мама Діє"
+        "name": "Мама Діє",
+        "link": "https://www.facebook.com/mamadiye"
       }
     ]
   },
@@ -415,7 +434,7 @@
           "alt": "Укрінформ"
         },
         "cardLink": {
-          "href": "/in-progress",
+          "href": "https://t.ly/uCvE6",
           "labelCardLink": "Укрінформ"
         }
       },
@@ -425,7 +444,7 @@
           "alt": "Undp.org"
         },
         "cardLink": {
-          "href": "/in-progress",
+          "href": "https://www.undp.org/uk/ukraine/news/zabezpechennya-inklyuzyvnosti-pid-chas-viyny-istoriya-mykoly",
           "labelCardLink": "Undp.org"
         }
       },
@@ -435,7 +454,7 @@
           "alt": "Суспільне Донбас"
         },
         "cardLink": {
-          "href": "/in-progress",
+          "href": "https://suspilne.media/donbas/762291-na-doneccini-ta-harkivsini-kostom-donoriv-vidremontuut-200-budinkiv-poskodzenih-obstrilami-armii-rf-ak-pracue-proekt/",
           "labelCardLink": "Суспільне Донбас"
         }
       },
@@ -445,7 +464,7 @@
           "alt": "Голос України"
         },
         "cardLink": {
-          "href": "/in-progress",
+          "href": "http://www.golos.com.ua/article/301378",
           "labelCardLink": "Голос України"
         }
       },
@@ -455,7 +474,7 @@
           "alt": "Espreso"
         },
         "cardLink": {
-          "href": "/in-progress",
+          "href": "https://espreso.tv/asotsiatsiya-organizatsiy-osib-z-invalidnistyu-dopravila-na-luganshchinu-35-tonn-gumanitarnoi-dopomogi-gayday",
           "labelCardLink": "Espreso"
         }
       }
