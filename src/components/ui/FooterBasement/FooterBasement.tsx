@@ -18,7 +18,7 @@ export const FooterBasement: React.FC<FooterBasementProps> = ({
       <Link
         href={`${lang}/${policyUrl}`}
         className={cn(
-          'relative py-1 text-[10px]/normal font-semibold transition-colors hover:text-textFooterAccent focus:text-textFooterAccent md:text-xs xl:text-sm',
+          'relative py-1 text-[10px]/normal font-semibold transition-colors md:text-xs xl:text-sm',
           styles.link,
         )}
       >
@@ -33,20 +33,14 @@ export const FooterBasement: React.FC<FooterBasementProps> = ({
       <p className="text-[10px]/normal font-semibold md:text-xs xl:text-sm">
         <Link
           href={designUrl}
-          className={cn(
-            'relative py-1 transition-colors hover:text-textFooterAccent focus:text-textFooterAccent',
-            styles.link,
-          )}
+          className={cn('relative py-1 transition-colors', styles.link)}
         >
           {data.designer}
         </Link>
         &nbsp;and&nbsp;
         <Link
           href={developUrl}
-          className={cn(
-            'relative py-1 transition-colors hover:text-textFooterAccent focus:text-textFooterAccent',
-            styles.link,
-          )}
+          className={cn('relative py-1 transition-colors', styles.link)}
         >
           {data.developers}
         </Link>

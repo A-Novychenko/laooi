@@ -11,5 +11,5 @@
 
 .link:hover::after,
 .link:focus::after {
-  background-color: #d4dae9;
+  @apply bg-bgLight;
 }
