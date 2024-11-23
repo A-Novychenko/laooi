@@ -39,3 +39,7 @@ html {
 
   cursor: grab !important;
 }
+
+.ReactCollapse--collapse {
+  transition: height 500ms;
+}

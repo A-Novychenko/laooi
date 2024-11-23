@@ -1,13 +1,9 @@
 'use client';
 
 import { Fragment, useState } from 'react';
+import { Collapse } from 'react-collapse';
 
-import { AnimatePresence, motion, easeOut } from 'framer-motion';
-import {
-  Disclosure,
-  DisclosureButton,
-  DisclosurePanel,
-} from '@headlessui/react';
+import { Disclosure, DisclosureButton } from '@headlessui/react';
 
 import { cn } from '@/utils/cn';
 
@@ -26,19 +22,10 @@ export const Accordion: React.FC<AccordionProps> = ({ data, className }) => {
       {data &&
         data.map((item: { question: string; answer: string }, idx: number) => {
           const isOpen = openIndex === idx;
+
           return (
             <Disclosure as={Fragment} defaultOpen={idx === 0} key={idx}>
-              <motion.li
-                layout
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                transition={{
-                  layout: { duration: 0.2, ease: easeOut },
-                  opacity: { duration: 0.2 },
-                }}
-                className="max-w-[448px] origin-top rounded-3xl bg-bgLightSlate p-4 md:w-[688px] md:max-w-full md:px-6 md:py-4 xl:w-[846px] xl:py-6"
-              >
+              <li className="max-w-[448px] origin-top rounded-3xl bg-bgLightSlate p-4 md:w-[688px] md:max-w-full md:px-6 md:py-4 xl:w-[846px] xl:py-6">
                 <DisclosureButton
                   className="group flex w-full justify-between"
                   onClick={() => handleToggle(idx)}
@@ -50,28 +37,20 @@ export const Accordion: React.FC<AccordionProps> = ({ data, className }) => {
                   <ArrowIcon
                     width={24}
                     height={24}
-                    className="transition-transform group-data-[open]:rotate-180"
+                    className={cn('transition-transform duration-300', {
+                      'rotate-180': isOpen,
+                    })}
                   />
                 </DisclosureButton>
 
-                <AnimatePresence initial={false}>
-                  {isOpen && (
-                    <DisclosurePanel static as={Fragment}>
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: 'auto', opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.2, ease: easeOut }}
-                        className="mt-2 origin-top overflow-hidden xl:mt-4"
-                      >
-                        <p className="text-sm font-normal text-textMenuAccent xl:text-base">
-                          {item.answer}
-                        </p>
-                      </motion.div>
-                    </DisclosurePanel>
-                  )}
-                </AnimatePresence>
-              </motion.li>
+                <Collapse isOpened={isOpen}>
+                  <div>
+                    <p className="overflow-hidden text-sm font-normal text-textMenuAccent xl:text-base">
+                      {item.answer}
+                    </p>
+                  </div>
+                </Collapse>
+              </li>
             </Disclosure>
           );
         })}
