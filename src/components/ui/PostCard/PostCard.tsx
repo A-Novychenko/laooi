@@ -17,7 +17,7 @@ export const PostCard: React.FC<PostCardProps> = ({ post, lang }) => {
   return (
     <Link
       href={`/${lang}/${newsUrl}`}
-      className={cn('block rounded-[20px] bg-bgLightSlate', styles.link)}
+      className={cn('block h-full rounded-[20px] bg-bgLightSlate', styles.link)}
     >
       <div className="relative h-[264px] w-full overflow-hidden rounded-2xl md:w-[336px] xl:w-[416px]">
         <PostLabel label={type}>{type}</PostLabel>
@@ -31,11 +31,15 @@ export const PostCard: React.FC<PostCardProps> = ({ post, lang }) => {
       </div>
 
       <div className="flex flex-col gap-2 p-4">
-        <Title tag={'h3'} style={'third'}>
+        <Title
+          tag={'h3'}
+          style={'third'}
+          className="h-[76px] overflow-hidden md:h-[82px] xl:h-[100px]"
+        >
           {title}
         </Title>
 
-        <p className="line-clamp-4 max-h-[76px] text-sm/normal font-semibold xl:max-h-[94px] xl:text-base">
+        <p className="line-clamp-4 h-[76px] text-sm/normal font-semibold xl:h-[94px] xl:text-base">
           {text}
         </p>
 
