@@ -60,10 +60,15 @@ export const AccessibilityProvider: React.FC<AccessibilityProviderProps> = ({
 
   useEffect(() => {
     const savedSettings = JSON.parse(
-      localStorage.getItem('accessibilitySettings') || '{}',
+      localStorage.getItem('accessibilitySettings') || 'null',
     );
-    if (savedSettings) {
-      setSettings(savedSettings);
+    if (!savedSettings) {
+      setSettings({
+        textSize: '16px',
+        highContrast: false,
+        highlightLinks: false,
+        largeCursor: false,
+      });
     }
   }, []);
 

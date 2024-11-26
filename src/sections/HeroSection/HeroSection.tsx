@@ -18,7 +18,7 @@ export const HeroSection: React.FC<ISectionProps> = ({ dict, lang }) => {
               {descr}
             </p>
 
-            <div className="mx-auto md:mx-0 md:max-w-[237px] xl:max-w-[308px]">
+            <div className="mx-auto md:mx-0 md:max-w-[237px] xl:max-w-[360px] xl:whitespace-nowrap">
               <ButtonLink
                 type="link"
                 settings={{

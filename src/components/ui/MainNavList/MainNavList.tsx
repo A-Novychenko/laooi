@@ -13,7 +13,7 @@ export const MainNavList: React.FC<MainNavListProps> = ({
 }) => {
   return (
     <nav>
-      <ul className="flex flex-col gap-4 xl:flex-row xl:items-center">
+      <ul className="flex flex-col gap-[16px] xl:flex-row xl:items-center">
         {mainNav &&
           mainNav.map(({ name, href, embedded }, idx: number) => {
             const data =

@@ -20,16 +20,19 @@ export const SocialsSection: React.FC<SocialsSectionProps> = ({ dict }) => {
         <Title className="mb-4">{title}</Title>
 
         <div className="xl:flex xl:gap-4">
-          <div className="mb-4 rounded-[16px] bg-bgLightSlate p-6 md:p-8 xl:mb-0 xl:flex xl:flex-col xl:justify-center xl:p-10">
+          <div className="mb-4 rounded-[16px] bg-bgLightSlate p-6 md:p-8 xl:mb-0 xl:flex xl:w-[632px] xl:flex-col xl:justify-center xl:p-[40px]">
             <p className="mb-4 text-lg/normal xl:mb-6">{descr}</p>
 
-            <ul className="flex flex-col items-center gap-2 md:flex-row md:gap-4">
+            <ul className="flex flex-col items-center gap-2 md:flex-row md:gap-[16px]">
               {socialLinks &&
                 socialLinks.map(({ name, label, settings }, idx) => {
                   const IconComponent = icons[idx];
 
                   return (
-                    <li key={idx} className="w-full md:max-w-[240px]">
+                    <li
+                      key={idx}
+                      className="w-full md:max-w-[240px] xl:max-w-[182px]"
+                    >
                       <ButtonLink
                         type="link"
                         settings={settings}

@@ -30,7 +30,7 @@ export const LangSwitcher: React.FC<LangSwitcherProps> = ({
   };
 
   return (
-    <div className="flex items-center gap-4 p-2">
+    <div className="flex items-center gap-[16px] p-2">
       <button
         type="button"
         className={cn(
