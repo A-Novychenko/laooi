@@ -24,7 +24,7 @@ export const Header: React.FC<HeaderProps> = async ({ lang }) => {
     <header>
       <div className="container">
         <div className="my-4 flex items-center justify-between rounded-[120px] bg-bgLight px-4 shadow-mobMenuHeader md:py-1 xl:my-6 xl:px-[30px] xl:py-2">
-          <div className="order-2 flex-shrink-0 xl:-order-none">
+          <div className="order-2 shrink-0 xl:-order-none">
             <Logo lang={lang} logoAlt={logoAlt} classNameImage="size-[56px]" />
           </div>
 

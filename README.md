@@ -1,6 +1,6 @@
 # LAOOI 💻🧩👨🏿‍💻
 
-**[View live page](https://laooi.vercel.app/)**
+**[View live page](https://laooi.org/)**
 
 ---
 
