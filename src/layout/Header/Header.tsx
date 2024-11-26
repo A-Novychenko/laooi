@@ -56,10 +56,6 @@ export const Header: React.FC<HeaderProps> = async ({ lang }) => {
               logoAlt={logoAlt}
               mainNav={mainNav}
             >
-              {/* <div className="grow overflow-y-auto">
-                <MainNavList lang={lang} mainNav={mainNav} />
-              </div> */}
-
               <LangSwitcher langCode={langCode} lang={lang} />
             </MobileMenu>
           </div>
