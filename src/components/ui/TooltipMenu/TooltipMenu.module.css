@@ -1,11 +1,15 @@
 .menuWrap:hover > .menuBox,
-.menuWrap:focus > .menuBox {
-  @apply opacity-100 transition-opacity;
+.menuWrap:focus-within > .menuBox {
   pointer-events: all;
+  visibility: visible;
+
+  @apply opacity-100 transition-opacity;
 }
 
 .menuBox {
   box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.1);
   pointer-events: none;
+  visibility: hidden;
+
   @apply opacity-0;
 }
