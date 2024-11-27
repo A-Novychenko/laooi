@@ -16,10 +16,12 @@ const nunito = Nunito({
 });
 
 export async function generateMetadata({
-  params: { lang },
+  params,
 }: {
   params: { lang: string };
 }) {
+  const lang = params.lang || 'uk';
+
   const meta = await makeMetaData(lang, 'main');
 
   return meta;

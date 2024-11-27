@@ -20,7 +20,7 @@ const makeMetaData = async (lang: string, page: string) => {
     keywords,
     metadataBase: new URL(BASE_URL),
     alternates: {
-      canonical: `${BASE_URL}/uk`,
+      canonical: `${BASE_URL}/${lang}`,
 
       languages: {
         uk: `${BASE_URL}/uk`,
@@ -91,7 +91,7 @@ const makeMetaData = async (lang: string, page: string) => {
       ],
       other: [
         {
-          rel: '/meta/apple-touch-icon.png',
+          rel: 'apple-touch-icon',
           url: '/meta/apple-touch-icon.png',
         },
       ],
