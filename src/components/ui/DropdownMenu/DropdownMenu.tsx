@@ -25,8 +25,9 @@ export const DropdownMenu: React.FC<DropdownMenuProps> = ({
 
       <MenuItems
         anchor={menuPosition}
+        portal
         className={cn(
-          'flex flex-col rounded-[24px] bg-bgLight p-4',
+          'z-[9999999] flex flex-col rounded-[24px] bg-bgLight p-4',
           `${styles.menuWrap}`,
         )}
       >

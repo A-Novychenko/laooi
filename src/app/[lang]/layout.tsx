@@ -39,7 +39,7 @@ export default function RootLayout({
   return (
     <AccessibilityProvider>
       <html lang={params.lang} className="scroll-smooth">
-        <body className={`${nunito.variable} antialiased`}>
+        <body className={`${nunito.variable} mt-[72px] antialiased`}>
           <div className="flex min-h-screen flex-col">
             <Header lang={params.lang} />
 
