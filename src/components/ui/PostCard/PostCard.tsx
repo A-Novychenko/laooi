@@ -30,16 +30,15 @@ export const PostCard: React.FC<PostCardProps> = ({ post, lang }) => {
         />
       </div>
 
-      <div className="flex flex-col gap-2 p-4">
+      <div className="p-4">
         <Title
           tag={'h3'}
           style={'third'}
-          className="h-[76px] overflow-hidden md:h-[82px] xl:h-[100px]"
+          className="mb-2 line-clamp-3 h-[4.75rem] leading-[1.35] md:h-[5.125rem] xl:h-[6.25rem]"
         >
           {title}
         </Title>
-
-        <p className="line-clamp-4 h-[76px] text-sm/normal font-semibold xl:h-[94px] xl:text-base">
+        <p className="mb-2 line-clamp-4 h-16 text-sm/normal font-semibold md:h-[4.75rem] md:text-sm/[1.35] xl:h-[5.875rem] xl:text-base">
           {text}
         </p>
 

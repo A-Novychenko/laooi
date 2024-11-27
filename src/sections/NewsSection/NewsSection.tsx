@@ -13,7 +13,7 @@ export const NewsSection: React.FC<NewsSectionProps> = ({ dict, lang }) => {
     <section className="section">
       <div className="container">
         <div className="mb-4 md:flex md:justify-between">
-          <Title className="sm:mb-2">{sectionTitle}</Title>
+          <Title className="mb-4 md:mb-0">{sectionTitle}</Title>
 
           <ButtonLink
             type="link"
@@ -28,7 +28,7 @@ export const NewsSection: React.FC<NewsSectionProps> = ({ dict, lang }) => {
           </ButtonLink>
         </div>
 
-        <ul className="md:flex md:flex-row md:gap-4">
+        <ul className="md:flex md:flex-row md:gap-[16px]">
           {posts &&
             posts.map((post: INewsPosts, idx: number) => (
               <li key={idx} className={cn(styles.card)}>

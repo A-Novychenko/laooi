@@ -8,7 +8,7 @@ export const MediaSection: React.FC<ISectionProps> = ({ dict, lang }) => {
     <section className="section">
       <div className="container">
         <div className="mb-4 md:flex md:justify-between">
-          <Title className="mb-2 md:mb-0">{title}</Title>
+          <Title className="mb-4 md:mb-0">{title}</Title>
 
           <ButtonLink
             type="link"
