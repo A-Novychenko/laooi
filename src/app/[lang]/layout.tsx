@@ -13,6 +13,7 @@ const nunito = Nunito({
   subsets: ['cyrillic', 'latin'],
   variable: '--font-nunito',
   display: 'swap',
+  adjustFontFallback: false,
 });
 
 export async function generateMetadata({
