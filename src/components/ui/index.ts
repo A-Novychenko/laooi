@@ -22,3 +22,5 @@ export * from './Gallery';
 export * from './PartnersCard';
 export * from './MediaCard';
 export * from './PostLabel';
+export * from './GalleryPost';
+export * from './PostCard';

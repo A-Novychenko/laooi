@@ -22,6 +22,7 @@ interface IDictionary {
   targetSection: ITargetSection;
   partnersSection: IPartnersSection;
   mediaSection: IMediaSection;
+  galleryNewsSection: IGalleryNewsSection;
 }
 
 interface IMeta {
@@ -217,4 +218,9 @@ interface IMediaSection {
       labelCardLink: string;
     };
   }[];
+}
+
+interface IGalleryNewsSection {
+  title: string;
+  posts: INewsPosts[];
 }
