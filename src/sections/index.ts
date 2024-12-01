@@ -9,3 +9,4 @@ export * from './PartnersSection';
 export * from './MediaSection';
 export * from './PlaceholderSection';
 export * from './GalleryNewsSection';
+export * from './NewsPostSection';

@@ -24,3 +24,5 @@ export * from './MediaCard';
 export * from './PostLabel';
 export * from './GalleryPost';
 export * from './PostCard';
+export * from './NewsPostText';
+export * from './DateStamp';

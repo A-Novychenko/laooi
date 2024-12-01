@@ -3,6 +3,7 @@ interface IDictionary {
   common: {
     logoAlt: string;
     searchInput: { placeholder: string };
+    postBackLink: string;
     mainNav: IMainNav[];
     accessibilityMenu: IAccessibilityMenu;
     footerNav: IFooterNav;
@@ -223,4 +224,9 @@ interface IMediaSection {
 interface IGalleryNewsSection {
   title: string;
   posts: INewsPosts[];
+}
+
+interface INewsPostSection {
+  linkTitle: string;
+  post: INewsPosts;
 }
