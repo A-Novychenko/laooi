@@ -17,6 +17,7 @@
   "common": {
     "logoAlt": "Company logo",
     "searchInput": { "placeholder": "Search" },
+    "postBackLink": "View all news and events",
     "mainNav": [
       {
         "name": "Home",

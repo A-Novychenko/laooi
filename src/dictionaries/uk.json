@@ -17,6 +17,7 @@
   "common": {
     "logoAlt": "Логотип компанії",
     "searchInput": { "placeholder": "Пошук" },
+    "postBackLink": "Перейти до всіх новин і подій",
     "mainNav": [
       {
         "name": "Головна",
