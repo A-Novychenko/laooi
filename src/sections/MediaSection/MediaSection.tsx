@@ -1,5 +1,5 @@
-import { MediaList } from '@/components/base';
 import { ButtonLink, Title } from '@/components/ui';
+import { MediaList } from '@/components/base';
 
 export const MediaSection: React.FC<ISectionProps> = ({ dict, lang }) => {
   const { title, link, items } = dict.mediaSection;

@@ -80,6 +80,7 @@ export const SearchInput: React.FC<SearchInputProps> = ({
                 value={inputValue}
                 onChange={handleInputChange}
               />
+
               <SearchIcon
                 width="16"
                 height="16"

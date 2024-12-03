@@ -1,5 +1,5 @@
-import { PartnersSliderWrap } from '@/components/base';
 import { Title } from '@/components/ui';
+import { PartnersSliderWrap } from '@/components/base';
 
 export const PartnersSection: React.FC<ISectionProps> = ({ dict }) => {
   const {

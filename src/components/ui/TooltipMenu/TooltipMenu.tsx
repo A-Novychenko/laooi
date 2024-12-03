@@ -11,7 +11,6 @@ import styles from './TooltipMenu.module.css';
 export const TooltipMenu: React.FC<TooltipMenuProps> = ({
   children,
   data,
-
   handleClose,
 }) => {
   return (

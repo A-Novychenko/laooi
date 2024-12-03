@@ -1,12 +1,14 @@
 .link:hover,
 .link:focus-within {
   background-color: #eaedf4;
+
   transition: background-color 0.3s ease;
 }
 
 .link:hover p,
 .link:focus-within p {
   color: #062365;
+
   transition: color 0.3s ease;
 }
 

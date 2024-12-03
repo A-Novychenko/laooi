@@ -45,6 +45,7 @@ export const ActivitiesSection: React.FC<ISectionProps> = ({
                 <p className="mb-2 text-[30px]/[1.27] font-bold text-textMenuAccent md:text-[32px]/[1.13] xl:text-[36px]/normal">
                   {quantity}
                 </p>
+
                 <p className="text-sm/normal font-semibold xl:text-base/normal">
                   {text}
                 </p>

@@ -1,8 +1,9 @@
 import { Nunito } from 'next/font/google';
 
-import { AccessibilityProvider } from '@/context';
 import { Footer, Header } from '@/layout';
 import { ScrollToTopButton } from '@/components/ui';
+
+import { AccessibilityProvider } from '@/context';
 
 import makeMetaData from '@/data/meta';
 
