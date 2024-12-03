@@ -261,11 +261,11 @@ Wrapper component for the slider in the target section
 | `targetGroups` | `undefined` | required, required, `Array<{ text: string}>` - an array of objects containing `text` for each target item. |
 | `className`    | `undefined` | optional, `string`, adds custom css class to the Button component.                                         |
 
-
+</details>
 
 <br/>
 
-
+<details>
 
 <summary><b>Small reusable components (button, modal, etc.):</b></summary>
 
