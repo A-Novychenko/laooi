@@ -65,7 +65,7 @@
       },
       {
         "name": "News",
-        "href": "/test-news"
+        "href": "/in-progress"
       },
       {
         "name": "Tenders",
@@ -116,7 +116,7 @@
       "footerOther": {
         "title": "Other",
         "embedded": [
-          { "name": "News", "href": "/news" },
+          { "name": "News", "href": "/in-progress" },
           { "name": "Vacancies", "href": "/in-progress" },
           { "name": "Tenders", "href": "/in-progress" },
           { "name": "Contacts", "href": "/in-progress" }
@@ -267,7 +267,7 @@
       }
     ]
   },
-  "newsSection": {
+  "blogSection": {
     "sectionTitle": "News and events",
     "link": {
       "label": "All publications",
@@ -283,7 +283,7 @@
         "title": "Resilience during wartime: LOOOI's participation in a public discussion in Lviv",
         "text": "The LAOOI participated in the public discussion 'which took place on Thursday, October 17, 2024. During the event",
         "date": "17.10.2024",
-        "newsUrl": "/in-progress",
+        "postUrl": "/in-progress",
         "linkTitle": "Read more"
       },
       {
@@ -292,7 +292,7 @@
         "title": "LOOOI and Solidar Suisse Ukraine in Kharkiv: support for affected families",
         "text": "Recently, a delegation from the Public Union 'Luhansk Association of Organizations of Persons with Disabilities' visited Kharkiv along with our partners from Solidar Suisse Ukraine. The",
         "date": "16.10.2024",
-        "newsUrl": "/in-progress",
+        "postUrl": "/in-progress",
         "linkTitle": "Read more"
       },
       {
@@ -301,7 +301,7 @@
         "title": "Thank you to our international partners: support that changes lives",
         "text": "We, the team of the Public Union 'Luhansk Association of Organizations of Persons with Disabilities', extend our heartfelt thanks to our international partners and friends who help us The",
         "date": "11.10.2024",
-        "newsUrl": "/in-progress",
+        "postUrl": "/in-progress",
         "linkTitle": "Read more"
       }
     ]
@@ -481,7 +481,7 @@
       }
     ]
   },
-  "galleryNewsSection": {
+  "blogGallerySection": {
     "title": "News and events",
     "posts": [
       {
@@ -490,7 +490,7 @@
         "title": "Celebrating world inclusion day: our goal is equal opportunities for all",
         "text": "The GS LAOOI took part in the public discussion 'Lviv Region in Conditions of War: Challenges and Sources of Resilience', which took place on Thursday, October 17, 2024. During the event, key aspects of social resilience and cohesion in conditions of a protracted war were discussed. The main goal of the discussion was to develop a common vision of responding to new threats facing the region and its residents. The Head of the GS LAOOI Mykola Nadulichnyy took part in the discussion of important aspects of supporting public initiatives and ways to strengthen social unity in this difficult period. Follow the news about resilience and cohesion on the Facebook page. National Platform for Resilience and Cohesion.",
         "date": "10.10.2024",
-        "newsUrl": "/in-progress",
+        "postUrl": "/in-progress",
         "linkTitle": "Read more"
       }
     ]

@@ -1,4 +1,4 @@
 export type PostCardProps = {
-  post: INewsPosts;
+  post: IBlogPost;
   lang: string;
 };

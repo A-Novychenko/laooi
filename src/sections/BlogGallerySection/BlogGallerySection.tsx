@@ -1,8 +1,8 @@
-import { GalleryPost, Title } from '@/components/ui';
+import { BlogGallery, Title } from '@/components/ui';
 
-import { GalleryNewsSectionProps } from './types';
+import { BlogGallerySectionProps } from './types';
 
-export const GalleryNewsSection: React.FC<GalleryNewsSectionProps> = ({
+export const BlogGallerySection: React.FC<BlogGallerySectionProps> = ({
   title,
   posts,
   lang,
@@ -14,7 +14,7 @@ export const GalleryNewsSection: React.FC<GalleryNewsSectionProps> = ({
       <div className="container">
         <Title className="mb-4">{title}</Title>
 
-        <GalleryPost posts={newPosts} lang={lang} />
+        <BlogGallery posts={newPosts} lang={lang} />
       </div>
     </section>
   );

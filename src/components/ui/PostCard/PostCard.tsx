@@ -12,15 +12,16 @@ import { PostCardProps } from './types';
 import styles from './PostCard.module.css';
 
 export const PostCard: React.FC<PostCardProps> = ({ post, lang }) => {
-  const { image, title, text, date, newsUrl, linkTitle, type } = post;
+  const { image, title, text, date, postUrl, linkTitle, type } = post;
 
   return (
     <Link
-      href={`/${lang}/${newsUrl}`}
+      href={`/${lang}/${postUrl}`}
       className={cn('block h-full rounded-[20px] bg-bgLightSlate', styles.link)}
     >
       <div className="relative h-[264px] w-full overflow-hidden rounded-2xl md:w-[336px] xl:w-[416px]">
         <PostLabel label={type}>{type}</PostLabel>
+
         <Image
           src={image}
           alt="sds"

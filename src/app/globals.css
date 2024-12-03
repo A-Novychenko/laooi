@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  @apply m-0 bg-bgLight font-nunito leading-normal text-textPrimary;
+  @apply m-0 mt-[72px] bg-bgLight font-nunito leading-normal text-textPrimary;
 }
 
 html {
@@ -28,6 +28,11 @@ html {
 
 .underline-links a {
   @apply underline;
+}
+
+.page-wrap {
+  @apply flex flex-col;
+  min-height: calc(100vh - 72px);
 }
 
 .section {

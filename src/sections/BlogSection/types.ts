@@ -1,4 +1,4 @@
-export type NewsSectionProps = {
+export type BlogSectionProps = {
   dict: IDictionary;
   lang: string;
 };
