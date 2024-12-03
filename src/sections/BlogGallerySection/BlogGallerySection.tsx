@@ -1,4 +1,5 @@
-import { BlogGallery, Title } from '@/components/ui';
+import { Title } from '@/components/ui';
+import { BlogGallery } from '@/components/base';
 
 import { BlogGallerySectionProps } from './types';
 
