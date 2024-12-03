@@ -222,33 +222,6 @@ A component that renders the main navigation of a site with embedded links
 | `mainNav`     | `undefined` | required, `Array<{ name: string; href: string, embedded?: IMainNavEmbedded[] }>` - an array of objects containing `name` and `href` and `embedded` for each nav item. |
 | `handleClose` | `undefined` | required, A callback function that is triggered to close the accordion menu. It does not take any parameters.                                                         |
 
-<br/>
-
-<details>
-
-<summary><b>ui components (link, title, etc.): </b></summary>
-
-<br/>
-- #### MainNavList
-
-A component that renders the main navigation of a site with embedded links
-
-| Prop          | Default     | Description                                                                                                                                                           |
-| ------------- | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `lang`        | `undefined` | required, `string`, current site language                                                                                                                             |
-| `mainNav`     | `undefined` | required, `Array<{ name: string; href: string, embedded?: IMainNavEmbedded[] }>` - an array of objects containing `name` and `href` and `embedded` for each nav item. |
-| `handleClose` | `undefined` | required, A callback function that is triggered to close the accordion menu. It does not take any parameters.                                                         |
-
-</details>
-
-<br/>
-
-<details>
-
-<summary><b>ui components (link, title, etc.): </b></summary>
-
-<br/>
-
 - #### MediaList
 
 A component that renders a gallery of media resource link cards
@@ -288,11 +261,11 @@ Wrapper component for the slider in the target section
 | `targetGroups` | `undefined` | required, required, `Array<{ text: string}>` - an array of objects containing `text` for each target item. |
 | `className`    | `undefined` | optional, `string`, adds custom css class to the Button component.                                         |
 
-</details>
+
 
 <br/>
 
-<details>
+
 
 <summary><b>Small reusable components (button, modal, etc.):</b></summary>
 
@@ -516,7 +489,7 @@ expected in the props
 | `url`    | `undefined` | required, `string`, value of the path to the video  |
 | `poster` | `undefined` | required, `string`, value of the path to the poster |
 
-]
+</details>
 
 ### 🚧 Technology stack
 
