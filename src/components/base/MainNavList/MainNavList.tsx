@@ -1,6 +1,7 @@
 import Link from 'next/link';
 
-import { AccordionMenu, TooltipMenu } from '@/components/ui';
+import { TooltipMenu } from '@/components/ui';
+import { AccordionMenu } from '@/components/base';
 
 import ArrowDownIcon from '~/icons/arrowDown.svg';
 

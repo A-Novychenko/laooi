@@ -5,11 +5,11 @@ import Link from 'next/link';
 
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react';
 
-import { DropdownMenuProps } from './types';
-
 import { cn } from '@/utils/cn';
 
 import ArrowBtnIcon from '~/icons/arrowBtnIcon.svg';
+
+import { DropdownMenuProps } from './types';
 
 import styles from './DropdownMenu.module.css';
 

@@ -1,13 +1,13 @@
 import { Nunito } from 'next/font/google';
 
-import { AccessibilityProvider } from '@/context/AccessibilityProvider';
+import { Footer, Header } from '@/layout';
+import { ScrollToTopButton } from '@/components/ui';
 
-import { ScrollToTopButton } from '@/components/ui/ScrollToTopBtn';
+import { AccessibilityProvider } from '@/context';
 
 import makeMetaData from '@/data/meta';
 
 import '../globals.css';
-import { Footer, Header } from '@/layout';
 
 const nunito = Nunito({
   subsets: ['cyrillic', 'latin'],
@@ -42,11 +42,11 @@ export default function RootLayout({
   return (
     <AccessibilityProvider>
       <html lang={params.lang} className="scroll-smooth">
-        <body className={`${nunito.variable} mt-[72px] antialiased`}>
-          <div className="flex min-h-screen flex-col">
+        <body className={`${nunito.variable} antialiased`}>
+          <div className="page-wrap">
             <Header lang={params.lang} />
 
-            {children}
+            <main className="flex grow flex-col">{children}</main>
 
             <Footer lang={params.lang} />
 

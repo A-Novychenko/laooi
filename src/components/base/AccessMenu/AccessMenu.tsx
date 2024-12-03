@@ -2,7 +2,8 @@
 
 import { DropdownMenu } from '@/components/ui';
 
-import { useAccessibility } from '@/context/AccessibilityProvider';
+import { useAccessibility } from '@/context';
+
 import { cn } from '@/utils/cn';
 
 import {

@@ -1,4 +1,4 @@
 export type GalleryPostProps = {
-  posts: INewsPosts[];
+  posts: IBlogPost[];
   lang: string;
 };

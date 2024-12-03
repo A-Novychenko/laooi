@@ -4,8 +4,8 @@ import { useState } from 'react';
 
 import { Dialog, DialogBackdrop, DialogPanel } from '@headlessui/react';
 
-import { AccessMenu } from '@/components/base';
-import { CircleButton, Logo, MainNavList, SearchInput } from '@/components/ui';
+import { CircleButton, Logo, SearchInput } from '@/components/ui';
+import { AccessMenu, MainNavList } from '@/components/base';
 
 import CloseIcon from '~/icons/close.svg';
 import MenuIcon from '~/icons/menu.svg';

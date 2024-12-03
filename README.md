@@ -161,6 +161,153 @@ is a list of more common components and their API.
 
 <br/>
 
+- #### AccessMenu
+
+The component is a drop-down menu that contains buttons for controlling text
+magnification, using grayscale, and underlining links throughout the site.
+
+| Prop   | Default     | Description                                                    |
+| ------ | ----------- | -------------------------------------------------------------- |
+| `dict` | `undefined` | required, `IDictionary`, data stored in the project dictionary |
+
+- #### AccordionMenu
+
+A component that creates a list of collapsible link items, allowing users to
+expand or collapse nested links.
+
+| Prop          | Default     | Description                                                                                                                     |
+| ------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| `children`    | `undefined` | required, Built-in ReactNode components                                                                                         |
+| `data`        | `undefined` | required, `Array<{ title: string; name: string }>` - an array of objects containing `title` and `name` for each accordion item. |
+| `handleClose` | `undefined` | required, A callback function that is triggered to close the accordion menu. It does not take any parameters.                   |
+
+- #### BlogGallery
+
+Description of the component and its purpose
+
+| Prop   | Default | Description                    |
+| ------ | ------- | ------------------------------ |
+| `prop` | `value` | required/optional, description |
+
+- #### FooterBasement
+
+A component that displays the footer's bottom section with customizable policy
+text, copyright information, and developer credits. This component is
+responsive, arranging content in a column layout on small screens and switching
+to a row layout on larger screens.
+
+| Prop   | Type              | Default     | Description                                                                                               |
+| ------ | ----------------- | ----------- | --------------------------------------------------------------------------------------------------------- |
+| `data` | `IFooterBasement` | `undefined` | **required**, an object containing `policy` and `developers` text content for the footer.                 |
+| `name` | `string`          | `undefined` | **required**, the name or title to be displayed as copyright text, preceded by a copyright symbol (`©`). |
+
+- #### FooterSocialList
+
+A component that displays a list of social media icons in the footer section. It
+presents a title for the social media group and renders each icon as a clickable
+item linked to the corresponding social media platform.
+
+| Prop    | Default     | Description                                                                                                                                                                 |
+| ------- | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `title` | `undefined` | **required**, `string`, the title displayed for the social media list.                                                                                                      |
+| `data`  | `[]`        | **required**, `Array<{ settings: { href: string } }>` an array of objects containing the social media links. Each object must include a `settings` property with an `href`. |
+
+- #### MainNavList
+
+A component that renders the main navigation of a site with embedded links
+
+| Prop          | Default     | Description                                                                                                                                                           |
+| ------------- | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `lang`        | `undefined` | required, `string`, current site language                                                                                                                             |
+| `mainNav`     | `undefined` | required, `Array<{ name: string; href: string, embedded?: IMainNavEmbedded[] }>` - an array of objects containing `name` and `href` and `embedded` for each nav item. |
+| `handleClose` | `undefined` | required, A callback function that is triggered to close the accordion menu. It does not take any parameters.                                                         |
+
+<br/>
+
+<details>
+
+<summary><b>ui components (link, title, etc.): </b></summary>
+
+<br/>
+- #### MainNavList
+
+A component that renders the main navigation of a site with embedded links
+
+| Prop          | Default     | Description                                                                                                                                                           |
+| ------------- | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `lang`        | `undefined` | required, `string`, current site language                                                                                                                             |
+| `mainNav`     | `undefined` | required, `Array<{ name: string; href: string, embedded?: IMainNavEmbedded[] }>` - an array of objects containing `name` and `href` and `embedded` for each nav item. |
+| `handleClose` | `undefined` | required, A callback function that is triggered to close the accordion menu. It does not take any parameters.                                                         |
+
+</details>
+
+<br/>
+
+<details>
+
+<summary><b>ui components (link, title, etc.): </b></summary>
+
+<br/>
+
+- #### MediaList
+
+A component that renders a gallery of media resource link cards
+
+| Prop    | Default     | Description                                                                                                                                                     |
+| ------- | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `items` | `undefined` | required, `Array<{ img: string; cardLink: {href: string; labelCardLink: string;} }>` - an array of objects containing `img` and `cardLink` for each media item. |
+
+- #### MobileMenu
+
+A component that renders the main navigation and language switcher on mobile and
+tablet devices
+
+| Prop       | Default     | Description                                                                                                                                                           |
+| ---------- | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `dict`     | `undefined` | required, `IDictionary`, data stored in the project dictionary                                                                                                        |
+| `children` | `undefined` | required, Built-in ReactNode components                                                                                                                               |
+| `logoAlt`  | `undefined` | required, `string`, img description                                                                                                                                   |
+| `lang`     | `undefined` | required, `string`, current site language                                                                                                                             |
+| `mainNav`  | `undefined` | required, `Array<{ name: string; href: string, embedded?: IMainNavEmbedded[] }>` - an array of objects containing `name` and `href` and `embedded` for each nav item. |
+
+- #### PartnersSliderWrap
+
+Wrapper component for the slider in the partners section
+
+| Prop        | Default     | Description                                                                                                                        |
+| ----------- | ----------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| `data`      | `undefined` | required, required, `Array<{ img: string; name: string}>` - an array of objects containing `img` and `name` for each partner item. |
+| `className` | `undefined` | optional, `string`, adds custom css class to the Button component.                                                                 |
+
+- #### TargetSliderWrap
+
+Wrapper component for the slider in the target section
+
+| Prop           | Default     | Description                                                                                                |
+| -------------- | ----------- | ---------------------------------------------------------------------------------------------------------- |
+| `targetGroups` | `undefined` | required, required, `Array<{ text: string}>` - an array of objects containing `text` for each target item. |
+| `className`    | `undefined` | optional, `string`, adds custom css class to the Button component.                                         |
+
+</details>
+
+<br/>
+
+<details>
+
+<summary><b>Small reusable components (button, modal, etc.):</b></summary>
+
+<br/>
+
+- #### Accordion
+
+A component that renders a list of collapsible accordion items, allowing users
+to expand or collapse content sections.
+
+| Prop        | Default     | Description                                                                                                                     |
+| ----------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| `data`      | `undefined` | required, `Array<{ title: string; text: string }>` - an array of objects containing `title` and `text` for each accordion item. |
+| `className` | `undefined` | optional, `string`, adds custom css class to the Button component.                                                              |
+
 - #### ButtonLink
 
 A button component styled as a button but capable of rendering either as a
@@ -186,6 +333,155 @@ and handle click actions.
 | `action`    | `undefined` | required, `() => void`, function triggered when the button is clicked                            |
 | `className` | `undefined` | optional, `string`, adds a custom CSS class to the CircleButton component for additional styling |
 
+- #### DateStamp
+
+Component that displays the creation date of news, events, articles
+
+| Prop       | Default     | Description                             |
+| ---------- | ----------- | --------------------------------------- |
+| `children` | `undefined` | required, Built-in ReactNode components |
+
+- #### DropdownMenu
+
+The component is a drop-down menu that can contain button or link elements.
+
+| Prop             | Default        | Description                                                                             |
+| ---------------- | -------------- | --------------------------------------------------------------------------------------- |
+| `children`       | `undefined`    | required, `ReactNode`, accepts a button component that will open a menu when clicked    |
+| `dataForButtons` | `undefined`    | optional, `Array`, array of objects with settings and data of menu button elements      |
+| `dataForLinks`   | `undefined`    | optional, `Array`, array of objects with settings and data of menu link items           |
+| `menuPosition`   | `bottom start` | optional, `string`, a line with a list of pages from which the menu location is counted |
+
+- #### FooterNavList
+
+A component that displays a list of navigation links in the footer section. It
+presents a title for the navigation group and renders each link as a clickable
+item.
+
+| Prop       | Default     | Description                                                                                                                                                         |
+| ---------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `children` | `undefined` | **required**, `ReactNode`, the title displayed for the navigation list.                                                                                             |
+| `data`     | `[]`        | **required**, `IFooterNavEmbedded[]`, an array of objects containing the navigation links. Each object must include `name` (string) and `href` (string) properties. |
+| `lang`     | `undefined` | required, `string`, current site language                                                                                                                           |
+
+- #### Gallery
+
+Component for displaying image cards for sections
+
+| Prop   | Default     | Description                                                                                                                     |
+| ------ | ----------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| `data` | `undefined` | required, required, `Array<{ src: string; alt: string}>` - an array of objects containing `src` and `alt` for each target item. |
+
+- #### LangSwitcher
+
+A component that displays the current site language and provides the ability to
+change languages ​​to Ukrainian or English
+
+| Prop       | Default     | Description                                    |
+| ---------- | ----------- | ---------------------------------------------- |
+| `lang`     | `undefined` | required, `string`, current site language      |
+| `langCode` | `undefined` | required, `string`, static data, language code |
+
+- #### Logo
+
+Company Logo component, the logo image is wrapped in a link that leads to the
+main page of the site
+
+| Prop             | Default     | Description                                                                               |
+| ---------------- | ----------- | ----------------------------------------------------------------------------------------- |
+| `lang`           | `undefined` | required, `string`, current site language                                                 |
+| `logoAlt`        | `undefined` | required, `string`, static data, description of the company logo image                    |
+| `classNameImage` | `undefined` | optional, `string`, adds a custom CSS class to the link component for additional styling  |
+| `classNameLink`  | `undefined` | optional, `string`, adds a custom CSS class to the image component for additional styling |
+
+- #### MediaCard
+
+Component card for the media section
+
+| Prop       | Default     | Description                                            |
+| ---------- | ----------- | ------------------------------------------------------ |
+| `img`      | `undefined` | required, `string`, path to img                        |
+| `cardLink` | `undefined` | required, `string`, link to an external media resource |
+
+- #### NavEmbeddedLink
+
+Component - main navigation nested link
+
+| Prop          | Default     | Description                                                                                                   |
+| ------------- | ----------- | ------------------------------------------------------------------------------------------------------------- |
+| `data`        | `undefined` | required, `IMainNavEmbedded[]` - an array of objects for each nav item.                                       |
+| `handleClose` | `undefined` | required, A callback function that is triggered to close the accordion menu. It does not take any parameters. |
+
+- #### PartnersCard
+
+Component card for the Partners section
+
+| Prop   | Default     | Description                                      |
+| ------ | ----------- | ------------------------------------------------ |
+| `img`  | `undefined` | required, `string`, path to img                  |
+| `name` | `undefined` | required, `string`, company name                 |
+| `link` | `undefined` | required, `string`, link to an external resource |
+
+- #### PostCard
+
+Description of the component and its purpose
+
+| Prop   | Default | Description                    |
+| ------ | ------- | ------------------------------ |
+| `prop` | `value` | required/optional, description |
+
+- #### PostLabel
+
+Description of the component and its purpose
+
+| Prop   | Default | Description                    |
+| ------ | ------- | ------------------------------ |
+| `prop` | `value` | required/optional, description |
+
+- #### PostText
+
+Description of the component and its purpose
+
+| Prop   | Default | Description                    |
+| ------ | ------- | ------------------------------ |
+| `prop` | `value` | required/optional, description |
+
+- #### ScrollToTopButton
+
+Description of the component and its purpose
+
+| Prop   | Default | Description                    |
+| ------ | ------- | ------------------------------ |
+| `prop` | `value` | required/optional, description |
+
+- #### SearchInput
+
+A component for entering search queries on a website. It has a separate state
+for desktop devices, a button that appears when clicked.
+
+| Prop          | Default     | Description                                                      |
+| ------------- | ----------- | ---------------------------------------------------------------- |
+| `placeholder` | `undefined` | required, `string`, placeholder                                  |
+| `desktop`     | `undefined` | optional, `boolean` or `undefined`, enables desktop version mode |
+
+- #### Slider
+
+| Prop             | Default     | Description                                                                                               |
+| ---------------- | ----------- | --------------------------------------------------------------------------------------------------------- |
+| `slideComponent` | -           | required, `React.FC<any>`, It`s the component that will be rendered as side.                              |
+| `slidesData`     | -           | required, `Record<string, any>[]`, It is a array with slide`s objects                                     |
+| `section`        | -           | required, `cases`, `reviews`, `partners`, `advantages`, name of the section where slider will be rendered |
+| `wrapClassName`  | `undefined` | optional, `string`, adds custom css class to the Swiper component.                                        |
+| `slideClassName` | `undefined` | optional, `string`, adds custom css class to the SlideComponent component.                                |
+
+- #### TargetCard
+
+Component card for the Target section
+
+| Prop   | Default     | Description              |
+| ------ | ----------- | ------------------------ |
+| `text` | `undefined` | required, `string`, text |
+
 - #### Title
 
 A versatile title component that renders a styled heading (`h1`, `h2`, etc.)
@@ -199,138 +495,28 @@ with customizable styles based on provided props.
 | `className` | `undefined` | optional, `string`, adds custom CSS classes for additional styling on the title component                                                     |
 | `hidden`    | `false`     | optional, `boolean`, if `true`, applies the `visually-hidden` class to hide the title visually while keeping it accessible for screen readers |
 
-- #### DropdownMenu
+- #### TooltipMenu
 
-The component is a drop-down menu that can contain button or link elements.
+A component that creates a list of collapsible link items, allowing users to
+expand or collapse nested links.
 
-| Prop             | Default        | Description                                                                             |
-| ---------------- | -------------- | --------------------------------------------------------------------------------------- |
-| `children`       | `undefined`    | required, `ReactNode`, accepts a button component that will open a menu when clicked    |
-| `dataForButtons` | `undefined`    | optional, `Array`, array of objects with settings and data of menu button elements      |
-| `dataForLinks`   | `undefined`    | optional, `Array`, array of objects with settings and data of menu link items           |
-| `menuPosition`   | `bottom start` | optional, `string`, a line with a list of pages from which the menu location is counted |
+| Prop          | Default     | Description                                                                                                   |
+| ------------- | ----------- | ------------------------------------------------------------------------------------------------------------- |
+| `children`    | `undefined` | required, Built-in ReactNode components                                                                       |
+| `data`        | `undefined` | required, `IMainNavEmbedded[]` - an array of objects for each nav item.                                       |
+| `handleClose` | `undefined` | required, A callback function that is triggered to close the accordion menu. It does not take any parameters. |
 
-- #### AccessMenu
+- #### VideoPlayer
 
-The component is a drop-down menu that contains buttons for controlling text
-magnification, using grayscale, and underlining links throughout the site.
+Video player component. Plays videos of different sizes. A link to the video is
+expected in the props
 
-| Prop   | Default     | Description                                                    |
-| ------ | ----------- | -------------------------------------------------------------- |
-| `dict` | `undefined` | required, `IDictionary`, data stored in the project dictionary |
+| Prop     | Default     | Description                                         |
+| -------- | ----------- | --------------------------------------------------- |
+| `url`    | `undefined` | required, `string`, value of the path to the video  |
+| `poster` | `undefined` | required, `string`, value of the path to the poster |
 
-- #### Logo
-
-Company Logo component, the logo image is wrapped in a link that leads to the
-main page of the site
-
-| Prop      | Default     | Description                                                            |
-| --------- | ----------- | ---------------------------------------------------------------------- |
-| `lang`    | `undefined` | required, `string`, current site language                              |
-| `logoAlt` | `undefined` | required, `string`, static data, description of the company logo image |
-
-- #### LangSwitcher
-
-A component that displays the current site language and provides the ability to
-change languages ​​to Ukrainian or English
-
-| Prop       | Default     | Description                                    |
-| ---------- | ----------- | ---------------------------------------------- |
-| `lang`     | `undefined` | required, `string`, current site language      |
-| `langCode` | `undefined` | required, `string`, static data, language code |
-
-- #### SearchInput
-
-A component for entering search queries on a website. It has a separate state
-for desktop devices, a button that appears when clicked.
-
-| Prop          | Default     | Description                                                      |
-| ------------- | ----------- | ---------------------------------------------------------------- |
-| `placeholder` | `undefined` | required, `string`, placeholder                                  |
-| `desktop`     | `undefined` | optional, `boolean` or `undefined`, enables desktop version mode |
-
-- #### Accordion
-
-A component that renders a list of collapsible accordion items, allowing users
-to expand or collapse content sections.
-
-| Prop   | Default     | Description                                                                                                                     |
-| ------ | ----------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| `data` | `undefined` | required, `Array<{ title: string; text: string }>` - an array of objects containing `title` and `text` for each accordion item. |
-
-- #### AccordionItem
-
-A component that represents an individual item in an accordion. It displays a
-title and collapsible content, with an arrow icon indicating the open/close
-default first item.
-
-| Prop          | Default     | Description                                                                                                    |
-| ------------- | ----------- | -------------------------------------------------------------------------------------------------------------- |
-| `item`        | `undefined` | required, `{ title: string; text: string }`, an object containing the `title` and `text` content for the item. |
-| `defaultOpen` | `false`     | optional, `boolean`, determines whether the accordion item is open by default.                                 |
-
-Certainly! Here’s the documentation for the `FooterNavList` component in the
-specified format:
-
----
-
-- #### FooterNavList
-
-A component that displays a list of navigation links in the footer section. It
-presents a title for the navigation group and renders each link as a clickable
-item.
-
-| Prop       | Default     | Description                                                                                                                                                         |
-| ---------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `children` | `undefined` | **required**, `ReactNode`, the title displayed for the navigation list.                                                                                             |
-| `data`     | `[]`        | **required**, `IFooterNavEmbedded[]`, an array of objects containing the navigation links. Each object must include `name` (string) and `href` (string) properties. |
-
-Certainly! Here’s the documentation for the `FooterSocialList` and
-`FooterSocialListLink` components in the specified format:
-
----
-
-- #### FooterSocialList
-
-A component that displays a list of social media icons in the footer section. It
-presents a title for the social media group and renders each icon as a clickable
-item linked to the corresponding social media platform.
-
-| Prop    | Default     | Description                                                                                                                                                                 |
-| ------- | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `title` | `undefined` | **required**, `string`, the title displayed for the social media list.                                                                                                      |
-| `data`  | `[]`        | **required**, `Array<{ settings: { href: string } }>` an array of objects containing the social media links. Each object must include a `settings` property with an `href`. |
-
-- #### FooterSocialListLink
-
-A component that wraps a social media link in an anchor element. It ensures that
-the link opens in a new tab and prevents the original tab from being affected by
-the link.
-
-| Prop       | Default     | Description                                                             |
-| ---------- | ----------- | ----------------------------------------------------------------------- |
-| `children` | `undefined` | **required**, `ReactNode`, the content to be displayed within the link. |
-| `href`     | `undefined` | **required**, `string`, the URL that the link points to.                |
-
-Here's documentation for the `FooterBasement` component in the requested format:
-
----
-
-- #### FooterBasement
-
-A component that displays the footer's bottom section with customizable policy
-text, copyright information, and developer credits. This component is
-responsive, arranging content in a column layout on small screens and switching
-to a row layout on larger screens.
-
-| Prop   | Type              | Default     | Description                                                                                               |
-| ------ | ----------------- | ----------- | --------------------------------------------------------------------------------------------------------- |
-| `data` | `IFooterBasement` | `undefined` | **required**, an object containing `policy` and `developers` text content for the footer.                 |
-| `name` | `string`          | `undefined` | **required**, the name or title to be displayed as copyright text, preceded by a copyright symbol (`©`). |
-
----
-
-</details>
+]
 
 ### 🚧 Technology stack
 

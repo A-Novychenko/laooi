@@ -1,8 +1,8 @@
 'use client';
 
 import { Fragment, useState } from 'react';
-import { Collapse } from 'react-collapse';
 
+import { Collapse } from 'react-collapse';
 import { Disclosure, DisclosureButton } from '@headlessui/react';
 
 import { cn } from '@/utils/cn';
@@ -17,6 +17,7 @@ export const Accordion: React.FC<AccordionProps> = ({ data, className }) => {
   const handleToggle = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
+
   return (
     <ul className={cn('flex flex-col gap-4', className)}>
       {data &&

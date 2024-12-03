@@ -2,7 +2,7 @@ import { PlaceholderSection } from '@/sections';
 
 import { getDictionary } from '@/utils/dictionaries';
 
-const InProgress = async ({
+const InProgressPage = async ({
   params: { lang },
 }: {
   params: { lang: string };
@@ -11,11 +11,7 @@ const InProgress = async ({
 
   const { devPage } = dict.common;
 
-  return (
-    <main className="flex grow flex-col">
-      <PlaceholderSection data={devPage} />
-    </main>
-  );
+  return <PlaceholderSection data={devPage} />;
 };
 
-export default InProgress;
+export default InProgressPage;

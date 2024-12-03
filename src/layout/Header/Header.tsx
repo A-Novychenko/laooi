@@ -1,11 +1,5 @@
-import {
-  LangSwitcher,
-  Logo,
-  MainNavList,
-  MobileMenu,
-  SearchInput,
-} from '@/components/ui';
-import { AccessMenu } from '@/components/base';
+import { LangSwitcher, Logo, SearchInput } from '@/components/ui';
+import { AccessMenu, MainNavList, MobileMenu } from '@/components/base';
 
 import { getDictionary } from '@/utils/dictionaries';
 

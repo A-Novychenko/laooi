@@ -1,11 +1,10 @@
-// import { TestPage } from '@/components/base/TestPage/TestPage';
 import {
   AboutSection,
   ActivitiesSection,
   FAQSection,
   HeroSection,
   MediaSection,
-  NewsSection,
+  BlogSection,
   PartnersSection,
   SocialsSection,
   TargetSection,
@@ -21,7 +20,7 @@ export default async function Home({
   const dict = await getDictionary(lang);
 
   return (
-    <main className="grow">
+    <>
       <HeroSection dict={dict} lang={lang} />
 
       <AboutSection dict={dict} lang={lang} />
@@ -36,11 +35,9 @@ export default async function Home({
 
       <SocialsSection dict={dict} />
 
-      <NewsSection dict={dict} lang={lang} />
+      <BlogSection dict={dict} lang={lang} />
 
       <FAQSection dict={dict} />
-
-      {/* <TestPage textTest={dict.common.logoAlt} /> */}
-    </main>
+    </>
   );
 }

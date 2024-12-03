@@ -2,12 +2,12 @@ import { ButtonLink, PostCard, Title } from '@/components/ui';
 
 import { cn } from '@/utils/cn';
 
-import { NewsSectionProps } from './types';
+import { BlogSectionProps } from './types';
 
-import styles from './NewsSection.module.css';
+import styles from './BlogSection.module.css';
 
-export const NewsSection: React.FC<NewsSectionProps> = ({ dict, lang }) => {
-  const { sectionTitle, posts, link } = dict.newsSection;
+export const BlogSection: React.FC<BlogSectionProps> = ({ dict, lang }) => {
+  const { sectionTitle, posts, link } = dict.blogSection;
 
   return (
     <section className="section">
@@ -30,7 +30,7 @@ export const NewsSection: React.FC<NewsSectionProps> = ({ dict, lang }) => {
 
         <ul className="md:flex md:flex-row md:gap-[16px]">
           {posts &&
-            posts.map((post: INewsPosts, idx: number) => (
+            posts.map((post: IBlogPost, idx: number) => (
               <li key={idx} className={cn(styles.card)}>
                 <PostCard post={post} lang={lang} />
               </li>

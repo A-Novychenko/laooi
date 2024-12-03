@@ -1,9 +1,5 @@
-import {
-  Logo,
-  FooterSocialList,
-  FooterNavList,
-  FooterBasement,
-} from '@/components/ui';
+import { Logo, FooterNavList } from '@/components/ui';
+import { FooterBasement, FooterSocialList } from '@/components/base';
 
 import { getDictionary } from '@/utils/dictionaries';
 

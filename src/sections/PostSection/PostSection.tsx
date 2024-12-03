@@ -1,11 +1,11 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-import { DateStamp, NewsPostText, PostLabel, Title } from '@/components/ui';
+import { DateStamp, PostText, PostLabel, Title } from '@/components/ui';
 
 import ArrowIcon from '~/icons/arrowDown.svg';
 
-export const NewsPostSection: React.FC<INewsPostSection> = ({
+export const PostSection: React.FC<IBlogPostSection> = ({
   linkTitle,
   post,
 }) => {
@@ -37,7 +37,8 @@ export const NewsPostSection: React.FC<INewsPostSection> = ({
               </PostLabel>
             </div>
 
-            <NewsPostText text={text} />
+            <PostText text={text} />
+
             <button type="button">{moreLinkTitle}</button>
           </div>
         </div>

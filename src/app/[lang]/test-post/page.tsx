@@ -1,18 +1,14 @@
-import { NewsPostSection } from '@/sections';
+import { PostSection } from '@/sections';
 
 import { getDictionary } from '@/utils/dictionaries';
 
-const NewsPost = async ({ params: { lang } }: { params: { lang: string } }) => {
+const PostPage = async ({ params: { lang } }: { params: { lang: string } }) => {
   const dict = await getDictionary(lang);
 
   const { postBackLink } = dict.common;
-  const { posts } = dict.galleryNewsSection;
+  const { posts } = dict.blogGallerySection;
 
-  return (
-    <main className="flex grow flex-col">
-      <NewsPostSection linkTitle={postBackLink} post={posts[0]} />
-    </main>
-  );
+  return <PostSection linkTitle={postBackLink} post={posts[0]} />;
 };
 
-export default NewsPost;
+export default PostPage;

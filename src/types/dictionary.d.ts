@@ -19,11 +19,11 @@ interface IDictionary {
   heroSection: IHeroSection;
   FAQSection: IFAQSection;
   socialSection: ISocialSection;
-  newsSection: INewSection;
+  blogSection: IBlogSection;
   targetSection: ITargetSection;
   partnersSection: IPartnersSection;
   mediaSection: IMediaSection;
-  galleryNewsSection: IGalleryNewsSection;
+  blogGallerySection: IBlogGallerySection;
 }
 
 interface IMeta {
@@ -160,19 +160,19 @@ interface IFooterBasement {
   designer: string;
 }
 
-interface INewsPosts {
+interface IBlogPost {
   type: string;
   image: string;
   title: string;
   text: string;
   date: string;
-  newsUrl: string;
+  postUrl: string;
   linkTitle: string;
 }
 
-interface INewSection {
+interface IBlogSection {
   sectionTitle: string;
-  posts: INewsPosts[];
+  posts: IBlogPost[];
   link: { label: string; settings: { href: string; externalLink: boolean } };
 }
 
@@ -221,12 +221,12 @@ interface IMediaSection {
   }[];
 }
 
-interface IGalleryNewsSection {
+interface IBlogGallerySection {
   title: string;
-  posts: INewsPosts[];
+  posts: IBlogPost[];
 }
 
-interface INewsPostSection {
+interface IBlogPostSection {
   linkTitle: string;
-  post: INewsPosts;
+  post: IBlogPost;
 }
