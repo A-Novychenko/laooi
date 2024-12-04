@@ -17,7 +17,11 @@
   "common": {
     "logoAlt": "Company logo",
     "searchInput": { "placeholder": "Search" },
-    "postBackLink": "View all news and events",
+    "postBackLink": {
+      "label": "View all news and events",
+      "link": "/blog"
+    },
+    "readMoreLabel": "Read more",
     "mainNav": [
       {
         "name": "Home",
@@ -65,7 +69,7 @@
       },
       {
         "name": "News",
-        "href": "/in-progress"
+        "href": "/blog"
       },
       {
         "name": "Tenders",
@@ -116,7 +120,7 @@
       "footerOther": {
         "title": "Other",
         "embedded": [
-          { "name": "News", "href": "/in-progress" },
+          { "name": "News", "href": "/blog" },
           { "name": "Vacancies", "href": "/in-progress" },
           { "name": "Tenders", "href": "/in-progress" },
           { "name": "Contacts", "href": "/in-progress" }
@@ -268,7 +272,7 @@
     ]
   },
   "blogSection": {
-    "sectionTitle": "News and events",
+    "title": "News and events",
     "link": {
       "label": "All publications",
       "settings": {
@@ -276,35 +280,16 @@
         "externalLink": false
       }
     },
-    "posts": [
-      {
-        "type": "News",
-        "image": "/images/image_news_first.webp",
-        "title": "Resilience during wartime: LOOOI's participation in a public discussion in Lviv",
-        "text": "The LAOOI participated in the public discussion 'which took place on Thursday, October 17, 2024. During the event",
-        "date": "17.10.2024",
-        "postUrl": "/in-progress",
-        "linkTitle": "Read more"
-      },
-      {
-        "type": "Articles",
-        "image": "/images/image_news_second.webp",
-        "title": "LOOOI and Solidar Suisse Ukraine in Kharkiv: support for affected families",
-        "text": "Recently, a delegation from the Public Union 'Luhansk Association of Organizations of Persons with Disabilities' visited Kharkiv along with our partners from Solidar Suisse Ukraine. The",
-        "date": "16.10.2024",
-        "postUrl": "/in-progress",
-        "linkTitle": "Read more"
-      },
-      {
-        "type": "Events",
-        "image": "/images/image_news_third.webp",
-        "title": "Thank you to our international partners: support that changes lives",
-        "text": "We, the team of the Public Union 'Luhansk Association of Organizations of Persons with Disabilities', extend our heartfelt thanks to our international partners and friends who help us The",
-        "date": "11.10.2024",
-        "postUrl": "/in-progress",
-        "linkTitle": "Read more"
+    "errorData": {
+      "description": "Unfortunately, there are no posts available for viewing at the moment. You can come back later or check other sections of our website for the latest information.",
+      "link": {
+        "label": "Home",
+        "settings": {
+          "href": "/en/",
+          "externalLink": false
+        }
       }
-    ]
+    }
   },
   "socialSection": {
     "title": "We are on social media",
@@ -478,20 +463,6 @@
           "href": "https://espreso.tv/asotsiatsiya-organizatsiy-osib-z-invalidnistyu-dopravila-na-luganshchinu-35-tonn-gumanitarnoi-dopomogi-gayday",
           "labelCardLink": "Espreso"
         }
-      }
-    ]
-  },
-  "blogGallerySection": {
-    "title": "News and events",
-    "posts": [
-      {
-        "type": "Events",
-        "image": "/images/world-without-border.webp",
-        "title": "Celebrating world inclusion day: our goal is equal opportunities for all",
-        "text": "The GS LAOOI took part in the public discussion 'Lviv Region in Conditions of War: Challenges and Sources of Resilience', which took place on Thursday, October 17, 2024. During the event, key aspects of social resilience and cohesion in conditions of a protracted war were discussed. The main goal of the discussion was to develop a common vision of responding to new threats facing the region and its residents. The Head of the GS LAOOI Mykola Nadulichnyy took part in the discussion of important aspects of supporting public initiatives and ways to strengthen social unity in this difficult period. Follow the news about resilience and cohesion on the Facebook page. National Platform for Resilience and Cohesion.",
-        "date": "10.10.2024",
-        "postUrl": "/in-progress",
-        "linkTitle": "Read more"
       }
     ]
   }

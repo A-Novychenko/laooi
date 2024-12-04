@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { Title, PostLabel } from '@/components/ui';
 
 import ArrowIcon from '~/icons/arrowBtnIcon.svg';
+import NoImage from '~/no-image.svg';
 
 import { cn } from '@/utils/cn';
 
@@ -11,24 +12,32 @@ import { PostCardProps } from './types';
 
 import styles from './PostCard.module.css';
 
-export const PostCard: React.FC<PostCardProps> = ({ post, lang }) => {
-  const { image, title, text, date, postUrl, linkTitle, type } = post;
+export const PostCard: React.FC<PostCardProps> = ({
+  post,
+  lang,
+  readMoreLabel,
+}) => {
+  const { image, label, title, text, date, postUrl, type } = post;
 
   return (
     <Link
-      href={`/${lang}/${postUrl}`}
+      href={`/${lang}/blog/${postUrl}`}
       className={cn('block h-full rounded-[20px] bg-bgLightSlate', styles.link)}
     >
       <div className="relative h-[264px] w-full overflow-hidden rounded-2xl md:w-[336px] xl:w-[416px]">
-        <PostLabel label={type}>{type}</PostLabel>
+        <PostLabel type={type}>{label}</PostLabel>
 
-        <Image
-          src={image}
-          alt="sds"
-          width={416}
-          height={264}
-          className="size-full object-cover"
-        />
+        {image ? (
+          <Image
+            src={image}
+            alt="sds"
+            width={416}
+            height={264}
+            className="size-full object-cover"
+          />
+        ) : (
+          <NoImage className="size-full object-cover text-textPrimary" />
+        )}
       </div>
 
       <div className="p-4">
@@ -39,6 +48,7 @@ export const PostCard: React.FC<PostCardProps> = ({ post, lang }) => {
         >
           {title}
         </Title>
+
         <p className="mb-2 line-clamp-4 h-16 text-sm/normal font-semibold md:h-[4.75rem] md:text-sm/[1.35] xl:h-[5.875rem] xl:text-base">
           {text}
         </p>
@@ -47,7 +57,7 @@ export const PostCard: React.FC<PostCardProps> = ({ post, lang }) => {
           <p className="text-xs/5 font-normal xl:text-sm">{date}</p>
 
           <p className="flex items-center justify-center gap-2 text-sm/normal font-semibold hover:text-bgAccentLight xl:text-base">
-            {linkTitle}
+            {readMoreLabel}
             <ArrowIcon width={24} height={24} />
           </p>
         </div>

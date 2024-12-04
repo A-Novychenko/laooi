@@ -5,20 +5,23 @@ import { DateStamp, PostText, PostLabel, Title } from '@/components/ui';
 
 import ArrowIcon from '~/icons/arrowDown.svg';
 
-export const PostSection: React.FC<IBlogPostSection> = ({
-  linkTitle,
-  post,
-}) => {
-  const { type, image, title, text, date, linkTitle: moreLinkTitle } = post;
+export const PostSection: React.FC<{
+  post: ITransformedPost;
+  postBackLink: IPostBackLink;
+}> = ({ postBackLink: { label: labelPostLink, link }, post }) => {
+  const { type, label, images, title, body, date } = post;
+
+  const image = images[0];
+
   return (
     <section className="pt-20">
       <div className="container">
         <Link
-          href={'/'}
+          href={link}
           className="mb-6 flex items-center gap-2 text-base/normal font-semibold xl:text-lg/normal"
         >
           <ArrowIcon width={24} height={24} className="rotate-90" />
-          {linkTitle}
+          {labelPostLink}
         </Link>
 
         <Title className="mb-4">{title}</Title>
@@ -32,14 +35,14 @@ export const PostSection: React.FC<IBlogPostSection> = ({
             <div className="mb-2 flex justify-between">
               <DateStamp>{date}</DateStamp>
 
-              <PostLabel label={type} typeStyle="secondary">
-                {type}
+              <PostLabel type={type} typeStyle="secondary">
+                {label}
               </PostLabel>
             </div>
 
-            <PostText text={text} />
+            <PostText body={body} />
 
-            <button type="button">{moreLinkTitle}</button>
+            {/* <button type="button">{moreLinkTitle}</button> */}
           </div>
         </div>
       </div>

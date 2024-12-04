@@ -1,4 +1,5 @@
 export type PostCardProps = {
-  post: IBlogPost;
-  lang: string;
+  post: ITransformedPostPreview;
+  lang: 'uk' | 'en';
+  readMoreLabel: string;
 };

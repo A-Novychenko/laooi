@@ -37,7 +37,7 @@ export default function RootLayout({
   params,
 }: Readonly<{
   children: React.ReactNode;
-  params: { lang: string };
+  params: { lang: 'uk' | 'en' };
 }>) {
   return (
     <AccessibilityProvider>

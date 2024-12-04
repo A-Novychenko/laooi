@@ -15,7 +15,7 @@ import { getDictionary } from '@/utils/dictionaries';
 export default async function Home({
   params: { lang },
 }: {
-  params: { lang: string };
+  params: { lang: 'uk' | 'en' };
 }) {
   const dict = await getDictionary(lang);
 

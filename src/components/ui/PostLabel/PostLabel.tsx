@@ -3,18 +3,15 @@ import { cn } from '@/utils/cn';
 import { PostLabelProps } from './types';
 
 export const PostLabel: React.FC<PostLabelProps> = ({
-  label,
+  type,
   children,
   typeStyle = 'primary',
   className,
 }) => {
   const textColor = cn('text-base/normal font-normal, capitalize', {
-    'text-textBlue':
-      label.toLowerCase() === 'news' || label.toLowerCase() === 'новини',
-    'text-textGreen':
-      label.toLowerCase() === 'events' || label.toLowerCase() === 'події',
-    'text-textRed':
-      label.toLowerCase() === 'articles' || label.toLowerCase() === 'статті',
+    'text-textBlue': type.toLowerCase() === 'news',
+    'text-textGreen': type.toLowerCase() === 'events',
+    'text-textRed': type.toLowerCase() === 'articles',
   });
 
   const baseStyles =
