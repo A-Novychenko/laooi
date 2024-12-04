@@ -4,6 +4,7 @@ export const getPostBySlugQuery = `*[_type == "Post" && slug.current == $slug][0
         title,
         body,
         publicationDate,
+        link,
         slug,
         images[]{
           asset->{url}

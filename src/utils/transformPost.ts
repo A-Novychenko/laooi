@@ -11,6 +11,7 @@ export const transformPost = (
     title: post.title[lang],
     body: post.body[lang] as string,
     date: post.publicationDate,
+    link: post.link,
     slug: post.slug.current,
     postUrl: `/${post.slug.current}`,
     linkTitle: post.title[lang],

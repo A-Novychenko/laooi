@@ -37,6 +37,7 @@ interface IPost {
   title: { [key: string]: string };
   body: { [key: string]: string };
   publicationDate: string;
+  link: string;
   slug: { current: string };
   images: { asset: { url: string } }[];
 }
@@ -48,6 +49,7 @@ interface ITransformedPost {
   title: string;
   body: string;
   date: string;
+  link: string;
   slug: string;
   postUrl: string;
   linkTitle: string;

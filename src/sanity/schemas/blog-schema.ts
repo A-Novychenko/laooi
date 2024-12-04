@@ -87,6 +87,17 @@ export const post = defineType({
     },
 
     {
+      name: 'link',
+      title: 'Посилання на публікацію (https://www.facebook.com/luhanskLAOLI/)',
+      type: 'url',
+      validation: Rule =>
+        Rule.required()
+          .error('Поле обовʼязкове')
+          .uri({ scheme: ['http', 'https'] })
+          .error('Введіть коректний URL'),
+    },
+
+    {
       name: 'publicationDate',
       title: 'Дата публікації',
       type: 'datetime',

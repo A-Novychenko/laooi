@@ -3,6 +3,7 @@ interface IDictionary {
   common: {
     logoAlt: string;
     searchInput: { placeholder: string };
+    postFBLinkLabel: string;
     postBackLink: IPostBackLink;
     readMoreLabel: string;
     mainNav: IMainNav[];

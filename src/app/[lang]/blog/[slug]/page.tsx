@@ -1,4 +1,4 @@
-import { PlaceholderSection, PostSection } from '@/sections';
+import { BlogSection, PlaceholderSection, PostSection } from '@/sections';
 
 import { getPostBySlug, getAllPosts } from '@/actions/sanity';
 import { getDictionary } from '@/utils/dictionaries';
@@ -26,15 +26,21 @@ const PostPage = async ({
   const dict = await getDictionary(lang);
 
   const { title, errorData } = dict.blogSection;
-  const { postBackLink } = dict.common;
+  const { postBackLink, postFBLinkLabel } = dict.common;
 
   return (
     <>
       {post ? (
-        <PostSection post={post} postBackLink={postBackLink} />
+        <PostSection
+          post={post}
+          postBackLink={postBackLink}
+          postFBLinkLabel={postFBLinkLabel}
+        />
       ) : (
         <PlaceholderSection data={{ title, ...errorData }} />
       )}
+
+      <BlogSection dict={dict} lang={lang} />
     </>
   );
 };

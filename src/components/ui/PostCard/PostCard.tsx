@@ -11,6 +11,7 @@ import { cn } from '@/utils/cn';
 import { PostCardProps } from './types';
 
 import styles from './PostCard.module.css';
+import { formatDate } from '@/utils/formatDate';
 
 export const PostCard: React.FC<PostCardProps> = ({
   post,
@@ -18,6 +19,8 @@ export const PostCard: React.FC<PostCardProps> = ({
   readMoreLabel,
 }) => {
   const { image, label, title, text, date, postUrl, type } = post;
+
+  const formattedDate = formatDate(date);
 
   return (
     <Link
@@ -54,7 +57,7 @@ export const PostCard: React.FC<PostCardProps> = ({
         </p>
 
         <div className="flex items-center justify-between">
-          <p className="text-xs/5 font-normal xl:text-sm">{date}</p>
+          <p className="text-xs/5 font-normal xl:text-sm">{formattedDate}</p>
 
           <p className="flex items-center justify-center gap-2 text-sm/normal font-semibold hover:text-bgAccentLight xl:text-base">
             {readMoreLabel}
