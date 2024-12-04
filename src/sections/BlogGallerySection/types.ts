@@ -1,5 +1,6 @@
 export type BlogGallerySectionProps = {
   title: string;
-  posts: IBlogPost[];
-  lang: string;
+  readMoreLabel: string;
+  posts: ITransformedPostPreview[];
+  lang: 'uk' | 'en';
 };

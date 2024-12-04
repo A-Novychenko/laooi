@@ -1,0 +1,7 @@
+.textBlock p {
+  @apply mb-6 text-base/normal last:mb-0 md:text-lg;
+}
+
+.textBlock br {
+  @apply hidden;
+}

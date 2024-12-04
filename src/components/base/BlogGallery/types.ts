@@ -1,4 +1,5 @@
 export type GalleryPostProps = {
-  posts: IBlogPost[];
-  lang: string;
+  posts: ITransformedPostPreview[];
+  lang: 'uk' | 'en';
+  readMoreLabel: string;
 };

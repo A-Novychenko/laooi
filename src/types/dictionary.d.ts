@@ -3,7 +3,9 @@ interface IDictionary {
   common: {
     logoAlt: string;
     searchInput: { placeholder: string };
-    postBackLink: string;
+    postFBLinkLabel: string;
+    postBackLink: IPostBackLink;
+    readMoreLabel: string;
     mainNav: IMainNav[];
     accessibilityMenu: IAccessibilityMenu;
     footerNav: IFooterNav;
@@ -23,7 +25,11 @@ interface IDictionary {
   targetSection: ITargetSection;
   partnersSection: IPartnersSection;
   mediaSection: IMediaSection;
-  blogGallerySection: IBlogGallerySection;
+}
+
+interface IPostBackLink {
+  label: string;
+  link: string;
 }
 
 interface IMeta {
@@ -160,19 +166,18 @@ interface IFooterBasement {
   designer: string;
 }
 
-interface IBlogPost {
-  type: string;
-  image: string;
-  title: string;
-  text: string;
-  date: string;
-  postUrl: string;
-  linkTitle: string;
-}
-
 interface IBlogSection {
-  sectionTitle: string;
-  posts: IBlogPost[];
+  title: string;
+  errorData: {
+    description: string;
+    link: {
+      label: string;
+      settings: {
+        href: string;
+        externalLink: boolean;
+      };
+    };
+  };
   link: { label: string; settings: { href: string; externalLink: boolean } };
 }
 
@@ -219,14 +224,4 @@ interface IMediaSection {
       labelCardLink: string;
     };
   }[];
-}
-
-interface IBlogGallerySection {
-  title: string;
-  posts: IBlogPost[];
-}
-
-interface IBlogPostSection {
-  linkTitle: string;
-  post: IBlogPost;
 }

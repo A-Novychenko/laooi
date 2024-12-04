@@ -1,24 +1,42 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-import { DateStamp, PostText, PostLabel, Title } from '@/components/ui';
+import {
+  DateStamp,
+  PostText,
+  PostLabel,
+  Title,
+  ButtonLink,
+} from '@/components/ui';
+
+import { formatDate } from '@/utils/formatDate';
 
 import ArrowIcon from '~/icons/arrowDown.svg';
 
-export const PostSection: React.FC<IBlogPostSection> = ({
-  linkTitle,
+export const PostSection: React.FC<{
+  post: ITransformedPost;
+  postBackLink: IPostBackLink;
+  postFBLinkLabel: string;
+}> = ({
+  postBackLink: { label: labelPostLink, link: blogLink },
   post,
+  postFBLinkLabel,
 }) => {
-  const { type, image, title, text, date, linkTitle: moreLinkTitle } = post;
+  const { type, label, images, title, body, date, link } = post;
+
+  const image = images[0];
+
+  const formattedDate = formatDate(date);
+
   return (
-    <section className="pt-20">
+    <section className="section">
       <div className="container">
         <Link
-          href={'/'}
+          href={blogLink}
           className="mb-6 flex items-center gap-2 text-base/normal font-semibold xl:text-lg/normal"
         >
           <ArrowIcon width={24} height={24} className="rotate-90" />
-          {linkTitle}
+          {labelPostLink}
         </Link>
 
         <Title className="mb-4">{title}</Title>
@@ -30,16 +48,23 @@ export const PostSection: React.FC<IBlogPostSection> = ({
 
           <div>
             <div className="mb-2 flex justify-between">
-              <DateStamp>{date}</DateStamp>
+              <DateStamp>{formattedDate}</DateStamp>
 
-              <PostLabel label={type} typeStyle="secondary">
-                {type}
+              <PostLabel type={type} typeStyle="secondary">
+                {label}
               </PostLabel>
             </div>
 
-            <PostText text={text} />
+            <PostText body={body} />
 
-            <button type="button">{moreLinkTitle}</button>
+            <ButtonLink
+              type="link"
+              typeStyle="primary"
+              settings={{ href: link, externalLink: true }}
+              className="max-w-[380px]"
+            >
+              {postFBLinkLabel}
+            </ButtonLink>
           </div>
         </div>
       </div>
