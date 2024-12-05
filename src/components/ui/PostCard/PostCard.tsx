@@ -18,7 +18,7 @@ export const PostCard: React.FC<PostCardProps> = ({
   lang,
   readMoreLabel,
 }) => {
-  const { image, label, title, text, date, postUrl, type } = post;
+  const { image, imageAlt, label, title, text, date, postUrl, type } = post;
 
   const formattedDate = formatDate(date);
 
@@ -33,7 +33,7 @@ export const PostCard: React.FC<PostCardProps> = ({
         {image ? (
           <Image
             src={image}
-            alt="sds"
+            alt={imageAlt ? imageAlt : ''}
             width={416}
             height={264}
             className="size-full object-cover"

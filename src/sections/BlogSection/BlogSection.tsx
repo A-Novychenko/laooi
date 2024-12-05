@@ -30,7 +30,7 @@ export const BlogSection: React.FC<BlogSectionProps> = async ({
                 typeStyle="light"
                 settings={{
                   ...link.settings,
-                  href: `${lang}${link.settings.href}`,
+                  href: `/${lang}${link.settings.href}`,
                 }}
                 className="md:h-12 md:w-[219px] xl:h-14 xl:w-[308px]"
               >

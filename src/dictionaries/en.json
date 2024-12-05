@@ -277,7 +277,7 @@
     "link": {
       "label": "All publications",
       "settings": {
-        "href": "/in-progress",
+        "href": "/blog",
         "externalLink": false
       }
     },

@@ -9,6 +9,7 @@ export const transformPostPreview = (
     type: post.postType,
     label: makePostType(post.postType, lang),
     image: post.images[0]?.asset.url,
+    imageAlt: post.images[0]?.caption[lang],
     title: post.title[lang],
     body: post.body[lang] as string,
     date: post.publicationDate,

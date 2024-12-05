@@ -43,7 +43,7 @@ export const PostSection: React.FC<{
 
         <div className="flex flex-col gap-4 xl:flex-row">
           <div className="mb-4 xl:sticky xl:top-4 xl:min-w-[632px] xl:self-start">
-            <Image src={image} alt="image" width={632} height={632} />
+            <Image src={image.src} alt={image.alt} width={632} height={632} />
           </div>
 
           <div>

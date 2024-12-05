@@ -17,7 +17,7 @@ export const post = defineType({
     select: {
       title: 'title.uk',
       subtitle: 'postType',
-      media: 'image.0',
+      media: 'images.0',
     },
   },
 
@@ -112,7 +112,13 @@ export const post = defineType({
         source: 'title.en',
         maxLength: 200,
         slugify: input =>
-          encodeURI(input.toLowerCase().replace(/\s+/g, '-').slice(0, 200)),
+          encodeURI(
+            input
+              .toLowerCase()
+              .replace(/[^a-zа-яёіїєґ\s]+/gi, '') // Видаляємо всі символи, що не є літерами або пробілами
+              .replace(/\s+/g, '-') // Заміна пробілів на дефіси
+              .slice(0, 200), // Обмеження довжини до 200 символів
+          ),
       },
       validation: Rule => Rule.required().error('Поле обовʼязкове'),
     },
