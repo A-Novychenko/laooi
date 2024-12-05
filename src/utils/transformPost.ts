@@ -7,7 +7,13 @@ export const transformPost = (
   return {
     type: post.postType,
     label: makePostType(post.postType, lang),
-    images: post.images.map(image => image.asset.url),
+    images: post.images.map(image => {
+      console.log('image', image);
+      return {
+        src: image.asset.url,
+        alt: image.caption[lang],
+      };
+    }),
     title: post.title[lang],
     body: post.body[lang] as string,
     date: post.publicationDate,

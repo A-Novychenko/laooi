@@ -22,6 +22,7 @@ interface ITransformedPostPreview {
   type: string;
   label: string;
   image: string | undefined;
+  imageAlt: string | undefined;
   title: string;
   body: string;
   date: string;
@@ -39,13 +40,13 @@ interface IPost {
   publicationDate: string;
   link: string;
   slug: { current: string };
-  images: { asset: { url: string } }[];
+  images: { asset: { url: string }; caption: { uk: string; en: string } }[];
 }
 
 interface ITransformedPost {
   type: string;
   label: string;
-  images: string[];
+  images: { src: string; alt: string }[];
   title: string;
   body: string;
   date: string;

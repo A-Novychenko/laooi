@@ -277,7 +277,7 @@
     "link": {
       "label": "Всі публікації",
       "settings": {
-        "href": "/in-progress",
+        "href": "/blog",
         "externalLink": false
       }
     },
