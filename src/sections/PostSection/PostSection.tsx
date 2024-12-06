@@ -25,8 +25,6 @@ export const PostSection: React.FC<{
 }) => {
   const { type, label, images, title, body, date, link } = post;
 
-  console.log('post section', images);
-
   const image = images[0];
 
   const formattedDate = formatDate(date);
