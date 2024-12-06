@@ -58,6 +58,7 @@ const config: Config = {
         bgAccentStrongDark: '#010C3B',
         bgIconEyeDark: '#424666',
         bgSocialIcon: '#23314D',
+        bgSlideBtn: '#eaedf480',
       },
       boxShadow: {
         mobMenuHeader: '0px 0px 40px 0px rgba(0, 0, 0, 0.10)',

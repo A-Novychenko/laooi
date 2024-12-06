@@ -8,3 +8,4 @@ export * from './MediaList';
 export * from './MobileMenu';
 export * from './PartnersSliderWrap';
 export * from './TargetSliderWrap';
+export * from './PostSliderWrap';

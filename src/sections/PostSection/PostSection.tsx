@@ -8,6 +8,7 @@ import {
   Title,
   ButtonLink,
 } from '@/components/ui';
+import { PostSliderWrap } from '@/components/base';
 
 import { formatDate } from '@/utils/formatDate';
 
@@ -23,6 +24,8 @@ export const PostSection: React.FC<{
   postFBLinkLabel,
 }) => {
   const { type, label, images, title, body, date, link } = post;
+
+  console.log('post section', images);
 
   const image = images[0];
 
@@ -42,8 +45,12 @@ export const PostSection: React.FC<{
         <Title className="mb-4">{title}</Title>
 
         <div className="flex flex-col gap-4 xl:flex-row">
-          <div className="mb-4 xl:sticky xl:top-4 xl:min-w-[632px] xl:self-start">
-            <Image src={image.src} alt={image.alt} width={632} height={632} />
+          <div className="mb-4 overflow-hidden rounded-3xl xl:sticky xl:top-4 xl:min-w-[632px] xl:self-start">
+            {images.length > 1 ? (
+              <PostSliderWrap data={images} />
+            ) : (
+              <Image src={image.src} alt={image.alt} width={632} height={632} />
+            )}
           </div>
 
           <div>

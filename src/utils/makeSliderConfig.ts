@@ -1,10 +1,11 @@
-import { Navigation, Autoplay, Pagination } from 'swiper/modules';
+import { Navigation, Autoplay, Pagination, Keyboard } from 'swiper/modules';
 
 import { SliderProps } from '@/components/ui/Slider/types';
 
 enum Sections {
   TARGET = 'target',
   PARTNERS = 'partners',
+  POST = 'post',
 }
 
 export const makeSliderConfig = ({
@@ -20,6 +21,7 @@ export const makeSliderConfig = ({
       ? { delay: 0, disableOnInteraction: false }
       : false;
 
+  let speedBase: number;
   let loopBase: boolean;
 
   let spaceBetweenTab: number;
@@ -38,6 +40,7 @@ export const makeSliderConfig = ({
       slidesPerViewDesk = 5;
 
       spaceBetweenDesk = 16;
+      speedBase = 5000;
 
       break;
 
@@ -49,7 +52,18 @@ export const makeSliderConfig = ({
 
       slidesPerViewDesk = 3;
       spaceBetweenDesk = 16;
+      speedBase = 5000;
 
+      break;
+
+    case Sections.POST:
+      loopBase = false;
+      slidesPerViewTab = 1;
+      spaceBetweenTab = 1;
+
+      slidesPerViewDesk = 1;
+      spaceBetweenDesk = 1;
+      speedBase = 500;
       break;
 
     default:
@@ -60,14 +74,16 @@ export const makeSliderConfig = ({
 
       slidesPerViewDesk = 3;
       spaceBetweenDesk = 24;
+
+      speedBase = 5000;
   }
 
   return {
     className: wrapClassName,
     updateOnWindowResize: true,
     wrapperTag: 'ul',
-    modules: [Navigation, Autoplay, Pagination],
-    speed: 5000,
+    modules: [Navigation, Autoplay, Pagination, Keyboard],
+    speed: speedBase,
     lazyPreloadPrevNext: 1,
     navigation: {
       prevEl: `.slider-prev-btn-${section}`,
@@ -81,6 +97,11 @@ export const makeSliderConfig = ({
 
     centeredSlides: true,
     freeMode: true,
+
+    keyboard:
+      section === Sections.POST
+        ? { enabled: true, onlyInViewport: false }
+        : undefined,
 
     breakpoints: {
       768: {
