@@ -43,7 +43,7 @@ export const PostSection: React.FC<{
         <Title className="mb-4">{title}</Title>
 
         <div className="flex flex-col gap-4 xl:flex-row">
-          <div className="mb-4 overflow-hidden rounded-3xl xl:sticky xl:top-4 xl:min-w-[632px] xl:self-start">
+          <div className="relative mb-4 overflow-hidden rounded-3xl xl:sticky xl:top-4 xl:w-[632px] xl:self-start">
             {images.length > 1 ? (
               <PostSliderWrap data={images} />
             ) : (
