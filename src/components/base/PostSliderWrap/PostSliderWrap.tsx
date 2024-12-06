@@ -1,6 +1,6 @@
 'use client';
 
-import { PostSectionCard, Slider } from '@/components/ui';
+import { PostImageSlide, Slider } from '@/components/ui';
 
 import { PostSliderWrapProps } from './types';
 
@@ -10,9 +10,9 @@ export const PostSliderWrap: React.FC<PostSliderWrapProps> = ({ data }) => {
     <Slider
       section="post"
       slidesData={data}
-      slideComponent={PostSectionCard}
+      slideComponent={PostImageSlide}
       type="post"
-      slideClassName="h-full"
+      slideClassName="h-[288px] md:h-[688px] xl:h-[632px] xl:w-[632px]"
     />
   );
 };

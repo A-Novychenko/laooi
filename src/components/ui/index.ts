@@ -20,4 +20,5 @@ export * from './TargetCard';
 export * from './Title';
 export * from './TooltipMenu';
 export * from './VideoPlayer';
-export * from './PostSectionCard';
+export * from './PostImageSlide';
+export * from './SliderButton';
