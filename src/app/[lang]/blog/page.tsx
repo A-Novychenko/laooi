@@ -6,15 +6,23 @@ import { getDictionary } from '@/utils/dictionaries';
 
 const BlogPage = async ({
   params: { lang },
+  searchParams,
 }: {
   params: { lang: 'uk' | 'en' };
+  searchParams: { page?: string };
 }) => {
   const dict = await getDictionary(lang);
 
   const { readMoreLabel } = dict.common;
   const { title, errorData } = dict.blogSection;
 
-  const posts = await getAllPosts(lang);
+  const page = parseInt(searchParams.page || '1', 10);
+  const pageSize = 12;
+
+  const posts = await getAllPosts(lang, page, pageSize);
+
+  const totalPosts = await getAllPosts(lang, 1, 99999);
+  const totalPages = Math.ceil(totalPosts.length / pageSize);
 
   return (
     <>
@@ -24,6 +32,8 @@ const BlogPage = async ({
           posts={posts}
           lang={lang}
           readMoreLabel={readMoreLabel}
+          currentPage={page}
+          totalPages={totalPages}
         />
       ) : (
         <PlaceholderSection data={{ title, ...errorData }} />
