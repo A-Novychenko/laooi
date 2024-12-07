@@ -397,19 +397,44 @@ Component card for the Partners section
 
 - #### PostCard
 
-Description of the component and its purpose
+A card component designed for displaying a blog post with a preview image,
+title, description, date, and a "read more" link. It supports localization and
+dynamic post content.
 
-| Prop   | Default | Description                    |
-| ------ | ------- | ------------------------------ |
-| `prop` | `value` | required/optional, description |
+| Prop            | Default     | Description                                                                                          |
+| --------------- | ----------- | ---------------------------------------------------------------------------------------------------- |
+| `post`          | `undefined` | **Required**. An object containing the post details (see **Post Object** below).                     |
+| `lang`          | `undefined` | **Required**. A string indicating the current language, used to construct the link to the blog post. |
+| `readMoreLabel` | `undefined` | **Required**. A string for the "read more" label text, displayed as a link to the full post.         |
+
+---
+
+### Post Object
+
+The `post` prop is an object with the following structure:
+
+| Field      | Type     | Description                                                                                           |
+| ---------- | -------- | ----------------------------------------------------------------------------------------------------- |
+| `image`    | `string` | The URL of the post's preview image. If not provided, a default placeholder is displayed.             |
+| `imageAlt` | `string` | Alternative text for the image.                                                                       |
+| `label`    | `string` | The label or tag displayed over the image.                                                            |
+| `title`    | `string` | The title of the post. Displayed as a clickable heading.                                              |
+| `text`     | `string` | A brief description or excerpt of the post content.                                                   |
+| `date`     | `string` | The post's publication date, formatted using the `formatDate` utility.                                |
+| `postUrl`  | `string` | The unique URL slug for the post.                                                                     |
+| `type`     | `string` | The type of the post (e.g., `'news'`, `'events'`, `'articles'`), passed to the `PostLabel` component. |
 
 - #### PostLabel
 
-Description of the component and its purpose
+A versatile label component designed to display a tag or label with customizable
+styles, such as indicating types of posts (e.g., "news", "events", "articles").
 
-| Prop   | Default | Description                    |
-| ------ | ------- | ------------------------------ |
-| `prop` | `value` | required/optional, description |
+| Prop        | Default     | Description                                                                                                                                      |
+| ----------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `type`      | `undefined` | **Required**. A string indicating the type of the post (e.g., `'news'`, `'events'`, `'articles'`). The `type` determines the label's text color. |
+| `children`  | `undefined` | **Required**. Content to be displayed within the label. Usually, this is the text of the label.                                                  |
+| `typeStyle` | `'primary'` | Optional. Defines the label's style variant. Accepts `'primary'` or `'secondary'`. Affects background and position styles.                       |
+| `className` | `undefined` | Optional. Additional CSS class names for further customization.                                                                                  |
 
 - #### PostText
 
@@ -421,11 +446,16 @@ Description of the component and its purpose
 
 - #### ScrollToTopButton
 
-Description of the component and its purpose
+A floating button that appears after the user scrolls down the page and enables
+smooth scrolling back to the top when clicked. Useful for improving navigation
+on long pages.
 
-| Prop   | Default | Description                    |
-| ------ | ------- | ------------------------------ |
-| `prop` | `value` | required/optional, description |
+### Component Details:
+
+The button becomes visible when the user scrolls more than 1000 pixels
+vertically. Clicking the button triggers a smooth scroll to the top of the page.
+Visibility is dynamically toggled using a combination of React state (isVisible)
+and scroll event listeners.
 
 - #### SearchInput
 
@@ -446,6 +476,17 @@ for desktop devices, a button that appears when clicked.
 | `section`        | -           | required, `cases`, `reviews`, `partners`, `advantages`, name of the section where slider will be rendered |
 | `wrapClassName`  | `undefined` | optional, `string`, adds custom css class to the Swiper component.                                        |
 | `slideClassName` | `undefined` | optional, `string`, adds custom css class to the SlideComponent component.                                |
+
+- #### SliderButton
+
+A button component designed for slider navigation, allowing users to navigate to
+the previous or next slide with visual indicators.
+
+| Prop              | Default     | Description                                                                                                              |
+| ----------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------ |
+| `ariaLabel`       | `undefined` | **Required**. A string used for the `aria-label` attribute to improve accessibility by describing the button's function. |
+| `customClassName` | `undefined` | Optional. A string of additional CSS class names for customizing the button's appearance.                                |
+| `direction`       | `undefined` | **Required**. A string indicating the button's direction, either `'prev'` or `'next'`.                                   |
 
 - #### TargetCard
 
@@ -488,6 +529,16 @@ expected in the props
 | -------- | ----------- | --------------------------------------------------- |
 | `url`    | `undefined` | required, `string`, value of the path to the video  |
 | `poster` | `undefined` | required, `string`, value of the path to the poster |
+
+- #### PostImageSlide
+
+A component for displaying an image in a responsive container. The image is
+styled to cover the container fully, maintaining its aspect ratio while filling
+the space.
+
+| Prop    | Default | Description                                                                      |
+| ------- | ------- | -------------------------------------------------------------------------------- |
+| `image` | N/A     | **Required**. An object containing `src` (image URL) and `alt` (image alt text). |
 
 </details>
 
