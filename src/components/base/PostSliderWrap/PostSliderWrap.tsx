@@ -5,7 +5,6 @@ import { PostImageSlide, Slider } from '@/components/ui';
 import { PostSliderWrapProps } from './types';
 
 export const PostSliderWrap: React.FC<PostSliderWrapProps> = ({ data }) => {
-  console.log('DATA', data);
   return (
     <Slider
       section="post"

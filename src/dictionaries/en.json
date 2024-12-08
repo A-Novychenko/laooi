@@ -19,7 +19,7 @@
     "searchInput": { "placeholder": "Search" },
     "postBackLink": {
       "label": "View all news and events",
-      "link": "/blog"
+      "link": "/en/blog"
     },
     "postFBLinkLabel": "Read on Facebook",
     "readMoreLabel": "Read more",
