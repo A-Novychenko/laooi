@@ -1,9 +1,12 @@
 'use client';
 
 import { useRouter, useSearchParams } from 'next/navigation';
-import { PaginationProps } from './types';
-import { cn } from '@/utils/cn';
+
 import ArrowIcon from '~/icons/arrowDown.svg';
+
+import { cn } from '@/utils/cn';
+
+import { PaginationProps } from './types';
 
 const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages }) => {
   const router = useRouter();
