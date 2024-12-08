@@ -19,7 +19,7 @@
     "searchInput": { "placeholder": "Пошук" },
     "postBackLink": {
       "label": "Перейти до всіх новин і подій",
-      "link": "/blog"
+      "link": "/uk/blog"
     },
     "postFBLinkLabel": "Читати у Facebook",
     "readMoreLabel": "Читати далі",

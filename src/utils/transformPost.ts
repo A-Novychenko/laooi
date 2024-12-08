@@ -8,7 +8,6 @@ export const transformPost = (
     type: post.postType,
     label: makePostType(post.postType, lang),
     images: post.images.map(image => {
-      console.log('image', image);
       return {
         src: image.asset.url,
         alt: image.caption[lang],
