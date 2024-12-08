@@ -1,5 +1,5 @@
-export const getAllPostsQuery = (page: number, pageSize: number) =>
-  `*[_type == "Post"] | order(publicationDate desc) [${(page - 1) * pageSize}...${page * pageSize}] {
+export const getLatestPostsQuery = () =>
+  `*[_type == "Post"] | order(publicationDate desc) [0..2] {
     _id,
     title {
       uk,

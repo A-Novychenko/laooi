@@ -2,25 +2,20 @@ import { sanityClient } from '@/sanity/lib/client';
 
 import { transformPostPreview } from '@/utils/transformPostPreview';
 
-import { getAllPostsQuery } from '../queries';
+import { getLatestPostsQuery } from '../queries';
 
-const fetchPosts = async (
-  page: number,
-  pageSize: number,
-): Promise<IPostPreview[]> => {
-  const query = getAllPostsQuery(page, pageSize);
+const fetchLatestPosts = async (): Promise<IPostPreview[]> => {
+  const query = getLatestPostsQuery();
   const data = await sanityClient.fetch(query);
 
   return data ? data : [];
 };
 
-export const getAllPosts = async (
+export const getLatestPosts = async (
   lang: 'uk' | 'en' = 'uk',
-  page: number = 1,
-  pageSize: number = 12,
 ): Promise<ITransformedPostPreview[]> => {
   try {
-    const posts = await fetchPosts(page, pageSize);
+    const posts = await fetchLatestPosts();
 
     const transformedPosts = posts
       ? posts.map(post => transformPostPreview(post, lang))

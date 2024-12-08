@@ -3,4 +3,6 @@ export type BlogGallerySectionProps = {
   readMoreLabel: string;
   posts: ITransformedPostPreview[];
   lang: 'uk' | 'en';
+  currentPage: number;
+  totalPages: number;
 };

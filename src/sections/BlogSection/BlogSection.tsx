@@ -1,7 +1,7 @@
 import { ButtonLink, PostCard, Title } from '@/components/ui';
 
 import { cn } from '@/utils/cn';
-import { getAllPosts } from '@/actions/sanity';
+import { getLatestPosts } from '@/actions/sanity/methods/getLatestPosts';
 
 import { BlogSectionProps } from './types';
 
@@ -14,8 +14,7 @@ export const BlogSection: React.FC<BlogSectionProps> = async ({
   const { title, link } = dict.blogSection;
   const { readMoreLabel } = dict.common;
 
-  const allPosts = await getAllPosts(lang);
-  const posts = allPosts.length > 3 ? allPosts.slice(0, 3) : allPosts;
+  const posts = await getLatestPosts(lang);
 
   return (
     <>
