@@ -22,3 +22,4 @@ export * from './TooltipMenu';
 export * from './VideoPlayer';
 export * from './PostImageSlide';
 export * from './SliderButton';
+export * from './GallerysSearchInput';

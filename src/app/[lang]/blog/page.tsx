@@ -1,15 +1,16 @@
 import { BlogGallerySection, PlaceholderSection } from '@/sections';
 
-import { getAllPosts } from '@/actions/sanity';
+import { getAllPosts, getTotalPostsCount } from '@/actions/sanity';
 
 import { getDictionary } from '@/utils/dictionaries';
+import { getSearchPost } from '@/actions/sanity/methods/getSearchPost';
 
 const BlogPage = async ({
   params: { lang },
   searchParams,
 }: {
   params: { lang: 'uk' | 'en' };
-  searchParams: { page?: string };
+  searchParams: { page?: string; search?: string };
 }) => {
   const dict = await getDictionary(lang);
 
@@ -19,10 +20,17 @@ const BlogPage = async ({
   const page = parseInt(searchParams.page || '1', 10);
   const pageSize = 12;
 
-  const posts = await getAllPosts(lang, page, pageSize);
+  const searchQuery = searchParams.search || '';
 
-  const totalPosts = await getAllPosts(lang, 1, 99999);
-  const totalPages = Math.ceil(totalPosts.length / pageSize);
+  // const posts = await getAllPosts(lang, page, pageSize);
+
+  const posts = searchQuery
+    ? await getSearchPost(searchQuery, lang) // Отримуємо пости по пошуковому слову
+    : await getAllPosts(lang, page, pageSize);
+
+  const totalCountPosts = await getTotalPostsCount();
+
+  const totalPages = Math.ceil(totalCountPosts / pageSize);
 
   return (
     <>
