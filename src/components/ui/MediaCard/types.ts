@@ -1,7 +1,5 @@
 export type MediaCardProps = {
-  img: { src: string; alt: string };
-  cardLink: {
-    href: string;
-    labelCardLink: string;
-  };
+  imageUrl: string;
+  imageAlt: string;
+  link: string;
 };

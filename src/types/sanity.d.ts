@@ -63,3 +63,30 @@ interface IPostImage {
     url: string;
   };
 }
+
+interface IMediaItem {
+  _id: string;
+  link: string;
+  img: {
+    caption: {
+      uk: string;
+      en: string;
+    };
+    asset: {
+      _id: string;
+      url: string;
+    };
+  };
+  publicationDate: string;
+}
+
+interface ITransformedMediaItem {
+  imageUrl: string;
+  imageAlt: string;
+  link: string;
+}
+
+interface IMediaItemsResponse {
+  items: IMediaItem[];
+  total: number;
+}

@@ -17,7 +17,7 @@ export const post = defineType({
     select: {
       title: 'title.uk',
       subtitle: 'postType',
-      media: 'images.0',
+      media: 'images.0.asset',
     },
   },
 
