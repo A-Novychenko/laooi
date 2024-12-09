@@ -9,20 +9,25 @@ const BlogPage = async ({
   searchParams,
 }: {
   params: { lang: 'uk' | 'en' };
-  searchParams: { page?: string };
+  searchParams: { page?: string; search?: string; type?: string };
 }) => {
   const dict = await getDictionary(lang);
 
-  const { readMoreLabel } = dict.common;
+  const { readMoreLabel, searchInput } = dict.common;
   const { title, errorData } = dict.blogSection;
 
   const page = parseInt(searchParams.page || '1', 10);
   const pageSize = 12;
 
-  const posts = await getAllPosts(lang, page, pageSize);
+  const searchQuery = searchParams.search || '';
+  // const postType = searchParams.type || '';
 
-  const totalPosts = await getAllPosts(lang, 1, 99999);
-  const totalPages = Math.ceil(totalPosts.length / pageSize);
+  const { posts, totalPages } = await getAllPosts(
+    searchQuery,
+    lang,
+    page,
+    pageSize,
+  );
 
   return (
     <>
@@ -34,6 +39,7 @@ const BlogPage = async ({
           readMoreLabel={readMoreLabel}
           currentPage={page}
           totalPages={totalPages}
+          placeholder={searchInput.placeholder}
         />
       ) : (
         <PlaceholderSection data={{ title, ...errorData }} />

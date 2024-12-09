@@ -4,7 +4,7 @@ import { getPostBySlug, getAllPosts } from '@/actions/sanity';
 import { getDictionary } from '@/utils/dictionaries';
 
 export async function generateStaticParams() {
-  const posts = await getAllPosts();
+  const { posts } = await getAllPosts();
 
   const staticParams =
     posts?.map(({ slug }) => {
