@@ -1,5 +1,10 @@
-export const getAllPostsQuery = (page: number, pageSize: number) =>
-  `*[_type == "Post"] | order(publicationDate desc) [${(page - 1) * pageSize}...${page * pageSize}] {
+export const getAllPostsQuery = (
+  page: number,
+  pageSize: number,
+  postType?: 'news' | 'articles' | 'events',
+) => {
+  const typeFilter = postType ? `&& postType == "${postType}"` : '';
+  return `*[_type == "Post" ${typeFilter}] | order(publicationDate desc) [${(page - 1) * pageSize}...${page * pageSize}] {
     _id,
     title {
       uk,
@@ -20,3 +25,4 @@ export const getAllPostsQuery = (page: number, pageSize: number) =>
       en
     }
   }`;
+};

@@ -4,12 +4,22 @@ import { getAllPosts } from '@/actions/sanity';
 
 import { getDictionary } from '@/utils/dictionaries';
 
+enum PostType {
+  News = 'news',
+  Articles = 'articles',
+  Events = 'events',
+}
+
 const BlogPage = async ({
   params: { lang },
   searchParams,
 }: {
   params: { lang: 'uk' | 'en' };
-  searchParams: { page?: string; search?: string; type?: string };
+  searchParams: {
+    page?: string;
+    search?: string;
+    type?: 'news' | 'articles' | 'events';
+  };
 }) => {
   const dict = await getDictionary(lang);
 
@@ -20,13 +30,19 @@ const BlogPage = async ({
   const pageSize = 12;
 
   const searchQuery = searchParams.search || '';
-  // const postType = searchParams.type || '';
+
+  const postType: PostType | undefined = Object.values(PostType).includes(
+    searchParams.type as PostType,
+  )
+    ? (searchParams.type as PostType)
+    : undefined;
 
   const { posts, totalPages } = await getAllPosts(
     searchQuery,
     lang,
     page,
     pageSize,
+    postType,
   );
 
   return (
