@@ -13,7 +13,8 @@ const MediaPage = async ({
 }) => {
   const dict = await getDictionary(lang);
 
-  const { title, errorData } = dict.blogSection;
+  const { title, errorData } = dict.mediaSection;
+  const { placeholder } = dict.common.searchInput;
 
   const page = parseInt(searchParams.page || '1', 10);
   const pageSize = 15;
@@ -33,6 +34,7 @@ const MediaPage = async ({
           currentPage={page}
           totalPages={totalPages}
           mediaItems={mediaItems}
+          placeholder={placeholder}
         />
       ) : (
         <PlaceholderSection data={{ title, ...errorData }} />

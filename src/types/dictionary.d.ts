@@ -168,16 +168,7 @@ interface IFooterBasement {
 
 interface IBlogSection {
   title: string;
-  errorData: {
-    description: string;
-    link: {
-      label: string;
-      settings: {
-        href: string;
-        externalLink: boolean;
-      };
-    };
-  };
+  errorData: IErrorData;
   link: { label: string; settings: { href: string; externalLink: boolean } };
 }
 
@@ -210,6 +201,18 @@ interface IPlaceholder {
 
 interface IMediaSection {
   title: string;
+  errorData: IErrorData;
+  link: {
+    label: string;
+    settings: {
+      href: string;
+      externalLink: boolean;
+    };
+  };
+}
+
+interface IErrorData {
+  description: string;
   link: {
     label: string;
     settings: {

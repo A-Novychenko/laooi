@@ -4,4 +4,5 @@ export type MediaGallerySectionProps = {
   currentPage: number;
   totalPages: number;
   mediaItems: ITransformedMediaItem[];
+  placeholder: string;
 };

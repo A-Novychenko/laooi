@@ -1,14 +1,23 @@
-import { Title } from '@/components/ui';
+import dynamic from 'next/dynamic';
+
+import { GallerysSearchInput, Title } from '@/components/ui';
 import { MediaList } from '@/components/base';
 
 import { MediaGallerySectionProps } from './types';
-import Pagination from '@/components/ui/Pagination/Pagination';
+
+const Pagination = dynamic(
+  () => import('@/components/ui/Pagination/Pagination'),
+  {
+    ssr: false,
+  },
+);
 
 export const MediaGallerySection: React.FC<MediaGallerySectionProps> = ({
   dict,
   currentPage,
   totalPages,
   mediaItems,
+  placeholder,
 }) => {
   const { title } = dict.mediaSection;
 
@@ -18,6 +27,8 @@ export const MediaGallerySection: React.FC<MediaGallerySectionProps> = ({
         <div className="mb-4 md:flex md:justify-between">
           <Title className="mb-4 md:mb-0">{title}</Title>
         </div>
+
+        <GallerysSearchInput placeholder={placeholder} />
 
         <MediaList items={mediaItems} />
 

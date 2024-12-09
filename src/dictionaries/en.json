@@ -413,6 +413,16 @@
         "href": "/media",
         "externalLink": false
       }
+    },
+    "errorData": {
+      "description": "Unfortunately, there are no media items available for viewing at the moment. You can come back later or check other sections of our website for the latest information.",
+      "link": {
+        "label": "Home",
+        "settings": {
+          "href": "/en/",
+          "externalLink": false
+        }
+      }
     }
   }
 }
