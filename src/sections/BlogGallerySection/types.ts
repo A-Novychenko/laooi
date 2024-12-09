@@ -5,4 +5,5 @@ export type BlogGallerySectionProps = {
   lang: 'uk' | 'en';
   currentPage: number;
   totalPages: number;
+  placeholder: string;
 };

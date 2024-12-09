@@ -19,13 +19,14 @@ export const BlogGallerySection: React.FC<BlogGallerySectionProps> = ({
   readMoreLabel,
   currentPage,
   totalPages,
+  placeholder,
 }) => {
   return (
     <section className="my-auto pb-32 pt-16">
       <div className="container">
         <Title className="mb-4">{title}</Title>
 
-        <GallerysSearchInput />
+        <GallerysSearchInput placeholder={placeholder} />
 
         <BlogGallery posts={posts} lang={lang} readMoreLabel={readMoreLabel} />
 

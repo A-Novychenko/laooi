@@ -23,3 +23,4 @@ export * from './VideoPlayer';
 export * from './PostImageSlide';
 export * from './SliderButton';
 export * from './GallerysSearchInput';
+export * from './CategorySelect';
