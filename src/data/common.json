@@ -4,8 +4,8 @@
     "en": "EN"
   },
   "videoUrl": "https://www.youtube.com/watch?v=u35WWrYws_c",
-  "poster": "https://fastly.picsum.photos/id/429/4128/2322.jpg?hmac=_mAS4ToWrJBx29qI2YNbOQ9IyOevQr01DEuCbArqthc",
-  "posterAlt": "Video preview",
+  "poster": "/images/poster.jpg",
+  "posterAlt": "Logo",
   "organization": "LAOOI",
   "policyUrl": "/in-progress",
   "designUrl": "https://www.behance.net/juliakopytko",

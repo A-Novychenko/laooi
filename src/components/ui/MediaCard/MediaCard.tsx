@@ -2,17 +2,25 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { cn } from '@/utils/cn';
+import { extractDomain } from '@/utils/extractDomain';
 
+import staticData from '@/data/common.json';
 import ArrowIcon from '~/icons/arrowBtnIcon.svg';
 
 import { MediaCardProps } from './types';
 
 import styles from './MediaCard.module.css';
 
-export const MediaCard: React.FC<MediaCardProps> = ({ img, cardLink }) => {
+export const MediaCard: React.FC<MediaCardProps> = ({
+  imageUrl,
+  imageAlt,
+  link,
+}) => {
+  const { poster, posterAlt } = staticData;
+
   return (
     <Link
-      href={cardLink.href}
+      href={link}
       target="_blank"
       rel="noopener noreferrer"
       className={cn('relative overflow-hidden', styles.link)}
@@ -25,8 +33,8 @@ export const MediaCard: React.FC<MediaCardProps> = ({ img, cardLink }) => {
         )}
       >
         <Image
-          src={img.src}
-          alt={img.src}
+          src={imageUrl ? imageUrl : poster}
+          alt={imageAlt ? imageAlt : posterAlt}
           width={288}
           height={288}
           className="size-full object-cover transition-transform"
@@ -42,7 +50,7 @@ export const MediaCard: React.FC<MediaCardProps> = ({ img, cardLink }) => {
           styles.overlay,
         )}
       >
-        {cardLink.labelCardLink} <ArrowIcon width={24} height={24} />
+        {extractDomain(link)} <ArrowIcon width={24} height={24} />
       </p>
     </Link>
   );

@@ -1,6 +1,6 @@
-import { BlogGallerySection, PlaceholderSection } from '@/sections';
+import { MediaGallerySection, PlaceholderSection } from '@/sections';
 
-import { getAllPosts } from '@/actions/sanity';
+import { getAllMediaItems } from '@/actions/sanity';
 
 import { getDictionary } from '@/utils/dictionaries';
 
@@ -13,27 +13,26 @@ const MediaPage = async ({
 }) => {
   const dict = await getDictionary(lang);
 
-  const { readMoreLabel } = dict.common;
   const { title, errorData } = dict.blogSection;
 
   const page = parseInt(searchParams.page || '1', 10);
-  const pageSize = 12;
+  const pageSize = 15;
 
-  const posts = await getAllPosts(lang, page, pageSize);
-
-  const totalPosts = await getAllPosts(lang, 1, 99999);
-  const totalPages = Math.ceil(totalPosts.length / pageSize);
+  const { totalPages, mediaItems } = await getAllMediaItems(
+    lang,
+    page,
+    pageSize,
+  );
 
   return (
     <>
-      {posts && posts.length > 0 ? (
-        <BlogGallerySection
-          title={title}
-          posts={posts}
+      {mediaItems && mediaItems.length > 0 ? (
+        <MediaGallerySection
+          dict={dict}
           lang={lang}
-          readMoreLabel={readMoreLabel}
           currentPage={page}
           totalPages={totalPages}
+          mediaItems={mediaItems}
         />
       ) : (
         <PlaceholderSection data={{ title, ...errorData }} />

@@ -1,9 +1,4 @@
 export type MediaListProps = {
-  items: {
-    img: { src: string; alt: string };
-    cardLink: {
-      href: string;
-      labelCardLink: string;
-    };
-  }[];
+  items: ITransformedMediaItem[];
+  type?: 'gallery' | 'main';
 };

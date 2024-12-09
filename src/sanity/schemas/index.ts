@@ -2,7 +2,8 @@ import { type SchemaTypeDefinition } from 'sanity';
 
 import { localizedString } from './localizedString';
 import { post } from './blog-schema';
+import { media } from './media-schema';
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [localizedString, post],
+  types: [localizedString, post, media],
 };

@@ -60,7 +60,7 @@
           },
           {
             "name": "Медіa про нас",
-            "href": "/in-progress"
+            "href": "/media"
           },
           {
             "name": "Документи",
@@ -114,7 +114,7 @@
         "embedded": [
           { "name": "Основні напрямки", "href": "/in-progress" },
           { "name": "Радники", "href": "/in-progress" },
-          { "name": "Медіа про нас", "href": "/in-progress" },
+          { "name": "Медіа про нас", "href": "/media" },
           { "name": "Документи", "href": "/in-progress" }
         ]
       },
@@ -410,61 +410,9 @@
     "link": {
       "label": "Всі публікації",
       "settings": {
-        "href": "/in-progress",
+        "href": "/media",
         "externalLink": false
       }
-    },
-    "items": [
-      {
-        "img": {
-          "src": "/images/media-section/media-1.webp",
-          "alt": "Укрінформ"
-        },
-        "cardLink": {
-          "href": "https://t.ly/uCvE6",
-          "labelCardLink": "Укрінформ"
-        }
-      },
-      {
-        "img": {
-          "src": "/images/media-section/media-2.webp",
-          "alt": "Undp.org"
-        },
-        "cardLink": {
-          "href": "https://www.undp.org/uk/ukraine/news/zabezpechennya-inklyuzyvnosti-pid-chas-viyny-istoriya-mykoly",
-          "labelCardLink": "Undp.org"
-        }
-      },
-      {
-        "img": {
-          "src": "/images/media-section/media-3.webp",
-          "alt": "Суспільне Донбас"
-        },
-        "cardLink": {
-          "href": "https://suspilne.media/donbas/762291-na-doneccini-ta-harkivsini-kostom-donoriv-vidremontuut-200-budinkiv-poskodzenih-obstrilami-armii-rf-ak-pracue-proekt/",
-          "labelCardLink": "Суспільне Донбас"
-        }
-      },
-      {
-        "img": {
-          "src": "/images/media-section/media-4.webp",
-          "alt": "Голос України"
-        },
-        "cardLink": {
-          "href": "http://www.golos.com.ua/article/301378",
-          "labelCardLink": "Голос України"
-        }
-      },
-      {
-        "img": {
-          "src": "/images/media-section/media-5.webp",
-          "alt": "Espreso"
-        },
-        "cardLink": {
-          "href": "https://espreso.tv/asotsiatsiya-organizatsiy-osib-z-invalidnistyu-dopravila-na-luganshchinu-35-tonn-gumanitarnoi-dopomogi-gayday",
-          "labelCardLink": "Espreso"
-        }
-      }
-    ]
+    }
   }
 }

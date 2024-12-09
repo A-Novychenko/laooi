@@ -1,8 +1,12 @@
 import { ButtonLink, Title } from '@/components/ui';
 import { MediaList } from '@/components/base';
 
-export const MediaSection: React.FC<ISectionProps> = ({ dict, lang }) => {
-  const { title, link, items } = dict.mediaSection;
+import { getLatestMediaItems } from '@/actions/sanity';
+
+export const MediaSection: React.FC<ISectionProps> = async ({ dict, lang }) => {
+  const { title, link } = dict.mediaSection;
+
+  const items = await getLatestMediaItems();
 
   return (
     <section className="section">
@@ -23,7 +27,7 @@ export const MediaSection: React.FC<ISectionProps> = ({ dict, lang }) => {
           </ButtonLink>
         </div>
 
-        <MediaList items={items} />
+        <MediaList items={items} type="main" />
       </div>
     </section>
   );
