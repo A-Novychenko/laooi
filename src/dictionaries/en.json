@@ -21,6 +21,19 @@
       "label": "View all news and events",
       "link": "/en/blog"
     },
+    "selectSortByDate": {
+      "title": "Sort by date",
+      "options": { "new": "Newest", "old": "Oldest" }
+    },
+    "selectPostByType": {
+      "title": "Content type",
+      "options": {
+        "news": "News",
+        "articles": "Articles",
+        "events": "Events",
+        "all": "All"
+      }
+    },
     "postFBLinkLabel": "Read on Facebook",
     "readMoreLabel": "Read more",
     "mainNav": [

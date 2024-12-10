@@ -25,18 +25,22 @@ export const BlogGallerySection: React.FC<BlogGallerySectionProps> = ({
   currentPage,
   totalPages,
   placeholder,
+  selectSortByDate,
+  selectPostByType,
 }) => {
   return (
     <section className="my-auto pb-32 pt-16">
       <div className="container">
         <Title className="mb-4">{title}</Title>
 
-        <div className="flex flex-col xl:flex-row xl:gap-4">
+        <div className="flex flex-col md:mb-4 xl:flex-row xl:gap-4">
           <GallerysSearchInput placeholder={placeholder} />
 
-          <CategorySelect />
+          <div className="flex flex-col md:flex-row md:gap-4">
+            <CategorySelect selectPostByType={selectPostByType} />
 
-          <SelectByDate />
+            <SelectByDate selectSortByDate={selectSortByDate} />
+          </div>
         </div>
 
         <BlogGallery posts={posts} lang={lang} readMoreLabel={readMoreLabel} />

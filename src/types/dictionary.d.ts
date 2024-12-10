@@ -15,6 +15,8 @@ interface IDictionary {
     footerLinkTitle: string;
     errorPage: IPlaceholder;
     devPage: IPlaceholder;
+    selectSortByDate: ISelectSortByDate;
+    selectPostByType: ISelectPostByType;
   };
   aboutSection: IAboutSection;
   activitiesSection: IActivitiesSection;
@@ -219,5 +221,23 @@ interface IErrorData {
       href: string;
       externalLink: boolean;
     };
+  };
+}
+
+interface ISelectSortByDate {
+  title: string;
+  options: {
+    new: string;
+    old: string;
+  };
+}
+
+interface ISelectPostByType {
+  title: string;
+  options: {
+    news: string;
+    articles: string;
+    events: string;
+    all: string;
   };
 }

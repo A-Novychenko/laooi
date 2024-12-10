@@ -24,7 +24,8 @@ const BlogPage = async ({
 }) => {
   const dict = await getDictionary(lang);
 
-  const { readMoreLabel, searchInput } = dict.common;
+  const { readMoreLabel, searchInput, selectSortByDate, selectPostByType } =
+    dict.common;
   const { title, errorData } = dict.blogSection;
 
   const page = parseInt(searchParams.page || '1', 10);
@@ -60,6 +61,8 @@ const BlogPage = async ({
           currentPage={page}
           totalPages={totalPages}
           placeholder={searchInput.placeholder}
+          selectSortByDate={selectSortByDate}
+          selectPostByType={selectPostByType}
         />
       ) : (
         <PlaceholderSection data={{ title, ...errorData }} />

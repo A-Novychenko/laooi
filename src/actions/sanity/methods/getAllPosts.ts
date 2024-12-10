@@ -2,12 +2,7 @@ import { sanityClient } from '@/sanity/lib/client';
 
 import { transformPostPreview } from '@/utils/transformPostPreview';
 
-import {
-  getAllPostsQuery,
-  getSearchPostQuery,
-  getSearchPostCountQuery,
-  getTotalCountPostsQuery,
-} from '../queries';
+import { getPostsWithCountQuery } from '../queries';
 
 const fetchPosts = async (
   search: string | null,
@@ -20,20 +15,21 @@ const fetchPosts = async (
   posts: IPostPreview[];
   totalCount: number;
 }> => {
-  let query, countQuery;
+  const query = getPostsWithCountQuery(
+    search,
+    lang,
+    page,
+    pageSize,
+    postType,
+    sortDate,
+  );
 
-  if (search) {
-    query = getSearchPostQuery(search, lang, page, pageSize, postType);
-    countQuery = getSearchPostCountQuery(search, lang, postType);
-  } else {
-    query = getAllPostsQuery(page, pageSize, postType, sortDate);
-    countQuery = getTotalCountPostsQuery(postType);
-  }
+  const result = await sanityClient.fetch(query);
 
-  const posts = await sanityClient.fetch(query);
-  const totalCount = await sanityClient.fetch(countQuery);
-
-  return { posts: posts ?? [], totalCount };
+  return {
+    posts: result.posts ?? [],
+    totalCount: result.totalCount ?? 0,
+  };
 };
 
 export const getAllPosts = async (
