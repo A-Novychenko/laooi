@@ -4,9 +4,9 @@ import { useEffect, useState } from 'react';
 
 import SearchIcon from '~/icons/search.svg';
 
-import { GallerysSearchInputProps } from './types';
+import { GallerySearchInputProps } from './types';
 
-export const GallerysSearchInput: React.FC<GallerysSearchInputProps> = ({
+export const GallerySearchInput: React.FC<GallerySearchInputProps> = ({
   placeholder,
 }) => {
   const [searchQuery, setSearchQuery] = useState('');
