@@ -13,8 +13,6 @@ export const CategorySelect: React.FC<CategorySelectProps> = ({
   const router = useRouter();
   const searchParams = useSearchParams();
 
-  console.log('selectPostByType', selectPostByType);
-
   const {
     title,
     options: { news, articles, events, all },
