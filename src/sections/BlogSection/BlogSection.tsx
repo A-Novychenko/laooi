@@ -1,7 +1,7 @@
 import { ButtonLink, PostCard, Title } from '@/components/ui';
 
 import { cn } from '@/utils/cn';
-import { getLatestPosts } from '@/actions/sanity/methods/getLatestPosts';
+import { getLatestPosts } from '@/actions/sanity';
 
 import { BlogSectionProps } from './types';
 
