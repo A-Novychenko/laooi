@@ -15,6 +15,7 @@ const fetchPosts = async (
   page: number,
   pageSize: number,
   postType?: 'news' | 'articles' | 'events',
+  sortDate: 'newest' | 'oldest' = 'newest',
 ): Promise<{
   posts: IPostPreview[];
   totalCount: number;
@@ -25,7 +26,7 @@ const fetchPosts = async (
     query = getSearchPostQuery(search, lang, page, pageSize, postType);
     countQuery = getSearchPostCountQuery(search, lang, postType);
   } else {
-    query = getAllPostsQuery(page, pageSize, postType);
+    query = getAllPostsQuery(page, pageSize, postType, sortDate);
     countQuery = getTotalCountPostsQuery(postType);
   }
 
@@ -41,6 +42,7 @@ export const getAllPosts = async (
   page: number = 1,
   pageSize: number = 12,
   postType?: 'news' | 'articles' | 'events',
+  sortDate: 'newest' | 'oldest' = 'newest',
 ): Promise<{
   posts: ITransformedPostPreview[];
   totalPages: number;
@@ -52,6 +54,7 @@ export const getAllPosts = async (
       page,
       pageSize,
       postType,
+      sortDate,
     );
 
     const transformedPosts = posts

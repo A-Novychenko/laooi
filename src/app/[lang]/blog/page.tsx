@@ -19,6 +19,7 @@ const BlogPage = async ({
     page?: string;
     search?: string;
     type?: 'news' | 'articles' | 'events';
+    sort?: string;
   };
 }) => {
   const dict = await getDictionary(lang);
@@ -30,6 +31,8 @@ const BlogPage = async ({
   const pageSize = 12;
 
   const searchQuery = searchParams.search || '';
+
+  const sortDate = searchParams.sort === 'oldest' ? 'oldest' : 'newest';
 
   const postType: PostType | undefined = Object.values(PostType).includes(
     searchParams.type as PostType,
@@ -43,6 +46,7 @@ const BlogPage = async ({
     page,
     pageSize,
     postType,
+    sortDate,
   );
 
   return (

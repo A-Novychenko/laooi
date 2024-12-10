@@ -1,6 +1,11 @@
 import dynamic from 'next/dynamic';
 
-import { CategorySelect, GallerysSearchInput, Title } from '@/components/ui';
+import {
+  CategorySelect,
+  GallerysSearchInput,
+  SelectByDate,
+  Title,
+} from '@/components/ui';
 import { BlogGallery } from '@/components/base';
 
 import { BlogGallerySectionProps } from './types';
@@ -26,9 +31,13 @@ export const BlogGallerySection: React.FC<BlogGallerySectionProps> = ({
       <div className="container">
         <Title className="mb-4">{title}</Title>
 
-        <GallerysSearchInput placeholder={placeholder} />
+        <div className="flex flex-col xl:flex-row xl:gap-4">
+          <GallerysSearchInput placeholder={placeholder} />
 
-        <CategorySelect />
+          <CategorySelect />
+
+          <SelectByDate />
+        </div>
 
         <BlogGallery posts={posts} lang={lang} readMoreLabel={readMoreLabel} />
 
