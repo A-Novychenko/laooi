@@ -77,7 +77,7 @@
           },
           {
             "name": "Документи",
-            "href": "/in-progress"
+            "href": "/documents"
           }
         ]
       },
@@ -128,7 +128,7 @@
           { "name": "Основні напрямки", "href": "/in-progress" },
           { "name": "Радники", "href": "/in-progress" },
           { "name": "Медіа про нас", "href": "/media" },
-          { "name": "Документи", "href": "/in-progress" }
+          { "name": "Документи", "href": "/documents" }
         ]
       },
       "footerOther": {
@@ -431,6 +431,30 @@
       "description": "На жаль, зараз немає доступних постів медіа про нас для перегляду. Ви можете повернутися пізніше або перевірити інші розділи нашого сайту для актуальної інформації.",
       "link": {
         "label": "Головна",
+        "settings": {
+          "href": "/uk/",
+          "externalLink": false
+        }
+      }
+    }
+  },
+  "documentsSection": {
+    "mainTitle": "Документи та звіти організації ЛАООІ",
+    "fileLinks": {
+      "openFileLabel": "Відкрити",
+      "downloadFileLabel": "Завантажити"
+    },
+    "categories": [
+      { "title": "Установчі документи", "category": "constituent" },
+      { "title": "Внутрішні документи та політики", "category": "internal" },
+      { "title": "Фінансові звіти", "category": "financial" },
+      { "title": "Звіти про використання доходів", "category": "reports" },
+      { "title": "Інші документи", "category": "other" }
+    ],
+    "errorData": {
+      "description": "На жаль, на даний момент немає документів, доступних для перегляду. Ви можете повернутися пізніше або переглянути останню інформацію в інших розділах нашого веб-сайту.",
+      "link": {
+        "label": "Home",
         "settings": {
           "href": "/uk/",
           "externalLink": false

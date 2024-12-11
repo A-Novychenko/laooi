@@ -77,7 +77,7 @@
           },
           {
             "name": "Documents",
-            "href": "/in-progress"
+            "href": "/documents"
           }
         ]
       },
@@ -128,7 +128,7 @@
           { "name": "Main areas", "href": "/in-progress" },
           { "name": "Advisors", "href": "/in-progress" },
           { "name": "Media about us", "href": "/media" },
-          { "name": "Documents", "href": "/in-progress" }
+          { "name": "Documents", "href": "/documents" }
         ]
       },
       "footerOther": {
@@ -429,6 +429,27 @@
     },
     "errorData": {
       "description": "Unfortunately, there are no media items available for viewing at the moment. You can come back later or check other sections of our website for the latest information.",
+      "link": {
+        "label": "Home",
+        "settings": {
+          "href": "/en/",
+          "externalLink": false
+        }
+      }
+    }
+  },
+  "documentsSection": {
+    "mainTitle": "Documents and reports of the LAOOI organization",
+    "fileLinks": { "openFileLabel": "Open", "downloadFileLabel": "Download" },
+    "categories": [
+      { "title": "Founding documents", "category": "constituent" },
+      { "title": "Internal documents and policies", "category": "internal" },
+      { "title": "Financial reports", "category": "financial" },
+      { "title": "Reports on income usage", "category": "reports" },
+      { "title": "Other documents", "category": "other" }
+    ],
+    "errorData": {
+      "description": "Unfortunately, there are no documents available for viewing at this time. You can come back later or view the latest information in other sections of our website.",
       "link": {
         "label": "Home",
         "settings": {

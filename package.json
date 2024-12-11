@@ -32,6 +32,7 @@
     "@sanity/vision": "3",
     "@types/negotiator": "^0.6.3",
     "autoprefixer": "^10.4.20",
+    "axios": "^1.7.9",
     "clsx": "^2.1.1",
     "framer-motion": "^11.11.7",
     "negotiator": "^0.6.3",

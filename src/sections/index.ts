@@ -11,3 +11,4 @@ export * from './PostSection';
 export * from './SocialsSection';
 export * from './TargetSection';
 export * from './MediaGallerySection';
+export * from './DocumentsSection';

@@ -90,3 +90,18 @@ interface IMediaItemsResponse {
   items: IMediaItem[];
   total: number;
 }
+
+interface IDocument {
+  title: {
+    uk: string;
+    en: string;
+  };
+  category: string;
+  fileUrl: string;
+}
+
+interface ITransformedDocument {
+  title: string;
+  category: string;
+  fileUrl: string;
+}

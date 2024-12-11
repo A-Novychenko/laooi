@@ -9,3 +9,4 @@ export * from './MobileMenu';
 export * from './PartnersSliderWrap';
 export * from './TargetSliderWrap';
 export * from './PostSliderWrap';
+export * from './DocumentsCategoryList';

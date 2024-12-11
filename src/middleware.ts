@@ -82,7 +82,6 @@
 //     // '/'
 //   ],
 // };
-
 import { NextRequest, NextResponse } from 'next/server';
 import Negotiator from 'negotiator';
 import { match } from '@formatjs/intl-localematcher';
@@ -113,6 +112,7 @@ export function middleware(request: NextRequest) {
   // Ігнорувати службові маршрути і статичні ресурси
   if (
     pathname.startsWith('/_next') ||
+    pathname.startsWith('/api') ||
     pathname.startsWith('/static') ||
     pathname.startsWith('/images') ||
     pathname.startsWith('/studio') ||
