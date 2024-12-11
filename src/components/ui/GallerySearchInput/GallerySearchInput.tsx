@@ -1,6 +1,7 @@
 'use client';
-import { useSearchParams, useRouter } from 'next/navigation';
+
 import { useEffect, useState } from 'react';
+import { useSearchParams, useRouter } from 'next/navigation';
 
 import SearchIcon from '~/icons/search.svg';
 
@@ -10,11 +11,13 @@ export const GallerySearchInput: React.FC<GallerySearchInputProps> = ({
   placeholder,
 }) => {
   const [searchQuery, setSearchQuery] = useState('');
+  
   const router = useRouter();
   const searchParams = useSearchParams();
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     const query = e.target.value;
+    
     setSearchQuery(query);
 
     const params = new URLSearchParams(searchParams.toString());
@@ -44,6 +47,7 @@ export const GallerySearchInput: React.FC<GallerySearchInputProps> = ({
         placeholder={placeholder}
         className="h-11 w-full rounded-[40px] border border-textActive bg-textLight pl-12 pr-6 font-semibold outline-textActive placeholder:text-textSlate md:h-12 xl:h-[56px] xl:w-[644px] xl:pl-12 xl:pr-6 xl:text-sm/normal"
       />
+      
       <SearchIcon
         width={16}
         height={16}
