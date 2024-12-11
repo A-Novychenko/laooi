@@ -21,6 +21,19 @@
       "label": "Перейти до всіх новин і подій",
       "link": "/uk/blog"
     },
+    "selectSortByDate": {
+      "title": "Сортувати за датою",
+      "options": { "new": "Спочатку нові", "old": "Спочатку старі" }
+    },
+    "selectPostByType": {
+      "title": "Тип контенту",
+      "options": {
+        "news": "Новини",
+        "articles": "Статті",
+        "events": "Події",
+        "all": "Усі типи"
+      }
+    },
     "postFBLinkLabel": "Читати у Facebook",
     "readMoreLabel": "Читати далі",
     "mainNav": [

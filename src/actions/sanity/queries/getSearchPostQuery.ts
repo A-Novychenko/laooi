@@ -1,12 +1,12 @@
 export const getSearchPostQuery = (
   search: string,
   lang: 'uk' | 'en',
-  page: number = 1,
-  pageSize: number = 12,
+  page: number,
+  pageSize: number,
+  postType?: 'news' | 'articles' | 'events',
 ) => {
-  const start = (page - 1) * pageSize;
-  const end = pageSize;
-  return `*[_type == "Post" && title.${lang} match "${search}*"] {
+  const typeFilter = postType ? `&& postType == "${postType}"` : '';
+  return `*[_type == "Post" && (title.${lang} match "${search}*" || body.${lang} match "${search}*") ${typeFilter}] | order(publicationDate desc) [${(page - 1) * pageSize}...${page * pageSize}] {
     _id,
     title {
       uk,
@@ -26,5 +26,5 @@ export const getSearchPostQuery = (
       uk,
       en
     }
-  }[${start}...${start + end}]`; // Використовуємо діапазон для пагінації
+  }`;
 };

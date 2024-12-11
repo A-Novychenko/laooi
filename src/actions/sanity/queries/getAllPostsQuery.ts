@@ -1,5 +1,16 @@
-export const getAllPostsQuery = (page: number, pageSize: number) =>
-  `*[_type == "Post"] | order(publicationDate desc) [${(page - 1) * pageSize}...${page * pageSize}] {
+export const getAllPostsQuery = (
+  page: number,
+  pageSize: number,
+  postType?: 'news' | 'articles' | 'events',
+  sortDate: 'newest' | 'oldest' = 'newest',
+) => {
+  const typeFilter = postType ? `&& postType == "${postType}"` : '';
+  const sortFilter =
+    sortDate === 'oldest'
+      ? `| order(publicationDate asc)`
+      : `| order(publicationDate desc)`;
+
+  return `*[_type == "Post" ${typeFilter}] ${sortFilter} [${(page - 1) * pageSize}...${page * pageSize}] {
     _id,
     title {
       uk,
@@ -20,3 +31,4 @@ export const getAllPostsQuery = (page: number, pageSize: number) =>
       en
     }
   }`;
+};

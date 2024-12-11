@@ -6,4 +6,6 @@ export type BlogGallerySectionProps = {
   currentPage: number;
   totalPages: number;
   placeholder: string;
+  selectSortByDate: ISelectSortByDate;
+  selectPostByType: ISelectPostByType;
 };

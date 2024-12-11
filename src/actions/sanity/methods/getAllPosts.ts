@@ -1,35 +1,35 @@
 import { sanityClient } from '@/sanity/lib/client';
+
 import { transformPostPreview } from '@/utils/transformPostPreview';
-import {
-  getAllPostsQuery,
-  getSearchPostQuery,
-  getSearchPostCountQuery,
-  getTotalCountPostsQuery,
-} from '../queries';
+
+import { getPostsWithCountQuery } from '../queries';
 
 const fetchPosts = async (
   search: string | null,
   lang: 'uk' | 'en',
   page: number,
   pageSize: number,
+  postType?: 'news' | 'articles' | 'events',
+  sortDate: 'newest' | 'oldest' = 'newest',
 ): Promise<{
   posts: IPostPreview[];
   totalCount: number;
 }> => {
-  let query, countQuery;
+  const query = getPostsWithCountQuery(
+    search,
+    lang,
+    page,
+    pageSize,
+    postType,
+    sortDate,
+  );
 
-  if (search) {
-    query = getSearchPostQuery(search, lang, page, pageSize);
-    countQuery = getSearchPostCountQuery(search, lang);
-  } else {
-    query = getAllPostsQuery(page, pageSize);
-    countQuery = getTotalCountPostsQuery();
-  }
+  const result = await sanityClient.fetch(query);
 
-  const posts = await sanityClient.fetch(query);
-  const totalCount = await sanityClient.fetch(countQuery);
-
-  return { posts: posts ?? [], totalCount };
+  return {
+    posts: result.posts ?? [],
+    totalCount: result.totalCount ?? 0,
+  };
 };
 
 export const getAllPosts = async (
@@ -37,6 +37,8 @@ export const getAllPosts = async (
   lang: 'uk' | 'en' = 'uk',
   page: number = 1,
   pageSize: number = 12,
+  postType?: 'news' | 'articles' | 'events',
+  sortDate: 'newest' | 'oldest' = 'newest',
 ): Promise<{
   posts: ITransformedPostPreview[];
   totalPages: number;
@@ -47,6 +49,8 @@ export const getAllPosts = async (
       lang,
       page,
       pageSize,
+      postType,
+      sortDate,
     );
 
     const transformedPosts = posts
