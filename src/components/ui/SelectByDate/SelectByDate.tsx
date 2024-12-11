@@ -11,7 +11,7 @@ export const SelectByDate: React.FC<SelectByDateProps> = ({
   selectSortByDate,
 }) => {
   const [selectedSort, setSelectedSort] = useState<SortDate | ''>('');
-  
+
   const router = useRouter();
   const searchParams = useSearchParams();
 
@@ -62,7 +62,7 @@ export const SelectByDate: React.FC<SelectByDateProps> = ({
           className="flex w-full cursor-pointer justify-between rounded-full bg-bgLightSlate px-6 py-4 text-base/normal font-semibold focus-within:bg-bgSlate hover:bg-bgSlate xl:text-lg"
         >
           <p id="sort-title">{getSortTitle(selectedSort)}</p>
-          
+
           <ArrowIcon
             width={24}
             height={24}
