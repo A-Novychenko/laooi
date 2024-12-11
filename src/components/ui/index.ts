@@ -25,4 +25,5 @@ export * from './SliderButton';
 export * from './GallerySearchInput';
 export * from './CategorySelect';
 export * from './DocumentCard';
+export * from './DocumentCard';
 export * from './SelectByDate';
