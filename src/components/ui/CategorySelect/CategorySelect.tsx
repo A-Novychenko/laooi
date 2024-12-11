@@ -62,6 +62,8 @@ export const CategorySelect: React.FC<CategorySelectProps> = ({
     <div
       className="relative mb-2 md:mb-0 md:min-w-[336px] xl:min-w-[302px]"
       role="combobox"
+      aria-expanded="true"
+      aria-controls="type-options"
     >
       <div className="group relative">
         <div
@@ -84,48 +86,52 @@ export const CategorySelect: React.FC<CategorySelectProps> = ({
           aria-label="type-label"
           className="absolute z-20 hidden w-full rounded-3xl bg-textLight p-4 transition-all group-focus-within:block group-hover:block"
         >
-          <li>
+          <li key="all">
             <button
               className="w-full cursor-pointer rounded-2xl p-4 text-left text-xs/normal font-semibold hover:bg-bgSlate xl:text-sm"
               type="button"
               role="option"
               aria-label="all"
+              aria-selected={selectedType === ''}
               onClick={evt => handleSelect('', evt)}
             >
               {all}
             </button>
           </li>
 
-          <li>
+          <li key="news">
             <button
               className="w-full cursor-pointer rounded-2xl p-4 text-left text-xs/normal font-semibold hover:bg-bgSlate xl:text-sm"
               type="button"
               role="option"
               aria-label="news"
               onClick={evt => handleSelect('news', evt)}
+              aria-selected={selectedType === 'news'}
             >
               {news}
             </button>
           </li>
 
-          <li>
+          <li key="articles">
             <button
               className="w-full cursor-pointer rounded-2xl p-4 text-left text-xs/normal font-semibold hover:bg-bgSlate xl:text-sm"
               type="button"
               role="option"
               aria-label="articles"
+              aria-selected={selectedType === 'articles'}
               onClick={evt => handleSelect('articles', evt)}
             >
               {articles}
             </button>
           </li>
 
-          <li>
+          <li key="events">
             <button
               className="w-full cursor-pointer rounded-2xl p-4 text-left text-xs/normal font-semibold hover:bg-bgSlate xl:text-sm"
               type="button"
               role="option"
               aria-label="events"
+              aria-selected={selectedType === 'events'}
               onClick={evt => handleSelect('events', evt)}
             >
               {events}

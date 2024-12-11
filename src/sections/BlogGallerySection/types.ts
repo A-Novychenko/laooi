@@ -8,4 +8,5 @@ export type BlogGallerySectionProps = {
   placeholder: string;
   selectSortByDate: ISelectSortByDate;
   selectPostByType: ISelectPostByType;
+  notFoundDescr: string;
 };
