@@ -113,6 +113,7 @@ export function middleware(request: NextRequest) {
   // Ігнорувати службові маршрути і статичні ресурси
   if (
     pathname.startsWith('/_next') ||
+    pathname.startsWith('/api') ||
     pathname.startsWith('/static') ||
     pathname.startsWith('/images') ||
     pathname.startsWith('/studio') ||

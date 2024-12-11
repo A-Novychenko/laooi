@@ -27,6 +27,7 @@ interface IDictionary {
   targetSection: ITargetSection;
   partnersSection: IPartnersSection;
   mediaSection: IMediaSection;
+  documentsSection: IDocumentsSection;
 }
 
 interface IPostBackLink {
@@ -222,6 +223,18 @@ interface IErrorData {
       externalLink: boolean;
     };
   };
+}
+
+interface IDocumentsSection {
+  mainTitle: string;
+  fileLinks: IFileLinks;
+  categories: { title: string; category: string }[];
+  errorData: IErrorData;
+}
+
+interface IFileLinks {
+  openFileLabel: string;
+  downloadFileLabel: string;
 }
 
 interface ISelectSortByDate {

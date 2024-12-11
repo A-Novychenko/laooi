@@ -39,6 +39,10 @@ html {
   @apply py-8 md:py-12 xl:py-16;
 }
 
+.section-documents {
+  @apply pt-4 md:pt-6 xl:pt-8;
+}
+
 .swiper-wrapper {
   transition-timing-function: linear !important;
 

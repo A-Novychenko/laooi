@@ -6,4 +6,5 @@ export * from './getLatestMediaItemsQuery';
 export * from './getTotalCountPostsQuery';
 export * from './getSearchPostQuery';
 export * from './getSearchPostCountQuery';
+export * from './getDocumentsQuery';
 export * from './getAllPostsWithCountQuery';
