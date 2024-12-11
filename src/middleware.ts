@@ -82,7 +82,6 @@
 //     // '/'
 //   ],
 // };
-
 import { NextRequest, NextResponse } from 'next/server';
 import Negotiator from 'negotiator';
 import { match } from '@formatjs/intl-localematcher';
