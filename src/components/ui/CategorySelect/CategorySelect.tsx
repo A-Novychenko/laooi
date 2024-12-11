@@ -11,7 +11,7 @@ export const CategorySelect: React.FC<CategorySelectProps> = ({
   selectPostByType,
 }) => {
   const [selectedType, setSelectedType] = useState<PostType | ''>('');
-  
+
   const router = useRouter();
   const searchParams = useSearchParams();
 
@@ -70,7 +70,7 @@ export const CategorySelect: React.FC<CategorySelectProps> = ({
           className="flex w-full cursor-pointer justify-between rounded-full bg-bgLightSlate px-6 py-4 text-base/normal font-semibold transition-all hover:bg-bgSlate focus:bg-bgSlate xl:text-lg"
         >
           <p id="type-title">{getSelectTypeTitle(selectedType)}</p>
-          
+
           <ArrowIcon
             width={24}
             height={24}
@@ -95,7 +95,7 @@ export const CategorySelect: React.FC<CategorySelectProps> = ({
               {all}
             </button>
           </li>
-          
+
           <li>
             <button
               className="w-full cursor-pointer rounded-2xl p-4 text-left text-xs/normal font-semibold hover:bg-bgSlate xl:text-sm"
@@ -107,7 +107,7 @@ export const CategorySelect: React.FC<CategorySelectProps> = ({
               {news}
             </button>
           </li>
-          
+
           <li>
             <button
               className="w-full cursor-pointer rounded-2xl p-4 text-left text-xs/normal font-semibold hover:bg-bgSlate xl:text-sm"
@@ -119,7 +119,7 @@ export const CategorySelect: React.FC<CategorySelectProps> = ({
               {articles}
             </button>
           </li>
-          
+
           <li>
             <button
               className="w-full cursor-pointer rounded-2xl p-4 text-left text-xs/normal font-semibold hover:bg-bgSlate xl:text-sm"
