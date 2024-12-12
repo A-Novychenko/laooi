@@ -1,6 +1,6 @@
 import dynamic from 'next/dynamic';
 
-import { GallerySearchInput, Title } from '@/components/ui';
+import { GallerySearchInput, SelectByDate, Title } from '@/components/ui';
 import { MediaList } from '@/components/base';
 
 import { MediaGallerySectionProps } from './types';
@@ -18,6 +18,7 @@ export const MediaGallerySection: React.FC<MediaGallerySectionProps> = ({
   totalPages,
   mediaItems,
   placeholder,
+  selectSortByDate,
 }) => {
   const { title } = dict.mediaSection;
 
@@ -28,7 +29,11 @@ export const MediaGallerySection: React.FC<MediaGallerySectionProps> = ({
           <Title className="mb-4 md:mb-0">{title}</Title>
         </div>
 
-        <GallerySearchInput placeholder={placeholder} />
+        <div className="flex gap-[16px]">
+          <GallerySearchInput placeholder={placeholder} />
+
+          <SelectByDate selectSortByDate={selectSortByDate} />
+        </div>
 
         <MediaList items={mediaItems} />
 

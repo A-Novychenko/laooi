@@ -68,7 +68,7 @@ export const SelectByDate: React.FC<SelectByDateProps> = ({
           <ArrowIcon
             width={24}
             height={24}
-            className="transition-all group-hover:-rotate-180"
+            className="size-6 transition-all group-hover:-rotate-180"
           />
         </div>
 

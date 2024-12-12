@@ -45,7 +45,7 @@ export const GallerySearchInput: React.FC<GallerySearchInputProps> = ({
         value={searchQuery}
         onChange={handleSearch}
         placeholder={placeholder}
-        className="h-11 w-full rounded-[40px] border border-textActive bg-textLight pl-12 pr-6 font-semibold outline-textActive placeholder:text-textSlate md:h-12 xl:h-[56px] xl:w-[644px] xl:pl-12 xl:pr-6 xl:text-sm/normal"
+        className="h-11 w-full rounded-[40px] border border-textActive bg-textLight pl-12 pr-6 font-semibold outline-textActive placeholder:text-textSlate focus:border-transparent md:h-12 xl:h-[56px] xl:w-[644px] xl:pl-12 xl:pr-6 xl:text-sm/normal"
       />
 
       <SearchIcon

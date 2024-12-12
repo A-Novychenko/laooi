@@ -9,20 +9,26 @@ const MediaPage = async ({
   searchParams,
 }: {
   params: { lang: 'uk' | 'en' };
-  searchParams: { page?: string };
+  searchParams: { page?: string; sort?: string };
 }) => {
   const dict = await getDictionary(lang);
 
   const { title, errorData } = dict.mediaSection;
-  const { placeholder } = dict.common.searchInput;
+  const {
+    searchInput: { placeholder },
+    selectSortByDate,
+  } = dict.common;
 
   const page = parseInt(searchParams.page || '1', 10);
   const pageSize = 15;
+
+  const sortDate = searchParams.sort === 'oldest' ? 'oldest' : 'newest';
 
   const { totalPages, mediaItems } = await getAllMediaItems(
     lang,
     page,
     pageSize,
+    sortDate,
   );
 
   return (
@@ -35,6 +41,7 @@ const MediaPage = async ({
           totalPages={totalPages}
           mediaItems={mediaItems}
           placeholder={placeholder}
+          selectSortByDate={selectSortByDate}
         />
       ) : (
         <PlaceholderSection data={{ title, ...errorData }} />

@@ -71,7 +71,7 @@ export const SearchInput: React.FC<SearchInputProps> = ({
             >
               <input
                 className={cn(
-                  'h-[48px] w-[500px] rounded-[40px] border py-2 pl-10 pr-4 text-base/normal font-semibold outline-textFooterAccent placeholder:text-textSlate',
+                  'h-[48px] w-[500px] rounded-[40px] border py-2 pl-10 pr-4 text-base/normal font-semibold outline-textFooterAccent placeholder:text-textSlate focus:border-transparent',
                   styles.input,
                 )}
                 type="search"

@@ -8,8 +8,8 @@ export const Gallery: React.FC<GalleryProps> = ({ data }) => {
   return (
     <ul className="flex gap-4">
       {data &&
-        data.map(({ img }, idx) => (
-          <li key={idx} className={styles.card}>
+        data.map(({ img }) => (
+          <li key={img.src} className={styles.card}>
             <Image
               src={img.src}
               alt={img.alt}
