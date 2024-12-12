@@ -39,7 +39,7 @@ export const GallerySearchInput: React.FC<GallerySearchInputProps> = ({
   }, [searchQuery, router, searchParams]);
 
   return (
-    <div className="relative mb-2 md:mb-4">
+    <div className="relative mb-2 md:mb-4 xl:mb-0">
       <input
         type="search"
         value={searchQuery}

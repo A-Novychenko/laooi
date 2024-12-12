@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  @apply m-0 mt-[72px] bg-bgLight font-nunito leading-normal text-textPrimary;
+  @apply m-0 mt-[72px] bg-bgLight font-nunito leading-normal text-textPrimary md:mt-[80px] xl:mt-[96px];
 }
 
 html {
@@ -35,12 +35,26 @@ html {
   min-height: calc(100vh - 72px);
 }
 
+@media screen and (min-width: 768px) {
+  .page-wrap {
+    min-height: calc(100vh - 80px);
+  }
+}
+
+@media screen and (min-width: 1360px) {
+  .page-wrap {
+    min-height: calc(100vh - 96px);
+  }
+}
+
 .section {
   @apply py-8 md:py-12 xl:py-16;
 }
 
+.section-media,
+.section-blog,
 .section-documents {
-  @apply pt-4 md:pt-6 xl:pt-8;
+  @apply pb-16 pt-8 md:pb-24 md:pt-10 xl:pb-32 xl:pt-14;
 }
 
 .swiper-wrapper {

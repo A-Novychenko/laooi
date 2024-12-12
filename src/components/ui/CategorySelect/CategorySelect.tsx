@@ -69,7 +69,7 @@ export const CategorySelect: React.FC<CategorySelectProps> = ({
         <div
           role="button"
           tabIndex={0}
-          className="flex w-full cursor-pointer justify-between rounded-full bg-bgLightSlate px-6 py-4 text-base/normal font-semibold transition-all hover:bg-bgSlate focus:bg-bgSlate xl:text-lg"
+          className="flex w-full cursor-pointer justify-between rounded-full bg-bgLightSlate px-6 py-2.5 text-base/[1.5] font-semibold transition-all hover:bg-bgSlate focus:bg-bgSlate md:py-3 xl:py-4 xl:text-lg/[1.22]"
         >
           <p id="type-title">{getSelectTypeTitle(selectedType)}</p>
 

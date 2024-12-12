@@ -19,25 +19,28 @@ export const MediaGallerySection: React.FC<MediaGallerySectionProps> = ({
   mediaItems,
   placeholder,
   selectSortByDate,
+  notFoundDescr,
 }) => {
   const { title } = dict.mediaSection;
 
   return (
-    <section className="section">
+    <section className="section section-media">
       <div className="container">
         <div className="mb-4 md:flex md:justify-between">
           <Title className="mb-4 md:mb-0">{title}</Title>
         </div>
 
-        <div className="flex gap-[16px]">
+        <div className="mb-4 flex flex-col xl:flex-row xl:gap-[16px]">
           <GallerySearchInput placeholder={placeholder} />
 
           <SelectByDate selectSortByDate={selectSortByDate} />
         </div>
 
-        <MediaList items={mediaItems} />
+        <MediaList items={mediaItems} notFoundDescr={notFoundDescr} />
 
-        <Pagination currentPage={currentPage} totalPages={totalPages} />
+        {mediaItems && mediaItems.length > 0 && (
+          <Pagination currentPage={currentPage} totalPages={totalPages} />
+        )}
       </div>
     </section>
   );

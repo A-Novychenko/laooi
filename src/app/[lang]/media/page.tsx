@@ -9,11 +9,11 @@ const MediaPage = async ({
   searchParams,
 }: {
   params: { lang: 'uk' | 'en' };
-  searchParams: { page?: string; sort?: string };
+  searchParams: { page?: string; sort?: string; search?: string };
 }) => {
   const dict = await getDictionary(lang);
 
-  const { title, errorData } = dict.mediaSection;
+  const { title, errorData, notFoundDescr } = dict.mediaSection;
   const {
     searchInput: { placeholder },
     selectSortByDate,
@@ -22,6 +22,8 @@ const MediaPage = async ({
   const page = parseInt(searchParams.page || '1', 10);
   const pageSize = 15;
 
+  const searchQuery = searchParams.search || '';
+
   const sortDate = searchParams.sort === 'oldest' ? 'oldest' : 'newest';
 
   const { totalPages, mediaItems } = await getAllMediaItems(
@@ -29,11 +31,12 @@ const MediaPage = async ({
     page,
     pageSize,
     sortDate,
+    searchQuery,
   );
 
   return (
-    <>
-      {mediaItems && mediaItems.length > 0 ? (
+    <div className="grow">
+      {mediaItems ? (
         <MediaGallerySection
           dict={dict}
           lang={lang}
@@ -42,11 +45,12 @@ const MediaPage = async ({
           mediaItems={mediaItems}
           placeholder={placeholder}
           selectSortByDate={selectSortByDate}
+          notFoundDescr={notFoundDescr}
         />
       ) : (
         <PlaceholderSection data={{ title, ...errorData }} />
       )}
-    </>
+    </div>
   );
 };
 

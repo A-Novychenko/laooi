@@ -5,8 +5,9 @@ const fetchPosts = async (
   page: number,
   pageSize: number,
   sortDate: 'newest' | 'oldest' = 'newest',
+  searchQuery: string | null = null,
 ): Promise<IMediaItemsResponse> => {
-  const query = getAllMediaItemsQuery(page, pageSize, sortDate);
+  const query = getAllMediaItemsQuery(page, pageSize, sortDate, searchQuery);
   const data = await sanityClient.fetch<IMediaItemsResponse>(query);
 
   return data ? data : { items: [], total: 0 };
@@ -17,12 +18,14 @@ export const getAllMediaItems = async (
   page: number = 1,
   pageSize: number = 15,
   sortDate: 'newest' | 'oldest' = 'newest',
+  searchQuery: string | null = null,
 ): Promise<{ totalPages: number; mediaItems: ITransformedMediaItem[] }> => {
   try {
     const { items: mediaItems, total } = await fetchPosts(
       page,
       pageSize,
       sortDate,
+      searchQuery,
     );
 
     const totalPages = Math.ceil(total / pageSize);

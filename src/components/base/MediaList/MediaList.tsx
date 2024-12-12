@@ -10,6 +10,7 @@ import { Fragment } from 'react';
 export const MediaList: React.FC<MediaListProps> = ({
   items,
   type = 'gallery',
+  notFoundDescr,
 }) => {
   return (
     <>
@@ -40,22 +41,33 @@ export const MediaList: React.FC<MediaListProps> = ({
       )}
 
       {type === 'gallery' && (
-        <ul className="flex flex-col gap-[16px] md:flex-row md:flex-wrap">
-          {items &&
-            items.map(({ imageUrl, imageAlt, link }) => (
-              <Fragment key={link + imageUrl}>
-                {link && (
-                  <li className={cn(styles.galleryItem)}>
-                    <MediaCard
-                      imageUrl={imageUrl}
-                      imageAlt={imageAlt}
-                      link={link}
-                    />
-                  </li>
-                )}
-              </Fragment>
-            ))}
-        </ul>
+        <>
+          {items && items.length > 0 ? (
+            <ul className="flex flex-col gap-[16px] md:flex-row md:flex-wrap">
+              {items.map(({ imageUrl, imageAlt, link }) => (
+                <Fragment key={link + imageUrl}>
+                  {link && (
+                    <li className={cn(styles.galleryItem)}>
+                      <MediaCard
+                        imageUrl={imageUrl}
+                        imageAlt={imageAlt}
+                        link={link}
+                      />
+                    </li>
+                  )}
+                </Fragment>
+              ))}
+            </ul>
+          ) : (
+            <div className="flex flex-col items-center gap-[16px] md:flex-row md:flex-wrap">
+              <div className="flex w-full justify-center py-8 text-center">
+                <p className="w-full text-base/normal md:w-[453px] xl:w-[506px] xl:text-lg">
+                  {notFoundDescr}
+                </p>
+              </div>
+            </div>
+          )}
+        </>
       )}
     </>
   );

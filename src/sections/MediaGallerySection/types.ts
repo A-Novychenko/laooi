@@ -6,4 +6,5 @@ export type MediaGallerySectionProps = {
   mediaItems: ITransformedMediaItem[];
   placeholder: string;
   selectSortByDate: ISelectSortByDate;
+  notFoundDescr: string;
 };

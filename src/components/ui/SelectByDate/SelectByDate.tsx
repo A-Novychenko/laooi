@@ -52,7 +52,7 @@ export const SelectByDate: React.FC<SelectByDateProps> = ({
 
   return (
     <div
-      className="relative mb-2 w-full md:mb-0 xl:min-w-[302px]"
+      className="relative w-full xl:min-w-[302px]"
       role="combobox"
       aria-expanded="true"
       aria-controls="type-options"
@@ -61,7 +61,7 @@ export const SelectByDate: React.FC<SelectByDateProps> = ({
         <div
           role="button"
           tabIndex={0}
-          className="flex w-full cursor-pointer justify-between rounded-full bg-bgLightSlate px-[24px] py-[16px] text-base/normal font-semibold focus-within:bg-bgSlate hover:bg-bgSlate xl:text-lg"
+          className="flex w-full cursor-pointer justify-between rounded-full bg-bgLightSlate px-[24px] py-2.5 text-base/[1.5] font-semibold focus-within:bg-bgSlate hover:bg-bgSlate md:py-3 xl:py-4 xl:text-lg/[1.22]"
         >
           <p id="sort-title">{getSortTitle(selectedSort)}</p>
 
