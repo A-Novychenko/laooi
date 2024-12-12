@@ -15,7 +15,7 @@ export const BlogGallery: React.FC<GalleryPostProps> = ({
           {posts.map(post => {
             return (
               <li
-                className="max-w-[448px] md:w-[336px] xl:w-[416px]"
+                className="max-w-[448px] md:w-[336px] xl:w-[416px] smOnly480:max-w-full"
                 key={post.slug}
               >
                 <PostCard
