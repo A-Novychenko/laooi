@@ -38,7 +38,7 @@ export const DropdownMenu: React.FC<DropdownMenuProps> = ({
               <button
                 onClick={action}
                 className={cn(
-                  'flex min-w-[232px] grow gap-2 rounded-2xl bg-bgLight p-4 text-sm/normal font-bold text-textPrimary',
+                  'flex min-w-[232px] grow gap-2 rounded-2xl bg-bgLight p-4 text-left text-sm/normal font-bold text-textPrimary',
                   'data-[focus]:bg-bgSlate data-[hover]:bg-bgSlate data-[focus]:text-textMenuAccent data-[hover]:text-textMenuAccent',
                   className,
                 )}
