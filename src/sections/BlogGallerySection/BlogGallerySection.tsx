@@ -34,7 +34,7 @@ export const BlogGallerySection: React.FC<BlogGallerySectionProps> = ({
       <div className="container">
         <Title className="mb-4">{title}</Title>
 
-        <div className="mb-2 flex flex-col md:mb-4 xl:flex-row xl:gap-4">
+        <div className="mb-2 flex flex-col md:mb-4 xl:flex-row xl:flex-wrap xl:justify-center xl:gap-4">
           <GallerySearchInput placeholder={placeholder} />
 
           <div className="flex flex-col md:flex-row md:gap-4">

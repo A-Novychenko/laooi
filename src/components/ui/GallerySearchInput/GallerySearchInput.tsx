@@ -45,13 +45,13 @@ export const GallerySearchInput: React.FC<GallerySearchInputProps> = ({
         value={searchQuery}
         onChange={handleSearch}
         placeholder={placeholder}
-        className="h-11 w-full rounded-[40px] border border-textActive bg-textLight pl-12 pr-6 font-semibold outline-textActive placeholder:text-textSlate focus:border-transparent md:h-12 xl:h-[56px] xl:w-[644px] xl:pl-12 xl:pr-6 xl:text-sm/normal"
+        className="h-11 w-full rounded-[40px] border border-textActive bg-textLight pl-12 pr-6 font-semibold outline-textActive placeholder:text-textSlate focus:border-transparent md:h-12 xl:h-14 xl:w-[644px] xl:pl-12 xl:pr-6 xl:text-sm/normal"
       />
 
       <SearchIcon
         width={16}
         height={16}
-        className="absolute left-6 top-1/2 -translate-y-1/2 text-textSlate"
+        className="absolute left-6 top-1/2 size-4 -translate-y-1/2 text-textSlate"
       />
     </div>
   );

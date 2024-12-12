@@ -32,7 +32,7 @@ export const ActivitiesSection: React.FC<ISectionProps> = ({
           </div>
         </div>
 
-        <ul className="flex flex-col gap-4 md:flex-row md:flex-wrap xl:flex-nowrap">
+        <ul className="flex flex-col gap-[16px] md:flex-row md:flex-wrap xl:flex-nowrap">
           {items &&
             items.map(({ quantity, text }, idx) => (
               <li
