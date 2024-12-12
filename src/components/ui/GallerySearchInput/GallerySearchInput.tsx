@@ -41,7 +41,7 @@ export const GallerySearchInput: React.FC<GallerySearchInputProps> = ({
   return (
     <div className="relative mb-2 md:mb-4">
       <input
-        type="text"
+        type="search"
         value={searchQuery}
         onChange={handleSearch}
         placeholder={placeholder}

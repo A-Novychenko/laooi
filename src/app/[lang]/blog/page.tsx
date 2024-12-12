@@ -26,7 +26,7 @@ const BlogPage = async ({
 
   const { readMoreLabel, searchInput, selectSortByDate, selectPostByType } =
     dict.common;
-  const { title, errorData } = dict.blogSection;
+  const { title, errorData, notFoundDescr } = dict.blogSection;
 
   const page = parseInt(searchParams.page || '1', 10);
   const pageSize = 12;
@@ -52,7 +52,7 @@ const BlogPage = async ({
 
   return (
     <>
-      {posts && posts.length > 0 ? (
+      {posts ? (
         <BlogGallerySection
           title={title}
           posts={posts}
@@ -63,6 +63,7 @@ const BlogPage = async ({
           placeholder={searchInput.placeholder}
           selectSortByDate={selectSortByDate}
           selectPostByType={selectPostByType}
+          notFoundDescr={notFoundDescr}
         />
       ) : (
         <PlaceholderSection data={{ title, ...errorData }} />

@@ -20,23 +20,48 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages }) => {
     }
   };
 
-  const visiblePages = [];
-  if (currentPage > 1) visiblePages.push(currentPage - 1);
-  visiblePages.push(currentPage);
-  if (currentPage < totalPages) visiblePages.push(currentPage + 1);
+  const generateVisiblePages = (): (number | string)[] => {
+    const pages: (number | string)[] = [];
 
+    if (totalPages <= 5) {
+      for (let i = 1; i <= totalPages; i++) {
+        pages.push(i);
+      }
+      return pages;
+    }
+
+    pages.push(1);
+
+    if (currentPage > 4) {
+      pages.push('...');
+    }
+
+    if (currentPage > 1 && currentPage < totalPages) {
+      pages.push(currentPage);
+    }
+
+    if (currentPage < totalPages - 3) {
+      pages.push('...');
+    }
+
+    pages.push(totalPages);
+
+    return pages;
+  };
+
+  const visiblePages = generateVisiblePages();
   const isFirstPage = currentPage <= 1;
   const isLastPage = currentPage >= totalPages;
 
   return (
-    <div className="mt-4 flex justify-center gap-1 xl:gap-2">
+    <div className="mt-4 flex items-center justify-center gap-1 xl:gap-2">
       <button
         type="button"
         aria-label="prev-page-click"
         onClick={() => handlePageChange(currentPage - 1)}
-        disabled={currentPage <= 1}
+        disabled={isFirstPage}
         className={cn(
-          'flex size-10 items-center justify-center rounded-md border border-none px-4 py-2 md:size-12 xl:size-[54px]',
+          'flex size-10 items-center justify-center rounded-md px-4 py-2 md:size-12 xl:size-[54px]',
           isFirstPage
             ? 'cursor-not-allowed text-textFooterAccent'
             : 'cursor-pointer text-textMenuAccent',
@@ -45,28 +70,37 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages }) => {
         <ArrowIcon width={24} height={24} className="shrink-0 rotate-90" />
       </button>
 
-      {visiblePages.map(page => (
-        <button
-          type="button"
-          aria-label="number-page"
-          key={page}
-          onClick={() => handlePageChange(page)}
-          className={cn(
-            'size-10 rounded-full border-none py-2 text-base/normal font-semibold transition-colors md:size-12 xl:size-14 xl:text-lg',
-            page === currentPage
-              ? 'bg-textMenuAccent font-bold text-white'
-              : 'bg-white hover:bg-bgSlate',
-          )}
-        >
-          {page}
-        </button>
-      ))}
+      {visiblePages.map((page, index) =>
+        typeof page === 'number' ? (
+          <button
+            type="button"
+            aria-label={`number-page-${page}`}
+            key={index}
+            onClick={() => handlePageChange(page)}
+            className={cn(
+              'size-10 rounded-full border-none py-2 text-base/normal font-semibold transition-colors md:size-12 xl:size-14 xl:text-lg',
+              page === currentPage
+                ? 'bg-textMenuAccent font-bold text-textLight'
+                : 'bg-textLight hover:bg-bgSlate',
+            )}
+          >
+            {page}
+          </button>
+        ) : (
+          <span
+            key={index}
+            className="flex size-10 items-center justify-center text-base/normal font-semibold text-textPrimary md:size-12 xl:size-14 xl:text-lg"
+          >
+            {page}
+          </span>
+        ),
+      )}
 
       <button
         type="button"
         aria-label="next-page-click"
         onClick={() => handlePageChange(currentPage + 1)}
-        disabled={currentPage >= totalPages}
+        disabled={isLastPage}
         className={cn(
           'flex size-10 items-center justify-center rounded-md border border-none px-4 py-2 transition-colors md:size-12 xl:size-[54px]',
           isLastPage

@@ -54,12 +54,14 @@ export const SelectByDate: React.FC<SelectByDateProps> = ({
     <div
       className="relative mb-2 w-full md:mb-0 xl:min-w-[302px]"
       role="combobox"
+      aria-expanded="true"
+      aria-controls="type-options"
     >
       <div className="group relative">
         <div
           role="button"
           tabIndex={0}
-          className="flex w-full cursor-pointer justify-between rounded-full bg-bgLightSlate px-6 py-4 text-base/normal font-semibold focus-within:bg-bgSlate hover:bg-bgSlate xl:text-lg"
+          className="flex w-full cursor-pointer justify-between rounded-full bg-bgLightSlate px-[24px] py-[16px] text-base/normal font-semibold focus-within:bg-bgSlate hover:bg-bgSlate xl:text-lg"
         >
           <p id="sort-title">{getSortTitle(selectedSort)}</p>
 
@@ -76,25 +78,27 @@ export const SelectByDate: React.FC<SelectByDateProps> = ({
           aria-label="sort-label"
           className="absolute z-20 hidden w-full rounded-3xl bg-textLight p-4 group-focus-within:block group-hover:block"
         >
-          <li>
+          <li key="newest">
             <button
               className="w-full cursor-pointer rounded-2xl p-4 text-left text-xs/normal font-semibold hover:bg-bgSlate xl:text-sm"
               onClick={evt => handleSelect('newest', evt)}
               type="button"
               role="option"
               aria-label="newest"
+              aria-selected={selectedSort === 'newest'}
             >
               {newTitleOption}
             </button>
           </li>
 
-          <li>
+          <li key="oldest">
             <button
               className="w-full cursor-pointer rounded-2xl p-4 text-left text-xs/normal font-semibold hover:bg-bgSlate xl:text-sm"
               onClick={evt => handleSelect('oldest', evt)}
               type="button"
               role="option"
               aria-label="oldest"
+              aria-selected={selectedSort === 'oldest'}
             >
               {oldTitleOption}
             </button>

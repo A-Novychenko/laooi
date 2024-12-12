@@ -27,6 +27,7 @@ export const BlogGallerySection: React.FC<BlogGallerySectionProps> = ({
   placeholder,
   selectSortByDate,
   selectPostByType,
+  notFoundDescr,
 }) => {
   return (
     <section className="my-auto pb-32 pt-16">
@@ -43,7 +44,12 @@ export const BlogGallerySection: React.FC<BlogGallerySectionProps> = ({
           </div>
         </div>
 
-        <BlogGallery posts={posts} lang={lang} readMoreLabel={readMoreLabel} />
+        <BlogGallery
+          posts={posts}
+          lang={lang}
+          readMoreLabel={readMoreLabel}
+          notFoundDescr={notFoundDescr}
+        />
 
         <Pagination currentPage={currentPage} totalPages={totalPages} />
       </div>

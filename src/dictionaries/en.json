@@ -287,6 +287,7 @@
   },
   "blogSection": {
     "title": "News and events",
+    "notFoundDescr": "No results found for your query. Try different keywords or explore other sections.",
     "link": {
       "label": "All publications",
       "settings": {

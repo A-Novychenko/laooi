@@ -172,6 +172,7 @@ interface IFooterBasement {
 
 interface IBlogSection {
   title: string;
+  notFoundDescr: string;
   errorData: IErrorData;
   link: { label: string; settings: { href: string; externalLink: boolean } };
 }
