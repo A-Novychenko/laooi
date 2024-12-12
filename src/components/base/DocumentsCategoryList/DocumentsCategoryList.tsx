@@ -20,7 +20,7 @@ export const DocumentsCategoryList: React.FC<DocumentsCategoryListProps> = ({
             {categoryTitle}
           </Title>
 
-          <ul className="flex flex-col gap-[8px] md:flex-row md:flex-wrap md:gap-[12px] xl:gap-[16px]">
+          <ul className="flex flex-col items-stretch gap-[8px] md:flex-row md:flex-wrap md:gap-[12px] xl:gap-[16px]">
             {documents &&
               documents.map((doc, idx) => (
                 <li key={idx} className={styles.card}>
