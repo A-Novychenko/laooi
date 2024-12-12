@@ -15,7 +15,7 @@ export const FooterSocialList: React.FC<FooterSocialListProps> = ({
   const icons = [YouTubeIcon, FacebookIcon, InstagramIcon];
 
   return (
-    <div className="text-center">
+    <div className="text-center md:grow">
       <p className="mb-1 text-sm/normal font-bold uppercase text-textFooterAccent md:mb-2 xl:mb-4">
         {title}
       </p>
