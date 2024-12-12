@@ -51,7 +51,7 @@ const BlogPage = async ({
   );
 
   return (
-    <>
+    <div className="grow">
       {posts ? (
         <BlogGallerySection
           title={title}
@@ -68,7 +68,7 @@ const BlogPage = async ({
       ) : (
         <PlaceholderSection data={{ title, ...errorData }} />
       )}
-    </>
+    </div>
   );
 };
 

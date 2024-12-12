@@ -43,14 +43,18 @@ export const MediaCard: React.FC<MediaCardProps> = ({
 
       <p
         className={cn(
-          'absolute bottom-0 left-0 z-[9999] flex h-[64px] w-full items-center justify-between',
+          'absolute bottom-0 left-0 z-[49] flex h-[64px] w-full items-center gap-[8px]',
           'overflow-hidden rounded-b-[16px] px-4 text-base/normal text-textLight',
           'md:rounded-b-[20px]',
           'xl:rounded-b-[24px] xl:text-lg/normal',
           styles.overlay,
         )}
       >
-        {extractDomain(link)} <ArrowIcon width={24} height={24} />
+        <span className="overflow-hidden whitespace-nowrap">
+          {extractDomain(link)}
+        </span>
+
+        <ArrowIcon width={24} height={24} className="shrink-0" />
       </p>
     </Link>
   );

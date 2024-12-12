@@ -5,4 +5,6 @@ export type MediaGallerySectionProps = {
   totalPages: number;
   mediaItems: ITransformedMediaItem[];
   placeholder: string;
+  selectSortByDate: ISelectSortByDate;
+  notFoundDescr: string;
 };

@@ -67,7 +67,11 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages }) => {
             : 'cursor-pointer text-textMenuAccent',
         )}
       >
-        <ArrowIcon width={24} height={24} className="shrink-0 rotate-90" />
+        <ArrowIcon
+          width={24}
+          height={24}
+          className="size-6 shrink-0 rotate-90"
+        />
       </button>
 
       {visiblePages.map((page, index) =>
@@ -108,7 +112,11 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages }) => {
             : 'cursor-pointer text-textMenuAccent',
         )}
       >
-        <ArrowIcon width={24} height={24} className="shrink-0 -rotate-90" />
+        <ArrowIcon
+          width={24}
+          height={24}
+          className="size-6 shrink-0 -rotate-90"
+        />
       </button>
     </div>
   );

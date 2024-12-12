@@ -9,22 +9,33 @@ export const BlogGallery: React.FC<GalleryPostProps> = ({
   notFoundDescr,
 }) => {
   return (
-    <ul className="flex flex-col items-center gap-[16px] md:flex-row md:flex-wrap">
+    <>
       {posts && posts.length > 0 ? (
-        posts.map((post, idx) => {
-          return (
-            <li className="max-w-[448px] md:w-[336px] xl:w-[416px]" key={idx}>
-              <PostCard post={post} lang={lang} readMoreLabel={readMoreLabel} />
-            </li>
-          );
-        })
+        <ul className="flex flex-col items-center gap-[16px] md:flex-row md:flex-wrap">
+          {posts.map(post => {
+            return (
+              <li
+                className="max-w-[448px] md:w-[336px] xl:w-[416px]"
+                key={post.slug}
+              >
+                <PostCard
+                  post={post}
+                  lang={lang}
+                  readMoreLabel={readMoreLabel}
+                />
+              </li>
+            );
+          })}
+        </ul>
       ) : (
-        <div className="flex w-full justify-center py-8 text-center">
-          <p className="w-full text-base/normal md:w-[453px] xl:w-[506px] xl:text-lg">
-            {notFoundDescr}
-          </p>
+        <div className="flex flex-col items-center gap-[16px] md:flex-row md:flex-wrap">
+          <div className="flex w-full justify-center py-8 text-center">
+            <p className="w-full text-base/normal md:w-[453px] xl:w-[506px] xl:text-lg">
+              {notFoundDescr}
+            </p>
+          </div>
         </div>
       )}
-    </ul>
+    </>
   );
 };

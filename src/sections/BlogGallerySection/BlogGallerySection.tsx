@@ -30,11 +30,11 @@ export const BlogGallerySection: React.FC<BlogGallerySectionProps> = ({
   notFoundDescr,
 }) => {
   return (
-    <section className="my-auto pb-32 pt-16">
+    <section className="section-blog">
       <div className="container">
         <Title className="mb-4">{title}</Title>
 
-        <div className="flex flex-col md:mb-4 xl:flex-row xl:gap-4">
+        <div className="mb-2 flex flex-col md:mb-4 xl:flex-row xl:gap-4">
           <GallerySearchInput placeholder={placeholder} />
 
           <div className="flex flex-col md:flex-row md:gap-4">
@@ -51,7 +51,9 @@ export const BlogGallerySection: React.FC<BlogGallerySectionProps> = ({
           notFoundDescr={notFoundDescr}
         />
 
-        <Pagination currentPage={currentPage} totalPages={totalPages} />
+        {posts && posts.length > 0 && (
+          <Pagination currentPage={currentPage} totalPages={totalPages} />
+        )}
       </div>
     </section>
   );

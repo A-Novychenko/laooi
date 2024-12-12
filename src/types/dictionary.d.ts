@@ -206,6 +206,7 @@ interface IPlaceholder {
 
 interface IMediaSection {
   title: string;
+  notFoundDescr: string;
   errorData: IErrorData;
   link: {
     label: string;
