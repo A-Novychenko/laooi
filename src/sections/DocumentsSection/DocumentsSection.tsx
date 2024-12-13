@@ -1,3 +1,5 @@
+import { Fragment } from 'react';
+
 import { DocumentsCategoryList } from '@/components/base';
 
 import { DocumentsSectionProps } from './types';
@@ -23,13 +25,20 @@ export const DocumentsSection: React.FC<DocumentsSectionProps> = ({
               const documentsByCategory = selectDocumentsCategory(category);
 
               return (
-                <li key={idx} className="py-4 md:py-6 xl:py-8">
-                  <DocumentsCategoryList
-                    categoryTitle={title}
-                    documents={documentsByCategory}
-                    fileLinks={fileLinks}
-                  />
-                </li>
+                <Fragment key={idx}>
+                  {documentsByCategory && documentsByCategory.length > 0 && (
+                    <>
+                      <li className="py-4 md:py-6 xl:py-8">
+                        <DocumentsCategoryList
+                          categoryTitle={title}
+                          documents={documentsByCategory}
+                          fileLinks={fileLinks}
+                        />
+                      </li>
+                      ,
+                    </>
+                  )}
+                </Fragment>
               );
             })}
         </ul>
