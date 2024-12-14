@@ -35,7 +35,6 @@ export const DocumentsSection: React.FC<DocumentsSectionProps> = ({
                           fileLinks={fileLinks}
                         />
                       </li>
-                      ,
                     </>
                   )}
                 </Fragment>
