@@ -17,6 +17,7 @@ export const getDocuments = async (
     const transformedDocuments: ITransformedDocument[] = documents.map(doc => ({
       title: doc.title[lang],
       category: doc.category,
+      index: doc.index,
       fileUrl: doc.fileUrl,
     }));
 

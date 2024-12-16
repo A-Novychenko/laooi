@@ -97,11 +97,13 @@ interface IDocument {
     en: string;
   };
   category: string;
+  index: number;
   fileUrl: string;
 }
 
 interface ITransformedDocument {
   title: string;
   category: string;
+  index: number;
   fileUrl: string;
 }

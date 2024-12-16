@@ -22,11 +22,13 @@ export const DocumentsCategoryList: React.FC<DocumentsCategoryListProps> = ({
 
           <ul className="flex flex-col items-stretch gap-[8px] md:flex-row md:flex-wrap md:gap-[12px] xl:gap-[16px]">
             {documents &&
-              documents.map((doc, idx) => (
-                <li key={idx} className={styles.card}>
-                  <DocumentCard doc={doc} fileLinks={fileLinks} />
-                </li>
-              ))}
+              documents
+                .sort((a, b) => (b.index || 1) - (a.index || 1))
+                .map((doc, idx) => (
+                  <li key={idx} className={styles.card}>
+                    <DocumentCard doc={doc} fileLinks={fileLinks} />
+                  </li>
+                ))}
           </ul>
         </>
       )}
