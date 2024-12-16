@@ -7,10 +7,37 @@ export const documents = defineType({
   title: 'Документи',
   type: 'document',
 
+  orderings: [
+    {
+      title: 'За категорією',
+      name: 'categoryAsc',
+      by: [{ field: 'category', direction: 'asc' }],
+    },
+  ],
+
   preview: {
     select: {
       title: 'title.uk',
-      subtitle: 'category',
+      category: 'category',
+      index: 'index',
+    },
+    prepare(selection) {
+      const { title, category, index } = selection;
+
+      const categoryTitles: Record<string, string> = {
+        constituent: 'Установчі документи',
+        internal: 'Внутрішні документи та політики',
+        financial: 'Фінансові звіти',
+        reports: 'Звіти про використання доходів',
+        other: 'Інші документи',
+      };
+
+      return {
+        title,
+        subtitle: `${categoryTitles[category] || 'Невідома категорія'}${
+          index !== undefined ? ` [${index}]` : ''
+        }`,
+      };
     },
   },
 
@@ -52,6 +79,19 @@ export const documents = defineType({
         ],
         layout: 'dropdown',
       },
+    },
+
+    {
+      name: 'index',
+      title: 'Індекс',
+      type: 'number',
+      description: 'Число для сортування документів на сайті',
+      validation: Rule =>
+        Rule.integer()
+          .positive()
+          .required()
+          .error('Індекс має бути позитивним цілим числом'),
+      initialValue: 999,
     },
 
     {
