@@ -3,10 +3,12 @@
 import { useEffect, useState } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 
+import { cn } from '@/utils/cn';
+
 import SearchIcon from '~/icons/search.svg';
 
 import { GallerySearchInputProps } from './types';
-import { cn } from '@/utils/cn';
+
 import styles from './GallerySearchInput.module.css';
 
 export const GallerySearchInput: React.FC<GallerySearchInputProps> = ({
