@@ -183,11 +183,17 @@ expand or collapse nested links.
 
 - #### BlogGallery
 
-Description of the component and its purpose
+The `BlogGallery` component is designed to display a collection of blog posts in
+a responsive grid format. If no posts are available, it renders a fallback
+message with a description. Each post is displayed using the `PostCard`
+component.
 
-| Prop   | Default | Description                    |
-| ------ | ------- | ------------------------------ |
-| `prop` | `value` | required/optional, description |
+| Prop            | Default     | Description                                                                               |
+| --------------- | ----------- | ----------------------------------------------------------------------------------------- |
+| `posts`         | `undefined` | **Required**. An array of post objects to be displayed in the gallery.                    |
+| `lang`          | `undefined` | **Required**. The language code for the content, used for localization in the `PostCard`. |
+| `readMoreLabel` | `undefined` | **Required**. A string label for the "Read More" button displayed in each `PostCard`.     |
+| `notFoundDescr` | `undefined` | **Required**. A string description to display when no posts are available in the gallery. |
 
 - #### FooterBasement
 
@@ -261,6 +267,28 @@ Wrapper component for the slider in the target section
 | `targetGroups` | `undefined` | required, required, `Array<{ text: string}>` - an array of objects containing `text` for each target item. |
 | `className`    | `undefined` | optional, `string`, adds custom css class to the Button component.                                         |
 
+- #### PostSliderWrap
+
+The `PostSliderWrap` component wraps the `Slider` component to display a
+carousel of blog post images. It uses the `PostImageSlide` component to render
+individual slides, allowing for responsive and reusable slider functionality.
+
+| Prop   | Default     | Description                                                                                    |
+| ------ | ----------- | ---------------------------------------------------------------------------------------------- |
+| `data` | `undefined` | Required. An array of slide data objects containing the necessary details for each post slide. |
+
+- #### DocumentsCategoryList
+
+The `DocumentsCategoryList` component displays a categorized list of documents
+with a title. Each document is rendered using the `DocumentCard` component, and
+documents are sorted based on their `index` property before rendering.
+
+| Prop            | Default     | Description                                                                               |
+| --------------- | ----------- | ----------------------------------------------------------------------------------------- |
+| `categoryTitle` | `undefined` | Required. A string representing the title of the document category.                       |
+| `documents`     | `undefined` | Required. An array of document objects, each containing details like `title` and `index`. |
+| `fileLinks`     | `undefined` | Optional. An array of file links associated with the documents.                           |
+
 </details>
 
 <br/>
@@ -295,6 +323,17 @@ button or a link, depending on the settings.
 | `settings`  | `undefined` | required, `Object`, Settings for link `{href: required string, external: required string}` or button `{action: required function}` depending on prop type |
 | `className` | `undefined` | optional, `string`, adds custom css class to the Button component.                                                                                        |
 
+- #### CategorySelect
+
+The `CategorySelect` component provides a dropdown menu for selecting a category
+of posts (e.g., news, articles, events). It uses React state, Next.js hooks, and
+URL query parameters to synchronize the selected category with the URL, enabling
+the category selection to persist across page reloads.
+
+| Prop               | Type     | Default | Description                                                                                             |
+| ------------------ | -------- | ------- | ------------------------------------------------------------------------------------------------------- |
+| `selectPostByType` | `object` | —       | **Required.** Contains the title and options for post categories (`news`, `articles`, `events`, `all`). |
+
 - #### CircleButton
 
 A circular button component designed to display content within a round button
@@ -308,11 +347,23 @@ and handle click actions.
 
 - #### DateStamp
 
-Component that displays the creation date of news, events, articles
+The `DateStamp` component is a simple wrapper used to display a date or
+timestamp in a styled `<p>` element. It is typically used to render text-based
+date information with consistent styling.
 
-| Prop       | Default     | Description                             |
-| ---------- | ----------- | --------------------------------------- |
-| `children` | `undefined` | required, Built-in ReactNode components |
+| Prop       | Default     | Description                                                                               |
+| ---------- | ----------- | ----------------------------------------------------------------------------------------- |
+| `children` | `undefined` | Required. The content to be rendered inside the component, typically a date or timestamp. |
+
+- #### DocumentCard
+
+The `DocumentCard` component displays document information with options to view
+and download a file. It includes styling, icons, and links for user interaction.
+
+| Prop        | Default     | Description                                                                                   |
+| ----------- | ----------- | --------------------------------------------------------------------------------------------- |
+| `doc`       | `undefined` | Required. An object containing document details: `title` (string) and `fileUrl` (string).     |
+| `fileLinks` | `undefined` | Required. An object containing labels for the links: `openFileLabel` and `downloadFileLabel`. |
 
 - #### DropdownMenu
 
@@ -344,6 +395,16 @@ Component for displaying image cards for sections
 | Prop   | Default     | Description                                                                                                                     |
 | ------ | ----------- | ------------------------------------------------------------------------------------------------------------------------------- |
 | `data` | `undefined` | required, required, `Array<{ src: string; alt: string}>` - an array of objects containing `src` and `alt` for each target item. |
+
+- #### GallerySearchInput
+
+The `GallerySearchInput` component provides a search input for filtering content
+in a gallery. It manages user input, updates the URL query parameters
+dynamically, and synchronizes with the browser's navigation state.
+
+| Prop          | Default     | Description                                         |
+| ------------- | ----------- | --------------------------------------------------- |
+| `placeholder` | `undefined` | Required. A string that sets the input placeholder. |
 
 - #### LangSwitcher
 
@@ -385,6 +446,17 @@ Component - main navigation nested link
 | `data`        | `undefined` | required, `IMainNavEmbedded[]` - an array of objects for each nav item.                                       |
 | `handleClose` | `undefined` | required, A callback function that is triggered to close the accordion menu. It does not take any parameters. |
 
+- #### Pagination
+
+The `Pagination` component provides navigation controls for paginated content.
+It dynamically generates and renders page numbers while handling navigation
+through query parameters.
+
+| Prop          | Type     | Default | Description                                 |
+| ------------- | -------- | ------- | ------------------------------------------- |
+| `currentPage` | `number` | —       | Required. The currently active page.        |
+| `totalPages`  | `number` | —       | Required. Total number of pages to display. |
+
 - #### PartnersCard
 
 Component card for the Partners section
@@ -401,15 +473,13 @@ A card component designed for displaying a blog post with a preview image,
 title, description, date, and a "read more" link. It supports localization and
 dynamic post content.
 
-| Prop            | Default     | Description                                                                                          |
-| --------------- | ----------- | ---------------------------------------------------------------------------------------------------- |
-| `post`          | `undefined` | **Required**. An object containing the post details (see **Post Object** below).                     |
-| `lang`          | `undefined` | **Required**. A string indicating the current language, used to construct the link to the blog post. |
-| `readMoreLabel` | `undefined` | **Required**. A string for the "read more" label text, displayed as a link to the full post.         |
+| Prop            | Default     | Description                                                                                      |
+| --------------- | ----------- | ------------------------------------------------------------------------------------------------ |
+| `post`          | `undefined` | Required. An object containing the post details (see **Post Object** below).                     |
+| `lang`          | `undefined` | Required. A string indicating the current language, used to construct the link to the blog post. |
+| `readMoreLabel` | `undefined` | Required. A string for the "read more" label text, displayed as a link to the full post.         |
 
----
-
-### Post Object
+- #### Post Object
 
 The `post` prop is an object with the following structure:
 
@@ -423,6 +493,17 @@ The `post` prop is an object with the following structure:
 | `date`     | `string` | The post's publication date, formatted using the `formatDate` utility.                                |
 | `postUrl`  | `string` | The unique URL slug for the post.                                                                     |
 | `type`     | `string` | The type of the post (e.g., `'news'`, `'events'`, `'articles'`), passed to the `PostLabel` component. |
+
+- #### PostImageSlide
+
+The `PostImageSlide` component displays an image with a responsive layout,
+tailored for various screen sizes. The image is rendered using Next.js' `Image`
+component, optimizing performance by providing proper width, height, and lazy
+loading.
+
+| Prop    | Type     | Default | Description                                                              |
+| ------- | -------- | ------- | ------------------------------------------------------------------------ |
+| `image` | `object` | —       | Required. An object containing `src` and `alt` properties for the image. |
 
 - #### PostLabel
 
@@ -450,7 +531,7 @@ A floating button that appears after the user scrolls down the page and enables
 smooth scrolling back to the top when clicked. Useful for improving navigation
 on long pages.
 
-### Component Details:
+- #### Component Details:
 
 The button becomes visible when the user scrolls more than 1000 pixels
 vertically. Clicking the button triggers a smooth scroll to the top of the page.
@@ -466,6 +547,17 @@ for desktop devices, a button that appears when clicked.
 | ------------- | ----------- | ---------------------------------------------------------------- |
 | `placeholder` | `undefined` | required, `string`, placeholder                                  |
 | `desktop`     | `undefined` | optional, `boolean` or `undefined`, enables desktop version mode |
+
+- #### SelectByDate
+
+The `SelectByDate` component is a dropdown menu used for sorting items by date,
+providing the user with options to filter by "newest" or "oldest." It utilizes
+React state and Next.js hooks for managing URL search parameters and rendering
+the appropriate sort option.
+
+| Prop               | Type     | Default | Description                                                                 |
+| ------------------ | -------- | ------- | --------------------------------------------------------------------------- |
+| `selectSortByDate` | `object` | —       | **Required.** Contains the title and options (`old` and `new`) for sorting. |
 
 - #### Slider
 
@@ -529,16 +621,6 @@ expected in the props
 | -------- | ----------- | --------------------------------------------------- |
 | `url`    | `undefined` | required, `string`, value of the path to the video  |
 | `poster` | `undefined` | required, `string`, value of the path to the poster |
-
-- #### PostImageSlide
-
-A component for displaying an image in a responsive container. The image is
-styled to cover the container fully, maintaining its aspect ratio while filling
-the space.
-
-| Prop    | Default | Description                                                                      |
-| ------- | ------- | -------------------------------------------------------------------------------- |
-| `image` | N/A     | **Required**. An object containing `src` (image URL) and `alt` (image alt text). |
 
 </details>
 
