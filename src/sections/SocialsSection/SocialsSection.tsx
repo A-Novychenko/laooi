@@ -21,7 +21,7 @@ export const SocialsSection: React.FC<SocialsSectionProps> = ({ dict }) => {
         <Title className="mb-4">{title}</Title>
 
         <div className="xl:flex xl:items-center xl:gap-4">
-          <div className="mb-4 rounded-[16px] bg-bgLightSlate p-6 md:p-8 xl:mb-0 xl:flex xl:w-[632px] xl:flex-col xl:justify-center xl:p-[40px]">
+          <div className="mb-4 rounded-[16px] bg-bgLightSlate p-6 md:p-8 xl:mb-0 xl:flex xl:w-[632px] xl:flex-col xl:justify-center xl:self-stretch xl:p-[40px]">
             <p className="mb-4 text-lg/normal xl:mb-6">{descr}</p>
 
             <ul className="flex flex-col items-center gap-2 md:flex-row md:justify-center md:gap-[16px]">
