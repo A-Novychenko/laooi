@@ -144,6 +144,7 @@ export const CategorySelect: React.FC<CategorySelectProps> = ({
             </button>
           </li>
         </ul>
+
         {isOpen && (
           <ul
             id="type-options"
