@@ -1,7 +1,19 @@
-.textBlock p {
-  @apply mb-6 text-base/normal last:mb-0 md:text-lg;
+.textBlock {
+  @apply flex flex-col gap-1;
 }
 
-.textBlock br {
-  @apply hidden;
+.textBlock p {
+  @apply text-base/normal md:text-lg;
+}
+
+.textBlock a {
+  @apply cursor-pointer text-base/normal text-blue-700 transition-colors hover:text-textAccent focus:text-textAccent md:text-lg;
+}
+
+.textBlock h1 {
+  @apply text-lg/normal font-bold md:text-xl;
+}
+
+.textBlock h2 {
+  @apply text-base/normal font-bold md:text-lg;
 }
