@@ -6,11 +6,23 @@ const dictionaries: Record<string, () => Promise<IDictionary>> = {
 };
 
 export const getDictionary = async (locale: string): Promise<IDictionary> => {
-  const dictionaryLoader = dictionaries[locale];
+  // Список дозволених локалей
+  const allowedLocales = ['uk', 'en'];
 
+  // Забороняємо службові шляхи та зарезервовані локалі
+  if (['_next', 'api'].includes(locale)) {
+    return await dictionaries['uk'](); // Повертаємо словник за замовчуванням
+  }
+
+  // Якщо локаль недійсна, встановлюємо українську як дефолтну
+  if (!allowedLocales.includes(locale)) {
+    return await dictionaries['uk']();
+  }
+
+  const dictionaryLoader = dictionaries[locale];
   if (!dictionaryLoader) {
     throw new Error(`Dictionary for locale "${locale}" not found.`);
   }
 
-  return dictionaryLoader();
+  return await dictionaryLoader(); // Викликаємо функцію-лоадер
 };
