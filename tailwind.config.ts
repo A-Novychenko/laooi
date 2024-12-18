@@ -49,6 +49,7 @@ const config: Config = {
         textBlue: '#039',
         textGreen: '#093',
         textRed: '#f00',
+        textRedAccent: '#d70000',
 
         bgLight: '#ffffff',
         bgSlate: '#EAEDF4',
