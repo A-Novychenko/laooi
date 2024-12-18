@@ -11,6 +11,7 @@ export const CategorySelect: React.FC<CategorySelectProps> = ({
   selectPostByType,
 }) => {
   const [selectedType, setSelectedType] = useState<PostType | ''>('');
+  const [isOpen, setIsOpen] = useState(false);
 
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -25,13 +26,17 @@ export const CategorySelect: React.FC<CategorySelectProps> = ({
     setSelectedType(typeUrl || '');
   }, [searchParams]);
 
+  const handleMenuToggle = () => {
+    setIsOpen(!isOpen);
+  };
+
   const handleSelect = (
     type: PostType | '',
     evt: React.MouseEvent<HTMLButtonElement>,
   ) => {
-    setSelectedType(type);
-
     evt.currentTarget.blur();
+    setSelectedType(type);
+    handleMenuToggle();
 
     const params = new URLSearchParams(searchParams.toString());
     if (type) {
@@ -69,6 +74,7 @@ export const CategorySelect: React.FC<CategorySelectProps> = ({
         <div
           role="button"
           tabIndex={0}
+          onClick={handleMenuToggle}
           className="flex w-full cursor-pointer justify-between rounded-full bg-bgLightSlate px-6 py-2.5 text-base/[1.5] font-semibold transition-all hover:bg-bgSlate focus:bg-bgSlate md:py-3 xl:py-4 xl:text-lg/[1.22]"
         >
           <p id="type-title">{getSelectTypeTitle(selectedType)}</p>
@@ -76,7 +82,7 @@ export const CategorySelect: React.FC<CategorySelectProps> = ({
           <ArrowIcon
             width={24}
             height={24}
-            className="transition-all group-hover:-rotate-180"
+            className={`size-6 transition-all ${isOpen ? 'rotate-180 xl:rotate-0' : ''} xl:group-hover:-rotate-180`}
           />
         </div>
 
@@ -84,7 +90,7 @@ export const CategorySelect: React.FC<CategorySelectProps> = ({
           id="type-options"
           role="listbox"
           aria-label="type-label"
-          className="absolute z-20 hidden w-full rounded-3xl bg-textLight p-4 transition-all group-focus-within:block group-hover:block"
+          className="absolute z-20 hidden w-full rounded-3xl bg-textLight p-4 transition-all xl:group-focus-within:block xl:group-hover:block"
         >
           <li key="all">
             <button
@@ -138,6 +144,66 @@ export const CategorySelect: React.FC<CategorySelectProps> = ({
             </button>
           </li>
         </ul>
+        {isOpen && (
+          <ul
+            id="type-options"
+            role="listbox"
+            aria-label="type-label"
+            className="absolute z-20 w-full rounded-3xl bg-textLight p-4 transition-all xl:hidden"
+          >
+            <li key="all">
+              <button
+                className="w-full cursor-pointer rounded-2xl p-4 text-left text-xs/normal font-semibold hover:bg-bgSlate xl:text-sm"
+                type="button"
+                role="option"
+                aria-label="all"
+                aria-selected={selectedType === ''}
+                onClick={evt => handleSelect('', evt)}
+              >
+                {all}
+              </button>
+            </li>
+
+            <li key="news">
+              <button
+                className="w-full cursor-pointer rounded-2xl p-4 text-left text-xs/normal font-semibold hover:bg-bgSlate xl:text-sm"
+                type="button"
+                role="option"
+                aria-label="news"
+                onClick={evt => handleSelect('news', evt)}
+                aria-selected={selectedType === 'news'}
+              >
+                {news}
+              </button>
+            </li>
+
+            <li key="articles">
+              <button
+                className="w-full cursor-pointer rounded-2xl p-4 text-left text-xs/normal font-semibold hover:bg-bgSlate xl:text-sm"
+                type="button"
+                role="option"
+                aria-label="articles"
+                aria-selected={selectedType === 'articles'}
+                onClick={evt => handleSelect('articles', evt)}
+              >
+                {articles}
+              </button>
+            </li>
+
+            <li key="events">
+              <button
+                className="w-full cursor-pointer rounded-2xl p-4 text-left text-xs/normal font-semibold hover:bg-bgSlate xl:text-sm"
+                type="button"
+                role="option"
+                aria-label="events"
+                aria-selected={selectedType === 'events'}
+                onClick={evt => handleSelect('events', evt)}
+              >
+                {events}
+              </button>
+            </li>
+          </ul>
+        )}
       </div>
     </div>
   );
