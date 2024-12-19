@@ -91,7 +91,7 @@
       },
       {
         "name": "Contacts",
-        "href": "/in-progress"
+        "href": "/contacts"
       }
     ],
     "accessibilityMenu": {
@@ -137,7 +137,7 @@
           { "name": "News", "href": "/blog" },
           { "name": "Vacancies", "href": "/in-progress" },
           { "name": "Tenders", "href": "/in-progress" },
-          { "name": "Contacts", "href": "/in-progress" }
+          { "name": "Contacts", "href": "/contacts" }
         ]
       }
     },
@@ -195,6 +195,31 @@
           "externalLink": false
         }
       }
+    },
+    "contactsPage": {
+      "inputs": [
+        {
+          "name": "name",
+          "type": "text",
+          "label": "Name",
+          "errorText": "Please enter your name",
+          "placeholder": "Enter name"
+        },
+        {
+          "name": "phone",
+          "type": "tel",
+          "label": "Phone number",
+          "errorText": "Please enter your phone number",
+          "placeholder": "+38(0__)___-__-__"
+        },
+        {
+          "name": "email",
+          "type": "email",
+          "label": "Email",
+          "errorText": "Please enter your phone number",
+          "placeholder": "Please enter your email address"
+        }
+      ]
     }
   },
   "aboutSection": {

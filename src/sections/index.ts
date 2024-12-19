@@ -12,3 +12,4 @@ export * from './SocialsSection';
 export * from './TargetSection';
 export * from './MediaGallerySection';
 export * from './DocumentsSection';
+export * from './ContactsFormSection';

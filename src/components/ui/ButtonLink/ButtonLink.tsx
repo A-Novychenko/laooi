@@ -32,7 +32,11 @@ export const ButtonLink: React.FC<ButtonProps> = ({
   return (
     <>
       {type === 'button' && (
-        <button type="button" onClick={settings.action} className={resultStyle}>
+        <button
+          type={settings.type ? settings.type : 'button'}
+          onClick={settings.action}
+          className={resultStyle}
+        >
           {children}
 
           {icon && <ArrowBtnIcon width={24} height={24} />}
