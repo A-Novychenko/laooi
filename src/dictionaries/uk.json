@@ -91,7 +91,7 @@
       },
       {
         "name": "Контакти",
-        "href": "/in-progress"
+        "href": "/contacts"
       }
     ],
     "accessibilityMenu": {
@@ -137,7 +137,7 @@
           { "name": "Новини", "href": "/blog" },
           { "name": "Вакансії", "href": "/in-progress" },
           { "name": "Тендери", "href": "/in-progress" },
-          { "name": "Контакти", "href": "/in-progress" }
+          { "name": "Контакти", "href": "/contacts" }
         ]
       }
     },
@@ -195,6 +195,31 @@
           "externalLink": false
         }
       }
+    },
+    "contactsPage": {
+      "inputs": [
+        {
+          "name": "name",
+          "type": "text",
+          "label": "Імʼя",
+          "errorText": "Будь ласка, введіть Ваше ім’я",
+          "placeholder": "Введіть ім'я"
+        },
+        {
+          "name": "phone",
+          "type": "tel",
+          "label": "Номер телефону",
+          "errorText": "Будь ласка, введіть номер телефону",
+          "placeholder": "+38(0__)___-__-__"
+        },
+        {
+          "name": "email",
+          "type": "email",
+          "label": "Емейл",
+          "errorText": "Будь ласка, введіть електронну пошту",
+          "placeholder": "Введіть адресу електронної пошти"
+        }
+      ]
     }
   },
   "aboutSection": {

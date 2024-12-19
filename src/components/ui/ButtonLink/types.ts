@@ -7,6 +7,7 @@ type LinkSettings = {
 
 type ButtonSettings = {
   action: () => void;
+  type?: 'button' | 'reset' | 'submit' | undefined;
 };
 
 export type ButtonProps = {

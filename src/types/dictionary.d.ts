@@ -17,6 +17,7 @@ interface IDictionary {
     devPage: IPlaceholder;
     selectSortByDate: ISelectSortByDate;
     selectPostByType: ISelectPostByType;
+    contactsPage: IContactsPage;
   };
   aboutSection: IAboutSection;
   activitiesSection: IActivitiesSection;
@@ -268,4 +269,14 @@ interface ISelectPostByType {
     events: string;
     all: string;
   };
+}
+
+interface IContactsPage {
+  inputs: {
+    name: string;
+    type: string;
+    label: string;
+    errorText: string;
+    placeholder: string;
+  }[];
 }
