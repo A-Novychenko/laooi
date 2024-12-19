@@ -11,6 +11,7 @@ export const SelectByDate: React.FC<SelectByDateProps> = ({
   selectSortByDate,
 }) => {
   const [selectedSort, setSelectedSort] = useState<SortDate | ''>('');
+  const [isOpen, setIsOpen] = useState(false);
 
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -30,6 +31,7 @@ export const SelectByDate: React.FC<SelectByDateProps> = ({
     evt: React.MouseEvent<HTMLButtonElement>,
   ) => {
     setSelectedSort(type);
+    handleMenuToggle();
 
     evt.currentTarget.blur();
 
@@ -37,6 +39,10 @@ export const SelectByDate: React.FC<SelectByDateProps> = ({
     params.set('sort', type);
 
     router.push(`?${params.toString()}`);
+  };
+
+  const handleMenuToggle = () => {
+    setIsOpen(!isOpen);
   };
 
   const getSortTitle = (selectedSort: string) => {
@@ -61,14 +67,15 @@ export const SelectByDate: React.FC<SelectByDateProps> = ({
         <div
           role="button"
           tabIndex={0}
-          className="flex w-full cursor-pointer justify-between rounded-full bg-bgLightSlate px-[24px] py-2.5 text-base/[1.5] font-semibold focus-within:bg-bgSlate hover:bg-bgSlate md:py-3 xl:py-4 xl:text-lg/[1.22]"
+          onClick={handleMenuToggle}
+          className="flex w-full cursor-pointer justify-between rounded-full bg-bgLightSlate px-[24px] py-2.5 text-base/[1.5] font-semibold md:py-3 xl:py-4 xl:text-lg/[1.22] xl:focus-within:bg-bgSlate xl:hover:bg-bgSlate"
         >
           <p id="sort-title">{getSortTitle(selectedSort)}</p>
 
           <ArrowIcon
             width={24}
             height={24}
-            className="size-6 transition-all group-hover:-rotate-180"
+            className={`size-6 transition-all ${isOpen ? 'rotate-180 xl:rotate-0' : ''} xl:group-hover:-rotate-180`}
           />
         </div>
 
@@ -76,7 +83,7 @@ export const SelectByDate: React.FC<SelectByDateProps> = ({
           id="sort-options"
           role="listbox"
           aria-label="sort-label"
-          className="absolute z-20 hidden w-full rounded-3xl bg-textLight p-4 group-focus-within:block group-hover:block"
+          className="absolute z-20 hidden w-full rounded-3xl bg-textLight p-4 xl:group-focus-within:block xl:group-hover:block"
         >
           <li key="newest">
             <button
@@ -104,6 +111,41 @@ export const SelectByDate: React.FC<SelectByDateProps> = ({
             </button>
           </li>
         </ul>
+
+        {isOpen && (
+          <ul
+            id="sort-options"
+            role="listbox"
+            aria-label="sort-label"
+            className="absolute z-20 w-full rounded-3xl bg-textLight p-4 xl:hidden"
+          >
+            <li key="newest">
+              <button
+                className="w-full cursor-pointer rounded-2xl p-4 text-left text-xs/normal font-semibold hover:bg-bgSlate"
+                onClick={evt => handleSelect('newest', evt)}
+                type="button"
+                role="option"
+                aria-label="newest"
+                aria-selected={selectedSort === 'newest'}
+              >
+                {newTitleOption}
+              </button>
+            </li>
+
+            <li key="oldest">
+              <button
+                className="w-full cursor-pointer rounded-2xl p-4 text-left text-xs/normal font-semibold hover:bg-bgSlate"
+                onClick={evt => handleSelect('oldest', evt)}
+                type="button"
+                role="option"
+                aria-label="oldest"
+                aria-selected={selectedSort === 'oldest'}
+              >
+                {oldTitleOption}
+              </button>
+            </li>
+          </ul>
+        )}
       </div>
     </div>
   );
