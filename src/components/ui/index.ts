@@ -28,3 +28,4 @@ export * from './DocumentCard';
 export * from './DocumentCard';
 export * from './SelectByDate';
 export * from './FormField';
+export * from './CustomSelect';

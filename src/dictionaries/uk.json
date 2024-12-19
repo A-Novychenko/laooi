@@ -219,7 +219,20 @@
           "errorText": "Будь ласка, введіть електронну пошту",
           "placeholder": "Введіть адресу електронної пошти"
         }
-      ]
+      ],
+      "select": {
+        "name": "appeal",
+        "title": "Тип звернення",
+        "placeholder": "Оберіть тип звернення",
+        "errorText": "Будь ласка, оберіть тип звернення",
+        "options": [
+          { "label": "Стати партнером", "value": "partner" },
+          { "label": "Стати волонтером", "value": "volunteer" },
+          { "label": "Запитання до радника", "value": "advisor" },
+          { "label": "Отримати допомогу", "value": "help" },
+          { "label": "Інше", "value": "other" }
+        ]
+      }
     }
   },
   "aboutSection": {

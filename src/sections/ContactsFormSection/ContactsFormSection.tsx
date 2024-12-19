@@ -2,12 +2,12 @@
 
 import { useForm, SubmitHandler } from 'react-hook-form';
 
-import { ButtonLink, FormField } from '@/components/ui';
+import { ButtonLink, CustomSelect, FormField } from '@/components/ui';
 
 export const ContactsFormSection: React.FC<ISectionProps> = ({ dict }) => {
-  const { inputs } = dict.common.contactsPage;
+  const { inputs, select } = dict.common.contactsPage;
 
-  const { register, handleSubmit } = useForm<IContactsFormFields>();
+  const { register, handleSubmit, setValue } = useForm<IContactsFormFields>();
 
   const onSubmit: SubmitHandler<IContactsFormFields> = data => {
     console.log(data);
@@ -26,6 +26,8 @@ export const ContactsFormSection: React.FC<ISectionProps> = ({ dict }) => {
           placeholder={placeholder}
         />
       ))}
+
+      <CustomSelect data={select} register={register} setValue={setValue} />
 
       <ButtonLink
         type="button"
