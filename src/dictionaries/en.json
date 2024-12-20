@@ -219,7 +219,20 @@
           "errorText": "Please enter your phone number",
           "placeholder": "Please enter your email address"
         }
-      ]
+      ],
+      "select": {
+        "name": "appeal",
+        "title": "Type of request",
+        "placeholder": "Select type of request",
+        "errorText": "Please select the type of request",
+        "options": [
+          { "label": "Become a partner", "value": "partner" },
+          { "label": "Become a volunteer", "value": "volunteer" },
+          { "label": "Question for advisor", "value": "advisor" },
+          { "label": "Receive help", "value": "help" },
+          { "label": "Other", "value": "other" }
+        ]
+      }
     }
   },
   "aboutSection": {

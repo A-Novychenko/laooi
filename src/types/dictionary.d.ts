@@ -279,4 +279,11 @@ interface IContactsPage {
     errorText: string;
     placeholder: string;
   }[];
+  select: {
+    name: string;
+    title: string;
+    placeholder: string;
+    errorText: string;
+    options: { label: string; value: string }[];
+  };
 }
