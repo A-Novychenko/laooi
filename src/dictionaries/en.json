@@ -253,12 +253,12 @@
               "message": "Please enter your email address"
             },
             "pattern": {
-              "value": "^[a-zA-Zа-яА-ЯёЁіІїЇєЄґҐ\\s-]+$",
-              "message": "Error"
+              "value": "^[a-zA-Z0-9]+([._-][a-zA-Z0-9]+)*@[a-zA-Z0-9]+([.-][a-zA-Z0-9]+)*\\.[a-zA-Z]{2,}(\\.[a-zA-Z]{2,})?$",
+              "message": "Incorrect email format"
             },
             "maxLength": {
-              "value": 70,
-              "message": "Error"
+              "value": 100,
+              "message": "The email can be no longer than 100 characters."
             }
           }
         }

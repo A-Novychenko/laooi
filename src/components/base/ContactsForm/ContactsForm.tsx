@@ -43,16 +43,21 @@ export const ContactsForm: React.FC<ContactsFormProps> = ({ data }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-2.5">
-      {inputs.map((inputConfig, idx) => (
-        <FormField
-          key={idx}
-          register={register}
-          errors={errors}
-          trigger={trigger}
-          config={inputConfig}
-        />
-      ))}
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      className="flex flex-col gap-y-2.5 md:gap-y-2"
+    >
+      <div className="gap-y-2 md:flex md:flex-wrap md:gap-x-[16px]">
+        {inputs.map((inputConfig, idx) => (
+          <FormField
+            key={idx}
+            register={register}
+            errors={errors}
+            trigger={trigger}
+            config={inputConfig}
+          />
+        ))}
+      </div>
 
       <CustomSelect data={select} register={register} setValue={setValue} />
 

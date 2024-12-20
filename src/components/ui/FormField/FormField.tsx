@@ -4,6 +4,8 @@ import RequiredIcon from '~/icons/required.svg';
 
 import { FormFieldProps } from './types';
 
+import styles from './FormField.module.css';
+
 export const FormField: React.FC<FormFieldProps> = ({
   config,
   register,
@@ -24,7 +26,7 @@ export const FormField: React.FC<FormFieldProps> = ({
   const errorMessage = errors?.[name]?.message;
 
   return (
-    <label className="flex h-[6.375rem] flex-col">
+    <label className={cn('flex h-[6.375rem] flex-col', styles.field)}>
       <span className="mb-1 flex gap-1">
         <span className="text-base/normal font-semibold text-textSecondary">
           {label}
@@ -48,6 +50,7 @@ export const FormField: React.FC<FormFieldProps> = ({
         className={cn(
           'mb-1 px-4 py-2 text-base/normal font-normal text-textPrimary placeholder:text-textActive',
           'h-14 rounded-[40px] bg-bgLight outline-bgLight',
+          'px-5',
         )}
         {...register(name as 'name' | 'email' | 'phone', {
           ...validationOptions,
@@ -73,7 +76,7 @@ export const FormField: React.FC<FormFieldProps> = ({
         <span className="flex gap-1">
           <RequiredIcon width={8} height={8} />
 
-          <span className="text-[0.625rem]/normal text-textRed">
+          <span className="text-[0.625rem]/normal text-textRed md:text-xs/normal">
             {errorMessage}
           </span>
         </span>
