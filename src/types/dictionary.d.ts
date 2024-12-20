@@ -272,13 +272,7 @@ interface ISelectPostByType {
 }
 
 interface IContactsPage {
-  inputs: {
-    name: string;
-    type: string;
-    label: string;
-    errorText: string;
-    placeholder: string;
-  }[];
+  inputs: IContactsPageInput[];
   select: {
     name: string;
     title: string;
@@ -287,3 +281,23 @@ interface IContactsPage {
     options: { label: string; value: string }[];
   };
 }
+
+interface IContactsPageInput {
+  name: string;
+  type: string;
+  label: string;
+  placeholder: string;
+  validationOptions: validationOptions;
+}
+
+interface IValidationOptions {
+  required: ValidationOption;
+  pattern: ValidationOption;
+  minLength?: ValidationOption;
+  maxLength: ValidationOption;
+}
+
+type ValidationOption = {
+  value: string | number | boolean;
+  message: string;
+};

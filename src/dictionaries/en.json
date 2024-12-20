@@ -202,22 +202,65 @@
           "name": "name",
           "type": "text",
           "label": "Name",
-          "errorText": "Please enter your name",
-          "placeholder": "Enter name"
+          "placeholder": "Enter name",
+          "validationOptions": {
+            "required": {
+              "value": true,
+              "message": "Please enter your name"
+            },
+            "pattern": {
+              "value": "^[a-zA-Zа-яА-ЯёЁіІїЇєЄґҐ\\s-]+$",
+              "message": "The name contains invalid characters"
+            },
+            "maxLength": {
+              "value": 70,
+              "message": "The name can be no longer than 70 characters"
+            }
+          }
         },
         {
           "name": "phone",
           "type": "tel",
           "label": "Phone number",
-          "errorText": "Please enter your phone number",
-          "placeholder": "+38(0__)___-__-__"
+          "placeholder": "+38(0__)___-__-__",
+          "validationOptions": {
+            "required": {
+              "value": true,
+              "message": "Please enter your phone number"
+            },
+            "pattern": {
+              "value": "^[\\d+\\-()\\s]*$",
+              "message": "Phone contains prohibited characters"
+            },
+            "minLength": {
+              "value": 7,
+              "message": "Phone must be more than 7 characters"
+            },
+            "maxLength": {
+              "value": 20,
+              "message": "Phone number can be no more than 20 characters."
+            }
+          }
         },
         {
           "name": "email",
           "type": "email",
           "label": "Email",
-          "errorText": "Please enter your phone number",
-          "placeholder": "Please enter your email address"
+          "placeholder": "Please enter your email address",
+          "validationOptions": {
+            "required": {
+              "value": true,
+              "message": "Please enter your email address"
+            },
+            "pattern": {
+              "value": "^[a-zA-Z0-9]+([._-][a-zA-Z0-9]+)*@[a-zA-Z0-9]+([.-][a-zA-Z0-9]+)*\\.[a-zA-Z]{2,}(\\.[a-zA-Z]{2,})?$",
+              "message": "Incorrect email format"
+            },
+            "maxLength": {
+              "value": 100,
+              "message": "The email can be no longer than 100 characters."
+            }
+          }
         }
       ],
       "select": {

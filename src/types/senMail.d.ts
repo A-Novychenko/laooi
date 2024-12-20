@@ -5,7 +5,7 @@ interface IEmailRequest {
 }
 
 interface ISendEmailPayload {
-  to: string;
-  subject: string;
+  to?: string;
+  subject?: string;
   text: string;
 }

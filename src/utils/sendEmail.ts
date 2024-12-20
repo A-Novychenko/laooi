@@ -1,4 +1,12 @@
-export const sendEmail = async ({ to, subject, text }: ISendEmailPayload) => {
+import staticData from '@/data/common.json';
+
+const { recipient, subjectPlaceholder } = staticData;
+
+export const sendEmail = async ({
+  to = recipient,
+  subject = subjectPlaceholder,
+  text,
+}: ISendEmailPayload) => {
   const response = await fetch('/api/sendEmail', {
     method: 'POST',
     headers: {

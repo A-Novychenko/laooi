@@ -10,3 +10,4 @@ export * from './PartnersSliderWrap';
 export * from './TargetSliderWrap';
 export * from './PostSliderWrap';
 export * from './DocumentsCategoryList';
+export * from './ContactsForm';

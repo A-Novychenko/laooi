@@ -1,10 +1,8 @@
-import { UseFormRegister } from 'react-hook-form';
+import { FieldErrors, UseFormRegister, UseFormTrigger } from 'react-hook-form';
 
 export type FormFieldProps = {
-  label: string;
-  errorText: string;
-  type: string;
-  name: string;
+  config: IContactsPageInput;
   register: UseFormRegister<IContactsFormFields>;
-  placeholder: string;
+  errors: FieldErrors<IContactsFormFields>;
+  trigger: UseFormTrigger<IContactsFormFields>;
 };
