@@ -202,22 +202,65 @@
           "name": "name",
           "type": "text",
           "label": "Імʼя",
-          "errorText": "Будь ласка, введіть Ваше ім’я",
-          "placeholder": "Введіть ім'я"
+          "placeholder": "Введіть ім'я",
+          "validationOptions": {
+            "required": {
+              "value": true,
+              "message": "Будь ласка, введіть Ваше ім’я"
+            },
+            "pattern": {
+              "value": "^[a-zA-Zа-яА-ЯёЁіІїЇєЄґҐ\\s-]+$",
+              "message": "Ім’я містить недопустимі символи"
+            },
+            "maxLength": {
+              "value": 70,
+              "message": "Імʼя може бути не більше 70 символів"
+            }
+          }
         },
         {
           "name": "phone",
           "type": "tel",
           "label": "Номер телефону",
-          "errorText": "Будь ласка, введіть номер телефону",
-          "placeholder": "+38(0__)___-__-__"
+          "placeholder": "+38(0__)___-__-__",
+          "validationOptions": {
+            "required": {
+              "value": true,
+              "message": "Будь ласка, введіть номер телефону"
+            },
+            "pattern": {
+              "value": "^[\\d+\\-()\\s]*$",
+              "message": "Телефон містить недопустимі символи"
+            },
+            "minLength": {
+              "value": 7,
+              "message": "Телефон повинен бути більше 7 символів"
+            },
+            "maxLength": {
+              "value": 20,
+              "message": "Телефон може бути не більше 20 символів"
+            }
+          }
         },
         {
           "name": "email",
           "type": "email",
           "label": "Емейл",
-          "errorText": "Будь ласка, введіть електронну пошту",
-          "placeholder": "Введіть адресу електронної пошти"
+          "placeholder": "Введіть адресу електронної пошти",
+          "validationOptions": {
+            "required": {
+              "value": true,
+              "message": "Будь ласка, введіть електронну пошту"
+            },
+            "pattern": {
+              "value": "^[a-zA-Zа-яА-ЯёЁіІїЇєЄґҐ\\s-]+$",
+              "message": "Ім’я містить недопустимі символи"
+            },
+            "maxLength": {
+              "value": 70,
+              "message": "Імʼя може бути не більше 70 символів"
+            }
+          }
         }
       ],
       "select": {

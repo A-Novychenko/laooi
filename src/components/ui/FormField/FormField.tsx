@@ -5,14 +5,23 @@ import RequiredIcon from '~/icons/required.svg';
 import { FormFieldProps } from './types';
 
 export const FormField: React.FC<FormFieldProps> = ({
-  type,
-  name,
-  label,
-  errorText,
+  config,
   register,
-  placeholder,
+  errors,
+  trigger,
 }) => {
-  const isError = true;
+  const {
+    type,
+    label,
+    name: nameData,
+    placeholder,
+    validationOptions,
+  } = config;
+
+  const required = validationOptions.required.value;
+  const name = nameData as 'name' | 'email' | 'phone';
+  const isError = errors?.[name as keyof IContactsFormFields];
+  const errorMessage = errors?.[name]?.message;
 
   return (
     <label className="flex h-[6.375rem] flex-col">
@@ -25,6 +34,15 @@ export const FormField: React.FC<FormFieldProps> = ({
       </span>
 
       <input
+        aria-required={required ? true : false}
+        aria-invalid={
+          errors[name as keyof IContactsFormFields] ? 'true' : 'false'
+        }
+        aria-describedby={
+          errors[name as keyof IContactsFormFields]
+            ? `errorMessage${name}`
+            : undefined
+        }
         type={type}
         placeholder={placeholder}
         className={cn(
@@ -32,17 +50,31 @@ export const FormField: React.FC<FormFieldProps> = ({
           'h-14 rounded-[40px] bg-bgLight outline-bgLight',
         )}
         {...register(name as 'name' | 'email' | 'phone', {
-          required: true,
-          maxLength: 20,
+          ...validationOptions,
+          required,
+          onChange: () => {
+            trigger(name);
+          },
+          onBlur: () => {
+            trigger(name);
+          },
+          pattern: {
+            value: validationOptions?.pattern
+              ? new RegExp(validationOptions.pattern.value)
+              : new RegExp(''),
+            message: validationOptions?.pattern
+              ? validationOptions?.pattern?.message
+              : '',
+          },
         })}
       />
 
-      {isError && (
+      {isError && errorMessage && (
         <span className="flex gap-1">
           <RequiredIcon width={8} height={8} />
 
           <span className="text-[0.625rem]/normal text-textRed">
-            {errorText}
+            {errorMessage}
           </span>
         </span>
       )}
