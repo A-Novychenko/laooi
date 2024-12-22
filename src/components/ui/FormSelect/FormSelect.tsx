@@ -6,21 +6,26 @@ import RequiredIcon from '~/icons/required.svg';
 
 import { CustomSelectProp, Option } from './types';
 
-export const CustomSelect: React.FC<CustomSelectProp> = ({
+export const FormSelect: React.FC<CustomSelectProp> = ({
   data,
   register,
   setValue,
+  errors,
+  trigger,
+  required = true,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedType, setSelectedType] = useState<string | null>(null);
 
   const { name, errorText, title, placeholder, options } = data;
 
-  const isError = true;
+  const isError = errors?.[name as keyof IContactsFormFields];
+  const errorMessage = isError?.message || errorText;
 
   const handleSelect = (value: string) => {
     setSelectedType(value);
-    setValue(name as 'appeal', value);
+    setValue(name as 'appeal', value, { shouldValidate: true });
+    trigger(name as 'appeal');
     setIsOpen(false);
   };
 
@@ -33,7 +38,7 @@ export const CustomSelect: React.FC<CustomSelectProp> = ({
 
   return (
     <div
-      className="relative mb-2"
+      className="relative"
       role="combobox"
       aria-expanded={isOpen}
       aria-controls="type-options"
@@ -93,7 +98,16 @@ export const CustomSelect: React.FC<CustomSelectProp> = ({
           </span>
         </span>
       )}
-      <input type="hidden" {...register(name as 'appeal')} />
+      <input
+        type="hidden"
+        aria-required={required ? true : false}
+        aria-invalid={
+          errors[name as keyof IContactsFormFields] ? 'true' : 'false'
+        }
+        {...register(name as 'appeal', {
+          required: required ? errorMessage : false,
+        })}
+      />
     </div>
   );
 };

@@ -280,6 +280,7 @@ interface IContactsPage {
     errorText: string;
     options: { label: string; value: string }[];
   };
+  textArea: IFormTextField;
 }
 
 interface IContactsPageInput {
@@ -300,4 +301,18 @@ interface IValidationOptions {
 type ValidationOption = {
   value: string | number | boolean;
   message: string;
+};
+
+type IFormTextField = {
+  name: string;
+  type: string;
+  label: string;
+  placeholder: string;
+  validationOptions: TextValidationOptions;
+};
+
+type TextValidationOptions = {
+  required: ValidationOption;
+  minLength: ValidationOption;
+  maxLength: ValidationOption;
 };
