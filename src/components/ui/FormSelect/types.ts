@@ -8,6 +8,7 @@ import {
 export type CustomSelectProp = {
   data: {
     name: string;
+    description: string;
     errorText: string;
     title: string;
     placeholder: string;

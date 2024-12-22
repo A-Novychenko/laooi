@@ -276,6 +276,7 @@ interface IContactsPage {
   select: {
     name: string;
     title: string;
+    description: string;
     placeholder: string;
     errorText: string;
     options: { label: string; value: string }[];

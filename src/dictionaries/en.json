@@ -266,6 +266,7 @@
       "select": {
         "name": "appeal",
         "title": "Type of request",
+        "description": "Please select the type of your request (become a partner, become a volunteer, receive help, other). After selecting a category, a recommendation will appear indicating what should be specified in the comment.",
         "placeholder": "Select type of request",
         "errorText": "Please select the type of request",
         "options": [

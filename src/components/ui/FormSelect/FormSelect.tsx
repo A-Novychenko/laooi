@@ -17,7 +17,7 @@ export const FormSelect: React.FC<CustomSelectProp> = ({
   const [isOpen, setIsOpen] = useState(false);
   const [selectedType, setSelectedType] = useState<string | null>(null);
 
-  const { name, errorText, title, placeholder, options } = data;
+  const { name, errorText, title, placeholder, options, description } = data;
 
   const isError = errors?.[name as keyof IContactsFormFields];
   const errorMessage = isError?.message || errorText;
@@ -108,6 +108,7 @@ export const FormSelect: React.FC<CustomSelectProp> = ({
           required: required ? errorMessage : false,
         })}
       />
+      <p className="mt-2 text-base/normal xl:mt-4 xl:text-lg">{description}</p>
     </div>
   );
 };
