@@ -3,14 +3,19 @@
 import { useForm, SubmitHandler } from 'react-hook-form';
 import useFormPersist from 'react-hook-form-persist';
 
-import { ButtonLink, CustomSelect, FormField } from '@/components/ui';
+import {
+  ButtonLink,
+  FormSelect,
+  FormField,
+  FormTextField,
+} from '@/components/ui';
 
 import { sendEmail } from '@/utils/sendEmail';
 
 import { ContactsFormProps } from './types';
 
 export const ContactsForm: React.FC<ContactsFormProps> = ({ data }) => {
-  const { inputs, select } = data;
+  const { inputs, select, textArea } = data;
 
   const {
     register,
@@ -36,6 +41,7 @@ export const ContactsForm: React.FC<ContactsFormProps> = ({ data }) => {
       await sendEmail(mailData);
 
       reset();
+
       window.sessionStorage.removeItem('contactForm');
     } catch (e) {
       console.log('e', e);
@@ -59,7 +65,20 @@ export const ContactsForm: React.FC<ContactsFormProps> = ({ data }) => {
         ))}
       </div>
 
-      <CustomSelect data={select} register={register} setValue={setValue} />
+      <FormSelect
+        data={select}
+        register={register}
+        setValue={setValue}
+        trigger={trigger}
+        errors={errors}
+      />
+
+      <FormTextField
+        config={textArea}
+        register={register}
+        errors={errors}
+        trigger={trigger}
+      />
 
       <ButtonLink
         type="button"

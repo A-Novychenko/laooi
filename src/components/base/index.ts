@@ -11,3 +11,4 @@ export * from './TargetSliderWrap';
 export * from './PostSliderWrap';
 export * from './DocumentsCategoryList';
 export * from './ContactsForm';
+export * from './ContactSocials';

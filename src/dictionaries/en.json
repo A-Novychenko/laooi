@@ -266,6 +266,7 @@
       "select": {
         "name": "appeal",
         "title": "Type of request",
+        "description": "Please select the type of your request (become a partner, become a volunteer, receive help, other). After selecting a category, a recommendation will appear indicating what should be specified in the comment.",
         "placeholder": "Select type of request",
         "errorText": "Please select the type of request",
         "options": [
@@ -275,6 +276,26 @@
           { "label": "Receive help", "value": "help" },
           { "label": "Other", "value": "other" }
         ]
+      },
+      "textArea": {
+        "name": "message",
+        "type": "text",
+        "label": "Message",
+        "placeholder": "Enter message",
+        "validationOptions": {
+          "required": {
+            "value": true,
+            "message": "Please write your message"
+          },
+          "minLength": {
+            "value": 6,
+            "message": "Message must be more than 7 symbols"
+          },
+          "maxLength": {
+            "value": 1024,
+            "message": "Maximum 1024 characters allowed."
+          }
+        }
       }
     }
   },
