@@ -1,7 +1,7 @@
 interface IContactsFormFields {
   name: string;
   phone: string;
-  email: number;
+  email: string;
   message: string;
   appeal: string;
 }

@@ -53,6 +53,7 @@ html {
 
 .section-media,
 .section-blog,
+.section-contacts,
 .section-documents {
   @apply pb-16 pt-8 md:pb-24 md:pt-10 xl:pb-32 xl:pt-14;
 }

@@ -50,7 +50,7 @@ export const FormField: React.FC<FormFieldProps> = ({
         className={cn(
           'mb-1 px-4 py-2 text-base/normal font-normal text-textPrimary placeholder:text-textActive',
           'h-14 rounded-[40px] bg-bgLight outline-bgLight',
-          'px-5',
+          'md:px-5 xl:px-6',
         )}
         {...register(name as 'name' | 'email' | 'phone', {
           ...validationOptions,

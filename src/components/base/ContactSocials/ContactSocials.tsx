@@ -1,7 +1,5 @@
-import Image from 'next/image';
 import Link from 'next/link';
 
-import LaooiLogo from '~/images/bigLogo.png';
 import InstagramIcon from '~/icons/instagram.svg';
 import FacebookIcon from '~/icons/facebook.svg';
 import YouTubeIcon from '~/icons/youtube.svg';
@@ -16,14 +14,14 @@ export const ContactSocials: React.FC<ContactSocialsProps> = ({
 
   return (
     <div className="xl:w-[524px]">
-      <div className="mb-4 flex flex-col items-center justify-center gap-4 rounded-2xl bg-bgLightSlate p-6 md:p-8 xl:p-10">
+      <div className="flex flex-col items-center justify-center gap-4 rounded-2xl bg-bgLightSlate p-6 md:p-8 xl:p-10">
         <p className="text-sm/normal font-bold uppercase text-textSecondary xl:text-lg xl:font-semibold">
           {title}
         </p>
 
         <ul className="flex flex-col gap-4 md:flex-row">
           {links &&
-            links.map((link, idx) => {
+            links.map((link: ISocialLinksItem, idx) => {
               const IconComponent = icons[idx];
 
               return (
@@ -44,15 +42,6 @@ export const ContactSocials: React.FC<ContactSocialsProps> = ({
               );
             })}
         </ul>
-      </div>
-
-      <div className="xl:w-[524px]">
-        <Image
-          src={LaooiLogo}
-          width={688}
-          height={684}
-          alt="big logo organization"
-        />
       </div>
     </div>
   );

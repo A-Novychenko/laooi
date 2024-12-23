@@ -197,6 +197,9 @@
       }
     },
     "contactsPage": {
+      "title": "Contact us",
+      "formLabel": "Looking for help, want to become a partner or volunteer, or have a question? Fill out the form, and we’ll get in touch with you!",
+      "submitBtnLabel": "Submit",
       "inputs": [
         {
           "name": "name",
