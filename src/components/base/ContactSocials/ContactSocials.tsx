@@ -26,7 +26,7 @@ export const ContactSocials: React.FC<ContactSocialsProps> = ({
 
               return (
                 <li key={idx} className="flex items-center gap-2">
-                  <span className="flex size-10 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-bgSocialIcon text-textLight transition-colors hover:bg-bgSlate hover:text-bgDark focus:bg-bgSlate focus:text-bgDark active:bg-bgDarkSlate">
+                  <span className="flex size-10 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-bgAccentDark text-textLight transition-colors hover:bg-bgAccentStrongDark focus:bg-bgAccentStrongDark active:bg-bgAccentStrongDark">
                     <IconComponent width={24} height={24} />
                   </span>
 
