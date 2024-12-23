@@ -5,7 +5,7 @@ const { recipient, subjectPlaceholder } = staticData;
 export const sendEmail = async ({
   to = recipient,
   subject = subjectPlaceholder,
-  text,
+  html,
 }: ISendEmailPayload) => {
   const response = await fetch('/api/sendEmail', {
     method: 'POST',
@@ -15,7 +15,7 @@ export const sendEmail = async ({
     body: JSON.stringify({
       to,
       subject,
-      text,
+      html,
     }),
   });
 

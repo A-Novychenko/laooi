@@ -11,6 +11,7 @@ import {
 } from '@/components/ui';
 
 import { sendEmail } from '@/utils/sendEmail';
+import { generateEmailHTML } from '@/utils/generateEmailHTML';
 
 import { ContactsFormProps } from './types';
 
@@ -29,13 +30,25 @@ export const ContactsForm: React.FC<ContactsFormProps> = ({ data }) => {
 
   useFormPersist('contactForm', { watch, setValue });
 
-  const onSubmit: SubmitHandler<IContactsFormFields> = async data => {
-    console.log(data);
-
+  const onSubmit: SubmitHandler<IContactsFormFields> = async ({
+    name,
+    email,
+    phone,
+    appeal,
+    message,
+  }) => {
     const mailData = {
-      subject: `Request from ${data.name}`,
-      text: `Name:${data.name} Email: ${data.email} Phone: ${data.phone}`,
+      subject: `Request from ${name}`,
+      html: generateEmailHTML({
+        name,
+        email,
+        phone,
+        caseType: appeal,
+        msg: message,
+      }),
     };
+
+    console.log('mailData', mailData);
 
     try {
       await sendEmail(mailData);

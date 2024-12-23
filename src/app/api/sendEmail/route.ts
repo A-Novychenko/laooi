@@ -1,9 +1,9 @@
 import nodemailer from 'nodemailer';
 
 export async function POST(req: Request) {
-  const { to, subject, text }: IEmailRequest = await req.json();
+  const { to, subject, html }: IEmailRequest = await req.json();
 
-  if (!to || !subject || !text) {
+  if (!to || !subject || !html) {
     return new Response(
       JSON.stringify({ message: 'Missing required fields' }),
       { status: 400 },
@@ -22,7 +22,7 @@ export async function POST(req: Request) {
     from: process.env.GMAIL_USER,
     to,
     subject,
-    text,
+    html,
   };
 
   try {
