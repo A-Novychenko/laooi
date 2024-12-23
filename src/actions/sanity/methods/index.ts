@@ -5,3 +5,4 @@ export * from './getLatestMediaItems';
 export * from './getDocuments';
 export * from './getDocuments';
 export * from './getLatestPosts';
+export * from './getResearchDocuments';

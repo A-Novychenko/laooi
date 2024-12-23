@@ -1,5 +1,5 @@
 export type DocumentsCategoryListProps = {
   categoryTitle: string;
-  documents: ITransformedDocument[];
+  documents: ITransformedDocument[] | ITransformedResearchDocument[];
   fileLinks: IFileLinks;
 };

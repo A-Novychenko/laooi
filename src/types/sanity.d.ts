@@ -107,3 +107,9 @@ interface ITransformedDocument {
   index: number;
   fileUrl: string;
 }
+
+interface ITransformedResearchDocument {
+  title: string;
+  index: number;
+  fileUrl: string;
+}

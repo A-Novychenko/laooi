@@ -56,6 +56,10 @@
           {
             "name": "Projects",
             "href": "/in-progress"
+          },
+          {
+            "name": "Research",
+            "href": "/research"
           }
         ]
       },
@@ -555,6 +559,21 @@
       { "title": "Reports on income usage", "category": "reports" },
       { "title": "Other documents", "category": "other" }
     ],
+    "errorData": {
+      "description": "Unfortunately, there are no documents available for viewing at this time. You can come back later or view the latest information in other sections of our website.",
+      "link": {
+        "label": "Home",
+        "settings": {
+          "href": "/en/",
+          "externalLink": false
+        }
+      }
+    }
+  },
+  "researchSection": {
+    "mainTitle": "Research of the LAOOI organization",
+    "categoryTitle": "Research",
+    "fileLinks": { "openFileLabel": "Open", "downloadFileLabel": "Download" },
     "errorData": {
       "description": "Unfortunately, there are no documents available for viewing at this time. You can come back later or view the latest information in other sections of our website.",
       "link": {
