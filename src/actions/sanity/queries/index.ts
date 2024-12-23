@@ -5,3 +5,4 @@ export * from './getLatestMediaItemsQuery';
 export * from './getDocumentsQuery';
 export * from './getDocumentsQuery';
 export * from './getAllPostsWithCountQuery';
+export * from './getResearchDocumentsQuery';

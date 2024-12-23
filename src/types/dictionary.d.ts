@@ -30,6 +30,7 @@ interface IDictionary {
   mediaSection: IMediaSection;
   documentsSection: IDocumentsSection;
   documentsSection: IDocumentsSection;
+  researchSection: IResearchSection;
 }
 
 interface IPostBackLink {
@@ -245,6 +246,13 @@ interface IDocumentsSection {
   mainTitle: string;
   fileLinks: IFileLinks;
   categories: { title: string; category: string }[];
+  errorData: IErrorData;
+}
+
+interface IResearchSection {
+  mainTitle: string;
+  categoryTitle: string;
+  fileLinks: IFileLinks;
   errorData: IErrorData;
 }
 
