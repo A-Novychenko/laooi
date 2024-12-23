@@ -272,6 +272,9 @@ interface ISelectPostByType {
 }
 
 interface IContactsPage {
+  title: string;
+  formLabel: string;
+  submitBtnLabel: string;
   inputs: IContactsPageInput[];
   select: {
     name: string;

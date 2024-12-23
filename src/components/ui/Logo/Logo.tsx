@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import LogoIcon from '~/logo.png';
+import logoIcon from '~/logo.png';
 
 import { LogoProps } from './types';
 
@@ -14,7 +14,7 @@ export const Logo: React.FC<LogoProps> = ({
   return (
     <Link href={`/${lang}/`} className={classNameLink}>
       <Image
-        src={LogoIcon}
+        src={logoIcon}
         width={80}
         height={80}
         alt={logoAlt}

@@ -11,11 +11,7 @@ const ContactsPage = async ({
 
   return (
     <>
-      <section className="section bg-slate-200">
-        <div className="container">
-          <ContactsFormSection dict={dict} lang={lang} />
-        </div>
-      </section>
+      <ContactsFormSection dict={dict} lang={lang} />
     </>
   );
 };

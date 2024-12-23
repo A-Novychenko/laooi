@@ -15,7 +15,7 @@ import { sendEmail } from '@/utils/sendEmail';
 import { ContactsFormProps } from './types';
 
 export const ContactsForm: React.FC<ContactsFormProps> = ({ data }) => {
-  const { inputs, select, textArea } = data;
+  const { formLabel, submitBtnLabel, inputs, select, textArea } = data;
 
   const {
     register,
@@ -49,44 +49,50 @@ export const ContactsForm: React.FC<ContactsFormProps> = ({ data }) => {
   };
 
   return (
-    <form
-      onSubmit={handleSubmit(onSubmit)}
-      className="flex flex-col gap-y-2.5 md:gap-y-2"
-    >
-      <div className="gap-y-2 md:flex md:flex-wrap md:gap-x-[16px]">
-        {inputs.map((inputConfig, idx) => (
-          <FormField
-            key={idx}
-            register={register}
-            errors={errors}
-            trigger={trigger}
-            config={inputConfig}
-          />
-        ))}
-      </div>
+    <div className="rounded-2xl bg-bgLightSlate px-[16px] py-6 md:rounded-[20px] md:p-[32px] xl:rounded-3xl xl:p-[40px]">
+      <p className="mb-4 text-base/normal text-textPrimary xl:mb-6 xl:text-lg/normal">
+        {formLabel}
+      </p>
 
-      <FormSelect
-        data={select}
-        register={register}
-        setValue={setValue}
-        trigger={trigger}
-        errors={errors}
-      />
-
-      <FormTextField
-        config={textArea}
-        register={register}
-        errors={errors}
-        trigger={trigger}
-      />
-
-      <ButtonLink
-        type="button"
-        typeStyle="primary"
-        settings={{ action: () => {}, type: 'submit' }}
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="flex flex-col gap-y-2.5 md:gap-y-2"
       >
-        Submit
-      </ButtonLink>
-    </form>
+        <div className="gap-y-2 md:flex md:flex-wrap md:gap-x-[16px] xl:gap-y-4">
+          {inputs.map((inputConfig, idx) => (
+            <FormField
+              key={idx}
+              register={register}
+              errors={errors}
+              trigger={trigger}
+              config={inputConfig}
+            />
+          ))}
+        </div>
+
+        <FormSelect
+          data={select}
+          register={register}
+          setValue={setValue}
+          trigger={trigger}
+          errors={errors}
+        />
+
+        <FormTextField
+          config={textArea}
+          register={register}
+          errors={errors}
+          trigger={trigger}
+        />
+
+        <ButtonLink
+          type="button"
+          typeStyle="primary"
+          settings={{ action: () => {}, type: 'submit' }}
+        >
+          {submitBtnLabel}
+        </ButtonLink>
+      </form>
+    </div>
   );
 };
