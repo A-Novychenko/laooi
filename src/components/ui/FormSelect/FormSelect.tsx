@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import ArrowIcon from '~/icons/arrowDown.svg';
 import RequiredIcon from '~/icons/required.svg';
@@ -17,9 +17,12 @@ export const FormSelect: React.FC<CustomSelectProp> = ({
   const [isOpen, setIsOpen] = useState(false);
   const [selectedType, setSelectedType] = useState<string | null>(null);
 
+  const selectRef = useRef<HTMLDivElement>(null);
+
   const { name, errorText, title, placeholder, options, description } = data;
 
   const isError = errors?.[name as keyof IContactsFormFields];
+
   const errorMessage = isError?.message || errorText;
 
   const handleSelect = (value: string) => {
@@ -36,8 +39,25 @@ export const FormSelect: React.FC<CustomSelectProp> = ({
     return selectedOption ? selectedOption.label : placeholder;
   };
 
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        selectRef.current &&
+        !selectRef.current.contains(event.target as Node)
+      ) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
   return (
     <div
+      ref={selectRef}
       className="relative"
       role="combobox"
       aria-expanded={isOpen}
@@ -47,16 +67,23 @@ export const FormSelect: React.FC<CustomSelectProp> = ({
         <span className="text-base/normal font-semibold text-textSecondary">
           {title}
         </span>
+
         <RequiredIcon width={8} height={8} />
       </span>
-      <div className="group relative">
+
+      <div
+        className="group relative"
+        tabIndex={0}
+        // onBlur={() => setIsOpen(false)}
+      >
         <div
           role="button"
           tabIndex={0}
-          className="flex w-full cursor-pointer justify-between rounded-full bg-bgLight px-4 py-2 text-base/normal font-normal transition-all hover:bg-bgSlate focus:bg-bgSlate md:px-5 md:py-[17px] xl:px-6"
+          className="flex h-14 w-full cursor-pointer items-center justify-between rounded-full bg-bgLight px-4 py-2 text-base/normal font-normal transition-all hover:bg-bgSlate active:bg-textLight md:px-5 md:py-[17px] xl:px-6"
           onClick={() => setIsOpen(!isOpen)}
         >
           <p id="type-title">{getSelectTitle(options)}</p>
+
           <ArrowIcon
             width={24}
             height={24}
@@ -69,7 +96,7 @@ export const FormSelect: React.FC<CustomSelectProp> = ({
             id="type-options"
             role="listbox"
             aria-label="type-label"
-            className="absolute z-20 w-full rounded-3xl bg-textLight p-4 transition-all"
+            className="absolute z-20 w-full rounded-3xl bg-textLight p-4 shadow-mobMenuHeader transition-all"
           >
             {options.map(option => (
               <li key={option.value}>
@@ -108,6 +135,7 @@ export const FormSelect: React.FC<CustomSelectProp> = ({
           required: required ? errorMessage : false,
         })}
       />
+
       <p className="mt-2 text-base/normal xl:mt-4 xl:text-lg">{description}</p>
     </div>
   );

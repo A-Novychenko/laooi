@@ -279,6 +279,7 @@
         "options": [
           { "label": "Стати партнером", "value": "partner" },
           { "label": "Стати волонтером", "value": "volunteer" },
+          { "label": "Стати радником", "value": "become-advisor" },
           { "label": "Запитання до радника", "value": "advisor" },
           { "label": "Отримати допомогу", "value": "help" },
           { "label": "Інше", "value": "other" }

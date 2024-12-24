@@ -279,6 +279,7 @@
         "options": [
           { "label": "Become a partner", "value": "partner" },
           { "label": "Become a volunteer", "value": "volunteer" },
+          { "label": "Become a advisor", "value": "become-advisor" },
           { "label": "Question for advisor", "value": "advisor" },
           { "label": "Receive help", "value": "help" },
           { "label": "Other", "value": "other" }
