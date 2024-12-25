@@ -31,6 +31,10 @@ interface IDictionary {
   documentsSection: IDocumentsSection;
   documentsSection: IDocumentsSection;
   researchSection: IResearchSection;
+  advisorsPage: {
+    advisorsHeroSection: IAdvisorsHeroSection;
+    advisorsSection: IAdvisorsSection;
+  };
 }
 
 interface IPostBackLink {
@@ -328,3 +332,26 @@ type TextValidationOptions = {
   minLength: ValidationOption;
   maxLength: ValidationOption;
 };
+
+interface IAdvisorsHeroSection {
+  title: string;
+  firstImg: string;
+  secondImg: string;
+  firstImgAlt: string;
+  secondImgAlt: string;
+  description: {
+    quotedText: {
+      advisors: string;
+      question: string;
+      become: string;
+    };
+    firstParagraph: { after: string };
+    secondParagraph: { before: string; after: string };
+    thirdParagraph: { before: string; after: string };
+  };
+  btn: { btnLabel: string; settings: { href: string; externalLink: boolean } };
+}
+
+interface IAdvisorsSection {
+  title: string;
+}

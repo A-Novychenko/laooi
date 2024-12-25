@@ -14,3 +14,5 @@ export * from './MediaGallerySection';
 export * from './DocumentsSection';
 export * from './ContactsFormSection';
 export * from './ResearchSection';
+export * from './AdvisorsHeroSection';
+export * from './AdvisorsSection';

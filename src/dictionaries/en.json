@@ -72,8 +72,8 @@
             "href": "/in-progress"
           },
           {
-            "name": "Counselors",
-            "href": "/in-progress"
+            "name": "Advisors",
+            "href": "/advisors"
           },
           {
             "name": "Media about us",
@@ -134,7 +134,7 @@
         "title": "Activities",
         "embedded": [
           { "name": "Main areas", "href": "/in-progress" },
-          { "name": "Advisors", "href": "/in-progress" },
+          { "name": "Advisors", "href": "/advisors" },
           { "name": "Media about us", "href": "/media" },
           { "name": "Documents", "href": "/documents" }
         ]
@@ -588,6 +588,40 @@
           "externalLink": false
         }
       }
+    }
+  },
+  "advisorsPage": {
+    "advisorsHeroSection": {
+      "title": "Inclusive community advisors",
+      "firstImg": "/images/advisors/first-advisors.webp",
+      "secondImg": "/images/advisors/second-advisors.webp",
+      "firstImgAlt": "A group photo in an office setting. Thirteen people, including a man in a wheelchair, stand in front of the Ukrainian flag and an organization banner. Everyone is smiling and showing a thumbs-up gesture.",
+      "secondImgAlt": "A group of people sitting around a large rectangular table in a conference room. The table has water bottles, papers, and a laptop. In the background, there is a flipchart with notes.",
+      "description": {
+        "quotedText": {
+          "advisors": "Inclusive community advisors",
+          "question": "\"Question for advisor\"",
+          "become": "\"Become advisor\""
+        },
+        "firstParagraph": {
+          "after": " are specialists who assist people with disabilities in protecting their rights, addressing key issues in their communities, and actively participating in social life. They operate in various cities across Ukraine, providing support, consultations, and assistance in addressing a wide range of life matters"
+        },
+        "secondParagraph": {
+          "before": "If you require help or advice, you can reach out to one of the advisors by phone or by filling out the feedback form. Select the category ",
+          "after": " and describe your need or situation in the message — this will help the advisor better prepare and provide the most effective response"
+        },
+        "thirdParagraph": {
+          "before": "If you would like to join our team and help people with disabilities, select the category ",
+          "after": " in the form, complete it, and leave your contact details. We will get in touch with you for further discussion and provide all the necessary information"
+        }
+      },
+      "btn": {
+        "btnLabel": "Submit request",
+        "settings": { "href": "/contacts", "externalLink": false }
+      }
+    },
+    "advisorsSection": {
+      "title": "Our advisors"
     }
   }
 }
