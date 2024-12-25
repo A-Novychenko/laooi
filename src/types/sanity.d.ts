@@ -113,3 +113,36 @@ interface ITransformedResearchDocument {
   index: number;
   fileUrl: string;
 }
+
+interface IAdvisor {
+  _id: string;
+  name: {
+    uk: string;
+    en: string;
+  };
+  photo: {
+    caption: {
+      uk: string;
+      en: string;
+    };
+    asset: {
+      _id: string;
+      url: string;
+    };
+  };
+  city: {
+    uk: string;
+    en: string;
+  };
+  phone: string;
+  index: number;
+}
+
+interface ITransformedAdvisor {
+  photo: string;
+  alt: string;
+  name: string;
+  city: string;
+  phone: string;
+  index: number;
+}

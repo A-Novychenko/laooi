@@ -1,0 +1,11 @@
+@media screen and (min-width: 768px) {
+  .advisorItem {
+    flex-basis: calc((100% - 16px) / 2);
+  }
+}
+
+@media screen and (min-width: 1360px) {
+  .advisorItem {
+    flex-basis: calc((100% - 32px) / 3);
+  }
+}

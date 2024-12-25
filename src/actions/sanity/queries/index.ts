@@ -6,3 +6,4 @@ export * from './getDocumentsQuery';
 export * from './getDocumentsQuery';
 export * from './getAllPostsWithCountQuery';
 export * from './getResearchDocumentsQuery';
+export * from './getAdvisorsQuery';
