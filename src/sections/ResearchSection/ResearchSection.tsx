@@ -16,6 +16,7 @@ export const ResearchSection: React.FC<DocumentsSectionProps> = ({
             categoryTitle={categoryTitle}
             documents={documents}
             fileLinks={fileLinks}
+            cardType="research"
           />
         </div>
       </div>

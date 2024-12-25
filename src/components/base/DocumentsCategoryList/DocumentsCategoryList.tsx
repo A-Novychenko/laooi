@@ -8,6 +8,7 @@ export const DocumentsCategoryList: React.FC<DocumentsCategoryListProps> = ({
   categoryTitle,
   documents,
   fileLinks,
+  cardType,
 }) => {
   return (
     <>
@@ -26,7 +27,11 @@ export const DocumentsCategoryList: React.FC<DocumentsCategoryListProps> = ({
                 .sort((a, b) => (b.index || 1) - (a.index || 1))
                 .map((doc, idx) => (
                   <li key={idx} className={styles.card}>
-                    <DocumentCard doc={doc} fileLinks={fileLinks} />
+                    <DocumentCard
+                      doc={doc}
+                      fileLinks={fileLinks}
+                      cardType={cardType}
+                    />
                   </li>
                 ))}
           </ul>
