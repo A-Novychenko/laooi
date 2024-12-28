@@ -1,17 +1,13 @@
 'use client';
 
 import { useState } from 'react';
-import { useForm, SubmitHandler } from 'react-hook-form';
-import useFormPersist from 'react-hook-form-persist';
 import dynamic from 'next/dynamic';
 
-import {
-  ButtonLink,
-  // FormSelect,
-  FormField,
-  FormTextField,
-  Loader,
-} from '@/components/ui';
+import { useForm, SubmitHandler } from 'react-hook-form';
+import useFormPersist from 'react-hook-form-persist';
+import { ToastContainer, toast, Bounce } from 'react-toastify';
+
+import { ButtonLink, FormField, FormTextField, Loader } from '@/components/ui';
 
 import { sendEmail } from '@/utils/sendEmail';
 import { generateEmailHTML } from '@/utils/generateEmailHTML';
@@ -28,9 +24,18 @@ const FormSelect = dynamic(
 );
 
 export const ContactsForm: React.FC<ContactsFormProps> = ({ data }) => {
-  const { formLabel, submitBtnLabel, inputs, select, textArea } = data;
+  const {
+    formLabel,
+    submitBtnLabel,
+    inputs,
+    select,
+    textArea,
+    successSubmit,
+    errorSubmit,
+  } = data;
 
-  const { subjectMailUser, subjectMailLaooi } = staticData;
+  const { subjectMailUser, subjectMailLaooi, contactsFormCasePlaceholder } =
+    staticData;
 
   const [pending, setPending] = useState<boolean>(false);
 
@@ -53,6 +58,14 @@ export const ContactsForm: React.FC<ContactsFormProps> = ({ data }) => {
     appeal,
     message,
   }) => {
+    const isTypeRequest = select.options.find(({ value }) => value === appeal)
+      ? select.options.find(({ value }) => value === appeal)
+      : null;
+
+    const typeRequest = isTypeRequest
+      ? isTypeRequest.label
+      : contactsFormCasePlaceholder;
+
     const mailDataLaooi = {
       subject: `${subjectMailLaooi} ${name}`,
       html: generateEmailHTML({
@@ -60,7 +73,7 @@ export const ContactsForm: React.FC<ContactsFormProps> = ({ data }) => {
         name,
         email,
         phone,
-        caseType: appeal,
+        caseType: typeRequest,
         msg: message,
       }),
     };
@@ -73,7 +86,7 @@ export const ContactsForm: React.FC<ContactsFormProps> = ({ data }) => {
         name,
         email,
         phone,
-        caseType: appeal,
+        caseType: typeRequest,
         msg: message,
       }),
     };
@@ -89,8 +102,18 @@ export const ContactsForm: React.FC<ContactsFormProps> = ({ data }) => {
       reset();
 
       window.sessionStorage.removeItem('contactForm');
+
+      toast.success(successSubmit, {
+        closeButton: false,
+        className: 'toast-custom',
+      });
     } catch (e) {
       console.log('e', e);
+
+      toast.error(errorSubmit, {
+        closeButton: false,
+        className: 'toast-custom',
+      });
     } finally {
       setPending(false);
     }
@@ -145,6 +168,20 @@ export const ContactsForm: React.FC<ContactsFormProps> = ({ data }) => {
           <Loader size={20} visible={pending} strokeWidth={1.5} color="#fff" />
         </ButtonLink>
       </form>
+
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar
+        newestOnTop={false}
+        closeOnClick={false}
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+        transition={Bounce}
+      />
     </div>
   );
 };

@@ -129,8 +129,9 @@ export const generateEmailHTML = ({
     <h1 class="title">
       Доброго дня, <br />
       <br />
-      Дякуємо, що звернулися до Луганська Асоцiацiя органiзацiй осіб з
-      інвалiднiстю, ми розглянемо ваш запит і звʼяжемося з вами.
+      Дякуємо, що звернулися до Луганської Асоцiацiї органiзацiй осіб з інвалiднiстю. Ми отримали ваш запит і розглянемо
+      його
+      в найкоротші терміни. Наш спеціаліст зв’яжеться з вами, щоб надати подальшу інформацію.
       <br />
       <br />
       З повагою, команда ЛАООІ
@@ -155,7 +156,9 @@ export const generateEmailHTML = ({
       <p class="data-text">Повідомлення: ${msg}</p>
     </div>
 
-    <p class="notice">Ви отримали цей лист, оскільки подали заявку на сайті laooi.org</p>
+    <p class="notice">
+      Ви отримали цей лист, оскільки залишили запит на сайті laooi.org
+    </p>
   </div>
 </body>
 
@@ -274,13 +277,7 @@ export const generateEmailHTML = ({
 <body>
   <div class="container">
     <h1 class="title">
-      Доброго дня, <br />
-      <br />
-      Дякуємо, що звернулися до Луганська Асоцiацiя органiзацiй осіб з
-      інвалiднiстю, ми розглянемо ваш запит і звʼяжемося з вами.
-      <br />
-      <br />
-      З повагою, команда ЛАООІ
+ ${name} створив нову заявку
     </h1>
 
     <a href="https://laooi.org/" class="logo-link">
@@ -293,7 +290,7 @@ export const generateEmailHTML = ({
     </a>
 
     <div class="data">
-      <h2 class="subtitle">Дані, які ви залишили:</h2>
+      <h2 class="subtitle">Дані, користувача:</h2>
 
       <p class="data-text">Ім’я: ${name}</p>
       <p class="data-text">Номер телефону: ${phone}</p>

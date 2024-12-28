@@ -287,6 +287,8 @@ interface IContactsPage {
   title: string;
   formLabel: string;
   submitBtnLabel: string;
+  successSubmit: string;
+  errorSubmit: string;
   inputs: IContactsPageInput[];
   select: {
     name: string;
