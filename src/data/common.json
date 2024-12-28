@@ -13,5 +13,6 @@
   "recipient": "novychenkoae@gmail.com",
   "subjectPlaceholder": "Email from the site",
   "subjectMailUser": "Підтвердження отримання запиту від ЛАООІ",
-  "subjectMailLaooi": "Нова заявка на сайті laooi.org від "
+  "subjectMailLaooi": "Нова заявка на сайті laooi.org від ",
+  "contactsFormCasePlaceholder": "Not found"
 }

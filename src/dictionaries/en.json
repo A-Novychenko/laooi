@@ -208,6 +208,8 @@
       "title": "Contact us",
       "formLabel": "Looking for help, want to become a partner or volunteer, or have a question? Fill out the form, and we’ll get in touch with you!",
       "submitBtnLabel": "Submit",
+      "successSubmit": "Request sent successfully!",
+      "errorSubmit": "Request not sent, please try again later!",
       "inputs": [
         {
           "name": "name",

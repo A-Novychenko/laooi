@@ -1,19 +1,13 @@
 'use client';
 
 import { useState } from 'react';
+import dynamic from 'next/dynamic';
 
 import { useForm, SubmitHandler } from 'react-hook-form';
 import useFormPersist from 'react-hook-form-persist';
 import { ToastContainer, toast, Bounce } from 'react-toastify';
-import dynamic from 'next/dynamic';
 
-import {
-  ButtonLink,
-  // FormSelect,
-  FormField,
-  FormTextField,
-  Loader,
-} from '@/components/ui';
+import { ButtonLink, FormField, FormTextField, Loader } from '@/components/ui';
 
 import { sendEmail } from '@/utils/sendEmail';
 import { generateEmailHTML } from '@/utils/generateEmailHTML';
@@ -30,9 +24,18 @@ const FormSelect = dynamic(
 );
 
 export const ContactsForm: React.FC<ContactsFormProps> = ({ data }) => {
-  const { formLabel, submitBtnLabel, inputs, select, textArea } = data;
+  const {
+    formLabel,
+    submitBtnLabel,
+    inputs,
+    select,
+    textArea,
+    successSubmit,
+    errorSubmit,
+  } = data;
 
-  const { subjectMailUser, subjectMailLaooi } = staticData;
+  const { subjectMailUser, subjectMailLaooi, contactsFormCasePlaceholder } =
+    staticData;
 
   const [pending, setPending] = useState<boolean>(false);
 
@@ -59,7 +62,9 @@ export const ContactsForm: React.FC<ContactsFormProps> = ({ data }) => {
       ? select.options.find(({ value }) => value === appeal)
       : null;
 
-    const typeRequest = isTypeRequest ? isTypeRequest.label : 'Not found';
+    const typeRequest = isTypeRequest
+      ? isTypeRequest.label
+      : contactsFormCasePlaceholder;
 
     const mailDataLaooi = {
       subject: `${subjectMailLaooi} ${name}`,
@@ -98,14 +103,14 @@ export const ContactsForm: React.FC<ContactsFormProps> = ({ data }) => {
 
       window.sessionStorage.removeItem('contactForm');
 
-      toast.success('Запит успішно відправлено!', {
+      toast.success(successSubmit, {
         closeButton: false,
         className: 'toast-custom',
       });
     } catch (e) {
       console.log('e', e);
 
-      toast.error('Запит не відправлено, спробуйте пізніше!', {
+      toast.error(errorSubmit, {
         closeButton: false,
         className: 'toast-custom',
       });
