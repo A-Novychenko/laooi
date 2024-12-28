@@ -13,6 +13,7 @@ type ButtonSettings = {
 export type ButtonProps = {
   children: ReactNode;
   typeStyle?: 'primary' | 'secondary' | 'light' | 'transparent';
+  disabled?: boolean;
 
   icon?: boolean;
   className?: string;
