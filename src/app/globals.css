@@ -67,3 +67,9 @@ html {
 .ReactCollapse--collapse {
   transition: height 500ms;
 }
+
+.toast-custom {
+  z-index: 999999999999 !important;
+
+  top: 100px !important;
+}

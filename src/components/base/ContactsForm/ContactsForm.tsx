@@ -1,8 +1,10 @@
 'use client';
 
 import { useState } from 'react';
+
 import { useForm, SubmitHandler } from 'react-hook-form';
 import useFormPersist from 'react-hook-form-persist';
+import { ToastContainer, toast, Bounce } from 'react-toastify';
 import dynamic from 'next/dynamic';
 
 import {
@@ -53,6 +55,12 @@ export const ContactsForm: React.FC<ContactsFormProps> = ({ data }) => {
     appeal,
     message,
   }) => {
+    const isTypeRequest = select.options.find(({ value }) => value === appeal)
+      ? select.options.find(({ value }) => value === appeal)
+      : null;
+
+    const typeRequest = isTypeRequest ? isTypeRequest.label : 'Not found';
+
     const mailDataLaooi = {
       subject: `${subjectMailLaooi} ${name}`,
       html: generateEmailHTML({
@@ -60,7 +68,7 @@ export const ContactsForm: React.FC<ContactsFormProps> = ({ data }) => {
         name,
         email,
         phone,
-        caseType: appeal,
+        caseType: typeRequest,
         msg: message,
       }),
     };
@@ -73,7 +81,7 @@ export const ContactsForm: React.FC<ContactsFormProps> = ({ data }) => {
         name,
         email,
         phone,
-        caseType: appeal,
+        caseType: typeRequest,
         msg: message,
       }),
     };
@@ -89,8 +97,18 @@ export const ContactsForm: React.FC<ContactsFormProps> = ({ data }) => {
       reset();
 
       window.sessionStorage.removeItem('contactForm');
+
+      toast.success('Запит успішно відправлено!', {
+        closeButton: false,
+        className: 'toast-custom',
+      });
     } catch (e) {
       console.log('e', e);
+
+      toast.error('Запит не відправлено, спробуйте пізніше!', {
+        closeButton: false,
+        className: 'toast-custom',
+      });
     } finally {
       setPending(false);
     }
@@ -145,6 +163,20 @@ export const ContactsForm: React.FC<ContactsFormProps> = ({ data }) => {
           <Loader size={20} visible={pending} strokeWidth={1.5} color="#fff" />
         </ButtonLink>
       </form>
+
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar
+        newestOnTop={false}
+        closeOnClick={false}
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+        transition={Bounce}
+      />
     </div>
   );
 };
