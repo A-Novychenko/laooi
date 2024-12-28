@@ -5,6 +5,7 @@ import ArrowIcon from '~/icons/arrowDown.svg';
 import RequiredIcon from '~/icons/required.svg';
 
 import { CustomSelectProp, Option } from './types';
+// import { useSearchParams } from 'next/navigation';
 
 export const FormSelect: React.FC<CustomSelectProp> = ({
   data,
@@ -18,6 +19,8 @@ export const FormSelect: React.FC<CustomSelectProp> = ({
   const [selectedType, setSelectedType] = useState<string | null>(null);
 
   const selectRef = useRef<HTMLDivElement>(null);
+
+  // const searchParams = useSearchParams();
 
   const { name, errorText, title, placeholder, options, description } = data;
 
@@ -54,6 +57,22 @@ export const FormSelect: React.FC<CustomSelectProp> = ({
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, []);
+
+  // useEffect(() => {
+  //   const refParam = searchParams.get('ref');
+
+  //   console.log('first parameter', refParam);
+  //   if (refParam === 'become-a-partner') {
+  //     const partnerOption = options.find(option => option.value === 'partner');
+  //     if (partnerOption) {
+  //       setSelectedType(partnerOption.value);
+  //       setValue(name as 'appeal', partnerOption.value, {
+  //         shouldValidate: true,
+  //       });
+  //       trigger(name as 'appeal');
+  //     }
+  //   }
+  // }, [searchParams, options, setValue, trigger, name]);
 
   return (
     <div
