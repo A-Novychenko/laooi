@@ -15,12 +15,12 @@ export const FooterSocialList: React.FC<FooterSocialListProps> = ({
   const icons = [YouTubeIcon, FacebookIcon, InstagramIcon];
 
   return (
-    <div className="text-center md:grow">
+    <div className="flex flex-col items-center justify-center md:items-start md:justify-start">
       <p className="mb-1 text-sm/normal font-bold uppercase text-textFooterAccent md:mb-2 xl:mb-4">
         {title}
       </p>
 
-      <ul className="mb-6 flex items-center justify-center gap-2 md:mb-14 xl:mb-[80px]">
+      <ul className="mb-6 flex items-center justify-start gap-2 md:mb-14 xl:mb-[80px]">
         {data &&
           data.map((item, idx) => {
             const IconComponent = icons[idx];
@@ -44,8 +44,11 @@ export const FooterSocialList: React.FC<FooterSocialListProps> = ({
       </ul>
 
       <Link
+        href={{
+          pathname: '/contacts',
+          query: { ref: 'become-a-partner' },
+        }}
         className="flex items-center justify-center text-sm/normal font-bold uppercase text-textFooterLink transition-colors hover:text-textFooterActive focus:text-textFooterActive xl:text-lg xl:font-semibold"
-        href="/in-progress"
       >
         {linkTitle}
         <ArrowBtnIcon width={24} height={24} />

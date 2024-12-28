@@ -294,7 +294,7 @@ interface IContactsPage {
     description: string;
     placeholder: string;
     errorText: string;
-    options: { label: string; value: string }[];
+    options: { label: string; value: string; description: string }[];
   };
   textArea: IFormTextField;
 }

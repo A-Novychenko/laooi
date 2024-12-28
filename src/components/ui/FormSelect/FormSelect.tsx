@@ -1,12 +1,14 @@
 'use client';
+
 import { useEffect, useRef, useState } from 'react';
+import { useSearchParams } from 'next/navigation';
 
 import ArrowIcon from '~/icons/arrowDown.svg';
 import RequiredIcon from '~/icons/required.svg';
 
 import { CustomSelectProp, Option } from './types';
 
-export const FormSelect: React.FC<CustomSelectProp> = ({
+const FormSelect: React.FC<CustomSelectProp> = ({
   data,
   register,
   setValue,
@@ -18,6 +20,8 @@ export const FormSelect: React.FC<CustomSelectProp> = ({
   const [selectedType, setSelectedType] = useState<string | null>(null);
 
   const selectRef = useRef<HTMLDivElement>(null);
+
+  const searchParams = useSearchParams();
 
   const { name, errorText, title, placeholder, options, description } = data;
 
@@ -39,6 +43,14 @@ export const FormSelect: React.FC<CustomSelectProp> = ({
     return selectedOption ? selectedOption.label : placeholder;
   };
 
+  const getSelectDescription = (selectOptions: Option[]): string => {
+    const selectedDescription = selectOptions.find(
+      option => option.value === selectedType,
+    );
+
+    return selectedDescription ? selectedDescription.description : description;
+  };
+
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
@@ -54,6 +66,21 @@ export const FormSelect: React.FC<CustomSelectProp> = ({
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, []);
+
+  useEffect(() => {
+    const refParam = searchParams?.get('ref');
+
+    if (refParam && refParam === 'become-a-partner') {
+      const partnerOption = options.find(option => option.value === 'partner');
+      if (partnerOption) {
+        setSelectedType(partnerOption.value);
+        setValue(name as 'appeal', partnerOption.value, {
+          shouldValidate: true,
+        });
+        trigger(name as 'appeal');
+      }
+    }
+  }, [searchParams, options, setValue, trigger, name]);
 
   return (
     <div
@@ -136,7 +163,11 @@ export const FormSelect: React.FC<CustomSelectProp> = ({
         })}
       />
 
-      <p className="mt-2 text-base/normal xl:mt-4 xl:text-lg">{description}</p>
+      <p className="mt-2 text-base/normal xl:mt-4 xl:text-lg">
+        {getSelectDescription(options)}
+      </p>
     </div>
   );
 };
+
+export default FormSelect;

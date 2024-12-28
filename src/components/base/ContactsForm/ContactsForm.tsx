@@ -3,10 +3,11 @@
 import { useState } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import useFormPersist from 'react-hook-form-persist';
+import dynamic from 'next/dynamic';
 
 import {
   ButtonLink,
-  FormSelect,
+  // FormSelect,
   FormField,
   FormTextField,
   Loader,
@@ -18,6 +19,13 @@ import { generateEmailHTML } from '@/utils/generateEmailHTML';
 import staticData from '@/data/common.json';
 
 import { ContactsFormProps } from './types';
+
+const FormSelect = dynamic(
+  () => import('@/components/ui/FormSelect/FormSelect'),
+  {
+    ssr: false,
+  },
+);
 
 export const ContactsForm: React.FC<ContactsFormProps> = ({ data }) => {
   const { formLabel, submitBtnLabel, inputs, select, textArea } = data;

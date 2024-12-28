@@ -281,12 +281,31 @@
         "placeholder": "Select type of request",
         "errorText": "Please select the type of request",
         "options": [
-          { "label": "Become a partner", "value": "partner" },
-          { "label": "Become a volunteer", "value": "volunteer" },
-          { "label": "Become a advisor", "value": "become-advisor" },
-          { "label": "Question for advisor", "value": "advisor" },
-          { "label": "Receive help", "value": "help" },
-          { "label": "Other", "value": "other" }
+          {
+            "label": "Become a partner",
+            "value": "partner",
+            "description": "Please specify the type of assistance you are willing to provide: payment for services, provision of services, transfer of material goods, payment for purchasing material goods, or assistance in monetary equivalent"
+          },
+          {
+            "label": "Become a volunteer",
+            "value": "volunteer",
+            "description": "Please specify your skills, experience, and area of interest if you want to become a volunteer. This may include event organization, participation in charity projects, or other types of volunteer activities"
+          },
+          {
+            "label": "Become a advisor",
+            "value": "become-advisor",
+            "description": "Please specify your specialization, experience, and the field in which you are willing to provide consultations or assistance. This may include legal, medical, psychological support, or other types of consultations"
+          },
+          {
+            "label": "Question for advisor",
+            "value": "advisor",
+            "description": "Please provide a detailed description of the topic of your request, question, or situation for which you need advice. Add as many details as possible so the advisor can prepare the most helpful response for you"
+          },
+          {
+            "label": "Other",
+            "value": "other",
+            "description": "Please specify the type of request and provide details that will help us better understand your needs that are not covered by the listed categories (become a partner or volunteer, receive help)"
+          }
         ]
       },
       "textArea": {

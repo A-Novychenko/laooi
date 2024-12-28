@@ -19,14 +19,14 @@ export const ContactSocials: React.FC<ContactSocialsProps> = ({
           {title}
         </p>
 
-        <ul className="flex flex-col gap-4 md:flex-row">
+        <ul className="flex flex-col gap-[16px] md:flex-row">
           {links &&
             links.map((link: ISocialLinksItem, idx) => {
               const IconComponent = icons[idx];
 
               return (
-                <li key={idx} className="flex items-center gap-2">
-                  <span className="flex size-10 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-bgAccentDark text-textLight transition-colors hover:bg-bgAccentStrongDark focus:bg-bgAccentStrongDark active:bg-bgAccentStrongDark">
+                <li key={idx} className="flex items-center gap-[8px]">
+                  <span className="flex size-[40px] cursor-pointer items-center justify-center overflow-hidden rounded-full bg-bgAccentDark text-textLight transition-colors hover:bg-bgAccentStrongDark focus:bg-bgAccentStrongDark active:bg-bgAccentStrongDark">
                     <IconComponent width={24} height={24} />
                   </span>
 
