@@ -11,5 +11,7 @@
   "designUrl": "https://www.behance.net/juliakopytko",
   "developUrl": "https://www.webdevsynergy.com.ua",
   "recipient": "novychenkoae@gmail.com",
-  "subjectPlaceholder": "Email from the site"
+  "subjectPlaceholder": "Email from the site",
+  "subjectMailUser": "Заявка на сайті laooi.org",
+  "subjectMailLaooi": "Нова заявка на сайті laooi.org від "
 }

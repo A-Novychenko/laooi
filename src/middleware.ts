@@ -23,7 +23,7 @@ function getLocale(request: NextRequest) {
 }
 
 export function middleware(request: NextRequest) {
-  const { pathname } = request.nextUrl;
+  const { pathname, search } = request.nextUrl;
 
   // Ігнорувати службові маршрути і статичні ресурси
   if (
@@ -45,7 +45,10 @@ export function middleware(request: NextRequest) {
   if (!pathnameHasLocale) {
     // Додавання локалі, якщо її немає
     const locale = getLocale(request);
-    const redirectUrl = new URL(`/${locale}${pathname}`, request.url);
+    const redirectUrl = new URL(
+      `/${locale}${pathname}${search ? search : ''}`,
+      request.url,
+    );
 
     const response = NextResponse.redirect(redirectUrl);
     response.cookies.set(cookieName, locale);
