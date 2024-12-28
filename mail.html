@@ -74,6 +74,10 @@
         margin-bottom: auto;
       }
 
+      .data {
+        margin-bottom: 24px;
+      }
+
       .subtitle {
         margin-bottom: 8px;
         color: #051d35;
@@ -91,6 +95,15 @@
         font-style: normal;
         font-weight: 400;
         line-height: 1.43;
+      }
+
+      .notice {
+        color: #000;
+        font-family: 'Nunito', serif;
+        font-size: 10px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
       }
     </style>
   </head>
@@ -121,7 +134,7 @@
         </p>
       </a>
 
-      <div>
+      <div class="data">
         <h2 class="subtitle">Дані, які ви залишили:</h2>
 
         <p class="data-text">Ім’я: ${name}</p>
@@ -130,6 +143,10 @@
         <p class="data-text">Тип звернення: ${caseType}</p>
         <p class="data-text">Повідомлення: ${msg}</p>
       </div>
+
+      <p class="notice">
+        Ви отримали цей лист, оскільки подали заявку на сайті laooi.org
+      </p>
     </div>
   </body>
 </html>

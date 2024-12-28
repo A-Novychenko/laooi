@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import useFormPersist from 'react-hook-form-persist';
 
@@ -14,11 +15,14 @@ import {
 import { sendEmail } from '@/utils/sendEmail';
 import { generateEmailHTML } from '@/utils/generateEmailHTML';
 
+import staticData from '@/data/common.json';
+
 import { ContactsFormProps } from './types';
-import { useState } from 'react';
 
 export const ContactsForm: React.FC<ContactsFormProps> = ({ data }) => {
   const { formLabel, submitBtnLabel, inputs, select, textArea } = data;
+
+  const { subjectMailUser, subjectMailLaooi } = staticData;
 
   const [pending, setPending] = useState<boolean>(false);
 
@@ -41,9 +45,23 @@ export const ContactsForm: React.FC<ContactsFormProps> = ({ data }) => {
     appeal,
     message,
   }) => {
-    const mailData = {
-      subject: `Request from ${name}`,
+    const mailDataLaooi = {
+      subject: `${subjectMailLaooi} ${name}`,
       html: generateEmailHTML({
+        recipient: 'laooi',
+        name,
+        email,
+        phone,
+        caseType: appeal,
+        msg: message,
+      }),
+    };
+
+    const mailDataUser = {
+      subject: subjectMailUser,
+      to: email,
+      html: generateEmailHTML({
+        recipient: 'user',
         name,
         email,
         phone,
@@ -55,7 +73,10 @@ export const ContactsForm: React.FC<ContactsFormProps> = ({ data }) => {
     try {
       setPending(true);
 
-      await sendEmail(mailData);
+      await Promise.all([
+        await sendEmail(mailDataLaooi),
+        await sendEmail(mailDataUser),
+      ]);
 
       reset();
 
@@ -66,7 +87,6 @@ export const ContactsForm: React.FC<ContactsFormProps> = ({ data }) => {
       setPending(false);
     }
   };
-  console.log('errors', errors);
 
   return (
     <div className="rounded-2xl bg-bgLightSlate px-[16px] py-6 md:rounded-[20px] md:p-[32px] xl:rounded-3xl xl:p-[40px]">
@@ -113,7 +133,8 @@ export const ContactsForm: React.FC<ContactsFormProps> = ({ data }) => {
           icon={false}
         >
           {submitBtnLabel}
-          <Loader size={20} visible={pending} />
+
+          <Loader size={20} visible={pending} strokeWidth={1.5} color="#fff" />
         </ButtonLink>
       </form>
     </div>
