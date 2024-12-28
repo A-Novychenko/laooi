@@ -55,7 +55,10 @@ export const FormField: React.FC<FormFieldProps> = ({
         {...register(name as 'name' | 'email' | 'phone', {
           ...validationOptions,
           required,
-          onChange: () => {
+          onChange: e => {
+            if (type === 'tel') {
+              e.target.value = e.target.value.replace(/[^0-9+\-() ]/g, '');
+            }
             trigger(name);
           },
           onBlur: () => {

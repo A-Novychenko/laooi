@@ -32,8 +32,8 @@ export const TooltipMenu: React.FC<TooltipMenuProps> = ({ children, data }) => {
         <p
           className={cn(
             'flex items-center p-[10px] text-lg/[1.39] font-semibold transition-colors hover:text-textAccent focus:text-textAccent',
-            styles.menuBtn,
           )}
+          onMouseDown={e => e.preventDefault()}
         >
           {children}
         </p>
