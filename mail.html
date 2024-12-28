@@ -47,15 +47,9 @@
       }
 
       .logo-link {
-        display: block;
+        display: inline-flex;
         text-decoration: none;
         margin-bottom: 24px;
-      }
-
-      .logo-box {
-        display: flex;
-        align-items: center;
-        gap: 12px;
       }
 
       .logo {
@@ -63,6 +57,7 @@
         height: 80px;
         object-fit: contain;
         flex-shrink: 0;
+        margin-right: 12px;
       }
 
       .logo-text {
@@ -75,6 +70,8 @@
         white-space: normal;
         overflow-wrap: break-word;
         max-width: 100%;
+        margin-top: auto;
+        margin-bottom: auto;
       }
 
       .subtitle {
@@ -111,21 +108,17 @@
       </h1>
 
       <a href="https://laooi.org/" class="logo-link">
-        <div class="logo-box">
-          <img
-            src="./public/logo.png"
-            alt="logo"
-            width="80"
-            height="80"
-            class="logo"
-          />
+        <img
+          src="https://res.cloudinary.com/dlphgiw4o/image/upload/v1735375844/logo_emh2hg.png"
+          alt="logo"
+          width="80"
+          height="80"
+          class="logo"
+        />
 
-          <div>
-            <p class="logo-text">
-              Луганська Асоцiацiя органiзацiй осіб з інвалiднiстю
-            </p>
-          </div>
-        </div>
+        <p class="logo-text">
+          Луганська Асоцiацiя органiзацiй осіб з інвалiднiстю
+        </p>
       </a>
 
       <div>

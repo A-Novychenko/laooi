@@ -8,15 +8,19 @@ import {
   FormSelect,
   FormField,
   FormTextField,
+  Loader,
 } from '@/components/ui';
 
 import { sendEmail } from '@/utils/sendEmail';
 import { generateEmailHTML } from '@/utils/generateEmailHTML';
 
 import { ContactsFormProps } from './types';
+import { useState } from 'react';
 
 export const ContactsForm: React.FC<ContactsFormProps> = ({ data }) => {
   const { formLabel, submitBtnLabel, inputs, select, textArea } = data;
+
+  const [pending, setPending] = useState<boolean>(false);
 
   const {
     register,
@@ -48,9 +52,9 @@ export const ContactsForm: React.FC<ContactsFormProps> = ({ data }) => {
       }),
     };
 
-    console.log('mailData', mailData);
-
     try {
+      setPending(true);
+
       await sendEmail(mailData);
 
       reset();
@@ -58,8 +62,11 @@ export const ContactsForm: React.FC<ContactsFormProps> = ({ data }) => {
       window.sessionStorage.removeItem('contactForm');
     } catch (e) {
       console.log('e', e);
+    } finally {
+      setPending(false);
     }
   };
+  console.log('errors', errors);
 
   return (
     <div className="rounded-2xl bg-bgLightSlate px-[16px] py-6 md:rounded-[20px] md:p-[32px] xl:rounded-3xl xl:p-[40px]">
@@ -102,8 +109,11 @@ export const ContactsForm: React.FC<ContactsFormProps> = ({ data }) => {
           type="button"
           typeStyle="primary"
           settings={{ action: () => {}, type: 'submit' }}
+          disabled={Object.keys(errors).length > 0 || pending}
+          icon={false}
         >
           {submitBtnLabel}
+          <Loader size={20} visible={pending} />
         </ButtonLink>
       </form>
     </div>
