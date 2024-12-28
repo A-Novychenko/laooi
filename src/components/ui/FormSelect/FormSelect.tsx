@@ -68,11 +68,8 @@ const FormSelect: React.FC<CustomSelectProp> = ({
   }, []);
 
   useEffect(() => {
-    if (typeof window === 'undefined') return;
-
     const refParam = searchParams?.get('ref');
 
-    console.log('first parameter', refParam);
     if (refParam && refParam === 'become-a-partner') {
       const partnerOption = options.find(option => option.value === 'partner');
       if (partnerOption) {
