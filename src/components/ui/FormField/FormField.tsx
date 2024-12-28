@@ -48,9 +48,9 @@ export const FormField: React.FC<FormFieldProps> = ({
         type={type}
         placeholder={placeholder}
         className={cn(
-          'mb-1 px-4 py-2 text-base/normal font-normal text-textPrimary placeholder:text-textActive',
+          'mb-1 px-[16px] py-2 text-base/normal font-normal text-textPrimary placeholder:text-textActive',
           'h-14 rounded-[40px] bg-bgLight outline-bgLight',
-          'md:px-5 xl:px-6',
+          'md:px-[20px] xl:px-[24px]',
         )}
         {...register(name as 'name' | 'email' | 'phone', {
           ...validationOptions,

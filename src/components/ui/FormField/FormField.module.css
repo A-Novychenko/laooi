@@ -1,11 +1,19 @@
 @media screen and (min-width: 768px) {
   .field {
     flex-basis: calc((100% - 16px) / 2);
+    max-width: 304px;
   }
 }
 
 @media screen and (min-width: 768px) {
   .field:last-child {
     flex-basis: 100%;
+    max-width: 100%;
+  }
+}
+
+@media screen and (min-width: 1360px) {
+  .field {
+    max-width: 100%;
   }
 }

@@ -15,10 +15,10 @@ export const ContactsFormSection: React.FC<ISectionProps> = ({ dict }) => {
           {contactsPage.title}
         </Title>
 
-        <div className="flex flex-col gap-4 xl:flex-row">
+        <div className="flex flex-col gap-[16px] xl:flex-row">
           <ContactsForm data={contactsPage} />
 
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-[16px]">
             <ContactSocials links={socialLinks} title={socialListTitle} />
 
             <div className="shrink-0 xl:flex xl:w-[524px] xl:grow xl:items-center">
