@@ -22,7 +22,7 @@ export const Footer: React.FC<FooterProps> = async ({ lang }) => {
   return (
     <footer>
       <div className="container">
-        <div className="flex flex-col items-center justify-center gap-4 rounded-t-3xl bg-bgDark py-8 md:flex md:flex-row md:flex-wrap md:items-start md:justify-between md:px-4 md:py-10 xl:px-10">
+        <div className="flex flex-col items-center justify-center gap-4 rounded-t-3xl bg-bgDark py-8 md:flex md:flex-row md:flex-wrap md:items-start md:justify-evenly md:px-4 md:py-10 xl:justify-between xl:px-10">
           <div className="shrink-0">
             <Logo
               lang={lang}

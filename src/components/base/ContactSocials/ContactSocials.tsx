@@ -19,7 +19,7 @@ export const ContactSocials: React.FC<ContactSocialsProps> = ({
           {title}
         </p>
 
-        <ul className="flex flex-col gap-[16px] md:flex-row">
+        <ul className="flex flex-col flex-wrap justify-center gap-[16px] md:flex-row">
           {links &&
             links.map((link: ISocialLinksItem, idx) => {
               const IconComponent = icons[idx];
