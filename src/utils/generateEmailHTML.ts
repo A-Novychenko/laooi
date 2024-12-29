@@ -240,10 +240,6 @@ export const generateEmailHTML = ({
       margin-bottom: auto;
     }
 
-    .data {
-      margin-bottom: 24px;
-    }
-
     .subtitle {
       margin-bottom: 8px;
       color: #051d35;
@@ -263,14 +259,6 @@ export const generateEmailHTML = ({
       line-height: 1.43;
     }
 
-    .notice {
-      color: #000;
-      font-family: 'Nunito', serif;
-      font-size: 10px;
-      font-style: normal;
-      font-weight: 600;
-      line-height: normal;
-    }
   </style>
 </head>
 
@@ -289,7 +277,7 @@ export const generateEmailHTML = ({
       </p>
     </a>
 
-    <div class="data">
+    <div>
       <h2 class="subtitle">Дані, користувача:</h2>
 
       <p class="data-text">Ім’я: ${name}</p>
