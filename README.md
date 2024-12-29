@@ -195,6 +195,48 @@ component.
 | `readMoreLabel` | `undefined` | **Required**. A string label for the "Read More" button displayed in each `PostCard`.     |
 | `notFoundDescr` | `undefined` | **Required**. A string description to display when no posts are available in the gallery. |
 
+- #### ContactsForm
+
+The `ContactsForm` component is a dynamic and customizable form used for
+collecting user information and sending emails. It provides built-in validation,
+persistence, and notification features.
+
+| Prop   | Type   | Default     | Description                                                           |
+| ------ | ------ | ----------- | --------------------------------------------------------------------- |
+| `data` | Object | `undefined` | Required. Configuration object for form labels, fields, and messages. |
+
+`data` Object Structure
+
+| Field            | Type            | Description                                                        |
+| ---------------- | --------------- | ------------------------------------------------------------------ |
+| `formLabel`      | `string`        | The text displayed as the form's label at the top.                 |
+| `submitBtnLabel` | `string`        | The text displayed on the submit button.                           |
+| `inputs`         | `Array<Object>` | Array of input field configurations (e.g., name, email, phone).    |
+| `select`         | `Object`        | Configuration for the dropdown field (e.g., options, placeholder). |
+| `textArea`       | `Object`        | Configuration for the textarea field (e.g., name, label).          |
+| `successSubmit`  | `string`        | Message displayed when the form submission is successful.          |
+| `errorSubmit`    | `string`        | Message displayed when there is an error during submission.        |
+
+- #### ContactSocials Component
+
+The `ContactSocials` component renders a list of social media links with
+corresponding icons. It is designed to be used in contact sections of a website,
+providing quick access to social profiles.
+
+| Prop    | Type   | Default     | Description                                                   |
+| ------- | ------ | ----------- | ------------------------------------------------------------- |
+| `links` | Array  | `undefined` | Required. An array of objects containing social link details. |
+| `title` | String | `undefined` | Required. The title displayed above the list of social links. |
+
+`links` Array Structure
+
+Each item in the `links` array should have the following structure:
+
+| Field           | Type   | Description                                                 |
+| --------------- | ------ | ----------------------------------------------------------- |
+| `label`         | String | The label displayed for the social link (e.g., "Facebook"). |
+| `settings.href` | String | The URL for the social link.                                |
+
 - #### FooterBasement
 
 A component that displays the footer's bottom section with customizable policy
@@ -309,6 +351,26 @@ to expand or collapse content sections.
 | `data`      | `undefined` | required, `Array<{ title: string; text: string }>` - an array of objects containing `title` and `text` for each accordion item. |
 | `className` | `undefined` | optional, `string`, adds custom css class to the Button component.                                                              |
 
+- #### AdvisorCard Component
+
+The `AdvisorCard` component displays detailed information about an advisor,
+including their photo, name, location, and phone number. It is designed to be
+visually appealing and responsive for use in directories or team listings.
+
+| Prop      | Type   | Default     | Description                                                                   |
+| --------- | ------ | ----------- | ----------------------------------------------------------------------------- |
+| `advisor` | Object | `undefined` | **Required.** An object containing the advisor's details (photo, name, etc.). |
+
+`advisor` Object Structure
+
+| Field   | Type   | Description                            |
+| ------- | ------ | -------------------------------------- |
+| `photo` | String | The URL of the advisor's photo.        |
+| `alt`   | String | The alt text for the advisor's photo.  |
+| `name`  | String | The advisor's full name.               |
+| `city`  | String | The city where the advisor is located. |
+| `phone` | String | The advisor's phone number.            |
+
 - #### ButtonLink
 
 A button component styled as a button but capable of rendering either as a
@@ -388,6 +450,68 @@ item.
 | `data`     | `[]`        | **required**, `IFooterNavEmbedded[]`, an array of objects containing the navigation links. Each object must include `name` (string) and `href` (string) properties. |
 | `lang`     | `undefined` | required, `string`, current site language                                                                                                                           |
 
+- #### FormField
+
+The `FormField` component renders an input field for forms, including
+validation, error handling, and accessibility features. It is designed to be
+flexible and customizable for various types of form inputs.
+
+| Prop       | Type   | Default     | Description                                                                            |
+| ---------- | ------ | ----------- | -------------------------------------------------------------------------------------- |
+| `config`   | Object | `undefined` | **Required.** Configuration object containing field properties such as type and label. |
+| `register` | Func   | `undefined` | **Required.** A function from `react-hook-form` for registering the input field.       |
+| `errors`   | Object | `undefined` | **Optional.** An object from `react-hook-form` containing validation errors.           |
+| `trigger`  | Func   | `undefined` | **Optional.** A function from `react-hook-form` to trigger field validation.           |
+
+config Object Structure
+
+| Field               | Type   | Description                                                           |
+| ------------------- | ------ | --------------------------------------------------------------------- |
+| `type`              | String | The type of the input (e.g., `text`, `email`, `tel`).                 |
+| `label`             | String | The label displayed for the input field.                              |
+| `name`              | String | The name of the field (used for `react-hook-form` registration).      |
+| `placeholder`       | String | Placeholder text for the input field.                                 |
+| `validationOptions` | Object | Validation options (e.g., `required`, `pattern`) for the input field. |
+
+- #### FormSelect
+
+The `FormSelect` component renders a custom select dropdown with enhanced
+accessibility, validation, and interactivity. It is designed for seamless
+integration into forms using `react-hook-form`.
+
+| Prop       | Type     | Default     | Description                                                                       |
+| ---------- | -------- | ----------- | --------------------------------------------------------------------------------- |
+| `data`     | Object   | `undefined` | **Required.** Configuration object containing options, labels, and placeholders.  |
+| `register` | Function | `undefined` | **Required.** A function from `react-hook-form` for registering the select field. |
+| `setValue` | Function | `undefined` | **Required.** A function from `react-hook-form` to set the field value.           |
+| `errors`   | Object   | `undefined` | **Optional.** An object from `react-hook-form` containing validation errors.      |
+| `trigger`  | Function | `undefined` | **Optional.** A function from `react-hook-form` to trigger field validation.      |
+| `required` | Boolean  | `true`      | **Optional.** Determines if the field is required. Default is `true`.             |
+
+data Object Structure
+
+| Field         | Type   | Description                                                                                  |
+| ------------- | ------ | -------------------------------------------------------------------------------------------- |
+| `name`        | String | Name of the field (used for registration).                                                   |
+| `title`       | String | Label displayed for the select field.                                                        |
+| `placeholder` | String | Placeholder text displayed when no option is selected.                                       |
+| `options`     | Array  | List of options. Each option is an object with `value`, `label`, and optional `description`. |
+| `description` | String | Fallback description displayed below the select field.                                       |
+| `errorText`   | String | Error message displayed when validation fails.                                               |
+
+- #### FormTextField Component
+
+The `FormTextField` component renders a customizable multiline text input field
+for forms, integrating validation and real-time character count functionality.
+It is designed for use with `react-hook-form`.
+
+| Prop       | Type     | Default     | Description                                                                            |
+| ---------- | -------- | ----------- | -------------------------------------------------------------------------------------- |
+| `config`   | Object   | `undefined` | **Required.** Configuration object containing field details like label and validation. |
+| `register` | Function | `undefined` | **Required.** A function from `react-hook-form` to register the text field.            |
+| `errors`   | Object   | `undefined` | **Optional.** An object from `react-hook-form` containing validation errors.           |
+| `trigger`  | Function | `undefined` | **Optional.** A function from `react-hook-form` to trigger field validation.           |
+
 - #### Gallery
 
 Component for displaying image cards for sections
@@ -427,6 +551,19 @@ main page of the site
 | `logoAlt`        | `undefined` | required, `string`, static data, description of the company logo image                    |
 | `classNameImage` | `undefined` | optional, `string`, adds a custom CSS class to the link component for additional styling  |
 | `classNameLink`  | `undefined` | optional, `string`, adds a custom CSS class to the image component for additional styling |
+
+- #### Loader Component
+
+The `Loader` component is a simple and customizable loading spinner built using
+the `react-loader-spinner` library. It is ideal for indicating loading states in
+your application.
+
+| Prop          | Type    | Default | Description                                                           |
+| ------------- | ------- | ------- | --------------------------------------------------------------------- |
+| `color`       | String  | `grey`  | **Optional.** Defines the color of the loader's stroke.               |
+| `size`        | Number  | `96`    | **Optional.** Specifies the width and height of the loader in pixels. |
+| `strokeWidth` | Number  | `5`     | **Optional.** Sets the thickness of the loader's stroke.              |
+| `visible`     | Boolean | `true`  | **Optional.** Controls whether the loader is visible or hidden.       |
 
 - #### MediaCard
 
@@ -531,7 +668,7 @@ A floating button that appears after the user scrolls down the page and enables
 smooth scrolling back to the top when clicked. Useful for improving navigation
 on long pages.
 
-- #### Component Details:
+- #### Details:
 
 The button becomes visible when the user scrolls more than 1000 pixels
 vertically. Clicking the button triggers a smooth scroll to the top of the page.
