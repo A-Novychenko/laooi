@@ -146,3 +146,7 @@ interface ITransformedAdvisor {
   phone: string;
   index: number;
 }
+
+interface IPrivacyPolicy {
+  body: { [key: string]: string };
+}

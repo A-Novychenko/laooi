@@ -7,3 +7,4 @@ export * from './getDocumentsQuery';
 export * from './getAllPostsWithCountQuery';
 export * from './getResearchDocumentsQuery';
 export * from './getAdvisorsQuery';
+export * from './getPrivacyPolicyQuery';

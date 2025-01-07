@@ -18,6 +18,7 @@ interface IDictionary {
     selectSortByDate: ISelectSortByDate;
     selectPostByType: ISelectPostByType;
     contactsPage: IContactsPage;
+    privacyPolicyPage: IPrivacyPolicyPage;
   };
   aboutSection: IAboutSection;
   activitiesSection: IActivitiesSection;
@@ -356,4 +357,9 @@ interface IAdvisorsHeroSection {
 
 interface IAdvisorsSection {
   title: string;
+}
+
+interface IPrivacyPolicyPage {
+  title: string;
+  errorData: IErrorData;
 }
