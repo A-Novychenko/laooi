@@ -4,5 +4,4 @@ export type DocumentCardProps = {
     fileUrl: string;
   };
   fileLinks: IFileLinks;
-  cardType?: string;
 };

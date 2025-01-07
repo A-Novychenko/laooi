@@ -13,7 +13,6 @@ import styles from './DocumentCard.module.css';
 export const DocumentCard: React.FC<DocumentCardProps> = ({
   doc: { title, fileUrl },
   fileLinks: { openFileLabel, downloadFileLabel },
-  cardType,
 }) => {
   return (
     <div className="flex h-full items-center gap-2 rounded-2xl bg-bgLightSlate p-4 md:p-5 xl:p-6">
@@ -22,15 +21,11 @@ export const DocumentCard: React.FC<DocumentCardProps> = ({
       <div>
         <p
           className={cn(
-            'mb-1 text-lg/normal font-bold tracking-[-0.36px] text-textMenuAccent',
-            'md:text-xl/normal md:tracking-[-0.4px]',
-            'xl:text-2xl/normal xl:tracking-[-0.48px]',
+            'mb-1 text-base/normal font-bold tracking-[-0.32px] text-textMenuAccent',
+            'md:text-base/normal md:tracking-[-0.32px]',
+            'xl:text-base/normal xl:tracking-[-0.32px]',
             'break-word line-clamp-2',
             styles.title,
-            {
-              'text-base/normal tracking-[-0.32px] md:text-base/normal md:tracking-[-0.32px] xl:text-base/normal xl:tracking-[-0.32px]':
-                cardType === 'research',
-            },
           )}
         >
           {title}
