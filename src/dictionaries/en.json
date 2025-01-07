@@ -330,6 +330,19 @@
           }
         }
       }
+    },
+    "privacyPolicyPage": {
+      "title": "Privacy Policy",
+      "errorData": {
+        "description": "Sorry, the Privacy Policy did not load. You can check back later or view the latest information in other sections of our website.",
+        "link": {
+          "label": "Home",
+          "settings": {
+            "href": "/en/",
+            "externalLink": false
+          }
+        }
+      }
     }
   },
   "aboutSection": {

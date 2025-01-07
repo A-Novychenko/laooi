@@ -16,3 +16,4 @@ export * from './ContactsFormSection';
 export * from './ResearchSection';
 export * from './AdvisorsHeroSection';
 export * from './AdvisorsSection';
+export * from './PrivacyPolicySection';
