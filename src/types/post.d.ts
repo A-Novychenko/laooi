@@ -11,6 +11,7 @@ interface IPostBlogGalleryPage {
   slug: string;
   postUrl?: string;
   linkTitle?: string;
+  projectYear?: string;
 }
 
 interface IPostBlogPage {
