@@ -7,6 +7,8 @@ import { documents } from './documents-schema';
 import { research } from './research-documents-schema';
 import { advisors } from './advisors-schema';
 import { privacyPolicy } from './privacy-policy-schema';
+import { tenders } from './tenders-schema';
+import { projects } from './projects-schema';
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -17,5 +19,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     research,
     advisors,
     privacyPolicy,
+    tenders,
+    projects,
   ],
 };

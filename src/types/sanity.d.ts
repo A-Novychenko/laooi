@@ -150,3 +150,97 @@ interface ITransformedAdvisor {
 interface IPrivacyPolicy {
   body: { [key: string]: string };
 }
+
+interface ITenderPreview {
+  _id: string;
+  title: {
+    uk: string;
+    en: string;
+  };
+  deadline: string;
+  publicationDate: string;
+  slug: {
+    current: string;
+  };
+  images: PostImage[];
+  body: {
+    uk: any[] | string;
+    en: any[] | string;
+  };
+}
+
+interface ITransformedTenderPreview {
+  deadline: string;
+  label: string;
+  image: string | undefined;
+  imageAlt: string | undefined;
+  title: string;
+  date: string;
+  slug: string;
+}
+
+interface ITender {
+  _id: string;
+  deadline: string;
+  title: { [key: string]: string };
+  body: { [key: string]: string };
+  publicationDate: string;
+  slug: { current: string };
+  images: { asset: { url: string }; caption: { uk: string; en: string } }[];
+}
+
+interface ITransformedTender {
+  deadline: string;
+  images: { src: string; alt: string }[];
+  title: string;
+  body: string;
+  date: string;
+  slug: string;
+}
+
+interface IProjectPreview {
+  _id: string;
+  title: {
+    uk: string;
+    en: string;
+  };
+  projectYear: string;
+  publicationDate: string;
+  slug: {
+    current: string;
+  };
+  images: PostImage[];
+  body: {
+    uk: any[] | string;
+    en: any[] | string;
+  };
+}
+
+interface ITransformedProjectPreview {
+  projectYear: string;
+  label: string;
+  image: string | undefined;
+  imageAlt: string | undefined;
+  title: string;
+  date: string;
+  slug: string;
+}
+
+interface IProject {
+  _id: string;
+  projectYear: string;
+  title: { [key: string]: string };
+  body: { [key: string]: string };
+  publicationDate: string;
+  slug: { current: string };
+  images: { asset: { url: string }; caption: { uk: string; en: string } }[];
+}
+
+interface ITransformedProject {
+  projectYear: string;
+  images: { src: string; alt: string }[];
+  title: string;
+  body: string;
+  date: string;
+  slug: string;
+}

@@ -1,7 +1,8 @@
 export type BlogGallerySectionProps = {
   title: string;
   readMoreLabel: string;
-  posts: ITransformedPostPreview[];
+  // posts: ITransformedPostPreview[] | ITransformedTenderPreview[];
+  posts: IPostBlogGalleryPage[];
   lang: 'uk' | 'en';
   currentPage: number;
   totalPages: number;
@@ -9,4 +10,5 @@ export type BlogGallerySectionProps = {
   selectSortByDate: ISelectSortByDate;
   selectPostByType: ISelectPostByType;
   notFoundDescr: string;
+  pageName: string;
 };

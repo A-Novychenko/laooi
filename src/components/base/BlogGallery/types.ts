@@ -1,6 +1,7 @@
 export type GalleryPostProps = {
-  posts: ITransformedPostPreview[];
+  posts: IPostBlogGalleryPage[];
   lang: 'uk' | 'en';
   readMoreLabel: string;
   notFoundDescr: string;
+  pageName: string;
 };

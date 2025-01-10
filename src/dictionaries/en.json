@@ -18,8 +18,16 @@
     "logoAlt": "Company logo",
     "searchInput": { "placeholder": "Search" },
     "postBackLink": {
+      "label": "View all tender",
+      "link": "/en/tender"
+    },
+    "tenderBackLink": {
       "label": "View all news and events",
       "link": "/en/blog"
+    },
+    "projectBackLink": {
+      "label": "View all projects",
+      "link": "/en/project"
     },
     "selectSortByDate": {
       "title": "Sort by date",
@@ -55,7 +63,7 @@
           },
           {
             "name": "Projects",
-            "href": "/in-progress"
+            "href": "projects"
           },
           {
             "name": "Research",
@@ -91,7 +99,7 @@
       },
       {
         "name": "Tenders",
-        "href": "/in-progress"
+        "href": "/tenders"
       },
       {
         "name": "Contacts",
@@ -123,7 +131,7 @@
         "embedded": [
           { "name": "Strategy", "href": "/in-progress" },
           { "name": "Team", "href": "/in-progress" },
-          { "name": "Projects", "href": "/in-progress" },
+          { "name": "Projects", "href": "/projects" },
           {
             "name": "Research",
             "href": "/research"
@@ -144,7 +152,7 @@
         "embedded": [
           { "name": "News", "href": "/blog" },
           { "name": "Vacancies", "href": "/in-progress" },
-          { "name": "Tenders", "href": "/in-progress" },
+          { "name": "Tenders", "href": "/tenders" },
           { "name": "Contacts", "href": "/contacts" }
         ]
       }
@@ -434,6 +442,7 @@
     ]
   },
   "blogSection": {
+    "pageName": "blog",
     "title": "News and events",
     "notFoundDescr": "No results found for your query. Try different keywords or explore other sections.",
     "link": {
@@ -445,6 +454,50 @@
     },
     "errorData": {
       "description": "Unfortunately, there are no posts available for viewing at the moment. You can come back later or check other sections of our website for the latest information.",
+      "link": {
+        "label": "Home",
+        "settings": {
+          "href": "/en/",
+          "externalLink": false
+        }
+      }
+    }
+  },
+  "tendersSection": {
+    "pageName": "tenders",
+    "title": "Tenders",
+    "notFoundDescr": "No results found for your query. Try different keywords or explore other sections.",
+    "link": {
+      "label": "All tenders",
+      "settings": {
+        "href": "/tenders",
+        "externalLink": false
+      }
+    },
+    "errorData": {
+      "description": "Unfortunately, there are no tenders available for viewing at the moment. You can come back later or check other sections of our website for the latest information.",
+      "link": {
+        "label": "Home",
+        "settings": {
+          "href": "/en/",
+          "externalLink": false
+        }
+      }
+    }
+  },
+  "projectsSection": {
+    "pageName": "projects",
+    "title": "Projects",
+    "notFoundDescr": "No results found for your query. Try different keywords or explore other sections.",
+    "link": {
+      "label": "All projects",
+      "settings": {
+        "href": "/projects",
+        "externalLink": false
+      }
+    },
+    "errorData": {
+      "description": "Unfortunately, there are no projects available for viewing at the moment. You can come back later or check other sections of our website for the latest information.",
       "link": {
         "label": "Home",
         "settings": {

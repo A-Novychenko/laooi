@@ -21,6 +21,14 @@
       "label": "Перейти до всіх новин і подій",
       "link": "/uk/blog"
     },
+    "tenderBackLink": {
+      "label": "Перейти до всіх тендерів",
+      "link": "/uk/tenders"
+    },
+    "projectBackLink": {
+      "label": "Перейти до всіх проєктів",
+      "link": "/uk/projects"
+    },
     "selectSortByDate": {
       "title": "Сортувати за датою",
       "options": { "new": "Спочатку нові", "old": "Спочатку старі" }
@@ -55,7 +63,7 @@
           },
           {
             "name": "Проєкти",
-            "href": "/in-progress"
+            "href": "/projects"
           },
           {
             "name": "Дослідження",
@@ -91,7 +99,7 @@
       },
       {
         "name": "Тендери",
-        "href": "/in-progress"
+        "href": "/tenders"
       },
       {
         "name": "Контакти",
@@ -123,7 +131,7 @@
         "embedded": [
           { "name": "Стратегія", "href": "/in-progress" },
           { "name": "Команда", "href": "/in-progress" },
-          { "name": "Проєкти", "href": "/in-progress" },
+          { "name": "Проєкти", "href": "/projects" },
           {
             "name": "Дослідження",
             "href": "/research"
@@ -144,7 +152,7 @@
         "embedded": [
           { "name": "Новини", "href": "/blog" },
           { "name": "Вакансії", "href": "/in-progress" },
-          { "name": "Тендери", "href": "/in-progress" },
+          { "name": "Тендери", "href": "/tenders" },
           { "name": "Контакти", "href": "/contacts" }
         ]
       }
@@ -434,6 +442,7 @@
     ]
   },
   "blogSection": {
+    "pageName": "blog",
     "title": "Новини і події",
     "notFoundDescr": "Нічого не знайдено за вашим запитом. Спробуйте інші ключові слова або перегляньте інші розділи.",
     "link": {
@@ -445,6 +454,50 @@
     },
     "errorData": {
       "description": "На жаль, зараз немає доступних постів для перегляду. Ви можете повернутися пізніше або перевірити інші розділи нашого сайту для актуальної інформації.",
+      "link": {
+        "label": "Головна",
+        "settings": {
+          "href": "/uk/",
+          "externalLink": false
+        }
+      }
+    }
+  },
+  "tendersSection": {
+    "pageName": "tenders",
+    "title": "Тендери",
+    "notFoundDescr": "Нічого не знайдено за вашим запитом. Спробуйте інші ключові слова або перегляньте інші розділи.",
+    "link": {
+      "label": "Всі тендери",
+      "settings": {
+        "href": "/tenders",
+        "externalLink": false
+      }
+    },
+    "errorData": {
+      "description": "На жаль, зараз немає доступних тендерів для перегляду. Ви можете повернутися пізніше або перевірити інші розділи нашого сайту для актуальної інформації.",
+      "link": {
+        "label": "Головна",
+        "settings": {
+          "href": "/uk/",
+          "externalLink": false
+        }
+      }
+    }
+  },
+  "projectsSection": {
+    "pageName": "projects",
+    "title": "Проєкти",
+    "notFoundDescr": "Нічого не знайдено за вашим запитом. Спробуйте інші ключові слова або перегляньте інші розділи.",
+    "link": {
+      "label": "Всі проєкти",
+      "settings": {
+        "href": "/projects",
+        "externalLink": false
+      }
+    },
+    "errorData": {
+      "description": "На жаль, зараз немає доступних проєктів для перегляду. Ви можете повернутися пізніше або перевірити інші розділи нашого сайту для актуальної інформації.",
       "link": {
         "label": "Головна",
         "settings": {

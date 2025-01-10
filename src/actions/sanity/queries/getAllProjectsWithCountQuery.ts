@@ -1,12 +1,12 @@
-export const getPostsWithCountQuery = (
+export const getAllProjectsWithCountQuery = (
   search: string | null,
   lang: 'uk' | 'en',
   page: number,
   pageSize: number,
-  projectYear?: string,
+  postType?: 'news' | 'articles' | 'events',
   sortDate: 'newest' | 'oldest' = 'newest',
 ) => {
-  const typeFilter = projectYear ? `&& postType == "${projectYear}"` : '';
+  const typeFilter = postType ? `&& postType == "${postType}"` : '';
   const sortFilter =
     sortDate === 'oldest'
       ? `| order(publicationDate asc)`
@@ -16,13 +16,13 @@ export const getPostsWithCountQuery = (
     : 'true';
 
   return `{
-    "projects": *[_type == "projects" && ${searchFilter} ${typeFilter}] ${sortFilter} [${(page - 1) * pageSize}...${page * pageSize}] {
+    "posts": *[_type == "Post" && ${searchFilter} ${typeFilter}] ${sortFilter} [${(page - 1) * pageSize}...${page * pageSize}] {
       _id,
       title {
         uk,
         en
       },
-      projectYear,
+      postType,
       publicationDate,
       slug,
       images[] {
@@ -37,6 +37,6 @@ export const getPostsWithCountQuery = (
         en
       }
     },
-    "totalCount": count(*[_type == "projects" && ${searchFilter} ${typeFilter}])
+    "totalCount": count(*[_type == "Post" && ${searchFilter} ${typeFilter}])
   }`;
 };
