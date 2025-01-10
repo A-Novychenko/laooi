@@ -1,13 +1,17 @@
 import { BlogSection, PlaceholderSection, PostSection } from '@/sections';
 
-import { getPostBySlug, getAllPosts, getLatestPosts } from '@/actions/sanity';
+import {
+  getAllTenders,
+  getLatestTenders,
+  getTenderBySlug,
+} from '@/actions/sanity';
 import { getDictionary } from '@/utils/dictionaries';
 
 export async function generateStaticParams() {
-  const { posts } = await getAllPosts();
+  const { tenders } = await getAllTenders();
 
   const staticParams =
-    posts?.map(({ slug }) => {
+    tenders?.map(({ slug }) => {
       return {
         slug,
       };
@@ -16,28 +20,24 @@ export async function generateStaticParams() {
   return staticParams;
 }
 
-const PostPage = async ({
+const TenderPage = async ({
   params: { lang, slug },
 }: {
   params: { lang: 'uk' | 'en'; slug: string };
 }) => {
-  const post = await getPostBySlug(slug, lang);
+  const tender = await getTenderBySlug(slug, lang);
 
-  const latestPosts = await getLatestPosts(lang);
+  const latestTender = await getLatestTenders(lang);
 
   const dict = await getDictionary(lang);
 
-  const { pageName, title, link, errorData } = dict.blogSection;
-  const { postBackLink, postFBLinkLabel } = dict.common;
+  const { pageName, title, errorData, link } = dict.tendersSection;
+  const { tenderBackLink } = dict.common;
 
   return (
     <>
-      {post ? (
-        <PostSection
-          post={post}
-          postBackLink={postBackLink}
-          postFBLinkLabel={postFBLinkLabel}
-        />
+      {tender ? (
+        <PostSection post={tender} postBackLink={tenderBackLink} />
       ) : (
         <PlaceholderSection data={{ title, ...errorData }} />
       )}
@@ -48,10 +48,10 @@ const PostPage = async ({
         pageName={pageName}
         title={title}
         link={link}
-        posts={latestPosts}
+        posts={latestTender}
       />
     </>
   );
 };
 
-export default PostPage;
+export default TenderPage;

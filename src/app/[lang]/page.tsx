@@ -1,3 +1,4 @@
+import { getLatestPosts } from '@/actions/sanity';
 import {
   AboutSection,
   ActivitiesSection,
@@ -19,6 +20,10 @@ export default async function Home({
 }) {
   const dict = await getDictionary(lang);
 
+  const latestPosts = await getLatestPosts(lang);
+
+  const { pageName, title, link } = dict.blogSection;
+
   return (
     <>
       <HeroSection dict={dict} lang={lang} />
@@ -35,7 +40,14 @@ export default async function Home({
 
       <SocialsSection dict={dict} />
 
-      <BlogSection dict={dict} lang={lang} />
+      <BlogSection
+        dict={dict}
+        lang={lang}
+        posts={latestPosts}
+        pageName={pageName}
+        link={link}
+        title={title}
+      />
 
       <FAQSection dict={dict} />
     </>

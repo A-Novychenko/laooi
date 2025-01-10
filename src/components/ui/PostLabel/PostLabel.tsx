@@ -7,11 +7,13 @@ export const PostLabel: React.FC<PostLabelProps> = ({
   children,
   typeStyle = 'primary',
   className,
+  deadline,
 }) => {
   const textColor = cn('text-base/normal font-normal, capitalize', {
-    'text-textBlue': type.toLowerCase() === 'news',
-    'text-textGreen': type.toLowerCase() === 'events',
-    'text-textRed': type.toLowerCase() === 'articles',
+    'text-textBlue': type?.toLowerCase() === 'news',
+    'text-textGreen': type?.toLowerCase() === 'events',
+    'text-textRed': type?.toLowerCase() === 'articles',
+    'text-blue-800': deadline,
   });
 
   const baseStyles =

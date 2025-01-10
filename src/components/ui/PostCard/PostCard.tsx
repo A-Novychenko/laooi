@@ -7,28 +7,33 @@ import ArrowIcon from '~/icons/arrowBtnIcon.svg';
 import NoImage from '~/no-image.svg';
 
 import { cn } from '@/utils/cn';
+import { formatDate } from '@/utils/formatDate';
 
 import { PostCardProps } from './types';
 
 import styles from './PostCard.module.css';
-import { formatDate } from '@/utils/formatDate';
 
 export const PostCard: React.FC<PostCardProps> = ({
   post,
   lang,
   readMoreLabel,
+  pageName,
 }) => {
-  const { image, imageAlt, label, title, text, date, postUrl, type } = post;
+  const { image, imageAlt, label, title, text, date, type, deadline, slug } =
+    post;
 
   const formattedDate = formatDate(date);
 
   return (
     <Link
-      href={`/${lang}/blog/${postUrl}`}
+      href={`/${lang}/${pageName}/${slug}`}
       className={cn('block h-full rounded-[20px] bg-bgLightSlate', styles.link)}
     >
       <div className="relative h-[264px] w-full overflow-hidden rounded-2xl md:w-[336px] xl:w-[416px]">
-        <PostLabel type={type}>{label}</PostLabel>
+        <PostLabel type={type} deadline={deadline}>
+          {type && label}
+          {deadline && `Зак: ${formatDate(deadline)}`}
+        </PostLabel>
 
         {image ? (
           <Image

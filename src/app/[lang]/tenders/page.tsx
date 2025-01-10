@@ -1,16 +1,10 @@
 import { BlogGallerySection, PlaceholderSection } from '@/sections';
 
-import { getAllPosts } from '@/actions/sanity';
+import { getAllTenders } from '@/actions/sanity';
 
 import { getDictionary } from '@/utils/dictionaries';
 
-enum PostType {
-  News = 'news',
-  Articles = 'articles',
-  Events = 'events',
-}
-
-const BlogPage = async ({
+const TendersPage = async ({
   params: { lang },
   searchParams,
 }: {
@@ -18,7 +12,7 @@ const BlogPage = async ({
   searchParams: {
     page?: string;
     search?: string;
-    type?: 'news' | 'articles' | 'events';
+    deadline?: string;
     sort?: string;
   };
 }) => {
@@ -26,7 +20,7 @@ const BlogPage = async ({
 
   const { readMoreLabel, searchInput, selectSortByDate, selectPostByType } =
     dict.common;
-  const { pageName, title, errorData, notFoundDescr } = dict.blogSection;
+  const { pageName, title, errorData, notFoundDescr } = dict.tendersSection;
 
   const page = parseInt(searchParams.page || '1', 10);
   const pageSize = 12;
@@ -35,27 +29,25 @@ const BlogPage = async ({
 
   const sortDate = searchParams.sort === 'oldest' ? 'oldest' : 'newest';
 
-  const postType: PostType | undefined = Object.values(PostType).includes(
-    searchParams.type as PostType,
-  )
-    ? (searchParams.type as PostType)
+  const deadline: string | undefined = searchParams?.deadline
+    ? searchParams.deadline
     : undefined;
 
-  const { posts, totalPages } = await getAllPosts(
+  const { tenders, totalPages } = await getAllTenders(
     searchQuery,
     lang,
     page,
     pageSize,
-    postType,
+    deadline,
     sortDate,
   );
 
   return (
     <div className="grow">
-      {posts ? (
+      {tenders ? (
         <BlogGallerySection
           title={title}
-          posts={posts}
+          posts={tenders}
           pageName={pageName}
           lang={lang}
           readMoreLabel={readMoreLabel}
@@ -73,4 +65,4 @@ const BlogPage = async ({
   );
 };
 
-export default BlogPage;
+export default TendersPage;

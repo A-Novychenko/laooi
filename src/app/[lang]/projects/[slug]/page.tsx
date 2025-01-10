@@ -1,6 +1,10 @@
 import { BlogSection, PlaceholderSection, PostSection } from '@/sections';
 
-import { getPostBySlug, getAllPosts, getLatestPosts } from '@/actions/sanity';
+import {
+  getProjectBySlug,
+  getAllPosts,
+  getLatestProjects,
+} from '@/actions/sanity';
 import { getDictionary } from '@/utils/dictionaries';
 
 export async function generateStaticParams() {
@@ -16,28 +20,24 @@ export async function generateStaticParams() {
   return staticParams;
 }
 
-const PostPage = async ({
+const ProjectPage = async ({
   params: { lang, slug },
 }: {
   params: { lang: 'uk' | 'en'; slug: string };
 }) => {
-  const post = await getPostBySlug(slug, lang);
+  const project = await getProjectBySlug(slug, lang);
 
-  const latestPosts = await getLatestPosts(lang);
+  const latestProjects = await getLatestProjects(lang);
 
   const dict = await getDictionary(lang);
 
-  const { pageName, title, link, errorData } = dict.blogSection;
-  const { postBackLink, postFBLinkLabel } = dict.common;
+  const { pageName, title, link, errorData } = dict.projectsSection;
+  const { projectBackLink } = dict.common;
 
   return (
     <>
-      {post ? (
-        <PostSection
-          post={post}
-          postBackLink={postBackLink}
-          postFBLinkLabel={postFBLinkLabel}
-        />
+      {project ? (
+        <PostSection post={project} postBackLink={projectBackLink} />
       ) : (
         <PlaceholderSection data={{ title, ...errorData }} />
       )}
@@ -48,10 +48,10 @@ const PostPage = async ({
         pageName={pageName}
         title={title}
         link={link}
-        posts={latestPosts}
+        posts={latestProjects}
       />
     </>
   );
 };
 
-export default PostPage;
+export default ProjectPage;

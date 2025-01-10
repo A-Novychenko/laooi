@@ -28,6 +28,7 @@ export const BlogGallerySection: React.FC<BlogGallerySectionProps> = ({
   selectSortByDate,
   selectPostByType,
   notFoundDescr,
+  pageName,
 }) => {
   return (
     <section className="section-blog">
@@ -49,6 +50,7 @@ export const BlogGallerySection: React.FC<BlogGallerySectionProps> = ({
           lang={lang}
           readMoreLabel={readMoreLabel}
           notFoundDescr={notFoundDescr}
+          pageName={pageName}
         />
 
         {posts && posts.length > 0 && (

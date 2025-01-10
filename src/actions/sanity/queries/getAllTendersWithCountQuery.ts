@@ -1,12 +1,12 @@
-export const getPostsWithCountQuery = (
+export const getAllTendersWithCountQuery = (
   search: string | null,
   lang: 'uk' | 'en',
   page: number,
   pageSize: number,
-  projectYear?: string,
+  deadline?: string,
   sortDate: 'newest' | 'oldest' = 'newest',
 ) => {
-  const typeFilter = projectYear ? `&& postType == "${projectYear}"` : '';
+  const typeFilter = deadline ? `&& deadline == "${deadline}"` : '';
   const sortFilter =
     sortDate === 'oldest'
       ? `| order(publicationDate asc)`
@@ -16,15 +16,14 @@ export const getPostsWithCountQuery = (
     : 'true';
 
   return `{
-    "projects": *[_type == "projects" && ${searchFilter} ${typeFilter}] ${sortFilter} [${(page - 1) * pageSize}...${page * pageSize}] {
+    "tenders": *[_type == "tenders" && ${searchFilter} ${typeFilter}] ${sortFilter} [${(page - 1) * pageSize}...${page * pageSize}] {
       _id,
       title {
         uk,
         en
       },
-      projectYear,
-      publicationDate,
       slug,
+      deadline,
       images[] {
         caption,
         asset->{
@@ -35,8 +34,9 @@ export const getPostsWithCountQuery = (
       body {
         uk,
         en
-      }
+      },
+      publicationDate
     },
-    "totalCount": count(*[_type == "projects" && ${searchFilter} ${typeFilter}])
+    "totalCount": count(*[_type == "tenders" && ${searchFilter} ${typeFilter}])
   }`;
 };

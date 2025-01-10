@@ -5,6 +5,8 @@ interface IDictionary {
     searchInput: { placeholder: string };
     postFBLinkLabel: string;
     postBackLink: IPostBackLink;
+    tenderBackLink: IPostBackLink;
+    projectBackLink: IPostBackLink;
     readMoreLabel: string;
     mainNav: IMainNav[];
     accessibilityMenu: IAccessibilityMenu;
@@ -26,6 +28,8 @@ interface IDictionary {
   FAQSection: IFAQSection;
   socialSection: ISocialSection;
   blogSection: IBlogSection;
+  tendersSection: IBlogSection;
+  projectsSection: IBlogSection;
   targetSection: ITargetSection;
   partnersSection: IPartnersSection;
   mediaSection: IMediaSection;
@@ -178,6 +182,7 @@ interface IFooterBasement {
 }
 
 interface IBlogSection {
+  pageName: string;
   title: string;
   notFoundDescr: string;
   errorData: IErrorData;

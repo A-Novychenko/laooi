@@ -1,7 +1,6 @@
 import { ButtonLink, PostCard, Title } from '@/components/ui';
 
 import { cn } from '@/utils/cn';
-import { getLatestPosts } from '@/actions/sanity';
 
 import { BlogSectionProps } from './types';
 
@@ -10,11 +9,12 @@ import styles from './BlogSection.module.css';
 export const BlogSection: React.FC<BlogSectionProps> = async ({
   dict,
   lang,
+  pageName,
+  title,
+  link,
+  posts,
 }) => {
-  const { title, link } = dict.blogSection;
   const { readMoreLabel } = dict.common;
-
-  const posts = await getLatestPosts(lang);
 
   return (
     <>
@@ -39,11 +39,12 @@ export const BlogSection: React.FC<BlogSectionProps> = async ({
 
             <ul className="md:flex md:flex-row md:gap-[16px]">
               {posts &&
-                posts.map((post: ITransformedPostPreview, idx: number) => (
+                posts.map((post: IPostBlogGalleryPage, idx: number) => (
                   <li key={idx} className={cn(styles.card)}>
                     <PostCard
                       post={post}
                       lang={lang}
+                      pageName={pageName}
                       readMoreLabel={readMoreLabel}
                     />
                   </li>
