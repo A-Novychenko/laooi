@@ -19,8 +19,18 @@ export const PostCard: React.FC<PostCardProps> = ({
   readMoreLabel,
   pageName,
 }) => {
-  const { image, imageAlt, label, title, text, date, type, deadline, slug } =
-    post;
+  const {
+    image,
+    imageAlt,
+    label,
+    title,
+    text,
+    date,
+    type,
+    deadline,
+    slug,
+    projectYear,
+  } = post;
 
   const formattedDate = formatDate(date);
 
@@ -33,6 +43,7 @@ export const PostCard: React.FC<PostCardProps> = ({
         <PostLabel type={type} deadline={deadline}>
           {type && label}
           {deadline && `Зак: ${formatDate(deadline)}`}
+          {projectYear && projectYear}
         </PostLabel>
 
         {image ? (
