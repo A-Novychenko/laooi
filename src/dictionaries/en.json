@@ -18,16 +18,16 @@
     "logoAlt": "Company logo",
     "searchInput": { "placeholder": "Search" },
     "postBackLink": {
-      "label": "View all tender",
-      "link": "/en/tender"
-    },
-    "tenderBackLink": {
       "label": "View all news and events",
       "link": "/en/blog"
     },
+    "tenderBackLink": {
+      "label": "View all tender",
+      "link": "/en/tenders"
+    },
     "projectBackLink": {
       "label": "View all projects",
-      "link": "/en/project"
+      "link": "/en/projects"
     },
     "selectSortByDate": {
       "title": "Sort by date",
