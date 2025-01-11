@@ -2,6 +2,7 @@ export const transformProjectPreview = (
   project: IProjectPreview,
   lang: 'uk' | 'en' = 'uk',
 ): ITransformedProjectPreview => {
+  console.log('project.donor?.name[lang]', project.donor?.name[lang]);
   return {
     projectYear: project.projectYear,
     label: project.projectYear,
@@ -10,6 +11,6 @@ export const transformProjectPreview = (
     title: project.title[lang],
     date: project.publicationDate,
     slug: project.slug.current,
-    donor: project.donor.name[lang],
+    donor: project.donor?.name[lang],
   };
 };
