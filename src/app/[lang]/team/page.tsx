@@ -7,9 +7,11 @@ const TeamPage = async ({
 }) => {
   const dict = await getDictionary(lang);
 
-  console.log('dict', dict);
-
-  return <></>;
+  return (
+    <>
+      <p className="hidden">{dict.toString()}</p>
+    </>
+  );
 };
 
 export default TeamPage;
