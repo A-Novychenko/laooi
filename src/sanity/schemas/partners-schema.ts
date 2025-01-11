@@ -2,35 +2,34 @@
 
 import { defineType } from 'sanity';
 
-export const advisors = defineType({
-  name: 'advisors',
-  title: 'Радники',
+export const partners = defineType({
+  name: 'partners',
+  title: 'Партнери (донори)',
   type: 'document',
 
   preview: {
     select: {
       title: 'name.uk',
       subtitle: 'index',
-      media: 'photo',
+      media: 'img',
     },
   },
 
   fields: [
     {
       name: 'name',
-      title:
-        'Прізвище та імʼя радника. *** | Обовʼязково! Від 2 до 70 символів',
+      title: 'Назва організації партнера',
       type: 'localizedString',
       validation: Rule => [
         Rule.required().error('Поле обовʼязкове'),
-        Rule.custom((title: any) => {
-          const titleEn = title?.en || '';
-          const titleUk = title?.uk || '';
+        Rule.custom((name: any) => {
+          const nameEn = name?.en || '';
+          const nameUk = name?.uk || '';
 
-          if (titleEn.length > 100 || titleUk.length > 100) {
+          if (nameEn.length > 100 || nameUk.length > 100) {
             return 'Може містити до 100 символів';
           }
-          if (titleEn.length < 2 || titleUk.length < 2) {
+          if (nameEn.length < 2 || nameUk.length < 2) {
             return 'Повинно містити від 2 символів';
           }
           return true;
@@ -39,8 +38,27 @@ export const advisors = defineType({
     },
 
     {
-      name: 'photo',
-      title: 'Фото',
+      name: 'id',
+      title: 'Генератор ідентифікатора сторінки',
+      type: 'slug',
+      options: {
+        source: 'name.en',
+        maxLength: 200,
+        slugify: input =>
+          encodeURI(
+            input
+              .toLowerCase()
+              .replace(/[^a-zа-яёіїєґ\s]+/gi, '') // Видаляємо всі символи, що не є літерами або пробілами
+              .replace(/\s+/g, '-') // Заміна пробілів на дефіси
+              .slice(0, 200), // Обмеження довжини до 200 символів
+          ),
+      },
+      validation: Rule => Rule.required().error('Поле обовʼязкове'),
+    },
+
+    {
+      name: 'img',
+      title: 'Логотип',
       type: 'image',
       validation: Rule => Rule.required().error('Потрібно додати зображення'),
       options: { hotspot: true },
@@ -60,17 +78,15 @@ export const advisors = defineType({
     },
 
     {
-      name: 'city',
-      title: 'Місто',
-      type: 'localizedString',
-      validation: Rule => [Rule.required().error('Поле обовʼязкове')],
-    },
-
-    {
-      name: 'phone',
-      title: 'Телефон радника.',
-      type: 'string',
-      validation: Rule => [Rule.required().error('Поле обовʼязкове')],
+      name: 'link',
+      title:
+        'Посилання на сайт партнера (https://www.facebook.com/luhanskLAOLI/)',
+      type: 'url',
+      validation: Rule =>
+        Rule.required()
+          .error('Поле обовʼязкове')
+          .uri({ scheme: ['http', 'https'] })
+          .error('Введіть коректний URL'),
     },
 
     {

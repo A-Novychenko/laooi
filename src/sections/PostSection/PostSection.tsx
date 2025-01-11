@@ -33,6 +33,7 @@ export const PostSection: React.FC<{
     link,
     deadline,
     projectYear,
+    donor,
   } = post;
 
   const image = Array.isArray(images) && images[0];
@@ -80,6 +81,8 @@ export const PostSection: React.FC<{
                 {projectYear && projectYear}
               </PostLabel>
             </div>
+
+            {donor && <p>{donor}</p>}
 
             <PostText body={body} />
 

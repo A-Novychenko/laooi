@@ -63,7 +63,7 @@
           },
           {
             "name": "Projects",
-            "href": "projects"
+            "href": "/projects"
           },
           {
             "name": "Research",
@@ -151,7 +151,6 @@
         "title": "Other",
         "embedded": [
           { "name": "News", "href": "/blog" },
-          { "name": "Vacancies", "href": "/in-progress" },
           { "name": "Tenders", "href": "/tenders" },
           { "name": "Contacts", "href": "/contacts" }
         ]
@@ -566,59 +565,7 @@
     ]
   },
   "partnersSection": {
-    "title": "Our supporters",
-    "partners": [
-      {
-        "img": "/images/partners/partners-1.jpg",
-        "name": "Department of Social Protection of the Population of Luhansk Oblast",
-        "link": "https://www.facebook.com/p/Департамент-соціального-захисту-населення-Луганської-ОДА-100064321647025/"
-      },
-      {
-        "img": "/images/partners/partners-2.jpg",
-        "name": "United Nations Development Programme in Ukraine (UNDP Ukraine)",
-        "link": "https://www.facebook.com/UNDPUkraine/"
-      },
-      {
-        "img": "/images/partners/partners-3.jpg",
-        "name": "Charity Foundation 'Trust.Ukraine'",
-        "link": "https://www.facebook.com/doviraua.org"
-      },
-      {
-        "img": "/images/partners/partners-4.jpg",
-        "name": "Fund for Social Protection of Persons with Disabilities",
-        "link": "https://www.facebook.com/fszoiukraine/"
-      },
-      {
-        "img": "/images/partners/partners-5.jpg",
-        "name": "US Agency for International Development (USAID Ukraine) ",
-        "link": "https://www.facebook.com/USAIDUkraine"
-      },
-      {
-        "img": "/images/partners/partners-6.jpg",
-        "name": "The Norwegian Refugee Council in Ukraine",
-        "link": "https://www.facebook.com/ua.nrc.no/"
-      },
-      {
-        "img": "/images/partners/partners-7.jpg",
-        "name": "Solidar Suisse",
-        "link": "https://www.facebook.com/solidar.ch"
-      },
-      {
-        "img": "/images/partners/partners-8.jpg",
-        "name": "Bevar Ukraine",
-        "link": "https://www.facebook.com/BevarUkraine.dk/"
-      },
-      {
-        "img": "/images/partners/partners-9.jpg",
-        "name": "Avalist Ngo",
-        "link": "https://www.facebook.com/people/Аваліст-Нго/100051478537126/"
-      },
-      {
-        "img": "/images/partners/partners-10.jpg",
-        "name": "Mother Acts",
-        "link": "https://www.facebook.com/mamadiye"
-      }
-    ]
+    "title": "Our supporters"
   },
   "mediaSection": {
     "title": "Media about us",

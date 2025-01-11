@@ -29,4 +29,5 @@ interface IPostBlogPage {
   slug: string;
   postUrl?: string;
   linkTitle?: string;
+  donor?: string;
 }

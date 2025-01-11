@@ -2,16 +2,16 @@ import { BlogSection, PlaceholderSection, PostSection } from '@/sections';
 
 import {
   getProjectBySlug,
-  getAllPosts,
   getLatestProjects,
+  getAllProjects,
 } from '@/actions/sanity';
 import { getDictionary } from '@/utils/dictionaries';
 
 export async function generateStaticParams() {
-  const { posts } = await getAllPosts();
+  const { projects } = await getAllProjects();
 
   const staticParams =
-    posts?.map(({ slug }) => {
+    projects?.map(({ slug }) => {
       return {
         slug,
       };

@@ -2,25 +2,25 @@ import { sanityClient } from '@/sanity/lib/client';
 
 import { transformProjectPreview } from '@/utils/transformProjectPreview';
 
-import { getPostsWithCountQuery } from '../queries';
+import { getAllProjectsWithCountQuery } from '../queries';
 
 const fetchPosts = async (
   search: string | null,
   lang: 'uk' | 'en',
   page: number,
   pageSize: number,
-  projectYear?: string,
+  donor?: string,
   sortDate: 'newest' | 'oldest' = 'newest',
 ): Promise<{
   projects: IProjectPreview[];
   totalCount: number;
 }> => {
-  const query = getPostsWithCountQuery(
+  const query = getAllProjectsWithCountQuery(
     search,
     lang,
     page,
     pageSize,
-    projectYear,
+    donor,
     sortDate,
   );
 
@@ -37,7 +37,7 @@ export const getAllProjects = async (
   lang: 'uk' | 'en' = 'uk',
   page: number = 1,
   pageSize: number = 12,
-  projectYear?: string,
+  donor?: string,
   sortDate: 'newest' | 'oldest' = 'newest',
 ): Promise<{
   projects: ITransformedProjectPreview[];
@@ -49,7 +49,7 @@ export const getAllProjects = async (
       lang,
       page,
       pageSize,
-      projectYear,
+      donor,
       sortDate,
     );
 

@@ -10,5 +10,6 @@ export const transformProjectPreview = (
     title: project.title[lang],
     date: project.publicationDate,
     slug: project.slug.current,
+    donor: project.donor.name[lang],
   };
 };

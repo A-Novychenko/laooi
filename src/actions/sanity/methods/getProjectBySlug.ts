@@ -15,6 +15,8 @@ export const getProjectBySlug = async (
       slug: decodedSlug,
     });
 
+    console.log('project', project);
+
     if (project) {
       return transformProject(project, lang);
     }
