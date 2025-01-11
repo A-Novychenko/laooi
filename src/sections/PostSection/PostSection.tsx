@@ -36,6 +36,9 @@ export const PostSection: React.FC<{
     donor,
   } = post;
 
+  console.log('deadline', deadline);
+  console.log('post', post);
+
   const image = Array.isArray(images) && images[0];
 
   const formattedDate = formatDate(date);

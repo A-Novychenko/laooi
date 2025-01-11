@@ -3,4 +3,5 @@ export type PostCardProps = {
   lang: 'uk' | 'en';
   readMoreLabel: string;
   pageName: string;
+  labelTitle?: string;
 };

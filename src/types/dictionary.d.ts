@@ -185,6 +185,7 @@ interface IBlogSection {
   pageName: string;
   title: string;
   notFoundDescr: string;
+  labelTitle?: string;
   errorData: IErrorData;
   link: { label: string; settings: { href: string; externalLink: boolean } };
 }

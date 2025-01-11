@@ -18,6 +18,7 @@ export const PostCard: React.FC<PostCardProps> = ({
   lang,
   readMoreLabel,
   pageName,
+  labelTitle,
 }) => {
   const {
     image,
@@ -34,15 +35,22 @@ export const PostCard: React.FC<PostCardProps> = ({
 
   const formattedDate = formatDate(date);
 
+  const isDeadline = deadline ? new Date(deadline) < new Date() : false;
+
+  console.log('post', post);
+  console.log('deadline', deadline);
+  console.log('type', type);
+  console.log('isDeadlinePassed', isDeadline);
+
   return (
     <Link
       href={`/${lang}/${pageName}/${slug}`}
       className={cn('block h-full rounded-[20px] bg-bgLightSlate', styles.link)}
     >
       <div className="relative h-[264px] w-full overflow-hidden rounded-2xl md:w-[336px] xl:w-[416px]">
-        <PostLabel type={type} deadline={deadline}>
+        <PostLabel type={type ?? isDeadline} deadline={projectYear}>
           {type && label}
-          {deadline && `Зак: ${formatDate(deadline)}`}
+          {deadline && `${labelTitle} ${formatDate(deadline)}`}
           {projectYear && projectYear}
         </PostLabel>
 
@@ -60,7 +68,14 @@ export const PostCard: React.FC<PostCardProps> = ({
       </div>
 
       <div className="max-w-full p-4">
-        <div className="mb-2 h-36 md:h-[10.5rem] xl:h-52">
+        <div
+          className={cn(
+            'mb-2 h-36 md:h-[10.5rem] xl:h-52',
+            text
+              ? 'h-36 md:h-[10.5rem] xl:h-52'
+              : 'h-[4.75rem] md:h-[5.125rem] xl:h-[6.25rem]',
+          )}
+        >
           <Title
             tag={'h3'}
             style={'third'}
@@ -69,9 +84,11 @@ export const PostCard: React.FC<PostCardProps> = ({
             {title}
           </Title>
 
-          <p className="line-clamp-4 text-sm/normal font-semibold md:text-sm/[1.35] xl:text-base">
-            {text}
-          </p>
+          {text && (
+            <p className="line-clamp-4 text-sm/normal font-semibold md:text-sm/[1.35] xl:text-base">
+              {text}
+            </p>
+          )}
         </div>
 
         <div className="flex flex-wrap items-center justify-between gap-y-2">

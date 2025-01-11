@@ -10,14 +10,18 @@ export const PostLabel: React.FC<PostLabelProps> = ({
   deadline,
 }) => {
   const textColor = cn('text-base/normal font-normal, capitalize', {
-    'text-textBlue': type?.toLowerCase() === 'news',
-    'text-textGreen': type?.toLowerCase() === 'events',
-    'text-textRed': type?.toLowerCase() === 'articles',
+    'text-textGreen':
+      type === false ||
+      (typeof type === 'string' && type.toLowerCase() === 'events'),
+    'text-textRed':
+      type === true ||
+      (typeof type === 'string' && type.toLowerCase() === 'articles'),
+    'text-textBlue': typeof type === 'string' && type.toLowerCase() === 'news',
     'text-blue-800': deadline,
   });
 
   const baseStyles =
-    'flex w-[107px] items-center justify-center rounded-3xl px-6 py-3';
+    'flex min-w-[107px] items-center justify-center rounded-3xl px-6 py-3';
 
   const stylesVariants = {
     primary: 'absolute right-2 top-2 z-10 bg-bgLight',

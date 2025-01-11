@@ -11,4 +11,5 @@ export type BlogGallerySectionProps = {
   selectPostByType: ISelectPostByType;
   notFoundDescr: string;
   pageName: string;
+  labelTitle?: string;
 };
