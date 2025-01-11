@@ -23,7 +23,7 @@ export const getLatestProjects = async (
 
     return transformedProjects;
   } catch (error) {
-    console.error('Помилка при отриманні постів:', error);
+    console.error('Помилка при отриманні latest projects:', error);
 
     return [];
   }

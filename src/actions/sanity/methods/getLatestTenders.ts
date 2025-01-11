@@ -23,7 +23,7 @@ export const getLatestTenders = async (
 
     return transformedTenders;
   } catch (error) {
-    console.error('Помилка при отриманні тендерів:', error);
+    console.error('Помилка при отриманні latest тендерів:', error);
 
     return [];
   }

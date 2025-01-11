@@ -23,7 +23,7 @@ export const getDocuments = async (
 
     return transformedDocuments;
   } catch (error) {
-    console.error('Помилка при пошуку документів:', error);
+    console.error('Помилка при пошуку ALL документів:', error);
 
     return [];
   }

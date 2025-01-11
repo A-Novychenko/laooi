@@ -23,7 +23,7 @@ export const getDonorsFromProjects = async (
 
     return { donors: transformedDonors };
   } catch (error) {
-    console.error('Помилка при отриманні donors:', error);
+    console.error('Помилка при отриманні donors from proj:', error);
 
     return { donors: [] };
   }

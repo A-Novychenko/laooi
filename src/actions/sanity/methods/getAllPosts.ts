@@ -61,7 +61,7 @@ export const getAllPosts = async (
 
     return { posts: transformedPosts, totalPages };
   } catch (error) {
-    console.error('Помилка при отриманні постів:', error);
+    console.error('Помилка при отриманні ALL постів:', error);
     return { posts: [], totalPages: 0 };
   }
 };
