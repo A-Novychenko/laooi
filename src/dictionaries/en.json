@@ -311,6 +311,11 @@
             "description": "Please provide a detailed description of the topic of your request, question, or situation for which you need advice. Add as many details as possible so the advisor can prepare the most helpful response for you"
           },
           {
+            "label": "Become part of the team",
+            "value": "become-team",
+            "description": "Please tell us about your experience, skills and motivation to join our team. Please indicate in which areas or tasks you would like to realize your potential by joining our activities"
+          },
+          {
             "label": "Other",
             "value": "other",
             "description": "Please specify the type of request and provide details that will help us better understand your needs that are not covered by the listed categories (become a partner or volunteer, receive help)"
@@ -466,6 +471,7 @@
     "pageName": "tenders",
     "title": "Tenders",
     "notFoundDescr": "No results found for your query. Try different keywords or explore other sections.",
+    "labelTitle": "Ending:",
     "link": {
       "label": "All tenders",
       "settings": {

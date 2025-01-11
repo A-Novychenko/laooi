@@ -20,7 +20,8 @@ const TendersPage = async ({
 
   const { readMoreLabel, searchInput, selectSortByDate, selectPostByType } =
     dict.common;
-  const { pageName, title, errorData, notFoundDescr } = dict.tendersSection;
+  const { pageName, title, errorData, notFoundDescr, labelTitle } =
+    dict.tendersSection;
 
   const page = parseInt(searchParams.page || '1', 10);
   const pageSize = 12;
@@ -57,6 +58,7 @@ const TendersPage = async ({
           selectSortByDate={selectSortByDate}
           selectPostByType={selectPostByType}
           notFoundDescr={notFoundDescr}
+          labelTitle={labelTitle}
         />
       ) : (
         <PlaceholderSection data={{ title, ...errorData }} />

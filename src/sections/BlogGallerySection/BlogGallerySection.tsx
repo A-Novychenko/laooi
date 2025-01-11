@@ -29,6 +29,7 @@ export const BlogGallerySection: React.FC<BlogGallerySectionProps> = ({
   selectPostByType,
   notFoundDescr,
   pageName,
+  labelTitle,
 }) => {
   return (
     <section className="section-blog">
@@ -51,6 +52,7 @@ export const BlogGallerySection: React.FC<BlogGallerySectionProps> = ({
           readMoreLabel={readMoreLabel}
           notFoundDescr={notFoundDescr}
           pageName={pageName}
+          labelTitle={labelTitle}
         />
 
         {posts && posts.length > 0 && (

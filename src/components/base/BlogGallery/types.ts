@@ -4,4 +4,5 @@ export type GalleryPostProps = {
   readMoreLabel: string;
   notFoundDescr: string;
   pageName: string;
+  labelTitle?: string;
 };

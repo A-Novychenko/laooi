@@ -8,6 +8,7 @@ export const BlogGallery: React.FC<GalleryPostProps> = ({
   readMoreLabel,
   notFoundDescr,
   pageName,
+  labelTitle,
 }) => {
   return (
     <>
@@ -24,6 +25,7 @@ export const BlogGallery: React.FC<GalleryPostProps> = ({
                   lang={lang}
                   readMoreLabel={readMoreLabel}
                   pageName={pageName}
+                  labelTitle={labelTitle}
                 />
               </li>
             );
