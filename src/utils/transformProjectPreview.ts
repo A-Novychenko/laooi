@@ -2,7 +2,6 @@ export const transformProjectPreview = (
   project: IProjectPreview,
   lang: 'uk' | 'en' = 'uk',
 ): ITransformedProjectPreview => {
-  console.log('project.donor?.name[lang]', project.donor?.name[lang]);
   return {
     projectYear: project.projectYear,
     label: project.projectYear,
