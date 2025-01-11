@@ -25,7 +25,7 @@ export const getLatestMediaItems = async (
 
     return transformedMediaItem;
   } catch (error) {
-    console.error('Помилка при отриманні постів:', error);
+    console.error('Помилка при отриманні latest MEDIA:', error);
 
     return [];
   }

@@ -3,6 +3,7 @@ import { BlogGallerySection, PlaceholderSection } from '@/sections';
 import { getAllProjects } from '@/actions/sanity';
 
 import { getDictionary } from '@/utils/dictionaries';
+// import { getDonorsFromProjects } from '@/actions/sanity/methods/getDonorsFromProjects';
 
 const ProjectsPage = async ({
   params: { lang },
@@ -12,7 +13,7 @@ const ProjectsPage = async ({
   searchParams: {
     page?: string;
     search?: string;
-    projectYear?: string;
+    donor?: string;
     sort?: string;
   };
 }) => {
@@ -29,18 +30,20 @@ const ProjectsPage = async ({
 
   const sortDate = searchParams.sort === 'oldest' ? 'oldest' : 'newest';
 
-  const projectYear = searchParams.projectYear
-    ? searchParams.projectYear
-    : undefined;
+  const donor = searchParams.donor ? searchParams.donor : undefined;
 
   const { projects, totalPages } = await getAllProjects(
     searchQuery,
     lang,
     page,
     pageSize,
-    projectYear,
+    donor,
     sortDate,
   );
+
+  // const donorsFromSelect = await getDonorsFromProjects(lang);
+
+  // console.log('donorsFromSelect', donorsFromSelect);
 
   return (
     <div className="grow">

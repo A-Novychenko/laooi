@@ -151,7 +151,6 @@
         "title": "Інше",
         "embedded": [
           { "name": "Новини", "href": "/blog" },
-          { "name": "Вакансії", "href": "/in-progress" },
           { "name": "Тендери", "href": "/tenders" },
           { "name": "Контакти", "href": "/contacts" }
         ]
@@ -566,59 +565,7 @@
     ]
   },
   "partnersSection": {
-    "title": "Нас підтримують",
-    "partners": [
-      {
-        "img": "/images/partners/partners-1.jpg",
-        "name": "Департамент соціального захисту населення Луганської ОДА",
-        "link": "https://www.facebook.com/p/Департамент-соціального-захисту-населення-Луганської-ОДА-100064321647025/"
-      },
-      {
-        "img": "/images/partners/partners-2.jpg",
-        "name": "Програма розвитку ООН в Україні (ПРООН в Україні)",
-        "link": "https://www.facebook.com/UNDPUkraine/"
-      },
-      {
-        "img": "/images/partners/partners-3.jpg",
-        "name": "Благодійний Фонд «Довіра.Україна»",
-        "link": "https://www.facebook.com/doviraua.org"
-      },
-      {
-        "img": "/images/partners/partners-4.jpg",
-        "name": "Фонд соціального захисту осіб з інвалідністю",
-        "link": "https://www.facebook.com/fszoiukraine/"
-      },
-      {
-        "img": "/images/partners/partners-5.jpg",
-        "name": "Агентство США з міжнародного розвитку (USAID Україна)",
-        "link": "https://www.facebook.com/USAIDUkraine"
-      },
-      {
-        "img": "/images/partners/partners-6.jpg",
-        "name": "Норвезька рада у справах біженців в Україні",
-        "link": "https://www.facebook.com/ua.nrc.no/"
-      },
-      {
-        "img": "/images/partners/partners-7.jpg",
-        "name": "Solidar Suisse",
-        "link": "https://www.facebook.com/solidar.ch"
-      },
-      {
-        "img": "/images/partners/partners-8.jpg",
-        "name": "Bevar Ukraine",
-        "link": "https://www.facebook.com/BevarUkraine.dk/"
-      },
-      {
-        "img": "/images/partners/partners-9.jpg",
-        "name": "Аваліст Нго",
-        "link": "https://www.facebook.com/people/Аваліст-Нго/100051478537126/"
-      },
-      {
-        "img": "/images/partners/partners-10.jpg",
-        "name": "Мама Діє",
-        "link": "https://www.facebook.com/mamadiye"
-      }
-    ]
+    "title": "Нас підтримують"
   },
   "mediaSection": {
     "title": "Медіа про нас",

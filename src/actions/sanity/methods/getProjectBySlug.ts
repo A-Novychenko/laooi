@@ -21,7 +21,7 @@ export const getProjectBySlug = async (
 
     return null;
   } catch (error) {
-    console.error('Error fetching project:', error);
+    console.error('Error fetching project by slug:', error);
 
     return null;
   }

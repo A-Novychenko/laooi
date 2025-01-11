@@ -61,7 +61,7 @@ export const getAllTenders = async (
 
     return { tenders: transformedTenders, totalPages };
   } catch (error) {
-    console.error('Помилка при отриманні тендерів:', error);
+    console.error('Помилка при отриманні ALL тендерів:', error);
     return { tenders: [], totalPages: 0 };
   }
 };

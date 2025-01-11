@@ -5,6 +5,9 @@ export const getProjectBySlugQuery = `*[_type == "projects" && slug.current == $
   body,
   publicationDate,
   slug,
+  donor->{
+    name
+    },
   images[]{
     asset->{url},
     caption {

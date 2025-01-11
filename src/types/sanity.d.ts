@@ -214,6 +214,12 @@ interface IProjectPreview {
     uk: any[] | string;
     en: any[] | string;
   };
+  donor: {
+    name: {
+      uk: string;
+      en: string;
+    };
+  };
 }
 
 interface ITransformedProjectPreview {
@@ -224,6 +230,7 @@ interface ITransformedProjectPreview {
   title: string;
   date: string;
   slug: string;
+  donor: string;
 }
 
 interface IProject {
@@ -234,6 +241,12 @@ interface IProject {
   publicationDate: string;
   slug: { current: string };
   images: { asset: { url: string }; caption: { uk: string; en: string } }[];
+  donor: {
+    name: {
+      uk: string;
+      en: string;
+    };
+  };
 }
 
 interface ITransformedProject {
@@ -243,4 +256,49 @@ interface ITransformedProject {
   body: string;
   date: string;
   slug: string;
+  donor: string;
+}
+
+interface IPartner {
+  _id: string;
+  name: {
+    uk: string;
+    en: string;
+  };
+  img: {
+    caption: {
+      uk: string;
+      en: string;
+    };
+    asset: {
+      _id: string;
+      url: string;
+    };
+  };
+  link: string;
+  index: number;
+}
+
+interface ITransformedPartner {
+  name: string;
+  img: string;
+  alt: string;
+  link: string;
+  index: number;
+}
+
+interface IDonors {
+  donor: {
+    _id: string;
+    name: {
+      uk: string;
+      en: string;
+    };
+    id: { current: string };
+  };
+}
+
+interface ITransformedDonor {
+  name: string;
+  id: string;
 }

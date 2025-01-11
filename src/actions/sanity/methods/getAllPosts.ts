@@ -2,7 +2,7 @@ import { sanityClient } from '@/sanity/lib/client';
 
 import { transformPostPreview } from '@/utils/transformPostPreview';
 
-import { getPostsWithCountQuery } from '../queries';
+import { getAllPostsWithCountQuery } from '../queries';
 
 const fetchPosts = async (
   search: string | null,
@@ -15,7 +15,7 @@ const fetchPosts = async (
   posts: IPostPreview[];
   totalCount: number;
 }> => {
-  const query = getPostsWithCountQuery(
+  const query = getAllPostsWithCountQuery(
     search,
     lang,
     page,
@@ -61,7 +61,7 @@ export const getAllPosts = async (
 
     return { posts: transformedPosts, totalPages };
   } catch (error) {
-    console.error('Помилка при отриманні постів:', error);
+    console.error('Помилка при отриманні ALL постів:', error);
     return { posts: [], totalPages: 0 };
   }
 };

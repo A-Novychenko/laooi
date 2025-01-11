@@ -21,7 +21,7 @@ export const getPostBySlug = async (
 
     return null;
   } catch (error) {
-    console.error('Error fetching post:', error);
+    console.error('Error fetching post by slug:', error);
 
     return null;
   }

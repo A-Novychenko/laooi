@@ -103,6 +103,24 @@ export const projects = defineType({
     },
 
     {
+      name: 'donor',
+      title: 'Донор',
+      type: 'reference',
+      to: [{ type: 'partners' }],
+      validation: Rule => Rule.required().error('Поле обовʼязкове'),
+      options: {
+        // filter: ({ document }) => {
+        //   // Додатковий фільтр, якщо потрібен (наприклад, тільки активні партнери)
+        //   console.log('document', document);
+        //   return {
+        //     filter: '',
+        //     params: {},
+        //   };
+        // },
+      },
+    },
+
+    {
       name: 'body',
       title: 'Текст статті',
       type: 'object',

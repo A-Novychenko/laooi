@@ -24,7 +24,7 @@ export const getResearchDocuments = async (
 
     return transformedDocuments;
   } catch (error) {
-    console.error('Помилка при пошуку документів:', error);
+    console.error('Помилка при пошуку research документів:', error);
 
     return [];
   }

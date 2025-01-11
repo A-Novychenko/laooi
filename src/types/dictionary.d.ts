@@ -197,11 +197,6 @@ interface ITargetSection {
 
 interface IPartnersSection {
   title: string;
-  partners: {
-    img: string;
-    name: string;
-    link: string;
-  }[];
 }
 
 interface IPlaceholder {

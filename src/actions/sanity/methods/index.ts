@@ -13,3 +13,4 @@ export * from './getTenderBySlug';
 export * from './getProjectBySlug';
 export * from './getLatestProjects';
 export * from './getLatestTenders';
+export * from './getPartners';

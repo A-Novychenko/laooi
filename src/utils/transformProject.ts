@@ -14,5 +14,6 @@ export const transformProject = (
     body: project.body[lang] as string,
     date: project.publicationDate,
     slug: project.slug.current,
+    donor: project.donor.name[lang],
   };
 };

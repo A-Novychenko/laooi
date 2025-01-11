@@ -23,7 +23,7 @@ export const getLatestPosts = async (
 
     return transformedPosts;
   } catch (error) {
-    console.error('Помилка при отриманні постів:', error);
+    console.error('Помилка при отриманні latest постів:', error);
 
     return [];
   }

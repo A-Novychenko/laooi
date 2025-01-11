@@ -21,7 +21,7 @@ export const getTenderBySlug = async (
 
     return null;
   } catch (error) {
-    console.error('Error fetching tender:', error);
+    console.error('Error fetching tender by slug:', error);
 
     return null;
   }
