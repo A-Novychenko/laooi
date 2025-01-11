@@ -37,11 +37,6 @@ export const PostCard: React.FC<PostCardProps> = ({
 
   const isDeadline = deadline ? new Date(deadline) < new Date() : false;
 
-  console.log('post', post);
-  console.log('deadline', deadline);
-  console.log('type', type);
-  console.log('isDeadlinePassed', isDeadline);
-
   return (
     <Link
       href={`/${lang}/${pageName}/${slug}`}
