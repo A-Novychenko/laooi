@@ -1,10 +1,9 @@
 import { sanityClient } from '@/sanity/lib/client';
 import { getDonorsFromProjectsQuery } from '../queries';
 
-const fetchDonors = async (): Promise<IDonorsFromProjectsSelect[]> => {
+const fetchDonors = async (): Promise<IDonors[]> => {
   const query = getDonorsFromProjectsQuery();
-  const data: IDonorsFromProjectsSelect[] =
-    await sanityClient.fetch<IDonorsFromProjectsSelect[]>(query);
+  const data: IDonors[] = await sanityClient.fetch<IDonors[]>(query);
 
   return data || [];
 };

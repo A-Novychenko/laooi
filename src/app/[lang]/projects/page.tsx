@@ -3,7 +3,7 @@ import { BlogGallerySection, PlaceholderSection } from '@/sections';
 import { getAllProjects } from '@/actions/sanity';
 
 import { getDictionary } from '@/utils/dictionaries';
-import { getDonorsFromProjects } from '@/actions/sanity/methods/getDonorsFromProjects';
+// import { getDonorsFromProjects } from '@/actions/sanity/methods/getDonorsFromProjects';
 
 const ProjectsPage = async ({
   params: { lang },
@@ -41,9 +41,9 @@ const ProjectsPage = async ({
     sortDate,
   );
 
-  const donorsFromSelect = await getDonorsFromProjects(lang);
+  // const donorsFromSelect = await getDonorsFromProjects(lang);
 
-  console.log('donorsFromSelect', donorsFromSelect);
+  // console.log('donorsFromSelect', donorsFromSelect);
 
   return (
     <div className="grow">

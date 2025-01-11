@@ -288,15 +288,6 @@ interface ITransformedPartner {
 }
 
 interface IDonors {
-  _id: string;
-  name: {
-    uk: string;
-    en: string;
-  };
-  id: { current: string };
-}
-
-interface IDonorsFromProjectsSelect {
   donor: {
     _id: string;
     name: {
