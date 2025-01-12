@@ -87,8 +87,8 @@ export const CategorySelect: React.FC<CategorySelectProps> = ({
           aria-label="sort-label"
           className="absolute z-20 hidden w-full rounded-3xl bg-textLight p-4 transition-all xl:group-focus-within:block xl:group-hover:block"
         >
-          {options.map(option => (
-            <li key={option.value}>
+          {options.map((option, index) => (
+            <li key={`${option.value}-${index}`}>
               <button
                 className="w-full cursor-pointer rounded-2xl p-4 text-left text-xs/normal font-semibold hover:bg-bgSlate xl:text-sm"
                 type="button"
