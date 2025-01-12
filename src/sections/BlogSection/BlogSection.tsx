@@ -13,6 +13,7 @@ export const BlogSection: React.FC<BlogSectionProps> = async ({
   title,
   link,
   posts,
+  labelTitle,
 }) => {
   const { readMoreLabel } = dict.common;
 
@@ -46,6 +47,7 @@ export const BlogSection: React.FC<BlogSectionProps> = async ({
                       lang={lang}
                       pageName={pageName}
                       readMoreLabel={readMoreLabel}
+                      labelTitle={labelTitle}
                     />
                   </li>
                 ))}

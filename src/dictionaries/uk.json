@@ -35,12 +35,23 @@
     },
     "selectPostByType": {
       "title": "Тип контенту",
-      "options": {
-        "news": "Новини",
-        "articles": "Статті",
-        "events": "Події",
-        "all": "Усі типи"
-      }
+      "options": [
+        { "value": "all", "label": "Усі типи" },
+        { "value": "news", "label": "Новини" },
+        { "value": "articles", "label": "Статті" },
+        { "value": "events", "label": "Події" }
+      ]
+    },
+    "selectTendersByDate": {
+      "title": "Статус тендерів",
+      "options": [
+        { "value": "all", "label": "Усі тендери" },
+        { "value": "active", "label": "Активні" },
+        { "value": "disabled", "label": "Завершені" }
+      ]
+    },
+    "selectDonorsByType": {
+      "title": "Донор проєкту"
     },
     "postFBLinkLabel": "Читати у Facebook",
     "readMoreLabel": "Читати далі",
