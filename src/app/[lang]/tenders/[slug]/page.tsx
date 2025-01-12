@@ -31,7 +31,7 @@ const TenderPage = async ({
 
   const dict = await getDictionary(lang);
 
-  const { pageName, title, errorData, link } = dict.tendersSection;
+  const { pageName, title, errorData, link, labelTitle } = dict.tendersSection;
   const { tenderBackLink } = dict.common;
 
   return (
@@ -49,6 +49,7 @@ const TenderPage = async ({
         title={title}
         link={link}
         posts={latestTender}
+        labelTitle={labelTitle}
       />
     </>
   );

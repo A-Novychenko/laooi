@@ -40,7 +40,10 @@ export const BlogGallerySection: React.FC<BlogGallerySectionProps> = ({
           <GallerySearchInput placeholder={placeholder} />
 
           <div className="flex flex-col md:flex-row md:gap-4">
-            <CategorySelect selectPostByType={selectPostByType} />
+            <CategorySelect
+              selectPostByType={selectPostByType}
+              queryKey={'type'}
+            />
 
             <SelectByDate selectSortByDate={selectSortByDate} />
           </div>

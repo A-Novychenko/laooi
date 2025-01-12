@@ -6,7 +6,15 @@ export const getAllTendersWithCountQuery = (
   deadline?: string,
   sortDate: 'newest' | 'oldest' = 'newest',
 ) => {
-  const typeFilter = deadline ? `&& deadline == "${deadline}"` : '';
+  const now = new Date().toISOString();
+  let typeFilter = '';
+
+  if (deadline === 'active') {
+    typeFilter = `&& deadline >= "${now}"`;
+  } else if (deadline === 'disabled') {
+    typeFilter = `&& deadline < "${now}"`;
+  }
+
   const sortFilter =
     sortDate === 'oldest'
       ? `| order(publicationDate asc)`

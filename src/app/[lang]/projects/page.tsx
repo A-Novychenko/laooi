@@ -1,9 +1,8 @@
 import { BlogGallerySection, PlaceholderSection } from '@/sections';
 
-import { getAllProjects } from '@/actions/sanity';
+import { getAllProjects, getDonorsFromProjects } from '@/actions/sanity';
 
 import { getDictionary } from '@/utils/dictionaries';
-// import { getDonorsFromProjects } from '@/actions/sanity/methods/getDonorsFromProjects';
 
 const ProjectsPage = async ({
   params: { lang },
@@ -15,11 +14,12 @@ const ProjectsPage = async ({
     search?: string;
     donor?: string;
     sort?: string;
+    type?: string;
   };
 }) => {
   const dict = await getDictionary(lang);
 
-  const { readMoreLabel, searchInput, selectSortByDate, selectPostByType } =
+  const { readMoreLabel, searchInput, selectSortByDate, selectDonorsByType } =
     dict.common;
   const { pageName, title, errorData, notFoundDescr } = dict.projectsSection;
 
@@ -30,7 +30,7 @@ const ProjectsPage = async ({
 
   const sortDate = searchParams.sort === 'oldest' ? 'oldest' : 'newest';
 
-  const donor = searchParams.donor ? searchParams.donor : undefined;
+  const donor = searchParams.type ? searchParams.type : undefined;
 
   const { projects, totalPages } = await getAllProjects(
     searchQuery,
@@ -41,9 +41,19 @@ const ProjectsPage = async ({
     sortDate,
   );
 
-  // const donorsFromSelect = await getDonorsFromProjects(lang);
+  const donorsFromSelect = await getDonorsFromProjects(lang);
 
-  // console.log('donorsFromSelect', donorsFromSelect);
+  const convertDonorsFromSelect = donorsFromSelect.donors.map(
+    (donor: { id: string; name: string }) => ({
+      value: donor.id,
+      label: donor.name,
+    }),
+  );
+
+  const selectDonorsByName = {
+    title: selectDonorsByType.title,
+    options: convertDonorsFromSelect,
+  };
 
   return (
     <div className="grow">
@@ -58,7 +68,7 @@ const ProjectsPage = async ({
           totalPages={totalPages}
           placeholder={searchInput.placeholder}
           selectSortByDate={selectSortByDate}
-          selectPostByType={selectPostByType}
+          selectPostByType={selectDonorsByName}
           notFoundDescr={notFoundDescr}
         />
       ) : (

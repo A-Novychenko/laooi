@@ -11,4 +11,5 @@ export type BlogSectionProps = {
     };
   };
   posts: IPostBlogGalleryPage[];
+  labelTitle?: string;
 };

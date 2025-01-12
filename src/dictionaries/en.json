@@ -35,12 +35,23 @@
     },
     "selectPostByType": {
       "title": "Content type",
-      "options": {
-        "news": "News",
-        "articles": "Articles",
-        "events": "Events",
-        "all": "All"
-      }
+      "options": [
+        { "value": "all", "label": "All" },
+        { "value": "news", "label": "News" },
+        { "value": "articles", "label": "Articles" },
+        { "value": "events", "label": "Events" }
+      ]
+    },
+    "selectTendersByDate": {
+      "title": "Tender status",
+      "options": [
+        { "value": "all", "label": "All tenders" },
+        { "value": "active", "label": "Active" },
+        { "value": "disabled", "label": "Disabled" }
+      ]
+    },
+    "selectDonorsByType": {
+      "title": "Prodject donor"
     },
     "postFBLinkLabel": "Read on Facebook",
     "readMoreLabel": "Read more",

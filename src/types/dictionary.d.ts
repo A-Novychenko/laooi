@@ -19,6 +19,8 @@ interface IDictionary {
     devPage: IPlaceholder;
     selectSortByDate: ISelectSortByDate;
     selectPostByType: ISelectPostByType;
+    selectTendersByDate: ISelectPostByType;
+    selectDonorsByType: ISelectDonorsByType;
     contactsPage: IContactsPage;
     privacyPolicyPage: IPrivacyPolicyPage;
   };
@@ -277,12 +279,16 @@ interface ISelectSortByDate {
 
 interface ISelectPostByType {
   title: string;
-  options: {
-    news: string;
-    articles: string;
-    events: string;
-    all: string;
-  };
+  options: ISelectOptions[];
+}
+
+interface ISelectOptions {
+  value: string | '';
+  label: string;
+}
+
+interface ISelectDonorsByType {
+  title: string;
 }
 
 interface IContactsPage {

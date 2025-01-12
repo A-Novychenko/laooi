@@ -14,11 +14,12 @@ const TendersPage = async ({
     search?: string;
     deadline?: string;
     sort?: string;
+    type?: string;
   };
 }) => {
   const dict = await getDictionary(lang);
 
-  const { readMoreLabel, searchInput, selectSortByDate, selectPostByType } =
+  const { readMoreLabel, searchInput, selectSortByDate, selectTendersByDate } =
     dict.common;
   const { pageName, title, errorData, notFoundDescr, labelTitle } =
     dict.tendersSection;
@@ -30,8 +31,8 @@ const TendersPage = async ({
 
   const sortDate = searchParams.sort === 'oldest' ? 'oldest' : 'newest';
 
-  const deadline: string | undefined = searchParams?.deadline
-    ? searchParams.deadline
+  const deadline: string | undefined = searchParams?.type
+    ? searchParams.type
     : undefined;
 
   const { tenders, totalPages } = await getAllTenders(
@@ -56,7 +57,7 @@ const TendersPage = async ({
           totalPages={totalPages}
           placeholder={searchInput.placeholder}
           selectSortByDate={selectSortByDate}
-          selectPostByType={selectPostByType}
+          selectPostByType={selectTendersByDate}
           notFoundDescr={notFoundDescr}
           labelTitle={labelTitle}
         />
