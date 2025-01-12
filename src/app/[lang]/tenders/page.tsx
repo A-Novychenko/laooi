@@ -44,8 +44,6 @@ const TendersPage = async ({
     sortDate,
   );
 
-  console.log('deadline', deadline);
-
   return (
     <div className="grow">
       {tenders ? (

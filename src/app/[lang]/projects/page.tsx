@@ -1,9 +1,8 @@
 import { BlogGallerySection, PlaceholderSection } from '@/sections';
 
-import { getAllProjects } from '@/actions/sanity';
+import { getAllProjects, getDonorsFromProjects } from '@/actions/sanity';
 
 import { getDictionary } from '@/utils/dictionaries';
-import { getDonorsFromProjects } from '@/actions/sanity/methods/getDonorsFromProjects';
 
 const ProjectsPage = async ({
   params: { lang },
