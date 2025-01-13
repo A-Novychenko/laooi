@@ -1,5 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
+// import type { PortableTextBlock } from 'sanity';
+
 interface IPostPreview {
   _id: string;
   title: {
@@ -237,7 +239,16 @@ interface IProject {
   _id: string;
   projectYear: string;
   title: { [key: string]: string };
-  body: { [key: string]: string };
+  body: {
+    uk: {
+      title: string;
+      text: any;
+    }[];
+    en: {
+      title: string;
+      text: any;
+    }[];
+  };
   publicationDate: string;
   slug: { current: string };
   images: { asset: { url: string }; caption: { uk: string; en: string } }[];
@@ -253,7 +264,11 @@ interface ITransformedProject {
   projectYear: string;
   images: { src: string; alt: string }[];
   title: string;
-  body: string;
+  body: {
+    title: string;
+    text: any;
+  }[];
+
   date: string;
   slug: string;
   donor: string;

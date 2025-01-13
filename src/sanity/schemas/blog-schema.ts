@@ -132,7 +132,47 @@ export const post = defineType({
           name: 'uk',
           type: 'array',
           title: 'Українська',
-          of: [{ type: 'block' }],
+          of: [
+            {
+              type: 'block',
+              styles: [
+                { title: 'Звичайний текст', value: 'normal' },
+                { title: 'Заголовок 2', value: 'h2' },
+                { title: 'Заголовок 3', value: 'h3' },
+                { title: 'Заголовок 4', value: 'h4' },
+                { title: 'Заголовок 5', value: 'h5' },
+                { title: 'Заголовок 6', value: 'h6' },
+                { title: 'Цитата', value: 'blockquote' },
+              ],
+              lists: [
+                { title: 'Маркірований список', value: 'bullet' },
+                { title: 'Нумерований список', value: 'number' },
+              ],
+              marks: {
+                decorators: [
+                  { title: 'Жирний', value: 'strong' },
+                  { title: 'Курсив', value: 'em' },
+                  { title: 'Підкреслений', value: 'underline' },
+                  { title: 'Закреслений', value: 'strike-through' },
+                  { title: 'Код', value: 'code' },
+                ],
+                annotations: [
+                  {
+                    name: 'link',
+                    type: 'object',
+                    title: 'Посилання',
+                    fields: [
+                      {
+                        name: 'href',
+                        type: 'url',
+                        title: 'URL',
+                      },
+                    ],
+                  },
+                ],
+              },
+            },
+          ],
         },
         {
           name: 'en',
