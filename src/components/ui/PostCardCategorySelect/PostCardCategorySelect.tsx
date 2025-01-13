@@ -7,7 +7,7 @@ import ArrowIcon from '~/icons/arrowDown.svg';
 
 import { CategorySelectProps } from './types';
 
-export const CategorySelect: React.FC<CategorySelectProps> = ({
+export const PostCardCategorySelect: React.FC<CategorySelectProps> = ({
   selectPostByType,
   queryKey,
 }) => {
@@ -85,7 +85,7 @@ export const CategorySelect: React.FC<CategorySelectProps> = ({
           id="options"
           role="listbox"
           aria-label="sort-label"
-          className="absolute z-20 hidden w-full rounded-3xl bg-textLight p-4 transition-all xl:group-focus-within:block xl:group-hover:block"
+          className="absolute z-20 hidden max-h-[50vh] w-full overflow-y-scroll rounded-3xl bg-textLight p-4 transition-all xl:group-focus-within:block xl:group-hover:block"
         >
           {options.map((option, index) => (
             <li key={`${option.value}-${index}`}>

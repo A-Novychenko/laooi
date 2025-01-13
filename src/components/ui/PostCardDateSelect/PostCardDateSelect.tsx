@@ -7,7 +7,7 @@ import ArrowIcon from '~/icons/arrowDown.svg';
 
 import { SelectByDateProps, SortDate } from './types';
 
-export const SelectByDate: React.FC<SelectByDateProps> = ({
+export const PostCardDateSelect: React.FC<SelectByDateProps> = ({
   selectSortByDate,
 }) => {
   const [selectedSort, setSelectedSort] = useState<SortDate | ''>('');
