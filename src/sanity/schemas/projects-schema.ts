@@ -108,36 +108,159 @@ export const projects = defineType({
       type: 'reference',
       to: [{ type: 'partners' }],
       validation: Rule => Rule.required().error('Поле обовʼязкове'),
-      options: {
-        // filter: ({ document }) => {
-        //   // Додатковий фільтр, якщо потрібен (наприклад, тільки активні партнери)
-        //   console.log('document', document);
-        //   return {
-        //     filter: '',
-        //     params: {},
-        //   };
-        // },
-      },
+      options: {},
     },
 
     {
       name: 'body',
-      title: 'Текст статті',
+      title: 'Body (двомовне)',
       type: 'object',
       fields: [
         {
           name: 'uk',
-          type: 'array',
           title: 'Українська',
-          of: [{ type: 'block' }],
+          type: 'array',
+          of: [
+            {
+              type: 'object',
+              title: 'Section',
+              fields: [
+                {
+                  name: 'title',
+                  type: 'string',
+                  title: 'Заголовок (UA)',
+                },
+                {
+                  name: 'text',
+                  type: 'array',
+                  title: 'Текст (UA)',
+                  of: [
+                    {
+                      type: 'block',
+                      styles: [
+                        { title: 'Звичайний текст', value: 'normal' },
+                        { title: 'Заголовок 2', value: 'h2' },
+                        { title: 'Заголовок 3', value: 'h3' },
+                        { title: 'Заголовок 4', value: 'h4' },
+                        { title: 'Заголовок 5', value: 'h5' },
+                        { title: 'Заголовок 6', value: 'h6' },
+                        { title: 'Цитата', value: 'blockquote' },
+                      ],
+                      lists: [
+                        { title: 'Маркірований список', value: 'bullet' },
+                        { title: 'Нумерований список', value: 'number' },
+                      ],
+                      marks: {
+                        decorators: [
+                          { title: 'Жирний', value: 'strong' },
+                          { title: 'Курсив', value: 'em' },
+                          { title: 'Підкреслений', value: 'underline' },
+                          { title: 'Закреслений', value: 'strike-through' },
+                          { title: 'Код', value: 'code' },
+                        ],
+                        annotations: [
+                          {
+                            name: 'link',
+                            type: 'object',
+                            title: 'Посилання',
+                            fields: [
+                              {
+                                name: 'href',
+                                type: 'url',
+                                title: 'URL',
+                              },
+                            ],
+                          },
+                        ],
+                      },
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
+          validation: Rule =>
+            Rule.required()
+              .min(1)
+              .error(
+                'Масив "Body" українською повинен містити хоча б один елемент',
+              ),
         },
         {
           name: 'en',
-          type: 'array',
           title: 'Англійська',
-          of: [{ type: 'block' }],
+          type: 'array',
+          of: [
+            {
+              type: 'object',
+              title: 'Section',
+              fields: [
+                {
+                  name: 'title',
+                  type: 'string',
+                  title: 'Заголовок (EN)',
+                },
+                {
+                  name: 'text',
+                  type: 'array',
+                  title: 'Текст (EN)',
+                  of: [
+                    {
+                      type: 'block',
+                      styles: [
+                        { title: 'Звичайний текст', value: 'normal' },
+                        { title: 'Заголовок 2', value: 'h2' },
+                        { title: 'Заголовок 3', value: 'h3' },
+                        { title: 'Заголовок 4', value: 'h4' },
+                        { title: 'Заголовок 5', value: 'h5' },
+                        { title: 'Заголовок 6', value: 'h6' },
+                        { title: 'Цитата', value: 'blockquote' },
+                      ],
+                      lists: [
+                        { title: 'Маркірований список', value: 'bullet' },
+                        { title: 'Нумерований список', value: 'number' },
+                      ],
+                      marks: {
+                        decorators: [
+                          { title: 'Жирний', value: 'strong' },
+                          { title: 'Курсив', value: 'em' },
+                          { title: 'Підкреслений', value: 'underline' },
+                          { title: 'Закреслений', value: 'strike-through' },
+                          { title: 'Код', value: 'code' },
+                        ],
+                        annotations: [
+                          {
+                            name: 'link',
+                            type: 'object',
+                            title: 'Посилання',
+                            fields: [
+                              {
+                                name: 'href',
+                                type: 'url',
+                                title: 'URL',
+                              },
+                            ],
+                          },
+                        ],
+                      },
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
+          validation: Rule =>
+            Rule.required()
+              .min(1)
+              .error(
+                'Масив "Body" англійською повинен містити хоча б один елемент',
+              ),
         },
       ],
+      validation: Rule =>
+        Rule.required().error(
+          'Поле "Body" є обовʼязковим і повинно бути заповнене обома мовами',
+        ),
     },
 
     {

@@ -7,6 +7,7 @@ import {
   PostLabel,
   Title,
   ButtonLink,
+  ProjectContent,
 } from '@/components/ui';
 import { PostSliderWrap } from '@/components/base';
 
@@ -18,10 +19,12 @@ export const PostSection: React.FC<{
   post: IPostBlogPage;
   postBackLink: IPostBackLink;
   postFBLinkLabel?: string;
+  pageName?: string;
 }> = ({
   postBackLink: { label: labelPostLink, link: blogLink },
   post,
   postFBLinkLabel,
+  pageName,
 }) => {
   const {
     type,
@@ -84,7 +87,9 @@ export const PostSection: React.FC<{
 
             {donor && <p>{donor}</p>}
 
-            <PostText body={body} />
+            {pageName !== 'projects' && <PostText body={body} />}
+
+            {pageName === 'projects' && <ProjectContent body={body} />}
 
             {postFBLinkLabel && link && (
               <ButtonLink

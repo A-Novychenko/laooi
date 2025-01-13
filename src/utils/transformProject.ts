@@ -11,7 +11,7 @@ export const transformProject = (
       };
     }),
     title: project.title[lang],
-    body: project.body[lang] as string,
+    body: project.body[lang],
     date: project.publicationDate,
     slug: project.slug.current,
     donor: project.donor.name[lang],

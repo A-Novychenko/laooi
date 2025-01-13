@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 interface IPostBlogGalleryPage {
   deadline?: string;
   type?: string;
@@ -24,7 +25,12 @@ interface IPostBlogPage {
   images?: { src: string; alt: string }[];
   imageAlt?: string;
   title: string;
-  body?: string;
+  body?:
+    | string
+    | {
+        title: string;
+        text: any;
+      }[];
   date: string;
   slug: string;
   postUrl?: string;
