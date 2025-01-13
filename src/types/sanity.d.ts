@@ -314,6 +314,6 @@ interface IDonors {
 }
 
 interface ITransformedDonor {
-  name: string;
-  id: string;
+  value: string;
+  label: string;
 }
