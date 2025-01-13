@@ -1,9 +1,9 @@
 import dynamic from 'next/dynamic';
 
 import {
-  CategorySelect,
+  PostCardCategorySelect,
   GallerySearchInput,
-  SelectByDate,
+  PostCardDateSelect,
   Title,
 } from '@/components/ui';
 import { BlogGallery } from '@/components/base';
@@ -40,12 +40,12 @@ export const BlogGallerySection: React.FC<BlogGallerySectionProps> = ({
           <GallerySearchInput placeholder={placeholder} />
 
           <div className="flex flex-col md:flex-row md:gap-4">
-            <CategorySelect
+            <PostCardCategorySelect
               selectPostByType={selectPostByType}
               queryKey={'type'}
             />
 
-            <SelectByDate selectSortByDate={selectSortByDate} />
+            <PostCardDateSelect selectSortByDate={selectSortByDate} />
           </div>
         </div>
 

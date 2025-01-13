@@ -58,6 +58,7 @@ export const Footer: React.FC<FooterProps> = async ({ lang }) => {
             data={socialLinks}
             title={socialListTitle}
             linkTitle={footerLinkTitle}
+            lang={lang}
           />
         </div>
 

@@ -11,6 +11,7 @@ export const FooterSocialList: React.FC<FooterSocialListProps> = ({
   title,
   data,
   linkTitle,
+  lang,
 }) => {
   const icons = [YouTubeIcon, FacebookIcon, InstagramIcon];
 
@@ -45,7 +46,7 @@ export const FooterSocialList: React.FC<FooterSocialListProps> = ({
 
       <Link
         href={{
-          pathname: '/contacts',
+          pathname: `/${lang}/contacts`,
           query: { ref: 'become-a-partner' },
         }}
         className="flex items-center justify-center text-sm/normal font-bold uppercase text-textFooterLink transition-colors hover:text-textFooterActive focus:text-textFooterActive xl:text-lg xl:font-semibold"
