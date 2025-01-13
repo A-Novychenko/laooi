@@ -10,21 +10,24 @@ const fetchDonors = async (): Promise<IDonors[]> => {
 
 export const getDonorsFromProjects = async (
   lang: 'uk' | 'en' = 'uk',
-): Promise<{ donors: ITransformedDonor[] }> => {
+): Promise<ITransformedDonor[]> => {
   try {
     const donors = await fetchDonors();
 
-    const transformedDonors: ITransformedDonor[] = donors.map(({ donor }) => {
-      return {
-        id: donor.id?.current,
-        name: donor?.name[lang],
-      };
-    });
+    const transformedDonors: ITransformedDonor[] = Array.from(
+      new Map(
+        donors.map(({ donor }) => [
+          donor.id?.current, // Унікальний ключ
+          { value: donor.id?.current, label: donor?.name[lang] }, // Формат об'єкта
+        ]),
+      ).values(),
+    );
 
-    return { donors: transformedDonors };
+    return transformedDonors;
   } catch (error) {
     console.error('Помилка при отриманні donors from proj:', error);
 
-    return { donors: [] };
+    // return { donors: [] };
+    return [];
   }
 };

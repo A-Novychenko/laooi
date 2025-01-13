@@ -45,16 +45,9 @@ const ProjectsPage = async ({
 
   const donorsFromSelect = await getDonorsFromProjects(lang);
 
-  const convertDonorsFromSelect = donorsFromSelect.donors.map(
-    (donor: { id: string; name: string }) => ({
-      value: donor.id,
-      label: donor.name,
-    }),
-  );
-
   const selectDonorsByName = {
     title: selectDonorsByType.title,
-    options: convertDonorsFromSelect,
+    options: donorsFromSelect,
   };
 
   return (
