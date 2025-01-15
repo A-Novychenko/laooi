@@ -68,7 +68,7 @@ export const PostCardDateSelect: React.FC<SelectByDateProps> = ({
           role="button"
           tabIndex={0}
           onClick={handleMenuToggle}
-          className="flex w-full cursor-pointer justify-between rounded-full bg-bgLightSlate px-[24px] py-2.5 text-base/[1.5] font-semibold md:py-3 xl:w-[302px] xl:py-4 xl:text-lg/[1.22] xl:focus-within:bg-bgSlate xl:hover:bg-bgSlate"
+          className="flex w-full cursor-pointer justify-between rounded-full bg-bgLightSlate px-[24px] py-2.5 text-base/[1.5] font-semibold md:py-3 xl:py-4 xl:text-lg/[1.22] xl:focus-within:bg-bgSlate xl:hover:bg-bgSlate"
         >
           <p id="sort-title">{getSortTitle(selectedSort)}</p>
 

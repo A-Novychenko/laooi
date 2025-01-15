@@ -34,7 +34,7 @@ const ProjectPage = async ({
   const dict = await getDictionary(lang);
 
   const { pageName, title, link, errorData } = dict.projectsSection;
-  const { projectBackLink } = dict.common;
+  const { projectBackLink, donorTitle } = dict.common;
 
   return (
     <>
@@ -43,6 +43,7 @@ const ProjectPage = async ({
           post={project}
           postBackLink={projectBackLink}
           pageName={pageName}
+          donorTitle={donorTitle}
         />
       ) : (
         <PlaceholderSection data={{ title, ...errorData }} />

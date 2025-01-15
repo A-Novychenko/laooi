@@ -23,6 +23,7 @@ interface IDictionary {
     selectDonorsByType: ISelectDonorsByType;
     contactsPage: IContactsPage;
     privacyPolicyPage: IPrivacyPolicyPage;
+    donorTitle: string;
   };
   aboutSection: IAboutSection;
   activitiesSection: IActivitiesSection;

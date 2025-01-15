@@ -53,6 +53,7 @@
     "selectDonorsByType": {
       "title": "Донор проєкту"
     },
+    "donorTitle": "Донор",
     "postFBLinkLabel": "Читати у Facebook",
     "readMoreLabel": "Читати далі",
     "mainNav": [

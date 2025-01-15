@@ -68,7 +68,7 @@ export const PostCardCategorySelect: React.FC<CategorySelectProps> = ({
           role="button"
           tabIndex={0}
           onClick={handleMenuToggle}
-          className="flex w-full cursor-pointer justify-between rounded-full bg-bgLightSlate px-[24px] py-2.5 text-base/[1.5] font-semibold md:py-3 xl:w-[302px] xl:whitespace-nowrap xl:py-4 xl:text-lg/[1.22] xl:focus-within:bg-bgSlate xl:hover:bg-bgSlate"
+          className="flex w-full cursor-pointer justify-between rounded-full bg-bgLightSlate px-[24px] py-2.5 text-base/[1.5] font-semibold md:py-3 xl:whitespace-nowrap xl:py-4 xl:text-lg/[1.22] xl:focus-within:bg-bgSlate xl:hover:bg-bgSlate"
         >
           <p id="sort-title" className="overflow-hidden">
             {getSelectedLabel()}
