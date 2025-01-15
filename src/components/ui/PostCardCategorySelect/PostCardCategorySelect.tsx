@@ -85,7 +85,7 @@ export const PostCardCategorySelect: React.FC<CategorySelectProps> = ({
           id="options"
           role="listbox"
           aria-label="sort-label"
-          className="absolute z-20 hidden max-h-[50vh] w-full overflow-y-scroll rounded-3xl bg-textLight p-4 transition-all xl:group-focus-within:block xl:group-hover:block"
+          className="max-h-screen-1/2 absolute z-20 hidden w-full overflow-y-auto rounded-3xl bg-textLight p-4 transition-all xl:group-focus-within:block xl:group-hover:block"
         >
           {options.map((option, index) => (
             <li key={`${option.value}-${index}`}>
@@ -108,7 +108,7 @@ export const PostCardCategorySelect: React.FC<CategorySelectProps> = ({
             id="options"
             role="listbox"
             aria-label="sort-label"
-            className="absolute z-20 w-full rounded-3xl bg-textLight p-4 transition-all xl:hidden"
+            className="max-h-screen-1/2 absolute z-20 w-full overflow-y-auto rounded-3xl bg-textLight p-4 transition-all xl:hidden"
           >
             {options.map(option => (
               <li key={option.value}>
