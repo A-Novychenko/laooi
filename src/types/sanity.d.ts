@@ -317,3 +317,41 @@ interface ITransformedDonor {
   value: string;
   label: string;
 }
+
+interface ITeamMember {
+  _id: string;
+  name: {
+    uk: string;
+    en: string;
+  };
+  position: {
+    uk: string;
+    en: string;
+  };
+  description: {
+    uk: string;
+    en: string;
+  };
+  photo: {
+    caption: {
+      uk: string;
+      en: string;
+    };
+    asset: {
+      _id: string;
+      url: string;
+    };
+  };
+  link: string;
+  index: number;
+}
+
+interface ITransformedTeamMember {
+  name: string;
+  position: string;
+  description: string;
+  photo: string;
+  alt: string;
+  link: string;
+  index: number;
+}

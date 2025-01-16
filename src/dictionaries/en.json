@@ -71,7 +71,7 @@
           },
           {
             "name": "Team",
-            "href": "/in-progress"
+            "href": "/team"
           },
           {
             "name": "Projects",
@@ -142,7 +142,7 @@
         "title": "About us",
         "embedded": [
           { "name": "Strategy", "href": "/in-progress" },
-          { "name": "Team", "href": "/in-progress" },
+          { "name": "Team", "href": "/team" },
           { "name": "Projects", "href": "/projects" },
           {
             "name": "Research",
@@ -669,11 +669,44 @@
       },
       "btn": {
         "btnLabel": "Submit request",
-        "settings": { "href": "/contacts", "externalLink": false }
+        "settings": {
+          "href": "/contacts?ref=become-a-advisor",
+          "externalLink": false
+        }
       }
     },
     "advisorsSection": {
       "title": "Our advisors"
+    }
+  },
+  "aboutTeamSection": {
+    "title": "Team",
+    "img": "/images/about-team.png",
+    "alt": "photos of organization members",
+    "description": {
+      "quotedText": {
+        "advisors": "We are a team of like-minded individuals",
+        "question": "bringing together people",
+        "become": "\"Join the team\""
+      },
+      "firstParagraph": {
+        "after": " working every day to improve the living conditions of people with disabilities. Each of us contributes to achieving our mission – creating an inclusive society where everyone has equal opportunities for self-realization and development"
+      },
+      "secondParagraph": {
+        "before": "We take pride in ",
+        "after": " who dedicate themselves daily to supporting individuals with disabilities and building an inclusive society. Every member of our team plays an important role in project implementation, strategy development, and providing support to those in need. Meet our leaders and learn more about each of us"
+      },
+      "thirdParagraph": {
+        "before": "If you want to join our team and help people with disabilities, select the ",
+        "after": " category in the form, fill it out, and leave your contact details. We will get in touch with you for further discussion and provide all the necessary information"
+      }
+    },
+    "btn": {
+      "btnLabel": "Submit request",
+      "settings": {
+        "href": "/contacts?ref=become-a-team",
+        "externalLink": false
+      }
     }
   }
 }

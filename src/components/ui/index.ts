@@ -34,3 +34,5 @@ export * from './AdvisorCard';
 export * from './Loader';
 export * from './PrivacyPolicyPortableText';
 export * from './ProjectContent';
+export * from './ReadMoreBtn';
+export * from './TeamCard';
