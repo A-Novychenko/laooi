@@ -70,7 +70,7 @@ export const PostSection: React.FC<{
                     alt={image.alt}
                     width={632}
                     height={632}
-                    className="w-full"
+                    className="h-auto w-full"
                   />
                 )}
               </>
