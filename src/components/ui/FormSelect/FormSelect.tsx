@@ -80,6 +80,30 @@ const FormSelect: React.FC<CustomSelectProp> = ({
         trigger(name as 'appeal');
       }
     }
+
+    if (refParam && refParam === 'become-a-advisor') {
+      const advisorOption = options.find(
+        option => option.value === 'become-advisor',
+      );
+      if (advisorOption) {
+        setSelectedType(advisorOption.value);
+        setValue(name as 'appeal', advisorOption.value, {
+          shouldValidate: true,
+        });
+        trigger(name as 'appeal');
+      }
+    }
+
+    if (refParam && refParam === 'become-a-team') {
+      const teamOption = options.find(option => option.value === 'become-team');
+      if (teamOption) {
+        setSelectedType(teamOption.value);
+        setValue(name as 'appeal', teamOption.value, {
+          shouldValidate: true,
+        });
+        trigger(name as 'appeal');
+      }
+    }
   }, [searchParams, options, setValue, trigger, name]);
 
   return (

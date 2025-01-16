@@ -10,6 +10,7 @@ import { privacyPolicy } from './privacy-policy-schema';
 import { tenders } from './tenders-schema';
 import { projects } from './projects-schema';
 import { partners } from './partners-schema';
+import { team } from './team-schema';
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -23,5 +24,6 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     tenders,
     projects,
     partners,
+    team,
   ],
 };

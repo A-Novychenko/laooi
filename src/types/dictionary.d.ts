@@ -43,6 +43,7 @@ interface IDictionary {
     advisorsHeroSection: IAdvisorsHeroSection;
     advisorsSection: IAdvisorsSection;
   };
+  aboutTeamSection: IAboutTeamSection;
 }
 
 interface IPostBackLink {
@@ -370,4 +371,24 @@ interface IAdvisorsSection {
 interface IPrivacyPolicyPage {
   title: string;
   errorData: IErrorData;
+}
+
+interface IAboutTeamSection {
+  title: string;
+  img: string;
+  alt: string;
+  description: {
+    quotedText: {
+      advisors: string;
+      question: string;
+      become: string;
+    };
+    firstParagraph: { after: string };
+    secondParagraph: { before: string; after: string };
+    thirdParagraph: { before: string; after: string };
+  };
+  btn: {
+    btnLabel: string;
+    settings: { href: string; externalLink: boolean };
+  };
 }

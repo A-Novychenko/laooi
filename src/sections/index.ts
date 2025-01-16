@@ -17,3 +17,5 @@ export * from './ResearchSection';
 export * from './AdvisorsHeroSection';
 export * from './AdvisorsSection';
 export * from './PrivacyPolicySection';
+export * from './AboutTeamSection';
+export * from './TeamSection';
