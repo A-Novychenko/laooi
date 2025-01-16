@@ -108,7 +108,7 @@ export const PostCardCategorySelect: React.FC<CategorySelectProps> = ({
             id="options"
             role="listbox"
             aria-label="sort-label"
-            className="max-h-screen-1/2 absolute z-20 w-full overflow-y-auto rounded-3xl bg-textLight p-4 transition-all xl:hidden"
+            className="absolute z-20 max-h-[50vh] w-full overflow-y-auto rounded-3xl bg-textLight p-4 transition-all xl:hidden"
           >
             {options.map(option => (
               <li key={option.value}>
