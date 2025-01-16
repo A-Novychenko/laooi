@@ -20,6 +20,11 @@ export const PostText: React.FC<PostTextProps> = ({ body }) => {
             normal: ({ children }) => (
               <p className="text-base/normal md:text-lg">{children}</p>
             ),
+            blockquote: ({ children }) => (
+              <blockquote className="border-l-4 border-textActive bg-bgLightSlate pl-4 text-base/normal font-bold italic text-textMenuAccent md:text-lg">
+                {children}
+              </blockquote>
+            ),
           },
           list: {
             bullet: ({ children }) => (
@@ -44,6 +49,16 @@ export const PostText: React.FC<PostTextProps> = ({ body }) => {
             em: ({ children }) => <em className="italic">{children}</em>,
             underline: ({ children }) => (
               <span className="underline">{children}</span>
+            ),
+            link: ({ value, children }) => (
+              <a
+                href={value.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cursor-pointer text-base/normal font-bold text-textBlue hover:underline md:text-lg"
+              >
+                {children}
+              </a>
             ),
           },
         }}
