@@ -17,7 +17,7 @@ const TeamPage = async ({
     <>
       <AboutTeamSection dict={dict} lang={lang} />
 
-      <TeamSection dict={dict} team={team} />
+      {team && team.length > 0 && <TeamSection dict={dict} team={team} />}
     </>
   );
 };

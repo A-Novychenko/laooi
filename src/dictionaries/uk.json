@@ -71,7 +71,7 @@
           },
           {
             "name": "Команда",
-            "href": "/in-progress"
+            "href": "/team"
           },
           {
             "name": "Проєкти",
@@ -142,7 +142,7 @@
         "title": "Про нас",
         "embedded": [
           { "name": "Стратегія", "href": "/in-progress" },
-          { "name": "Команда", "href": "/in-progress" },
+          { "name": "Команда", "href": "/team" },
           { "name": "Проєкти", "href": "/projects" },
           {
             "name": "Дослідження",

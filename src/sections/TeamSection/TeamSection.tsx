@@ -8,7 +8,7 @@ export const TeamSection: React.FC<TeamSectionProps> = ({ dict, team }) => {
   return (
     <section className="section">
       <div className="container">
-        <ul className="flex flex-wrap gap-[16px]">
+        <ul className="flex flex-wrap content-stretch gap-[16px]">
           {team &&
             team.length > 0 &&
             team.map((teamMember, idx) => (

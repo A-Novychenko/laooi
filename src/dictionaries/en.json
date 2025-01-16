@@ -71,7 +71,7 @@
           },
           {
             "name": "Team",
-            "href": "/in-progress"
+            "href": "/team"
           },
           {
             "name": "Projects",
@@ -142,7 +142,7 @@
         "title": "About us",
         "embedded": [
           { "name": "Strategy", "href": "/in-progress" },
-          { "name": "Team", "href": "/in-progress" },
+          { "name": "Team", "href": "/team" },
           { "name": "Projects", "href": "/projects" },
           {
             "name": "Research",
