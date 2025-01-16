@@ -68,7 +68,7 @@ export const PostCardCategorySelect: React.FC<CategorySelectProps> = ({
           role="button"
           tabIndex={0}
           onClick={handleMenuToggle}
-          className="flex w-full cursor-pointer justify-between rounded-full bg-bgLightSlate px-[24px] py-2.5 text-base/[1.5] font-semibold md:py-3 xl:w-[302px] xl:whitespace-nowrap xl:py-4 xl:text-lg/[1.22] xl:focus-within:bg-bgSlate xl:hover:bg-bgSlate"
+          className="flex w-full cursor-pointer justify-between rounded-full bg-bgLightSlate px-[24px] py-2.5 text-base/[1.5] font-semibold md:py-3 xl:whitespace-nowrap xl:py-4 xl:text-lg/[1.22] xl:focus-within:bg-bgSlate xl:hover:bg-bgSlate"
         >
           <p id="sort-title" className="overflow-hidden">
             {getSelectedLabel()}
@@ -85,7 +85,7 @@ export const PostCardCategorySelect: React.FC<CategorySelectProps> = ({
           id="options"
           role="listbox"
           aria-label="sort-label"
-          className="absolute z-20 hidden max-h-[50vh] w-full overflow-y-scroll rounded-3xl bg-textLight p-4 transition-all xl:group-focus-within:block xl:group-hover:block"
+          className="max-h-screen-1/2 absolute z-20 hidden w-full overflow-y-auto rounded-3xl bg-textLight p-4 transition-all xl:group-focus-within:block xl:group-hover:block"
         >
           {options.map((option, index) => (
             <li key={`${option.value}-${index}`}>
@@ -108,7 +108,7 @@ export const PostCardCategorySelect: React.FC<CategorySelectProps> = ({
             id="options"
             role="listbox"
             aria-label="sort-label"
-            className="absolute z-20 w-full rounded-3xl bg-textLight p-4 transition-all xl:hidden"
+            className="max-h-screen-1/2 absolute z-20 w-full overflow-y-auto rounded-3xl bg-textLight p-4 transition-all xl:hidden"
           >
             {options.map(option => (
               <li key={option.value}>

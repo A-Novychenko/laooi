@@ -53,6 +53,7 @@
     "selectDonorsByType": {
       "title": "Prodject donor"
     },
+    "donorTitle": "Donor",
     "postFBLinkLabel": "Read on Facebook",
     "readMoreLabel": "Read more",
     "mainNav": [

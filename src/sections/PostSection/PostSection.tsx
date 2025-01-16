@@ -20,11 +20,13 @@ export const PostSection: React.FC<{
   postBackLink: IPostBackLink;
   postFBLinkLabel?: string;
   pageName?: string;
+  donorTitle?: string;
 }> = ({
   postBackLink: { label: labelPostLink, link: blogLink },
   post,
   postFBLinkLabel,
   pageName,
+  donorTitle,
 }) => {
   const {
     type,
@@ -68,6 +70,7 @@ export const PostSection: React.FC<{
                     alt={image.alt}
                     width={632}
                     height={632}
+                    className="w-full"
                   />
                 )}
               </>
@@ -85,8 +88,16 @@ export const PostSection: React.FC<{
               </PostLabel>
             </div>
 
-            {donor && <p>{donor}</p>}
-
+            {donor && (
+              <div className="mb-2 flex flex-col gap-2 md:flex-row md:justify-between">
+                <p className="text-base/normal font-semibold xl:text-lg">
+                  {donorTitle}:
+                </p>
+                <p className="text-left text-base/normal md:w-[580px] xl:w-[504px] xl:text-lg">
+                  {donor}
+                </p>
+              </div>
+            )}
             {pageName !== 'projects' && <PostText body={body} />}
 
             {pageName === 'projects' && <ProjectContent body={body} />}
