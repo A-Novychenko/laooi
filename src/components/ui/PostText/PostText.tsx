@@ -12,11 +12,15 @@ export const PostText: React.FC<PostTextProps> = ({ body }) => {
         components={{
           block: {
             h2: ({ children }) => (
-              <h2 className="text-base/normal font-bold md:text-lg">
+              <h2 className="text-lg/normal font-bold md:text-xl">
                 {children}
               </h2>
             ),
-            h3: ({ children }) => <h3 className="">{children}</h3>,
+            h3: ({ children }) => (
+              <h3 className="text-base/normal font-semibold md:text-lg">
+                {children}
+              </h3>
+            ),
             normal: ({ children }) => (
               <p className="text-base/normal md:text-lg">{children}</p>
             ),
@@ -55,7 +59,7 @@ export const PostText: React.FC<PostTextProps> = ({ body }) => {
                 href={value.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="cursor-pointer text-base/normal font-bold text-textBlue hover:underline md:text-lg"
+                className="cursor-pointer text-base/normal font-bold text-textBlue hover:underline focus:underline md:text-lg"
               >
                 {children}
               </a>
