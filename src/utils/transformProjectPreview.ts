@@ -5,7 +5,7 @@ export const transformProjectPreview = (
   return {
     projectYear: project.projectYear,
     label: project.projectYear,
-    image: project.images[0]?.asset.url,
+    image: project.images[0]?.asset?.url,
     imageAlt: project.images[0]?.caption[lang],
     title: project.title[lang],
     date: project.publicationDate,
