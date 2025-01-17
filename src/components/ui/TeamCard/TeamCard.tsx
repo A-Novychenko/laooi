@@ -25,7 +25,7 @@ export const TeamCard: React.FC<TeamCardProps> = ({
         styles.card,
       )}
     >
-      <div className="grow">
+      <div className="mb-2 grow md:mb-0">
         <div className="relative mx-auto mb-2 flex size-[96px] md:size-[128px] xl:size-[160px]">
           <div className="size-full shrink-0 overflow-hidden rounded-full">
             <Image
@@ -52,12 +52,15 @@ export const TeamCard: React.FC<TeamCardProps> = ({
             <FacebookIcon className="size-[16px] text-textLight md:size-[20px] xl:size-[24px]" />
           </Link>
         </div>
+
         <p className="mb-1 text-center text-lg/normal font-bold tracking-[-0.36px] md:text-xl/normal md:tracking-[-0.4px] xl:text-2xl/normal xl:tracking-[-0.48px]">
           {name}
         </p>
+
         <p className="mb-2 text-center text-sm/normal font-semibold text-textMenuAccent xl:text-base/normal">
           {position}
         </p>
+
         <p className="line-clamp-[7] text-sm/normal font-semibold xl:line-clamp-6 xl:text-base/normal">
           {description}
         </p>
