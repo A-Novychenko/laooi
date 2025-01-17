@@ -45,9 +45,21 @@ const ProjectsPage = async ({
 
   const donorsFromSelect = await getDonorsFromProjects(lang);
 
+  const donorsFromSelectWithOther = [
+    {
+      label: selectDonorsByType.generalOptions.all.label,
+      value: selectDonorsByType.generalOptions.all.value,
+    },
+    ...donorsFromSelect,
+    {
+      label: selectDonorsByType.generalOptions.other.label,
+      value: selectDonorsByType.generalOptions.other.value,
+    },
+  ];
+
   const selectDonorsByName = {
     title: selectDonorsByType.title,
-    options: donorsFromSelect,
+    options: donorsFromSelectWithOther,
   };
 
   return (

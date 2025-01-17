@@ -90,6 +90,18 @@ export const partners = defineType({
     },
 
     {
+      name: 'isVisible',
+      title: 'Додати в секцію "Нас підтримують"',
+      type: 'boolean',
+      options: {
+        layout: 'radio', // Відображає як радіокнопки
+      },
+      description:
+        'Оберіть "Так", якщо потрібно щоб цей партнер показувався в секції "Нас підтримують"',
+      initialValue: false, // За замовчуванням "Ні"
+    },
+
+    {
       name: 'index',
       title: 'Індекс',
       type: 'number',

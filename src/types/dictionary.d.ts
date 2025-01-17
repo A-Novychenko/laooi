@@ -291,6 +291,10 @@ interface ISelectOptions {
 
 interface ISelectDonorsByType {
   title: string;
+  generalOptions: {
+    all: { label: string; value: string };
+    other: { label: string; value: string };
+  };
 }
 
 interface IContactsPage {

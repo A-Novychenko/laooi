@@ -310,6 +310,7 @@ interface IDonors {
       en: string;
     };
     id: { current: string };
+    isVisible: boolean;
   };
 }
 

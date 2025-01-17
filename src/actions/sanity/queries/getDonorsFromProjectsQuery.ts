@@ -4,7 +4,8 @@ export const getDonorsFromProjectsQuery = () => {
   donor->{
     _id,
     id,
-    name
+    name,
+    isVisible
   }
 } | order(name.uk asc) {
   donor

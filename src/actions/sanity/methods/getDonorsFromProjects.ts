@@ -14,11 +14,18 @@ export const getDonorsFromProjects = async (
   try {
     const donors = await fetchDonors();
 
+    const filteredByVisibleDonors = donors.filter(
+      ({ donor }) => donor.isVisible,
+    );
+
     const transformedDonors: ITransformedDonor[] = Array.from(
       new Map(
-        donors.map(({ donor }) => [
+        filteredByVisibleDonors.map(({ donor }) => [
           donor.id?.current, // Унікальний ключ
-          { value: donor.id?.current, label: donor?.name[lang] }, // Формат об'єкта
+          {
+            value: donor.id?.current,
+            label: donor?.name[lang],
+          }, // Формат об'єкта
         ]),
       ).values(),
     );

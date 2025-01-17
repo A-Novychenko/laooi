@@ -32,14 +32,14 @@ export const projects = defineType({
           const titleEn = title?.en || '';
           const titleUk = title?.uk || '';
 
-          if (titleEn.length > 100 || titleUk.length > 100) {
-            return 'Може містити до 70 символів';
+          if (titleEn.length > 200 || titleUk.length > 200) {
+            return 'Може містити до 200 символів';
           }
           if (titleEn.length < 2 || titleUk.length < 2) {
             return 'Повинно містити від 2 символів';
           }
           return true;
-        }).error('Заголовок має бути між 2 і 70 символами для кожної мови'),
+        }).error('Заголовок має бути між 2 і 200 символами для кожної мови'),
       ],
     },
 

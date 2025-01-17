@@ -6,14 +6,16 @@ export const getAllProjectsWithCountQuery = (
   donor?: string,
   sortDate: 'newest' | 'oldest' = 'newest',
 ) => {
-  const typeFilter = donor
-    ? `&& donor->id.current == ${JSON.stringify(donor)}`
-    : '';
+  const filterByid = `&& donor->id.current == ${JSON.stringify(donor)}`;
+  const filterByOther = `&& donor->isVisible == false`;
+  const selectFilter = donor === 'other' ? filterByOther : filterByid;
+  const typeFilter = donor ? selectFilter : '';
 
   const sortFilter =
     sortDate === 'oldest'
       ? `| order(publicationDate asc)`
       : `| order(publicationDate desc)`;
+
   const searchFilter = search
     ? `(title.${lang} match "${search}*" || body.${lang} match "${search}*")`
     : 'true';
@@ -29,7 +31,8 @@ export const getAllProjectsWithCountQuery = (
       publicationDate,
       slug,
       donor->{
-        name
+        name,
+        isVisible
         },
       images[] {
         caption,
