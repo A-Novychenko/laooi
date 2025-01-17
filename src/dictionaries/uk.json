@@ -51,7 +51,11 @@
       ]
     },
     "selectDonorsByType": {
-      "title": "Донор проєкту"
+      "title": "Донор проєкту",
+      "generalOptions": {
+        "all": { "label": "Всі проєкти", "value": "" },
+        "other": { "label": "Інші", "value": "other" }
+      }
     },
     "donorTitle": "Донор",
     "postFBLinkLabel": "Читати у Facebook",

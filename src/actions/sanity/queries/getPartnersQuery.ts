@@ -1,6 +1,6 @@
 export const getPartnersQuery = () => {
   return `
-  *[_type == "partners"] | order(index asc) {
+  *[_type == "partners" && isVisible == true] | order(index asc) {
     _id,
     name,
     img {

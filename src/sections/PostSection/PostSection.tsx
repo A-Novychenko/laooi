@@ -65,13 +65,15 @@ export const PostSection: React.FC<{
             ) : (
               <>
                 {image && (
-                  <Image
-                    src={image.src}
-                    alt={image.alt}
-                    width={632}
-                    height={632}
-                    className="h-auto w-full"
-                  />
+                  <div className="overflow-hidden rounded-3xl md:size-[688px] xl:size-[632px]">
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      width={688}
+                      height={688}
+                      className="size-full object-cover"
+                    />
+                  </div>
                 )}
               </>
             )}

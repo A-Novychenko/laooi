@@ -51,7 +51,11 @@
       ]
     },
     "selectDonorsByType": {
-      "title": "Prodject donor"
+      "title": "Project donor",
+      "generalOptions": {
+        "all": { "label": "All projects", "value": "" },
+        "other": { "label": "Other", "value": "other" }
+      }
     },
     "donorTitle": "Donor",
     "postFBLinkLabel": "Read on Facebook",
