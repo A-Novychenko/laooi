@@ -73,3 +73,30 @@ html {
 
   top: 100px !important;
 }
+
+div[data-expanded='true'] {
+  box-shadow: 0px 0px 40px 0px #0000001a;
+}
+
+div[data-expanded='true'] p {
+  -webkit-line-clamp: unset;
+  overflow: visible;
+}
+
+div[data-expanded='false'] p {
+  display: -webkit-box;
+  -webkit-line-clamp: 7;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@media screen and (min-width: 768px) {
+  div[data-expanded='true'] {
+    transform: scale(1.05);
+    position: absolute;
+    z-index: 10;
+    transition:
+      transform 0.3s ease,
+      z-index 0.3s ease;
+  }
+}

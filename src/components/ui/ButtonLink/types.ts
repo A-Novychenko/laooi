@@ -14,6 +14,8 @@ export type ButtonProps = {
   children: ReactNode;
   typeStyle?: 'primary' | 'secondary' | 'light' | 'transparent';
   disabled?: boolean;
+  teamCard?: boolean;
+  isExpanded?: boolean;
 
   icon?: boolean;
   className?: string;

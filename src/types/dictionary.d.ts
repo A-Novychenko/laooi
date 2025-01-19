@@ -8,6 +8,7 @@ interface IDictionary {
     tenderBackLink: IPostBackLink;
     projectBackLink: IPostBackLink;
     readMoreLabel: string;
+    teamClosedLabel: string;
     mainNav: IMainNav[];
     accessibilityMenu: IAccessibilityMenu;
     footerNav: IFooterNav;
