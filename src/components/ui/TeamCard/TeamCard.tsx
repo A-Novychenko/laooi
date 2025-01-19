@@ -15,6 +15,7 @@ export const TeamCard: React.FC<TeamCardProps> = ({
   teamMember,
   readMoreLabel,
   isExpanded = false,
+  teamClosedLabel,
 }) => {
   const { name, position, description, photo, alt, link, index } = teamMember;
 
@@ -71,6 +72,8 @@ export const TeamCard: React.FC<TeamCardProps> = ({
           className="mt-auto"
           cardId={index}
           type={'team'}
+          teamClosedLabel={teamClosedLabel}
+          teamCard={true}
         />
       </div>
     </li>

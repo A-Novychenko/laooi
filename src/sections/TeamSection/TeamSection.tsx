@@ -3,7 +3,7 @@ import { TeamCard } from '@/components/ui';
 import { TeamSectionProps } from './types';
 
 export const TeamSection: React.FC<TeamSectionProps> = ({ dict, team }) => {
-  const { readMoreLabel } = dict.common;
+  const { readMoreLabel, teamClosedLabel } = dict.common;
 
   return (
     <section className="section">
@@ -16,6 +16,7 @@ export const TeamSection: React.FC<TeamSectionProps> = ({ dict, team }) => {
                 key={idx}
                 teamMember={teamMember}
                 readMoreLabel={readMoreLabel}
+                teamClosedLabel={teamClosedLabel}
               />
             ))}
         </ul>

@@ -10,6 +10,8 @@ export const ReadMoreBtn: React.FC<ReadMoreBtnProps> = ({
   className,
   cardId,
   type,
+  teamClosedLabel,
+  teamCard = false,
 }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
@@ -31,8 +33,10 @@ export const ReadMoreBtn: React.FC<ReadMoreBtnProps> = ({
           type: 'button',
           action: type === 'team' ? handleClick : () => {},
         }}
+        teamCard={teamCard}
+        isExpanded={isExpanded}
       >
-        {isExpanded ? 'Close' : readMoreLabel}
+        {isExpanded ? teamClosedLabel : readMoreLabel}
       </ButtonLink>
     </div>
   );

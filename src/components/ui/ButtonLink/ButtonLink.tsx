@@ -14,6 +14,8 @@ export const ButtonLink: React.FC<ButtonProps> = ({
   settings,
   className,
   disabled = false,
+  teamCard = false,
+  isExpanded,
 }) => {
   const baseStyles =
     'flex items-center justify-center gap-2 rounded-[32px] px-8 py-[10px] md:py-[12px] xl:py-4 text-base/normal font-semibold transition-colors xl:text-lg/normal text-textLight pointer';
@@ -41,7 +43,15 @@ export const ButtonLink: React.FC<ButtonProps> = ({
         >
           {children}
 
-          {icon && <ArrowBtnIcon width={24} height={24} />}
+          {icon && (
+            <ArrowBtnIcon
+              width={24}
+              height={24}
+              className={cn(
+                `${teamCard && !isExpanded ? 'rotate-[135deg]' : ''} ${isExpanded ? 'rotate-[315deg]' : ''}`,
+              )}
+            />
+          )}
         </button>
       )}
 
