@@ -21,6 +21,8 @@ export const TeamSection: React.FC<TeamSectionProps> = ({ dict, team }) => {
             ))}
         </ul>
       </div>
+
+      <div data-team-backdrop></div>
     </section>
   );
 };

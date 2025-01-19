@@ -94,9 +94,21 @@ div[data-expanded='false'] p {
   div[data-expanded='true'] {
     transform: scale(1.05);
     position: absolute;
-    z-index: 10;
+    z-index: 200000000;
     transition:
       transform 0.3s ease,
       z-index 0.3s ease;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .team-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 100000000;
   }
 }

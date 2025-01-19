@@ -1,3 +1,5 @@
+'use server';
+
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -20,7 +22,7 @@ export const TeamCard: React.FC<TeamCardProps> = ({
   const { name, position, description, photo, alt, link, index } = teamMember;
 
   return (
-    <li className={cn('relative', 'flex flex-col self-stretch', styles.card)}>
+    <li className={cn('relative flex flex-col self-stretch', styles.card)}>
       <div
         className="rounded-[24px] bg-bgLightSlate p-[16px] xl:p-[24px]"
         data-expanded={isExpanded}
