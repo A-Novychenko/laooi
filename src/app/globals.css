@@ -73,3 +73,14 @@ html {
 
   top: 100px !important;
 }
+
+div[data-expanded='true'] {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  overflow: visible;
+  z-index: 10;
+  transition:
+    transform 0.3s ease,
+    z-index 0.3s ease;
+}
