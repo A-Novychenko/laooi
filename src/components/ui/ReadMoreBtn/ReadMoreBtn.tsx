@@ -1,7 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import { ButtonLink } from '../ButtonLink';
+
+import { ButtonLink } from '@/components/ui';
 
 import { ReadMoreBtnProps } from './types';
 
@@ -17,10 +18,21 @@ export const ReadMoreBtn: React.FC<ReadMoreBtnProps> = ({
 
   const handleClick = () => {
     const cardElement = document.querySelector(`[data-id="${cardId}"]`);
+
     if (cardElement) {
       const expanded = cardElement.getAttribute('data-expanded') === 'true';
       cardElement.setAttribute('data-expanded', expanded ? 'false' : 'true');
       setIsExpanded(!expanded);
+
+      const backdropElement = document.querySelector('[data-team-backdrop]');
+
+      if (backdropElement) {
+        if (!backdropElement.classList.contains('team-backdrop')) {
+          backdropElement.classList.add('team-backdrop');
+        } else {
+          backdropElement.classList.remove('team-backdrop');
+        }
+      }
     }
   };
 
