@@ -60,6 +60,7 @@ export const PostText: React.FC<PostTextProps> = ({ body }) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="cursor-pointer text-base/normal font-bold text-textBlue hover:underline focus:underline md:text-lg"
+                style={{ wordBreak: 'break-word' }}
               >
                 {children}
               </a>
