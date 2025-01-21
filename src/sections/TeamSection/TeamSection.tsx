@@ -1,4 +1,4 @@
-import { TeamCard } from '@/components/ui';
+import { Backdrop, TeamCard } from '@/components/ui';
 
 import { TeamSectionProps } from './types';
 
@@ -22,7 +22,7 @@ export const TeamSection: React.FC<TeamSectionProps> = ({ dict, team }) => {
         </ul>
       </div>
 
-      <div data-team-backdrop></div>
+      <Backdrop />
     </section>
   );
 };
