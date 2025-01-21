@@ -24,15 +24,14 @@ export const AboutTeamSection: React.FC<ISectionProps> = ({ dict, lang }) => {
               className="size-full object-cover"
             />
           </div>
-
           <div className="rounded-[16px] bg-bgLightSlate p-[24px] text-base/normal text-textPrimary md:rounded-[20px] md:p-[32px] xl:flex xl:flex-col xl:justify-between xl:rounded-[24px] xl:p-[40px] xl:text-lg/normal">
-            <p className="mb-6">
+            <p className="mb-6 xl:mb-0">
               <b>{quotedText.advisors}</b>
 
               {firstParagraph.after}
             </p>
 
-            <p className="mb-6">
+            <p className="mb-6 xl:mb-0">
               {secondParagraph.before}
 
               <b>{quotedText.question}</b>
@@ -40,7 +39,7 @@ export const AboutTeamSection: React.FC<ISectionProps> = ({ dict, lang }) => {
               {secondParagraph.after}
             </p>
 
-            <p className="mb-4 xl:mb-6">
+            <p className="mb-4 xl:mb-0">
               {thirdParagraph.before}
 
               <b>{quotedText.become}</b>

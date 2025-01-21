@@ -11,7 +11,7 @@ export const ProjectContent: React.FC<ProjectContentProps> = ({ body }) => {
             key={idx}
             className="flex flex-col gap-2 md:flex-row md:justify-between"
           >
-            <p className="text-base/normal font-semibold xl:text-lg">
+            <p className="break-words text-base/normal font-semibold md:w-[100px] xl:w-[120px] xl:text-lg">
               {title}:
             </p>
             <div className="md:w-[580px] xl:w-[504px]">
@@ -19,20 +19,35 @@ export const ProjectContent: React.FC<ProjectContentProps> = ({ body }) => {
                 value={text}
                 components={{
                   block: {
-                    h2: ({ children }) => <h2 className="">{children}</h2>,
-                    h3: ({ children }) => <h3 className="">{children}</h3>,
+                    h2: ({ children }) => (
+                      <h2 className="text-lg/normal font-bold md:text-xl">
+                        {children}
+                      </h2>
+                    ),
+                    h3: ({ children }) => (
+                      <h3 className="text-base/normal font-semibold md:text-lg">
+                        {children}
+                      </h3>
+                    ),
                     normal: ({ children }) => (
                       <p className="text-base/normal xl:text-lg">{children}</p>
+                    ),
+                    blockquote: ({ children }) => (
+                      <blockquote className="border-l-4 border-textActive bg-bgLightSlate pl-4 text-base/normal font-bold italic text-textMenuAccent md:text-lg">
+                        {children}
+                      </blockquote>
                     ),
                   },
                   list: {
                     bullet: ({ children }) => (
-                      <ul className="list-outside list-disc pl-8">
+                      <ul className="mb-4 list-disc pl-6 text-base/normal xl:text-lg/normal">
                         {children}
                       </ul>
                     ),
                     number: ({ children }) => (
-                      <ol className="list-decimal pl-8">{children}</ol>
+                      <ol className="mb-4 list-decimal pl-6 text-base/normal xl:text-lg/normal">
+                        {children}
+                      </ol>
                     ),
                   },
                   listItem: {
@@ -52,6 +67,17 @@ export const ProjectContent: React.FC<ProjectContentProps> = ({ body }) => {
                     ),
                     underline: ({ children }) => (
                       <span className="underline">{children}</span>
+                    ),
+                    link: ({ value, children }) => (
+                      <a
+                        href={value.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="cursor-pointer text-base/normal font-bold text-textBlue hover:underline focus:underline md:text-lg"
+                        style={{ wordBreak: 'break-word' }}
+                      >
+                        {children}
+                      </a>
                     ),
                   },
                 }}
