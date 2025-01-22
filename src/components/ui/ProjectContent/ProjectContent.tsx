@@ -1,5 +1,7 @@
 import { PortableText } from 'next-sanity';
 
+import ArrowIcon from '~/icons/arrowBtnIcon.svg';
+
 import { ProjectContentProps } from './types';
 
 export const ProjectContent: React.FC<ProjectContentProps> = ({ body }) => {
@@ -73,9 +75,10 @@ export const ProjectContent: React.FC<ProjectContentProps> = ({ body }) => {
                         href={value.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="cursor-pointer text-base/normal font-bold text-textBlue hover:underline focus:underline md:text-lg"
+                        className="flex cursor-pointer text-base/normal font-bold text-textBlue hover:underline focus:underline md:text-lg"
                         style={{ wordBreak: 'break-word' }}
                       >
+                        <ArrowIcon width={24} height={24} className="mr-2" />
                         {children}
                       </a>
                     ),
