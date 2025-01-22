@@ -53,8 +53,8 @@ export const FormField: React.FC<FormFieldProps> = ({
           'md:px-[20px] xl:px-[24px]',
         )}
         {...register(name as 'name' | 'email' | 'phone', {
-          ...validationOptions,
           required,
+          ...validationOptions,
           onChange: e => {
             if (type === 'tel') {
               e.target.value = e.target.value.replace(/[^0-9+\-() ]/g, '');
