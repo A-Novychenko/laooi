@@ -15,7 +15,7 @@ export const AboutTeamSection: React.FC<ISectionProps> = ({ dict, lang }) => {
         </Title>
 
         <div className="xl:flex xl:gap-[16px]">
-          <div className="mb-2 h-[288px] shrink-0 overflow-hidden rounded-[16px] md:mb-4 md:size-[688px] md:rounded-[20px] xl:mb-0 xl:h-[608px] xl:w-[632px] xl:rounded-[24px]">
+          <div className="mb-2 h-[288px] shrink-0 overflow-hidden rounded-[16px] md:mb-4 md:size-[688px] md:rounded-[20px] xl:sticky xl:top-0 xl:mb-0 xl:h-[608px] xl:w-[632px] xl:rounded-[24px]">
             <Image
               src={img}
               alt={alt}
