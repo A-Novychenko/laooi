@@ -4,6 +4,8 @@ import { getTeam } from '@/actions/sanity';
 
 import { getDictionary } from '@/utils/dictionaries';
 
+export const revalidate = 0;
+
 const TeamPage = async ({
   params: { lang },
 }: {

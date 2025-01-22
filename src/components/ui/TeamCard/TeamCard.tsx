@@ -22,9 +22,9 @@ export const TeamCard: React.FC<TeamCardProps> = ({
   const { name, position, description, photo, alt, link, index } = teamMember;
 
   return (
-    <li className={cn('relative flex flex-col self-stretch', styles.card)}>
+    <li className={cn('relative self-stretch', styles.card)}>
       <div
-        className="rounded-[24px] bg-bgLightSlate p-[16px] xl:p-[24px]"
+        className="flex size-full flex-col justify-between rounded-[24px] bg-bgLightSlate p-[16px] xl:p-[24px]"
         data-expanded={isExpanded}
         data-id={index}
       >
