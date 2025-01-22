@@ -83,6 +83,10 @@ div[data-expanded='true'] p {
   overflow: visible;
 }
 
+div[data-expanded='false'] {
+  transition: transform 0.3s ease;
+}
+
 div[data-expanded='false'] p {
   display: -webkit-box;
   -webkit-line-clamp: 7;
@@ -92,12 +96,13 @@ div[data-expanded='false'] p {
 
 @media screen and (min-width: 768px) {
   div[data-expanded='true'] {
-    transform: scale(1.05);
     position: absolute;
+    width: 100%;
+    height: auto;
     z-index: 200000000;
-    transition:
-      transform 0.3s ease,
-      z-index 0.3s ease;
+
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
   }
 }
 
