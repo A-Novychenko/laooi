@@ -117,3 +117,7 @@ div[data-expanded='false'] p {
     z-index: 100000000;
   }
 }
+
+.portable-text br {
+  display: none;
+}

@@ -32,7 +32,9 @@ export const ProjectContent: React.FC<ProjectContentProps> = ({ body }) => {
                       </h3>
                     ),
                     normal: ({ children }) => (
-                      <p className="text-base/normal xl:text-lg">{children}</p>
+                      <p className="portable-text text-base/normal xl:text-lg">
+                        {children}
+                      </p>
                     ),
                     blockquote: ({ children }) => (
                       <blockquote className="border-l-4 border-textActive bg-bgLightSlate pl-4 text-base/normal font-bold italic text-textMenuAccent md:text-lg">
@@ -78,7 +80,11 @@ export const ProjectContent: React.FC<ProjectContentProps> = ({ body }) => {
                         className="flex cursor-pointer text-base/normal font-bold text-textBlue hover:underline focus:underline md:text-lg"
                         style={{ wordBreak: 'break-word' }}
                       >
-                        <ArrowIcon width={24} height={24} className="mr-2" />
+                        <ArrowIcon
+                          width={24}
+                          height={24}
+                          className="mr-2 w-[18px] flex-shrink-0 items-center"
+                        />
                         {children}
                       </a>
                     ),
