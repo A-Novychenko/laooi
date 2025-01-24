@@ -16,7 +16,9 @@
   },
   "common": {
     "logoAlt": "Company logo",
-    "searchInput": { "placeholder": "Search" },
+    "searchInput": {
+      "placeholder": "Search"
+    },
     "postBackLink": {
       "label": "View all news and events",
       "link": "/en/blog"
@@ -31,30 +33,60 @@
     },
     "selectSortByDate": {
       "title": "Sort by date",
-      "options": { "new": "Newest", "old": "Oldest" }
+      "options": {
+        "new": "Newest",
+        "old": "Oldest"
+      }
     },
     "selectPostByType": {
       "title": "Content type",
       "options": [
-        { "value": "all", "label": "All" },
-        { "value": "news", "label": "News" },
-        { "value": "articles", "label": "Articles" },
-        { "value": "events", "label": "Events" }
+        {
+          "value": "all",
+          "label": "All"
+        },
+        {
+          "value": "news",
+          "label": "News"
+        },
+        {
+          "value": "articles",
+          "label": "Articles"
+        },
+        {
+          "value": "events",
+          "label": "Events"
+        }
       ]
     },
     "selectTendersByDate": {
       "title": "Tender status",
       "options": [
-        { "value": "all", "label": "All tenders" },
-        { "value": "active", "label": "Active" },
-        { "value": "disabled", "label": "Disabled" }
+        {
+          "value": "all",
+          "label": "All tenders"
+        },
+        {
+          "value": "active",
+          "label": "Active"
+        },
+        {
+          "value": "disabled",
+          "label": "Disabled"
+        }
       ]
     },
     "selectDonorsByType": {
       "title": "Project donor",
       "generalOptions": {
-        "all": { "label": "All projects", "value": "" },
-        "other": { "label": "Other", "value": "other" }
+        "all": {
+          "label": "All projects",
+          "value": ""
+        },
+        "other": {
+          "label": "Other",
+          "value": "other"
+        }
       }
     },
     "donorTitle": "Donor",
@@ -72,7 +104,7 @@
         "embedded": [
           {
             "name": "Strategy",
-            "href": "/in-progress"
+            "href": "/strategy"
           },
           {
             "name": "Team",
@@ -146,9 +178,18 @@
       "footerAbout": {
         "title": "About us",
         "embedded": [
-          { "name": "Strategy", "href": "/in-progress" },
-          { "name": "Team", "href": "/team" },
-          { "name": "Projects", "href": "/projects" },
+          {
+            "name": "Strategy",
+            "href": "/strategy"
+          },
+          {
+            "name": "Team",
+            "href": "/team"
+          },
+          {
+            "name": "Projects",
+            "href": "/projects"
+          },
           {
             "name": "Research",
             "href": "/research"
@@ -158,18 +199,39 @@
       "footerActivities": {
         "title": "Activities",
         "embedded": [
-          { "name": "Main areas", "href": "/in-progress" },
-          { "name": "Advisors", "href": "/advisors" },
-          { "name": "Media about us", "href": "/media" },
-          { "name": "Documents", "href": "/documents" }
+          {
+            "name": "Main areas",
+            "href": "/in-progress"
+          },
+          {
+            "name": "Advisors",
+            "href": "/advisors"
+          },
+          {
+            "name": "Media about us",
+            "href": "/media"
+          },
+          {
+            "name": "Documents",
+            "href": "/documents"
+          }
         ]
       },
       "footerOther": {
         "title": "Other",
         "embedded": [
-          { "name": "News", "href": "/blog" },
-          { "name": "Tenders", "href": "/tenders" },
-          { "name": "Contacts", "href": "/contacts" }
+          {
+            "name": "News",
+            "href": "/blog"
+          },
+          {
+            "name": "Tenders",
+            "href": "/tenders"
+          },
+          {
+            "name": "Contacts",
+            "href": "/contacts"
+          }
         ]
       }
     },
@@ -386,7 +448,7 @@
     },
     "link": {
       "label": "Learn more",
-      "href": "/in-progress"
+      "href": "/strategy"
     }
   },
   "activitiesSection": {
@@ -395,7 +457,7 @@
     "link": {
       "label": "Key directions",
       "settings": {
-        "href": "/in-progress",
+        "href": "/main-areas",
         "externalLink": false
       }
     },
@@ -422,9 +484,9 @@
     "title": "Luhansk Association of Organizations of Persons with Disabilities",
     "descr": "We’re doing everything to show that even in the most challenging times, together we can achieve the incredible",
     "link": {
-      "label": "Learn more",
+      "label": "Contact us",
       "settings": {
-        "href": "/in-progress",
+        "href": "/contacts",
         "externalLink": false
       }
     },
@@ -538,15 +600,33 @@
   "targetSection": {
     "title": "Our target groups",
     "targetGroups": [
-      { "text": "Persons with disabilities" },
-      { "text": "Families and caregivers of persons with disabilities" },
-      { "text": "Civil and non-governmental organizations" },
-      { "text": "State and local authorities" },
-      { "text": "Educational institutions" },
-      { "text": "Employers" },
-      { "text": "The general public" },
-      { "text": "Media" },
-      { "text": "International organizations and donors" }
+      {
+        "text": "Persons with disabilities"
+      },
+      {
+        "text": "Families and caregivers of persons with disabilities"
+      },
+      {
+        "text": "Civil and non-governmental organizations"
+      },
+      {
+        "text": "State and local authorities"
+      },
+      {
+        "text": "Educational institutions"
+      },
+      {
+        "text": "Employers"
+      },
+      {
+        "text": "The general public"
+      },
+      {
+        "text": "Media"
+      },
+      {
+        "text": "International organizations and donors"
+      }
     ],
     "photos": [
       {
@@ -613,13 +693,31 @@
   },
   "documentsSection": {
     "mainTitle": "Documents and reports of the LAOOI organization",
-    "fileLinks": { "openFileLabel": "Open", "downloadFileLabel": "Download" },
+    "fileLinks": {
+      "openFileLabel": "Open",
+      "downloadFileLabel": "Download"
+    },
     "categories": [
-      { "title": "Founding documents", "category": "constituent" },
-      { "title": "Internal documents and policies", "category": "internal" },
-      { "title": "Financial reports", "category": "financial" },
-      { "title": "Reports on income usage", "category": "reports" },
-      { "title": "Other documents", "category": "other" }
+      {
+        "title": "Founding documents",
+        "category": "constituent"
+      },
+      {
+        "title": "Internal documents and policies",
+        "category": "internal"
+      },
+      {
+        "title": "Financial reports",
+        "category": "financial"
+      },
+      {
+        "title": "Reports on income usage",
+        "category": "reports"
+      },
+      {
+        "title": "Other documents",
+        "category": "other"
+      }
     ],
     "errorData": {
       "description": "Unfortunately, there are no documents available for viewing at this time. You can come back later or view the latest information in other sections of our website.",
@@ -635,7 +733,10 @@
   "researchSection": {
     "mainTitle": "Research of the LAOOI organization",
     "categoryTitle": "Research",
-    "fileLinks": { "openFileLabel": "Open", "downloadFileLabel": "Download" },
+    "fileLinks": {
+      "openFileLabel": "Open",
+      "downloadFileLabel": "Download"
+    },
     "errorData": {
       "description": "Unfortunately, there are no documents available for viewing at this time. You can come back later or view the latest information in other sections of our website.",
       "link": {
