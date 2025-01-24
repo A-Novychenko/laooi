@@ -83,7 +83,7 @@ export const ProjectContent: React.FC<ProjectContentProps> = ({ body }) => {
                         <ArrowIcon
                           width={24}
                           height={24}
-                          className="mr-2 w-[18px] flex-shrink-0 items-center"
+                          className="mr-2 w-[18px] shrink-0 items-center"
                         />
                         {children}
                       </a>

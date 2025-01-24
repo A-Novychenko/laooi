@@ -7,6 +7,8 @@ import {
 } from '@/actions/sanity';
 import { getDictionary } from '@/utils/dictionaries';
 
+export const revalidate = 0;
+
 export async function generateStaticParams() {
   const { tenders } = await getAllTenders();
 

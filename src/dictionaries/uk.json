@@ -16,7 +16,9 @@
   },
   "common": {
     "logoAlt": "Логотип компанії",
-    "searchInput": { "placeholder": "Пошук" },
+    "searchInput": {
+      "placeholder": "Пошук"
+    },
     "postBackLink": {
       "label": "Перейти до всіх новин і подій",
       "link": "/uk/blog"
@@ -31,30 +33,60 @@
     },
     "selectSortByDate": {
       "title": "Сортувати за датою",
-      "options": { "new": "Спочатку нові", "old": "Спочатку старі" }
+      "options": {
+        "new": "Спочатку нові",
+        "old": "Спочатку старі"
+      }
     },
     "selectPostByType": {
       "title": "Тип контенту",
       "options": [
-        { "value": "all", "label": "Усі типи" },
-        { "value": "news", "label": "Новини" },
-        { "value": "articles", "label": "Статті" },
-        { "value": "events", "label": "Події" }
+        {
+          "value": "all",
+          "label": "Усі типи"
+        },
+        {
+          "value": "news",
+          "label": "Новини"
+        },
+        {
+          "value": "articles",
+          "label": "Статті"
+        },
+        {
+          "value": "events",
+          "label": "Події"
+        }
       ]
     },
     "selectTendersByDate": {
       "title": "Статус тендерів",
       "options": [
-        { "value": "all", "label": "Усі тендери" },
-        { "value": "active", "label": "Активні" },
-        { "value": "disabled", "label": "Завершені" }
+        {
+          "value": "all",
+          "label": "Усі тендери"
+        },
+        {
+          "value": "active",
+          "label": "Активні"
+        },
+        {
+          "value": "disabled",
+          "label": "Завершені"
+        }
       ]
     },
     "selectDonorsByType": {
       "title": "Донор проєкту",
       "generalOptions": {
-        "all": { "label": "Всі проєкти", "value": "" },
-        "other": { "label": "Інші", "value": "other" }
+        "all": {
+          "label": "Всі проєкти",
+          "value": ""
+        },
+        "other": {
+          "label": "Інші",
+          "value": "other"
+        }
       }
     },
     "donorTitle": "Донор",
@@ -72,7 +104,7 @@
         "embedded": [
           {
             "name": "Стратегія",
-            "href": "/in-progress"
+            "href": "/strategy"
           },
           {
             "name": "Команда",
@@ -146,9 +178,18 @@
       "footerAbout": {
         "title": "Про нас",
         "embedded": [
-          { "name": "Стратегія", "href": "/in-progress" },
-          { "name": "Команда", "href": "/team" },
-          { "name": "Проєкти", "href": "/projects" },
+          {
+            "name": "Стратегія",
+            "href": "/strategy"
+          },
+          {
+            "name": "Команда",
+            "href": "/team"
+          },
+          {
+            "name": "Проєкти",
+            "href": "/projects"
+          },
           {
             "name": "Дослідження",
             "href": "/research"
@@ -158,18 +199,39 @@
       "footerActivities": {
         "title": "Діяльність",
         "embedded": [
-          { "name": "Основні напрямки", "href": "/in-progress" },
-          { "name": "Радники", "href": "/advisors" },
-          { "name": "Медіа про нас", "href": "/media" },
-          { "name": "Документи", "href": "/documents" }
+          {
+            "name": "Основні напрямки",
+            "href": "/in-progress"
+          },
+          {
+            "name": "Радники",
+            "href": "/advisors"
+          },
+          {
+            "name": "Медіа про нас",
+            "href": "/media"
+          },
+          {
+            "name": "Документи",
+            "href": "/documents"
+          }
         ]
       },
       "footerOther": {
         "title": "Інше",
         "embedded": [
-          { "name": "Новини", "href": "/blog" },
-          { "name": "Тендери", "href": "/tenders" },
-          { "name": "Контакти", "href": "/contacts" }
+          {
+            "name": "Новини",
+            "href": "/blog"
+          },
+          {
+            "name": "Тендери",
+            "href": "/tenders"
+          },
+          {
+            "name": "Контакти",
+            "href": "/contacts"
+          }
         ]
       }
     },
@@ -386,7 +448,7 @@
     },
     "link": {
       "label": "Дізнатися більше",
-      "href": "/in-progress"
+      "href": "/strategy"
     }
   },
   "activitiesSection": {
@@ -395,7 +457,7 @@
     "link": {
       "label": "Основні напрямки",
       "settings": {
-        "href": "/in-progress",
+        "href": "/main-areas",
         "externalLink": false
       }
     },
@@ -422,9 +484,9 @@
     "title": "Луганська Асоцiацiя органiзацiй осіб з інвалiднiстю",
     "descr": "Ми робимо все, щоб показати, що навіть у найскладніші часи, разом ми можемо досягти неймовірного",
     "link": {
-      "label": "Дізнатися більше",
+      "label": "Звʼязатись з нами",
       "settings": {
-        "href": "/in-progress",
+        "href": "/contacts",
         "externalLink": false
       }
     },
@@ -538,15 +600,33 @@
   "targetSection": {
     "title": "Наші цільові групи",
     "targetGroups": [
-      { "text": "Особи з інвалідністю" },
-      { "text": "Родини та опікуни осіб з інвалідністю" },
-      { "text": "Громадські та неурядові організації" },
-      { "text": "Державні та місцеві органи влади" },
-      { "text": "Освітні установи" },
-      { "text": "Роботодавці" },
-      { "text": "Широка громадськість" },
-      { "text": "Медіа" },
-      { "text": "Міжнародні організації та донори" }
+      {
+        "text": "Особи з інвалідністю"
+      },
+      {
+        "text": "Родини та опікуни осіб з інвалідністю"
+      },
+      {
+        "text": "Громадські та неурядові організації"
+      },
+      {
+        "text": "Державні та місцеві органи влади"
+      },
+      {
+        "text": "Освітні установи"
+      },
+      {
+        "text": "Роботодавці"
+      },
+      {
+        "text": "Широка громадськість"
+      },
+      {
+        "text": "Медіа"
+      },
+      {
+        "text": "Міжнародні організації та донори"
+      }
     ],
     "photos": [
       {
@@ -618,11 +698,26 @@
       "downloadFileLabel": "Завантажити"
     },
     "categories": [
-      { "title": "Установчі документи", "category": "constituent" },
-      { "title": "Внутрішні документи та політики", "category": "internal" },
-      { "title": "Фінансові звіти", "category": "financial" },
-      { "title": "Звіти про використання доходів", "category": "reports" },
-      { "title": "Інші документи", "category": "other" }
+      {
+        "title": "Установчі документи",
+        "category": "constituent"
+      },
+      {
+        "title": "Внутрішні документи та політики",
+        "category": "internal"
+      },
+      {
+        "title": "Фінансові звіти",
+        "category": "financial"
+      },
+      {
+        "title": "Звіти про використання доходів",
+        "category": "reports"
+      },
+      {
+        "title": "Інші документи",
+        "category": "other"
+      }
     ],
     "errorData": {
       "description": "На жаль, на даний момент немає документів, доступних для перегляду. Ви можете повернутися пізніше або переглянути останню інформацію в інших розділах нашого веб-сайту.",
