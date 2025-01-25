@@ -3,6 +3,8 @@ import { DocumentsSection, PlaceholderSection } from '@/sections';
 import { getDocuments } from '@/actions/sanity';
 import { getDictionary } from '@/utils/dictionaries';
 
+export const revalidate = 0;
+
 const DocumentsPage = async ({
   params: { lang },
 }: {
