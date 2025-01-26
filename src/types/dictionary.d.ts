@@ -45,6 +45,9 @@ interface IDictionary {
     advisorsSection: IAdvisorsSection;
   };
   aboutTeamSection: IAboutTeamSection;
+  strategyAboutSection: IStrategyAboutSection;
+  strategySection: IStrategySection;
+  strategyValueSection: IStrategyValueSection;
 }
 
 interface IPostBackLink {
@@ -396,4 +399,30 @@ interface IAboutTeamSection {
     btnLabel: string;
     settings: { href: string; externalLink: boolean };
   };
+}
+
+interface IStrategyAboutSection {
+  title: string;
+  img: string;
+  alt: string;
+  description: IParagraph[];
+}
+
+type IParagraph = {
+  text: string;
+};
+
+interface IStrategySection {
+  title: string;
+  strategy: IStrategyDescription[];
+}
+
+type IStrategyDescription = {
+  title: string;
+  description: string;
+};
+
+interface IStrategyValueSection {
+  title: string;
+  values: IStrategyDescription[];
 }
