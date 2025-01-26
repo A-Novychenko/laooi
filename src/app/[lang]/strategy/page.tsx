@@ -1,3 +1,9 @@
+import {
+  StrategyAboutSection,
+  StrategySection,
+  StrategyValueSection,
+} from '@/sections';
+
 import { getDictionary } from '@/utils/dictionaries';
 
 const StrategyPage = async ({
@@ -9,7 +15,11 @@ const StrategyPage = async ({
 
   return (
     <>
-      <p className="hidden">{dict.toString()}</p>
+      <StrategyAboutSection dict={dict} />
+
+      <StrategySection dict={dict} />
+
+      <StrategyValueSection dict={dict} />
     </>
   );
 };

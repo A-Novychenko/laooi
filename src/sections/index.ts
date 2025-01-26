@@ -19,3 +19,6 @@ export * from './AdvisorsSection';
 export * from './PrivacyPolicySection';
 export * from './AboutTeamSection';
 export * from './TeamSection';
+export * from './StrategyAboutSection';
+export * from './StrategySection';
+export * from './StrategyValueSection';

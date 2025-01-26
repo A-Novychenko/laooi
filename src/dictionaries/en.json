@@ -814,5 +814,100 @@
         "externalLink": false
       }
     }
+  },
+  "strategyAboutSection": {
+    "title": "About organization",
+    "img": "/images/strategy-team-img.jpg",
+    "alt": "photos of organization members",
+    "description": [
+      {
+        "text": "On May 25, 2018, the Public Union 'Luhansk Association of Organizations of Persons with Disabilities' (LAOOI) was established, striving to improve the lives of people with disabilities in the region. This was a day when hope and determination united to create a system of mutual support and ensure equal opportunities for all who need help."
+      },
+      {
+        "text": "From the very beginning, our organization aimed for a significant goal: improving the quality of life and protecting the rights of people with disabilities, promoting social inclusion, and fostering awareness of the value of a barrier-free environment."
+      },
+      {
+        "text": "Over the years, we have become a leading civic institution in eastern Ukraine, proving that together, we can change the world."
+      },
+      {
+        "text": "Each of our projects was implemented with great enthusiasm to make life better for those around us. We provided people with disabilities with assistive rehabilitation devices under the 'Care' program, conducted video experiments assessing the accessibility of social facilities, taught computer literacy to seniors and people with disabilities, and operated an inclusive network of community advisors in Luhansk and Donetsk regions. We organized a Volunteer Support Center during the COVID-19 pandemic and ensured the accessibility of transportation and infrastructure."
+      },
+      {
+        "text": "The full-scale war changed our lives and plans. The temporary occupation of Luhansk forced us to leave our homes—most of us for the second time. In 2014, we had to leave Luhansk city, and in 2022, Sievierodonetsk. Yet, we did not give up. We proved resilient enough to face new challenges. Under martial law, our activities focused on crisis evacuation, humanitarian aid, setting up temporary shelters, and providing psychosocial support. We supported rehabilitation centers, shared best practices, and worked on transforming communities in crisis."
+      },
+      {
+        "text": "Our knowledge and experience became even more crucial. As before, we represent the interests of persons with disabilities before governmental bodies, monitor accessibility standards in reconstruction projects, implement innovative technologies, and promote the GESI approach (Gender Equality and Social Inclusion)."
+      },
+      {
+        "text": "We do all this to show that even in the most challenging times, together we can achieve incredible things. Our story is one of resilience, unwavering faith in a better future, and the belief that each of us can make this world more just and accessible for all. This is the story of the Public Union 'Luhansk Association of Organizations of Persons with Disabilities'—an organization that, even in the darkest times, does not lose the light of hope."
+      },
+      {
+        "text": "In May–June 2024, a new cycle of strategic planning took place, resulting in the development of a strategy for the 2024–2025 period."
+      },
+      {
+        "text": "The new strategy considers modern societal trends characterized by people’s struggle to survive amidst simultaneous changes in various spheres and aspects, along with the lack of psychological support."
+      },
+      {
+        "text": "The strategy for the period until 2026 was developed and adopted in strict adherence to the principles of inclusivity, transparency, and accountability."
+      }
+    ]
+  },
+  "strategySection": {
+    "title": "Strategy",
+    "strategy": [
+      {
+        "title": "Mission",
+        "description": "To unite hearts and efforts to create a society of equal opportunities, where every person has the right to a dignified life, support, and development. Even in the most challenging times, we strive to build a world defined by hope, inclusion, and accessibility"
+      },
+      {
+        "title": "Vision",
+        "description": "We aim to create a society where every individual, regardless of their abilities, has access to all aspects of life, feels valued, and is a full-fledged member of the community. A society where inclusion, respect, and support form the foundation, and everyone has the opportunity to realize their potential and live with dignity, free from barriers and discrimination"
+      }
+    ]
+  },
+  "strategyValueSection": {
+    "title": "Values",
+    "values": [
+      {
+        "title": "INCLUSION",
+        "description": "Creating an environment where everyone has equal opportunities and access to all spheres of life"
+      },
+      {
+        "title": "RESPECT",
+        "description": "Recognizing the dignity and value of every person, regardless of their abilities"
+      },
+      {
+        "title": "SOLIDARITY",
+        "description": "Supporting and uniting efforts to achieve common goals"
+      },
+      {
+        "title": "TRANSPARENCY",
+        "description": "Openness and honesty in all actions and decisions"
+      },
+      {
+        "title": "RESPONSIBILITY",
+        "description": "Awareness and acceptance of responsibilities toward the community and society"
+      },
+      {
+        "title": "INNOVATION",
+        "description": "Implementing advanced technologies and approaches to improve the lives of people with disabilities"
+      },
+      {
+        "title": "RESILIENCE",
+        "description": "The ability to adapt and act effectively even in challenging conditions"
+      },
+      {
+        "title": "ADVOCACY",
+        "description": "Defending the rights and interests of people with disabilities at all levels"
+      },
+      {
+        "title": "HUMANITY",
+        "description": "Demonstrating care, compassion, and support in relationships with others"
+      },
+      {
+        "title": "DEVELOPMENT",
+        "description": "Continuous improvement and learning to achieve the best results"
+      }
+    ]
   }
 }
