@@ -867,6 +867,10 @@
   },
   "strategyValueSection": {
     "title": "Values",
+    "templateValue": {
+      "title": "Company logo",
+      "description": "Decorative element with company logo"
+    },
     "values": [
       {
         "title": "INCLUSION",

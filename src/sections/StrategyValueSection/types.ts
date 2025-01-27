@@ -3,8 +3,8 @@ export type StrategyValueSectionProps = {
 };
 
 export type ValueItem = {
-  title?: string;
-  description?: string;
+  title: string;
+  description: string;
   isLogo: boolean;
-  logo?: string;
+  logo: string;
 };

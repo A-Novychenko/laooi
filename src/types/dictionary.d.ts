@@ -424,5 +424,9 @@ type IStrategyDescription = {
 
 interface IStrategyValueSection {
   title: string;
+  templateValue: {
+    title: string;
+    description: string;
+  };
   values: IStrategyDescription[];
 }
