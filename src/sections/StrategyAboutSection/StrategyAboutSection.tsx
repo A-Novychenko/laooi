@@ -17,7 +17,7 @@ export const StrategyAboutSection: React.FC<StrategyAboutSectionProps> = ({
         </Title>
 
         <div className="flex flex-col gap-2 md:gap-4 xl:flex-row">
-          <div className="shrink-0 overflow-hidden rounded-2xl md:max-h-[688px] xl:sticky xl:top-[7.5rem] xl:size-auto xl:max-h-min">
+          <div className="shrink-0 overflow-hidden rounded-2xl md:max-h-[688px] xl:sticky xl:top-[7.5rem] xl:h-auto xl:max-h-min xl:w-[632px]">
             <Image
               src={img}
               alt={alt}
