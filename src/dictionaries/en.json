@@ -126,7 +126,7 @@
         "embedded": [
           {
             "name": "Main areas",
-            "href": "/in-progress"
+            "href": "/main-areas"
           },
           {
             "name": "Advisors",
@@ -593,7 +593,7 @@
   },
   "socialSection": {
     "title": "We are on social media",
-    "descr": "We actively share news about our activities, stories of people we have helped, and information about important initiatives, projects, and events. Join us on social media to learn about new projects, follow event announcements, and join the change. We strive to create an open and friendly community that supports the rights of people with disabilities and promotes their integration.",
+    "descr": "We actively share news about our activities, stories of people we have helped, and information about important initiatives, projects, and events. Join us on social media to learn about new projects, follow event announcements, and join the change. We strive to create an open and friendly community that supports the rights of people with disabilities and promotes their integration",
     "videoUrl": "https://www.youtube.com/watch?v=Gk4l7UIyz8c",
     "poster": "/images/poster.jpg"
   },
@@ -913,5 +913,16 @@
         "description": "Continuous improvement and learning to achieve the best results"
       }
     ]
+  },
+  "mainAreasHeroSection": {
+    "title": "Key focus areas",
+    "image": {
+      "src": "/images/team-areas.jpg",
+      "alt": "team photo"
+    },
+    "description": {
+      "after": "Our Strategic Goal",
+      "before": "We aim to improve the quality of life for vulnerable population groups by employing a systematic approach to providing humanitarian aid; developing a network of inclusive community advisors; optimizing the social services system; actively participating in the planning and implementation of post-war reconstruction; and promoting inclusive veteran policies. We will work to ensure accessibility and equality so that every individual can realize their potential and feel like a full-fledged member of society, free from barriers and discrimination"
+    }
   }
 }

@@ -48,6 +48,7 @@ interface IDictionary {
   strategyAboutSection: IStrategyAboutSection;
   strategySection: IStrategySection;
   strategyValueSection: IStrategyValueSection;
+  mainAreasHeroSection: IMainAreasHeroSection;
 }
 
 interface IPostBackLink {
@@ -429,4 +430,10 @@ interface IStrategyValueSection {
     description: string;
   };
   values: IStrategyDescription[];
+}
+
+interface IMainAreasHeroSection {
+  title: string;
+  image: { src: string; alt: string };
+  description: { after: string; before: string };
 }
