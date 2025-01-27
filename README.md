@@ -194,6 +194,8 @@ component.
 | `lang`          | `undefined` | **Required**. The language code for the content, used for localization in the `PostCard`. |
 | `readMoreLabel` | `undefined` | **Required**. A string label for the "Read More" button displayed in each `PostCard`.     |
 | `notFoundDescr` | `undefined` | **Required**. A string description to display when no posts are available in the gallery. |
+| `pageName`      | `undefined` | **Required**. The name of the page, passed to the `PostCard` for contextual rendering.    |
+| `labelTitle`    | `undefined` | An optional string displayed as a title or label in the `PostCard`.                       |
 
 - #### ContactsForm
 
@@ -237,6 +239,19 @@ Each item in the `links` array should have the following structure:
 | `label`         | String | The label displayed for the social link (e.g., "Facebook"). |
 | `settings.href` | String | The URL for the social link.                                |
 
+- #### DocumentsCategoryList
+
+The `DocumentsCategoryList` component is designed to display a list of documents
+categorized under a specific title. Each document is displayed using the
+`DocumentCard` component. If no documents are provided, the component does not
+render anything.
+
+| Prop            | Default     | Description                                                                                |
+| --------------- | ----------- | ------------------------------------------------------------------------------------------ |
+| `categoryTitle` | `undefined` | **Required**. The title of the category displayed above the list of documents.             |
+| `documents`     | `undefined` | **Required**. An array of document objects to be displayed in the list.                    |
+| `fileLinks`     | `undefined` | **Required**. An object containing file link data passed to each `DocumentCard` component. |
+
 - #### FooterBasement
 
 A component that displays the footer's bottom section with customizable policy
@@ -272,11 +287,15 @@ A component that renders the main navigation of a site with embedded links
 
 - #### MediaList
 
-A component that renders a gallery of media resource link cards
+The `MediaList` component is designed to display a list of media items in either
+a "gallery" or "main" layout. Each media item is rendered using the `MediaCard`
+component. If no items are available, a fallback message is displayed.
 
-| Prop    | Default     | Description                                                                                                                                                     |
-| ------- | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `items` | `undefined` | required, `Array<{ img: string; cardLink: {href: string; labelCardLink: string;} }>` - an array of objects containing `img` and `cardLink` for each media item. |
+| Prop            | Default     | Description                                                                    |
+| --------------- | ----------- | ------------------------------------------------------------------------------ |
+| `items`         | `undefined` | **Required**. An array of media items to be displayed.                         |
+| `type`          | `'gallery'` | The layout type of the media list. Options: `'gallery'` (default) or `'main'`. |
+| `notFoundDescr` | `undefined` | An optional string description displayed when no items are available.          |
 
 - #### MobileMenu
 
@@ -311,13 +330,14 @@ Wrapper component for the slider in the target section
 
 - #### PostSliderWrap
 
-The `PostSliderWrap` component wraps the `Slider` component to display a
-carousel of blog post images. It uses the `PostImageSlide` component to render
-individual slides, allowing for responsive and reusable slider functionality.
+The `PostSliderWrap` component is a wrapper for a slider component designed to
+display a collection of post-related images. It utilizes the `Slider` component
+and renders each image using the `PostImageSlide` component.
 
-| Prop   | Default     | Description                                                                                    |
-| ------ | ----------- | ---------------------------------------------------------------------------------------------- |
-| `data` | `undefined` | Required. An array of slide data objects containing the necessary details for each post slide. |
+| Prop        | Default     | Description                                                                    |
+| ----------- | ----------- | ------------------------------------------------------------------------------ |
+| `data`      | `undefined` | **Required**. An array of image objects containing `src` (URL) and `alt` text. |
+| `className` | `undefined` | An optional CSS class string for additional customization of the component.    |
 
 - #### DocumentsCategoryList
 
@@ -371,19 +391,56 @@ visually appealing and responsive for use in directories or team listings.
 | `city`  | String | The city where the advisor is located. |
 | `phone` | String | The advisor's phone number.            |
 
-- #### ButtonLink
+- #### MCounter
 
-A button component styled as a button but capable of rendering either as a
-button or a link, depending on the settings.
+The `MCounter` component is an animated counter that smoothly transitions
+between numerical values when it enters the viewport. It uses the
+`framer-motion` library for animations.
 
-| Prop        | Default     | Description                                                                                                                                               |
-| ----------- | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `children`  | `undefined` | required, Built-in ReactNode components, an button content                                                                                                |
-| `typeStyle` | `primary`   | optional, can take the value `primary` `secondary` `light` `transparent`, changes the design of the button                                                |
-| `icon`      | `true`      | optional, `boolean`, display arrow icon                                                                                                                   |
-| `type`      | `undefined` | required, `link` or `button`, Specifies which tag to render                                                                                               |
-| `settings`  | `undefined` | required, `Object`, Settings for link `{href: required string, external: required string}` or button `{action: required function}` depending on prop type |
-| `className` | `undefined` | optional, `string`, adds custom css class to the Button component.                                                                                        |
+| Prop        | Default | Description                                                                               |
+| ----------- | ------- | ----------------------------------------------------------------------------------------- |
+| `value`     | `0`     | **Required**. The target numerical value for the counter.                                 |
+| `direction` | `'up'`  | Determines the animation direction: `'up'` for counting up or `'down'` for counting down. |
+| `className` | `null`  | An optional CSS class string for styling the counter.                                     |
+
+- #### MWrap
+
+The `MWrap` component is a wrapper that animates its children into view using
+`framer-motion`. It provides a smooth transition from an off-screen position to
+their final position on the page.
+
+| Prop       | Default | Description                                                  |
+| ---------- | ------- | ------------------------------------------------------------ |
+| `children` | `null`  | **Required**. React nodes to be rendered inside the wrapper. |
+
+- #### ButtonLink Component
+
+The `ButtonLink` component is a versatile button and link component designed for
+consistency and reusability in UI. It supports multiple styles, configurations,
+and functionality while maintaining a clean API.
+
+| Name         | Type          | Default         | Description                                                              |
+| ------------ | ------------- | --------------- | ------------------------------------------------------------------------ | --------------------------------------------------------------------- | ----------- | ---------------------------------------------- |
+| `children`   | `ReactNode`   | Required        | Content inside the button or link, such as text or icons.                |
+| `typeStyle`  | `'primary'    | 'secondary'     | 'light'                                                                  | 'transparent'`                                                        | `'primary'` | Determines the style variant of the component. |
+| `type`       | `'button'     | 'link'`         | Required                                                                 | Specifies if the component should render as a `<button>` or `<Link>`. |
+| `settings`   | `LinkSettings | ButtonSettings` | Required                                                                 | Configuration for the action or navigation (depends on `type`).       |
+| `disabled`   | `boolean`     | `false`         | Disables the button (only applicable if `type` is `'button'`).           |
+| `icon`       | `boolean`     | `true`          | Toggles the display of the arrow icon.                                   |
+| `teamCard`   | `boolean`     | `false`         | Modifies the icon rotation, used in special contexts (e.g., team cards). |
+| `isExpanded` | `boolean`     | `false`         | Adjusts the icon rotation to indicate expanded or collapsed states.      |
+| `className`  | `string`      | `''`            | Additional custom classes for styling the component.                     |
+
+# Styles Variants
+
+The `typeStyle` prop controls the visual style of the component:
+
+| Variant       | Description                                                              |
+| ------------- | ------------------------------------------------------------------------ |
+| `primary`     | Dark accent background with hover/focus states for primary actions.      |
+| `secondary`   | Lighter accent background with hover/focus states for secondary actions. |
+| `light`       | Light text on a slate background for less prominent actions.             |
+| `transparent` | Transparent button with text emphasis for minimal UI interactions.       |
 
 - #### CategorySelect
 
@@ -565,14 +622,17 @@ your application.
 | `strokeWidth` | Number  | `5`     | **Optional.** Sets the thickness of the loader's stroke.              |
 | `visible`     | Boolean | `true`  | **Optional.** Controls whether the loader is visible or hidden.       |
 
-- #### MediaCard
+- #### MediaCard Component
 
-Component card for the media section
+The `MediaCard` component is a responsive and interactive media link card. It
+displays an image with a descriptive overlay, making it suitable for showcasing
+links to external resources or media.
 
-| Prop       | Default     | Description                                            |
-| ---------- | ----------- | ------------------------------------------------------ |
-| `img`      | `undefined` | required, `string`, path to img                        |
-| `cardLink` | `undefined` | required, `string`, link to an external media resource |
+| Name       | Type     | Default  | Description                                             |
+| ---------- | -------- | -------- | ------------------------------------------------------- |
+| `imageUrl` | `string` | Required | The URL of the image to display in the card.            |
+| `imageAlt` | `string` | Required | Alternative text for the image, used for accessibility. |
+| `link`     | `string` | Required | The URL the card navigates to when clicked.             |
 
 - #### NavEmbeddedLink
 
@@ -604,17 +664,20 @@ Component card for the Partners section
 | `name` | `undefined` | required, `string`, company name                 |
 | `link` | `undefined` | required, `string`, link to an external resource |
 
-- #### PostCard
+- #### PostCard Component
 
-A card component designed for displaying a blog post with a preview image,
-title, description, date, and a "read more" link. It supports localization and
-dynamic post content.
+The `PostCard` component is designed to display blog or gallery posts with
+essential information, including an image (with a fallback), a title,
+description, and metadata like the post date and label. It links to a detailed
+page for each post, with a clean layout that adapts to various screen sizes.
 
-| Prop            | Default     | Description                                                                                      |
-| --------------- | ----------- | ------------------------------------------------------------------------------------------------ |
-| `post`          | `undefined` | Required. An object containing the post details (see **Post Object** below).                     |
-| `lang`          | `undefined` | Required. A string indicating the current language, used to construct the link to the blog post. |
-| `readMoreLabel` | `undefined` | Required. A string for the "read more" label text, displayed as a link to the full post.         |
+| Name            | Type                   | Default  | Description                                                         |
+| --------------- | ---------------------- | -------- | ------------------------------------------------------------------- | --------------------- |
+| `post`          | `IPostBlogGalleryPage` | Required | An object containing the details of the post (image, title, etc.).  |
+| `lang`          | `'uk'                  | 'en'`    | Required                                                            | Language of the page. |
+| `readMoreLabel` | `string`               | Required | Text label for the "Read More" link.                                |
+| `pageName`      | `string`               | Required | The name of the page for the post link (e.g., 'blog' or 'gallery'). |
+| `labelTitle`    | `string`               | Optional | Custom label title displayed along with deadline (if applicable).   |
 
 - #### Post Object
 
@@ -630,6 +693,17 @@ The `post` prop is an object with the following structure:
 | `date`     | `string` | The post's publication date, formatted using the `formatDate` utility.                                |
 | `postUrl`  | `string` | The unique URL slug for the post.                                                                     |
 | `type`     | `string` | The type of the post (e.g., `'news'`, `'events'`, `'articles'`), passed to the `PostLabel` component. |
+
+- #### PostCardCategorySelect Component
+
+The `PostCardCategorySelect` component is used for rendering a category
+selection dropdown that allows filtering posts by category. It also updates the
+URL with the selected category.
+
+| Field              | Type                | Description                                                                                                                                 |
+| ------------------ | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| `selectPostByType` | `ISelectPostByType` | The object containing options for filtering posts. It includes a `title` and an `options` array with `value` and `label` for each category. |
+| `queryKey`         | `string`            | The query parameter key used to update the URL with the selected category value.                                                            |
 
 - #### PostImageSlide
 
@@ -661,6 +735,135 @@ Description of the component and its purpose
 | Prop   | Default | Description                    |
 | ------ | ------- | ------------------------------ |
 | `prop` | `value` | required/optional, description |
+
+- #### PrivacyPolicyPortableText Component
+
+The `PrivacyPolicyPortableText` component is used for rendering portable text
+(formatted content) in a privacy policy section, using the `next-sanity`
+library.
+
+| Field   | Type                  | Description                                                                                                                                         |
+| ------- | --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `value` | `PortableTextBlock[]` | An array of portable text blocks that represent the structured content of the privacy policy. Each block can be a heading, paragraph, or list item. |
+
+- PortableTextBlock Object
+
+The `value` prop contains an array of `PortableTextBlock` objects. These blocks
+can have different types, such as `block`, `list`, or `marks`, which are
+rendered in a specific way. Each block can have the following structure:
+
+| Field      | Type              | Description                                               |
+| ---------- | ----------------- | --------------------------------------------------------- |
+| `children` | `React.ReactNode` | The content of the block (e.g., text or nested elements). |
+
+- Block Components
+
+The `PortableText` component is customized to render different types of blocks
+with specific styles:
+
+- **Headings**:
+  - `h2`: Renders as a large heading with bold text and appropriate spacing.
+  - `h3`: Renders as a smaller heading with bold text and appropriate spacing.
+- **Paragraphs**:
+
+  - `normal`: Renders as a standard paragraph with some margin and normal text.
+
+- **Lists**:
+
+  - `bullet`: Renders an unordered list with bullet points and padding.
+  - `number`: Renders an ordered list with numbered points and padding.
+
+- **List Items**:
+
+  - `bullet`: Renders each list item without additional margin.
+  - `number`: Renders each ordered list item without additional margin.
+
+- **Marks**:
+
+  - `strong`: Renders as bold text.
+  - `em`: Renders as italicized text.
+  - `underline`: Renders as underlined text.
+
+- #### ProjectContent Component
+
+The `ProjectContent` component is responsible for rendering a list of
+project-related content, with customizable sections including titles, text, and
+formatted portable text content.
+
+| Field  | Type    | Description                                     |
+| ------ | ------- | ----------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `body` | `string | { title: string; text: PortableTextBlock[] }[]` | An optional array of content sections, where each section has a `title` and a `text` (formatted portable text). If `body` is a string, it's treated as a simple text block. |
+
+**PortableTextBlock Object**
+
+The `text` prop contains an array of `PortableTextBlock` objects. These blocks
+represent various content types (e.g., headings, paragraphs, lists, quotes).
+Each block can have the following structure:
+
+| Field      | Type              | Description                                               |
+| ---------- | ----------------- | --------------------------------------------------------- |
+| `children` | `React.ReactNode` | The content of the block (e.g., text or nested elements). |
+
+**Block Components**
+
+The `PortableText` component is customized to render different types of blocks
+with specific styles:
+
+- **Headings**:
+  - `h2`: Renders as a larger heading with bold text.
+  - `h3`: Renders as a smaller heading with semi-bold text.
+- **Paragraphs**:
+
+  - `normal`: Renders as a standard paragraph with normal text.
+
+- **Blockquote**:
+
+  - `blockquote`: Renders a blockquote with a left border and italicized text.
+
+- **Lists**:
+
+  - `bullet`: Renders an unordered list with bullet points and padding.
+  - `number`: Renders an ordered list with numbered items and padding.
+
+- **List Items**:
+
+  - `bullet`: Renders each unordered list item without additional margin.
+  - `number`: Renders each ordered list item without additional margin.
+
+- **Marks**:
+
+  - `strong`: Renders as bold text.
+  - `em`: Renders as italicized text.
+  - `underline`: Renders as underlined text.
+  - `link`: Renders a link with an optional icon and hover effects.
+
+- #### ReadMoreBtn
+
+The `ReadMoreBtn` component is a button that toggles the expanded state of a
+card element, displaying different labels based on the expansion state. It is
+used for showing more content within a card, such as detailed information or
+actions.
+
+| Field             | Type                   | Description                                                                                    |
+| ----------------- | ---------------------- | ---------------------------------------------------------------------------------------------- |
+| `readMoreLabel`   | `string`               | The label displayed on the button when the content is collapsed (e.g., "Read More").           |
+| `className`       | `string` _(optional)_  | Additional CSS class(es) for custom styling of the button container.                           |
+| `cardId`          | `number` _(optional)_  | The unique identifier of the card. Used to track the expansion state of the card.              |
+| `type`            | `string` _(optional)_  | The type of the card (e.g., 'team'). Determines specific behavior (e.g., toggling expansion).  |
+| `teamClosedLabel` | `string` _(optional)_  | The label displayed when the content is expanded (e.g., "Close").                              |
+| `teamCard`        | `boolean` _(optional)_ | If `true`, it triggers specific actions related to team cards (like showing/hiding backdrops). |
+
+**Component Behavior**
+
+- **Expansion State**: The button toggles the expanded state of the card. If the
+  card is expanded, it shows the `teamClosedLabel`; otherwise, it shows the
+  `readMoreLabel`.
+- **MutationObserver**: The component uses a `MutationObserver` to track changes
+  to the `data-expanded` attribute on the card element, updating the button's
+  state accordingly.
+- **Card Element Interaction**: When clicked, the button toggles the
+  `data-expanded` attribute on the card element and manages the visibility of a
+  backdrop element related to the team card.
 
 - #### ScrollToTopButton
 
@@ -724,6 +927,30 @@ Component card for the Target section
 | Prop   | Default     | Description              |
 | ------ | ----------- | ------------------------ |
 | `text` | `undefined` | required, `string`, text |
+
+- #### TeamCard
+
+The `TeamCard` component is used to display a team member's information, such as
+their name, position, photo, and description. It also includes a "Read More"
+button for expanding the description and a link to the team member's social
+media profile (e.g., Facebook).
+
+| Field             | Type                     | Description                                                                                                                                 |
+| ----------------- | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| `teamMember`      | `ITransformedTeamMember` | The object representing the team member, containing properties like `name`, `position`, `description`, `photo`, `alt`, `link`, and `index`. |
+| `readMoreLabel`   | `string`                 | The label displayed on the "Read More" button when the content is collapsed (e.g., "Read More").                                            |
+| `isExpanded`      | `boolean` _(optional)_   | Determines whether the team member's description is expanded initially (default: `false`).                                                  |
+| `teamClosedLabel` | `string`                 | The label displayed when the content is expanded (e.g., "Close").                                                                           |
+
+**Component Behavior**
+
+- **Expansion State**: The card toggles between expanded and collapsed states.
+  The button text changes based on whether the description is expanded or not.
+- **Image & Social Link**: Displays the team member's photo, along with a social
+  media icon (e.g., Facebook) that links to their profile.
+- **Description**: Displays the team member's name, position, and a description
+  with a maximum of 7 lines of text. The "Read More" button expands the
+  description if the content exceeds this limit.
 
 - #### Title
 
