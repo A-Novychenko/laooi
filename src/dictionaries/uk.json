@@ -867,6 +867,10 @@
   },
   "strategyValueSection": {
     "title": "Цінності",
+    "templateValue": {
+      "title": "Логотип компанії",
+      "description": "Деокративний елемент з логотипом компанії"
+    },
     "values": [
       {
         "title": "ІНКЛЮЗІЯ",

@@ -15,7 +15,7 @@ export const AboutTeamSection: React.FC<ISectionProps> = ({ dict, lang }) => {
         </Title>
 
         <div className="xl:flex xl:gap-[16px]">
-          <div className="mb-2 h-[288px] shrink-0 overflow-hidden rounded-[16px] md:mb-4 md:size-[688px] md:rounded-[20px] xl:sticky xl:top-0 xl:mb-0 xl:h-[608px] xl:w-[632px] xl:rounded-[24px]">
+          <div className="mb-2 h-[288px] shrink-0 overflow-hidden rounded-[16px] md:mb-4 md:size-[688px] md:rounded-[20px] xl:sticky xl:top-[7.5rem] xl:mb-0 xl:h-[608px] xl:w-[632px] xl:rounded-[24px]">
             <Image
               src={img}
               alt={alt}
@@ -24,6 +24,7 @@ export const AboutTeamSection: React.FC<ISectionProps> = ({ dict, lang }) => {
               className="size-full object-cover"
             />
           </div>
+
           <div className="rounded-[16px] bg-bgLightSlate p-[24px] text-base/normal text-textPrimary md:rounded-[20px] md:p-[32px] xl:flex xl:flex-col xl:rounded-[24px] xl:p-[40px] xl:text-lg/[1.4]">
             <div className="mb-4 xl:mb-6">
               <p className="mb-4">
