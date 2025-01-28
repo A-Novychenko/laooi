@@ -201,7 +201,7 @@
         "embedded": [
           {
             "name": "Main areas",
-            "href": "/in-progress"
+            "href": "/main-areas"
           },
           {
             "name": "Advisors",
@@ -921,13 +921,16 @@
       "alt": "team photo"
     },
     "description": {
-      "after": "Our Strategic Goal",
-      "before": "We aim to improve the quality of life for vulnerable population groups by employing a systematic approach to providing humanitarian aid; developing a network of inclusive community advisors; optimizing the social services system; actively participating in the planning and implementation of post-war reconstruction; and promoting inclusive veteran policies. We will work to ensure accessibility and equality so that every individual can realize their potential and feel like a full-fledged member of society, free from barriers and discrimination"
+      "before": "Our Strategic Goal",
+      "after": "We aim to improve the quality of life for vulnerable population groups by employing a systematic approach to providing humanitarian aid; developing a network of inclusive community advisors; optimizing the social services system; actively participating in the planning and implementation of post-war reconstruction; and promoting inclusive veteran policies. We will work to ensure accessibility and equality so that every individual can realize their potential and feel like a full-fledged member of society, free from barriers and discrimination"
     }
   },
   "mainAreasSection": {
     "title": "Over the next two years, the organization aims to focus on five key areas of activity:",
-    "logo": { "src": "/images/poster.jpg", "alt": "logo image" },
+    "logo": {
+      "src": "/images/poster.jpg",
+      "alt": "logo image"
+    },
     "areas": [
       {
         "title": "Humanitarian aid",

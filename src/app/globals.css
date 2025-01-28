@@ -118,6 +118,13 @@ div[data-expanded='false'] p {
   }
 }
 
+.portable-text p br,
 .portable-text br {
-  display: none;
+  display: none !important;
+  height: 0 !important;
+}
+
+br {
+  display: none !important;
+  height: 0 !important;
 }

@@ -13,6 +13,8 @@ import {
 
 import { getDictionary } from '@/utils/dictionaries';
 
+export const revalidate = 0;
+
 export default async function Home({
   params: { lang },
 }: {

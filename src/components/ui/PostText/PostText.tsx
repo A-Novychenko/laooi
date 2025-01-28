@@ -4,9 +4,7 @@ import { PostTextProps } from './types';
 
 export const PostText: React.FC<PostTextProps> = ({ body }) => {
   return (
-    <div
-      className={'mx-auto mb-4 flex flex-col gap-1 xl:mb-6 xl:max-w-[632px]'}
-    >
+    <div className={'mx-auto mb-4 flex flex-col xl:mb-6 xl:max-w-[632px]'}>
       <PortableText
         value={body}
         components={{
@@ -22,7 +20,9 @@ export const PostText: React.FC<PostTextProps> = ({ body }) => {
               </h3>
             ),
             normal: ({ children }) => (
-              <p className="text-base/normal md:text-lg">{children}</p>
+              <p className="mb-4 text-base/[1.5] last:mb-0 md:text-lg">
+                {children}
+              </p>
             ),
             blockquote: ({ children }) => (
               <blockquote className="border-l-4 border-textActive bg-bgLightSlate pl-4 text-base/normal font-bold italic text-textMenuAccent md:text-lg">
