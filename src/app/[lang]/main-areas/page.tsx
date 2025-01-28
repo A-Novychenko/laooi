@@ -1,3 +1,5 @@
+import { MainAreasHeroSection, MainAreasSection } from '@/sections';
+
 import { getDictionary } from '@/utils/dictionaries';
 
 const MainAreasPage = async ({
@@ -9,7 +11,9 @@ const MainAreasPage = async ({
 
   return (
     <>
-      <p className="hidden">{dict.toString()}</p>
+      <MainAreasHeroSection dict={dict} />
+
+      <MainAreasSection dict={dict} />
     </>
   );
 };

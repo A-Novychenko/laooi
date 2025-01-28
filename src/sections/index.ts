@@ -22,3 +22,5 @@ export * from './TeamSection';
 export * from './StrategyAboutSection';
 export * from './StrategySection';
 export * from './StrategyValueSection';
+export * from './MainAreasHeroSection';
+export * from './MainAreasSection';

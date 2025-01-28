@@ -22,7 +22,7 @@ export const SocialsSection: React.FC<SocialsSectionProps> = ({ dict }) => {
 
         <div className="xl:flex xl:items-center xl:gap-4">
           <div className="mb-4 rounded-[16px] bg-bgLightSlate p-6 md:p-8 xl:mb-0 xl:flex xl:w-[632px] xl:flex-col xl:justify-start xl:self-stretch xl:p-[40px]">
-            <p className="mb-4 text-lg/normal xl:mb-6">{descr}</p>
+            <p className="mb-4 text-lg/[1.39] xl:mb-6">{descr}</p>
 
             <ul className="flex flex-col items-center gap-2 md:flex-row md:justify-center md:gap-[16px]">
               {socialLinks &&
