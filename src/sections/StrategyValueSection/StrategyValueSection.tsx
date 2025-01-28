@@ -52,7 +52,7 @@ export const StrategyValueSection: React.FC<StrategyValueSectionProps> = ({
             <li
               key={idx}
               className={cn(
-                'min-h-[10.75rem] overflow-hidden rounded-3xl bg-bgLightSlate p-[24px] md:min-h-[11.75rem] md:w-[308px] md:p-[32px] xl:min-h-[15.5rem] xl:w-[308px] xl:p-[40px]',
+                'overflow-hidden rounded-3xl bg-bgLightSlate p-[24px] md:min-h-[11.75rem] md:w-[308px] md:p-[32px] xl:min-h-[15.5rem] xl:w-[308px] xl:p-[40px]',
                 {
                   'flex items-center justify-center bg-bgLight p-0 md:p-0 xl:p-0':
                     value.isLogo,

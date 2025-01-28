@@ -49,28 +49,30 @@ export const AdvisorsHeroSection: React.FC<ISectionProps> = ({
             </div>
           </div>
 
-          <div className="rounded-[16px] bg-bgLightSlate p-[24px] text-base/normal text-textPrimary md:rounded-[20px] md:p-[32px] xl:flex xl:flex-col xl:justify-between xl:rounded-[24px] xl:p-[40px] xl:text-lg/normal">
-            <p className="mb-6">
-              <b>{quotedText.advisors}</b>
+          <div className="rounded-[16px] bg-bgLightSlate p-[24px] text-base/[1.5] text-textPrimary md:rounded-[20px] md:p-[32px] xl:flex xl:flex-col xl:rounded-[24px] xl:p-[40px] xl:text-lg">
+            <div className="mb-4 xl:mb-6">
+              <p className="mb-4">
+                <b>{quotedText.advisors}</b>
 
-              {firstParagraph.after}
-            </p>
+                {firstParagraph.after}
+              </p>
 
-            <p className="mb-6">
-              {secondParagraph.before}
+              <p className="mb-4">
+                {secondParagraph.before}
 
-              <b>{quotedText.question}</b>
+                <b>{quotedText.question}</b>
 
-              {secondParagraph.after}
-            </p>
+                {secondParagraph.after}
+              </p>
 
-            <p className="mb-4 xl:mb-6">
-              {thirdParagraph.before}
+              <p>
+                {thirdParagraph.before}
 
-              <b>{quotedText.become}</b>
+                <b>{quotedText.become}</b>
 
-              {thirdParagraph.after}
-            </p>
+                {thirdParagraph.after}
+              </p>
+            </div>
 
             <ButtonLink
               type="link"

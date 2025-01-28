@@ -27,7 +27,7 @@ export const MainAreasSection: React.FC<MainAreasSectionProps> = ({ dict }) => {
           {areas.map((item, idx) => (
             <li
               key={idx}
-              className="min-h-[279px] rounded-3xl bg-bgLightSlate p-[24px] md:min-h-[307px] md:w-[308px] md:p-[32px] xl:min-h-[296px] xl:w-[416px] xl:p-[40px]"
+              className="rounded-3xl bg-bgLightSlate p-[24px] md:min-h-[307px] md:w-[308px] md:p-[32px] xl:min-h-[296px] xl:w-[416px] xl:p-[40px]"
             >
               <Title
                 tag={'h3'}

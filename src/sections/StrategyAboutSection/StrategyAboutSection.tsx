@@ -27,7 +27,7 @@ export const StrategyAboutSection: React.FC<StrategyAboutSectionProps> = ({
             />
           </div>
 
-          <div className="flex flex-col gap-5 rounded-2xl bg-bgLightSlate p-6 md:p-8 xl:gap-8 xl:p-10">
+          <div className="flex flex-col gap-4 rounded-2xl bg-bgLightSlate p-6 md:p-8">
             {description.map((item, idx) => {
               return (
                 <p
