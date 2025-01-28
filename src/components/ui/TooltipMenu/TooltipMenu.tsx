@@ -39,6 +39,8 @@ export const TooltipMenu: React.FC<TooltipMenuProps> = ({ children, data }) => {
         </p>
 
         <ul
+          onClick={handleClose}
+          tabIndex={-1}
           className={cn(
             'absolute flex flex-col rounded-[24px] bg-bgLight p-4',
             styles.menuBox,
