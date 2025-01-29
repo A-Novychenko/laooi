@@ -1,14 +1,14 @@
 import { Title } from '@/components/ui';
 import { PartnersSliderWrap } from '@/components/base';
 
-import { PartnersSectionProps } from './types';
+import { DonorsMainSectionProps } from './types';
 
-export const PartnersSection: React.FC<PartnersSectionProps> = ({
+export const DonorsMainSection: React.FC<DonorsMainSectionProps> = ({
   dict,
-  partners,
+  donors,
 }) => {
   const {
-    partnersSection: { title },
+    donorsSection: { title },
   } = dict;
 
   return (
@@ -16,7 +16,7 @@ export const PartnersSection: React.FC<PartnersSectionProps> = ({
       <div className="container">
         <Title className="mb-4">{title}</Title>
 
-        <PartnersSliderWrap data={partners} />
+        <PartnersSliderWrap data={donors} />
       </div>
     </section>
   );

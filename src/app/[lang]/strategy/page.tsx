@@ -1,10 +1,14 @@
 import {
   StrategyAboutSection,
+  StrategyDonorsSection,
   StrategySection,
   StrategyValueSection,
 } from '@/sections';
 
+import { getAllDonors } from '@/actions/sanity';
 import { getDictionary } from '@/utils/dictionaries';
+
+export const revalidate = 0;
 
 const StrategyPage = async ({
   params: { lang },
@@ -13,6 +17,8 @@ const StrategyPage = async ({
 }) => {
   const dict = await getDictionary(lang);
 
+  const donors = await getAllDonors(lang);
+
   return (
     <>
       <StrategyAboutSection dict={dict} />
@@ -20,6 +26,8 @@ const StrategyPage = async ({
       <StrategySection dict={dict} />
 
       <StrategyValueSection dict={dict} />
+
+      {donors && <StrategyDonorsSection dict={dict} donors={donors} />}
     </>
   );
 };

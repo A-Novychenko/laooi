@@ -670,6 +670,9 @@
   "partnersSection": {
     "title": "Our supporters"
   },
+  "donorsSection": {
+    "title": "Donors"
+  },
   "mediaSection": {
     "title": "Media about us",
     "notFoundDescr": "No results found for your query. Try different keywords or explore other sections.",

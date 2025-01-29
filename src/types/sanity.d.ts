@@ -302,7 +302,35 @@ interface ITransformedPartner {
   index: number;
 }
 
-interface IDonors {
+interface IDonor {
+  _id: string;
+  name: {
+    uk: string;
+    en: string;
+  };
+  img: {
+    caption: {
+      uk: string;
+      en: string;
+    };
+    asset: {
+      _id: string;
+      url: string;
+    };
+  };
+  link: string;
+  index: number;
+}
+
+interface ITransformedDonor {
+  name: string;
+  img: string;
+  alt: string;
+  link: string;
+  index: number;
+}
+
+interface IDonorFromFilter {
   donor: {
     _id: string;
     name: {
@@ -314,7 +342,7 @@ interface IDonors {
   };
 }
 
-interface ITransformedDonor {
+interface ITransformedFromFilter {
   value: string;
   label: string;
 }

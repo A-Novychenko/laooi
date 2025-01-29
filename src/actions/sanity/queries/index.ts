@@ -17,3 +17,4 @@ export * from './getLatestProjectsQuery';
 export * from './getPartnersQuery';
 export * from './getDonorsFromProjectsQuery';
 export * from './getTeamQuery';
+export * from './getAllDonorsQuery';

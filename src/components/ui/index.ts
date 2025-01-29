@@ -37,3 +37,4 @@ export * from './ProjectContent';
 export * from './ReadMoreBtn';
 export * from './TeamCard';
 export * from './Backdrop';
+export * from './PartnersGallery';

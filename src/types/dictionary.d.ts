@@ -36,8 +36,8 @@ interface IDictionary {
   projectsSection: IBlogSection;
   targetSection: ITargetSection;
   partnersSection: IPartnersSection;
+  donorsSection: IDonorsSection;
   mediaSection: IMediaSection;
-  documentsSection: IDocumentsSection;
   documentsSection: IDocumentsSection;
   researchSection: IResearchSection;
   advisorsPage: {
@@ -207,6 +207,10 @@ interface ITargetSection {
 }
 
 interface IPartnersSection {
+  title: string;
+}
+
+interface IDonorsSection {
   title: string;
 }
 

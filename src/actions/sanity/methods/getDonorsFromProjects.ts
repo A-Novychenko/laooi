@@ -1,16 +1,17 @@
 import { sanityClient } from '@/sanity/lib/client';
 import { getDonorsFromProjectsQuery } from '../queries';
 
-const fetchDonors = async (): Promise<IDonors[]> => {
+const fetchDonors = async (): Promise<IDonorFromFilter[]> => {
   const query = getDonorsFromProjectsQuery();
-  const data: IDonors[] = await sanityClient.fetch<IDonors[]>(query);
+  const data: IDonorFromFilter[] =
+    await sanityClient.fetch<IDonorFromFilter[]>(query);
 
   return data || [];
 };
 
 export const getDonorsFromProjects = async (
   lang: 'uk' | 'en' = 'uk',
-): Promise<ITransformedDonor[]> => {
+): Promise<ITransformedFromFilter[]> => {
   try {
     const donors = await fetchDonors();
 
@@ -18,7 +19,7 @@ export const getDonorsFromProjects = async (
       ({ donor }) => donor.isVisible,
     );
 
-    const transformedDonors: ITransformedDonor[] = Array.from(
+    const transformedDonors: ITransformedFromFilter[] = Array.from(
       new Map(
         filteredByVisibleDonors.map(({ donor }) => [
           donor.id?.current, // Унікальний ключ
