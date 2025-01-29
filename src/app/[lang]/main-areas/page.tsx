@@ -1,6 +1,14 @@
-import { MainAreasHeroSection, MainAreasSection } from '@/sections';
+import {
+  MainAreasHeroSection,
+  MainAreasSection,
+  PartnersSection,
+} from '@/sections';
+
+import { getPartners } from '@/actions/sanity';
 
 import { getDictionary } from '@/utils/dictionaries';
+
+export const revalidate = 0;
 
 const MainAreasPage = async ({
   params: { lang },
@@ -9,11 +17,15 @@ const MainAreasPage = async ({
 }) => {
   const dict = await getDictionary(lang);
 
+  const { partners } = await getPartners(lang);
+
   return (
     <>
       <MainAreasHeroSection dict={dict} />
 
       <MainAreasSection dict={dict} />
+
+      {partners && <PartnersSection dict={dict} partners={partners} />}
     </>
   );
 };

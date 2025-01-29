@@ -1,4 +1,4 @@
-import { getLatestPosts, getPartners } from '@/actions/sanity';
+import { getAllDonors, getLatestPosts } from '@/actions/sanity';
 import {
   AboutSection,
   ActivitiesSection,
@@ -6,9 +6,9 @@ import {
   HeroSection,
   MediaSection,
   BlogSection,
-  PartnersSection,
   SocialsSection,
   TargetSection,
+  DonorsMainSection,
 } from '@/sections';
 
 import { getDictionary } from '@/utils/dictionaries';
@@ -23,7 +23,8 @@ export default async function Home({
   const dict = await getDictionary(lang);
 
   const latestPosts = await getLatestPosts(lang);
-  const { partners } = await getPartners(lang);
+  // const { partners } = await getPartners(lang);
+  const donors = await getAllDonors(lang);
 
   const { pageName, title, link } = dict.blogSection;
 
@@ -37,8 +38,8 @@ export default async function Home({
 
       <TargetSection dict={dict} lang={lang} />
 
-      {partners && partners.length > 0 && (
-        <PartnersSection dict={dict} lang={lang} partners={partners} />
+      {donors && donors.length > 0 && (
+        <DonorsMainSection dict={dict} lang={lang} donors={donors} />
       )}
 
       <MediaSection dict={dict} lang={lang} />

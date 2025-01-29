@@ -2,9 +2,9 @@
 
 import { defineType } from 'sanity';
 
-export const partners = defineType({
-  name: 'partners',
-  title: 'Партнери',
+export const donors = defineType({
+  name: 'donors',
+  title: 'Донори',
   type: 'document',
 
   preview: {
@@ -18,7 +18,7 @@ export const partners = defineType({
   fields: [
     {
       name: 'name',
-      title: 'Назва організації партнера',
+      title: 'Назва організації донора',
       type: 'localizedString',
       validation: Rule => [
         Rule.required().error('Поле обовʼязкове'),
@@ -80,7 +80,7 @@ export const partners = defineType({
     {
       name: 'link',
       title:
-        'Посилання на сайт партнера (https://www.facebook.com/luhanskLAOLI/)',
+        'Посилання на сайт донора (https://www.facebook.com/luhanskLAOLI/)',
       type: 'url',
       validation: Rule =>
         Rule.required()
@@ -91,14 +91,14 @@ export const partners = defineType({
 
     {
       name: 'isVisible',
-      title: 'Додати в секцію "Нас підтримують"',
+      title: 'Додати в секцію "Донори"',
       type: 'boolean',
       options: {
         layout: 'radio', // Відображає як радіокнопки
       },
       description:
-        'Оберіть "Так", якщо потрібно щоб цей партнер показувався в секції "Нас підтримують"',
-      initialValue: true, // За замовчуванням "Так"
+        'Оберіть "Так", якщо потрібно щоб цей партнер показувався в секції "Донори"',
+      initialValue: false, // За замовчуванням "Ні"
     },
 
     {

@@ -1,18 +1,18 @@
 import { PartnersGallery, Title } from '@/components/ui';
 
-import { PartnersSectionProps } from './types';
+import { StrategyDonorsSectionProps } from './types';
 
-export const PartnersSection: React.FC<PartnersSectionProps> = ({
+export const StrategyDonorsSection: React.FC<StrategyDonorsSectionProps> = ({
   dict,
-  partners,
+  donors,
 }) => {
-  const { title } = dict.partnersSection;
+  const { title } = dict.donorsSection;
   return (
     <section className="section">
       <div className="container">
         <Title className="mb-4">{title}</Title>
 
-        <PartnersGallery items={partners} />
+        <PartnersGallery items={donors} />
       </div>
     </section>
   );

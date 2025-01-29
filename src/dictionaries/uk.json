@@ -668,7 +668,10 @@
     ]
   },
   "partnersSection": {
-    "title": "Нас підтримують"
+    "title": "Партнери"
+  },
+  "donorsSection": {
+    "title": "Донори"
   },
   "mediaSection": {
     "title": "Медіа про нас",
