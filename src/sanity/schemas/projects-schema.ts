@@ -106,7 +106,7 @@ export const projects = defineType({
       name: 'donor',
       title: 'Донор',
       type: 'reference',
-      to: [{ type: 'partners' }],
+      to: [{ type: 'donors' }],
       validation: Rule => Rule.required().error('Поле обовʼязкове'),
       options: {},
     },

@@ -4,7 +4,7 @@ import { defineType } from 'sanity';
 
 export const partners = defineType({
   name: 'partners',
-  title: 'Партнери (донори)',
+  title: 'Партнери',
   type: 'document',
 
   preview: {
@@ -98,7 +98,7 @@ export const partners = defineType({
       },
       description:
         'Оберіть "Так", якщо потрібно щоб цей партнер показувався в секції "Нас підтримують"',
-      initialValue: false, // За замовчуванням "Ні"
+      initialValue: true, // За замовчуванням "Так"
     },
 
     {
