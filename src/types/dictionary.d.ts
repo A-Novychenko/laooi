@@ -381,6 +381,10 @@ interface IAdvisorsHeroSection {
 
 interface IAdvisorsSection {
   title: string;
+  link: {
+    path: string;
+    label: string;
+  };
 }
 
 interface IPrivacyPolicyPage {

@@ -1,6 +1,6 @@
-export const getAdvisorsQuery = () => {
+export const getAdvisorBySlugQuery = (slug: string) => {
   return `
-  *[_type == "advisors"] | order(index asc) {
+  *[_type == "advisors" && slug.current == "${slug}"][0] {
     _id,
     name,
     photo {
@@ -12,7 +12,9 @@ export const getAdvisorsQuery = () => {
     },
     city,
     slug,
+    body,
     phone,
+    link,
     index
   }
   `;

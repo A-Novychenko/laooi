@@ -789,7 +789,11 @@
       }
     },
     "advisorsSection": {
-      "title": "Our advisors"
+      "title": "Our advisors",
+      "link": {
+        "path": "/advisors/",
+        "label": "About the advisor"
+      }
     }
   },
   "aboutTeamSection": {

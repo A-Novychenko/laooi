@@ -8,7 +8,7 @@ export const AdvisorsSection: React.FC<ISectionProps> = async ({
   dict,
   lang,
 }) => {
-  const { title } = dict.advisorsPage.advisorsSection;
+  const { title, link } = dict.advisorsPage.advisorsSection;
 
   const { advisors } = await getAdvisors(lang);
 
@@ -25,7 +25,7 @@ export const AdvisorsSection: React.FC<ISectionProps> = async ({
               {advisors &&
                 advisors.map((advisor, idx) => (
                   <li key={idx} className={styles.advisorItem}>
-                    <AdvisorCard advisor={advisor} />
+                    <AdvisorCard advisor={advisor} lang={lang} link={link} />
                   </li>
                 ))}
             </ul>
