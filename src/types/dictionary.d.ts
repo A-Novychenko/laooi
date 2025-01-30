@@ -7,6 +7,7 @@ interface IDictionary {
     postBackLink: IPostBackLink;
     tenderBackLink: IPostBackLink;
     projectBackLink: IPostBackLink;
+    advisorsBackLink: IPostBackLink;
     readMoreLabel: string;
     teamClosedLabel: string;
     mainNav: IMainNav[];
