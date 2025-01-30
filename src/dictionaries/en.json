@@ -796,6 +796,19 @@
       }
     }
   },
+  "singleAdvisorSection": {
+    "title": "Advisor",
+    "errorData": {
+      "description": "Unfortunately, we were unable to obtain information on the advisor at this time. You can come back later or check other sections of our website for the latest information.",
+      "link": {
+        "label": "Home",
+        "settings": {
+          "href": "/en/",
+          "externalLink": false
+        }
+      }
+    }
+  },
   "aboutTeamSection": {
     "title": "Team",
     "img": "/images/about-team.jpg",

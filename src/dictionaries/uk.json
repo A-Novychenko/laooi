@@ -796,6 +796,19 @@
       }
     }
   },
+  "singleAdvisorSection": {
+    "title": "Радник",
+    "errorData": {
+      "description": "На жаль, зараз не вдалося отримати інформацію по раднику. Ви можете повернутися пізніше або перевірити інші розділи нашого сайту для актуальної інформації.",
+      "link": {
+        "label": "Home",
+        "settings": {
+          "href": "/uk/",
+          "externalLink": false
+        }
+      }
+    }
+  },
   "aboutTeamSection": {
     "title": "Команда",
     "img": "/images/about-team.jpg",
