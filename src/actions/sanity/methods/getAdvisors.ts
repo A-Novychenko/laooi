@@ -22,6 +22,7 @@ export const getAdvisors = async (
         city: advisor.city[lang],
         phone: advisor.phone,
         index: advisor.index,
+        slug: advisor.slug?.current,
       };
     });
 

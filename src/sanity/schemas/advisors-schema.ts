@@ -39,6 +39,25 @@ export const advisors = defineType({
     },
 
     {
+      name: 'slug',
+      title: 'Генератор ідентифікатора сторінки',
+      type: 'slug',
+      options: {
+        source: 'name.en',
+        maxLength: 200,
+        slugify: input =>
+          encodeURI(
+            input
+              .toLowerCase()
+              .replace(/[^a-zа-яёіїєґ\s]+/gi, '') // Видаляємо всі символи, що не є літерами або пробілами
+              .replace(/\s+/g, '-') // Заміна пробілів на дефіси
+              .slice(0, 200), // Обмеження довжини до 200 символів
+          ),
+      },
+      validation: Rule => Rule.required().error('Поле обовʼязкове'),
+    },
+
+    {
       name: 'photo',
       title: 'Фото',
       type: 'image',
@@ -71,6 +90,119 @@ export const advisors = defineType({
       title: 'Телефон радника.',
       type: 'string',
       validation: Rule => [Rule.required().error('Поле обовʼязкове')],
+    },
+
+    {
+      name: 'link',
+      title:
+        'Посилання на facebook радника (https://www.facebook.com/luhanskLAOLI/)',
+      type: 'url',
+      validation: Rule =>
+        Rule.required()
+          .error('Поле обовʼязкове')
+          .uri({ scheme: ['http', 'https'] })
+          .error('Введіть коректний URL'),
+    },
+
+    {
+      name: 'body',
+      title: 'Детальна інформація про радника',
+      type: 'object',
+      validation: Rule => [Rule.required().error('Поле обовʼязкове')],
+      fields: [
+        {
+          name: 'uk',
+          type: 'array',
+          title: 'Українська',
+          of: [
+            {
+              type: 'block',
+              styles: [
+                { title: 'Звичайний текст', value: 'normal' },
+                { title: 'Заголовок 2', value: 'h2' },
+                { title: 'Заголовок 3', value: 'h3' },
+                { title: 'Заголовок 4', value: 'h4' },
+                { title: 'Заголовок 5', value: 'h5' },
+                { title: 'Заголовок 6', value: 'h6' },
+                { title: 'Цитата', value: 'blockquote' },
+              ],
+              lists: [
+                { title: 'Маркірований список', value: 'bullet' },
+                { title: 'Нумерований список', value: 'number' },
+              ],
+              marks: {
+                decorators: [
+                  { title: 'Жирний', value: 'strong' },
+                  { title: 'Курсив', value: 'em' },
+                  { title: 'Підкреслений', value: 'underline' },
+                  { title: 'Закреслений', value: 'strike-through' },
+                  { title: 'Код', value: 'code' },
+                ],
+                annotations: [
+                  {
+                    name: 'link',
+                    type: 'object',
+                    title: 'Посилання',
+                    fields: [
+                      {
+                        name: 'href',
+                        type: 'url',
+                        title: 'URL',
+                      },
+                    ],
+                  },
+                ],
+              },
+            },
+          ],
+        },
+        {
+          name: 'en',
+          type: 'array',
+          title: 'Англійська',
+          of: [
+            {
+              type: 'block',
+              styles: [
+                { title: 'Звичайний текст', value: 'normal' },
+                { title: 'Заголовок 2', value: 'h2' },
+                { title: 'Заголовок 3', value: 'h3' },
+                { title: 'Заголовок 4', value: 'h4' },
+                { title: 'Заголовок 5', value: 'h5' },
+                { title: 'Заголовок 6', value: 'h6' },
+                { title: 'Цитата', value: 'blockquote' },
+              ],
+              lists: [
+                { title: 'Маркірований список', value: 'bullet' },
+                { title: 'Нумерований список', value: 'number' },
+              ],
+              marks: {
+                decorators: [
+                  { title: 'Жирний', value: 'strong' },
+                  { title: 'Курсив', value: 'em' },
+                  { title: 'Підкреслений', value: 'underline' },
+                  { title: 'Закреслений', value: 'strike-through' },
+                  { title: 'Код', value: 'code' },
+                ],
+                annotations: [
+                  {
+                    name: 'link',
+                    type: 'object',
+                    title: 'Посилання',
+                    fields: [
+                      {
+                        name: 'href',
+                        type: 'url',
+                        title: 'URL',
+                      },
+                    ],
+                  },
+                ],
+              },
+            },
+          ],
+        },
+      ],
     },
 
     {

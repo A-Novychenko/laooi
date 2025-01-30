@@ -138,6 +138,9 @@ interface IAdvisor {
   };
   phone: string;
   index: number;
+  slug: {
+    current: string;
+  };
 }
 
 interface ITransformedAdvisor {
@@ -147,6 +150,60 @@ interface ITransformedAdvisor {
   city: string;
   phone: string;
   index: number;
+  slug: string;
+}
+
+interface IAdvisorBySlug {
+  _id: string;
+  name: {
+    uk: string;
+    en: string;
+  };
+  photo: {
+    caption: {
+      uk: string;
+      en: string;
+    };
+    asset: {
+      _id: string;
+      url: string;
+    };
+  };
+  city: {
+    uk: string;
+    en: string;
+  };
+  phone: string;
+  link: link;
+  index: number;
+  slug: {
+    current: string;
+  };
+  body: {
+    uk: {
+      title: string;
+      text: any;
+    }[];
+    en: {
+      title: string;
+      text: any;
+    }[];
+  };
+}
+
+interface ITransformedAdvisorBySlug {
+  photo: string;
+  alt: string;
+  name: string;
+  city: string;
+  phone: string;
+  index: number;
+  slug: string;
+  link: link;
+  body: {
+    title: string;
+    text: any;
+  }[];
 }
 
 interface IPrivacyPolicy {

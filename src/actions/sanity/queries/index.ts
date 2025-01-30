@@ -18,3 +18,4 @@ export * from './getPartnersQuery';
 export * from './getDonorsFromProjectsQuery';
 export * from './getTeamQuery';
 export * from './getAllDonorsQuery';
+export * from './getAdvisorBySlugQuery';

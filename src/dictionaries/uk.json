@@ -789,7 +789,11 @@
       }
     },
     "advisorsSection": {
-      "title": "Наші радники"
+      "title": "Наші радники",
+      "link": {
+        "path": "/advisors/",
+        "label": "Про радника"
+      }
     }
   },
   "aboutTeamSection": {
