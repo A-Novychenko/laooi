@@ -31,6 +31,10 @@
       "label": "View all projects",
       "link": "/en/projects"
     },
+    "advisorsBackLink": {
+      "label": "Go to all advisors",
+      "link": "/en/advisors"
+    },
     "selectSortByDate": {
       "title": "Sort by date",
       "options": {

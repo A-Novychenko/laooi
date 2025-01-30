@@ -31,6 +31,10 @@
       "label": "Перейти до всіх проєктів",
       "link": "/uk/projects"
     },
+    "advisorsBackLink": {
+      "label": "Перейти до всіх радників",
+      "link": "/uk/advisors"
+    },
     "selectSortByDate": {
       "title": "Сортувати за датою",
       "options": {

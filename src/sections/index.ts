@@ -26,3 +26,4 @@ export * from './MainAreasHeroSection';
 export * from './MainAreasSection';
 export * from './StrategyDonorsSection';
 export * from './PartnersSection';
+export * from './SingleAdvisorSection';
