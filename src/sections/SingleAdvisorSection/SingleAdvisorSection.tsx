@@ -10,6 +10,7 @@ import { SingleAdvisorSectionProps } from './types';
 export const SingleAdvisorSection: React.FC<SingleAdvisorSectionProps> = ({
   advisorsBackLink: { label: labelLink, link: advisorsLink },
   advisor: { photo, alt, name, city, phone, body, link },
+  postFBLinkLabel,
 }) => {
   return (
     <section className="section">
@@ -22,7 +23,7 @@ export const SingleAdvisorSection: React.FC<SingleAdvisorSectionProps> = ({
           {labelLink}
         </Link>
 
-        <Title>{name}</Title>
+        <Title className="xl:mb-4">{name}</Title>
 
         <div className="flex flex-col gap-4 xl:flex-row">
           <div className="overflow-hidden rounded-3xl md:size-[688px] xl:size-[632px]">
@@ -55,7 +56,7 @@ export const SingleAdvisorSection: React.FC<SingleAdvisorSectionProps> = ({
               settings={{ href: link, externalLink: true }}
               className="max-w-[380px]"
             >
-              Читати у Facebook??????????
+              {postFBLinkLabel}
             </ButtonLink>
           </div>
         </div>

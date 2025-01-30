@@ -1,4 +1,4 @@
-import { SingleAdvisorSection } from '@/sections';
+import { SingleAdvisorSection, PlaceholderSection } from '@/sections';
 
 import { getAdvisors } from '@/actions/sanity/methods/getAdvisors';
 
@@ -27,15 +27,19 @@ const SingleAdvisorPage = async ({
 
   const advisor = await getAdvisorBySlug(lang, slug);
 
-  const { advisorsBackLink } = dict.common;
+  const { advisorsBackLink, postFBLinkLabel } = dict.common;
+  const { title, errorData } = dict.singleAdvisorSection;
 
   return (
     <>
-      {advisor && (
+      {advisor ? (
         <SingleAdvisorSection
           advisorsBackLink={advisorsBackLink}
           advisor={advisor}
+          postFBLinkLabel={postFBLinkLabel}
         />
+      ) : (
+        <PlaceholderSection data={{ title, ...errorData }} />
       )}
     </>
   );

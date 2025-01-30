@@ -51,6 +51,7 @@ interface IDictionary {
   strategyValueSection: IStrategyValueSection;
   mainAreasHeroSection: IMainAreasHeroSection;
   mainAreasSection: IMainAreasSection;
+  singleAdvisorSection: ISingleAdvisorSection;
 }
 
 interface IPostBackLink {
@@ -452,4 +453,9 @@ interface IMainAreasSection {
   title: string;
   logo: { src: string; alt: string };
   areas: IStrategyDescription[];
+}
+
+interface ISingleAdvisorSection {
+  title: string;
+  errorData: IErrorData;
 }
