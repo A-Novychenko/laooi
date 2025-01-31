@@ -19,3 +19,5 @@ export * from './getDonorsFromProjectsQuery';
 export * from './getTeamQuery';
 export * from './getAllDonorsQuery';
 export * from './getAdvisorBySlugQuery';
+export * from './getAllActivitiesQuery';
+export * from './getLatestActivitiesQuery';

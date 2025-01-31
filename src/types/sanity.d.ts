@@ -441,3 +441,18 @@ interface ITransformedTeamMember {
   link: string;
   index: number;
 }
+
+interface IActivity {
+  _id: string;
+  quantity: number;
+  text: {
+    uk: string;
+    en: string;
+  };
+  index: number;
+}
+
+interface ITransformedActivity {
+  quantity: number;
+  text: string;
+}
