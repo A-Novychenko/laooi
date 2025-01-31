@@ -1,0 +1,5 @@
+@media screen and (max-width: 479px) {
+  .photo {
+    height: calc(100vw - 32px);
+  }
+}

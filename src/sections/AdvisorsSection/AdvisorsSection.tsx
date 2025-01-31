@@ -15,7 +15,7 @@ export const AdvisorsSection: React.FC<ISectionProps> = async ({
   return (
     <>
       {advisors && advisors.length > 0 && (
-        <section className="section">
+        <section className="section xl:pb-32">
           <div className="container">
             <Title tag="h2" className="mb-6">
               {title}

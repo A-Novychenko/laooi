@@ -109,7 +109,7 @@ export const PostSection: React.FC<{
                 type="link"
                 typeStyle="primary"
                 settings={{ href: link, externalLink: true }}
-                className="max-w-[380px]"
+                className="w-full md:w-60 xl:w-[308px]"
               >
                 {postFBLinkLabel}
               </ButtonLink>
