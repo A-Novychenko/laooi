@@ -8,7 +8,7 @@ export const StrategyDonorsSection: React.FC<StrategyDonorsSectionProps> = ({
 }) => {
   const { title } = dict.donorsSection;
   return (
-    <section className="section">
+    <section className="section xl:pb-32">
       <div className="container">
         <Title className="mb-4">{title}</Title>
 

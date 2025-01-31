@@ -3,9 +3,13 @@ import Image from 'next/image';
 
 import { ButtonLink, PostLabel, PostText, Title } from '@/components/ui';
 
+import { cn } from '@/utils/cn';
+
 import ArrowIcon from '~/icons/arrowDown.svg';
 
 import { SingleAdvisorSectionProps } from './types';
+
+import styles from './SingleAdvisorSection.module.css';
 
 export const SingleAdvisorSection: React.FC<SingleAdvisorSectionProps> = ({
   advisorsBackLink: { label: labelLink, link: advisorsLink },
@@ -23,10 +27,15 @@ export const SingleAdvisorSection: React.FC<SingleAdvisorSectionProps> = ({
           {labelLink}
         </Link>
 
-        <Title className="xl:mb-4">{name}</Title>
+        <Title className="mb-4">{name}</Title>
 
         <div className="flex flex-col gap-4 xl:flex-row">
-          <div className="overflow-hidden rounded-3xl md:size-[688px] xl:sticky xl:top-[7.5rem] xl:size-[632px]">
+          <div
+            className={cn(
+              'max-h-[448px] overflow-hidden rounded-3xl md:size-[688px] md:max-h-full xl:sticky xl:top-[7.5rem] xl:size-[632px]',
+              styles.photo,
+            )}
+          >
             <Image
               src={photo}
               alt={alt}
@@ -54,7 +63,7 @@ export const SingleAdvisorSection: React.FC<SingleAdvisorSectionProps> = ({
               type="link"
               typeStyle="primary"
               settings={{ href: link, externalLink: true }}
-              className="max-w-[380px]"
+              className="w-full md:w-60 xl:w-[308px]"
             >
               {postFBLinkLabel}
             </ButtonLink>
