@@ -42,6 +42,7 @@ export default async function Home({
         dict={dict}
         lang={lang}
         activities={latestActivities}
+        isMainPage
       />
 
       <TargetSection dict={dict} lang={lang} />

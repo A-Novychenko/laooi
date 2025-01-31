@@ -8,6 +8,7 @@ export const ActivitiesSection: React.FC<ActivitiesSectionProps> = ({
   dict: { activitiesSection },
   lang,
   activities,
+  isMainPage = false,
 }) => {
   const { title, description, link } = activitiesSection;
 
@@ -15,23 +16,24 @@ export const ActivitiesSection: React.FC<ActivitiesSectionProps> = ({
     <section className="section">
       <div className="container">
         <Title className="mb-4">{title}</Title>
+        {isMainPage && (
+          <div className="xl:mb-4 xl:flex xl:gap-4">
+            <p className="mb-2 xl:mb-0">{description}</p>
 
-        <div className="xl:mb-4 xl:flex xl:gap-4">
-          <p className="mb-2 xl:mb-0">{description}</p>
-
-          <div className="mx-auto mb-4 md:mx-0 md:max-w-[237px] xl:mb-0 xl:w-full xl:max-w-[370px] xl:whitespace-nowrap">
-            <ButtonLink
-              type="link"
-              typeStyle="secondary"
-              settings={{
-                ...link.settings,
-                href: `${lang}${link.settings.href}`,
-              }}
-            >
-              {link.label}
-            </ButtonLink>
+            <div className="mx-auto mb-4 md:mx-0 md:max-w-[237px] xl:mb-0 xl:w-full xl:max-w-[370px] xl:whitespace-nowrap">
+              <ButtonLink
+                type="link"
+                typeStyle="secondary"
+                settings={{
+                  ...link.settings,
+                  href: `${lang}${link.settings.href}`,
+                }}
+              >
+                {link.label}
+              </ButtonLink>
+            </div>
           </div>
-        </div>
+        )}
 
         <ul className="flex flex-col gap-[16px] md:flex-row md:flex-wrap">
           {activities &&
