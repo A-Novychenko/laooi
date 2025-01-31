@@ -1,14 +1,15 @@
-import { ButtonLink, Title } from '@/components/ui';
+import { ActivitiesCard, ButtonLink, Title } from '@/components/ui';
 
-import { cn } from '@/utils/cn';
+import { ActivitiesSectionProps } from './types';
 
 import styles from './ActivitiesSection.module.css';
 
-export const ActivitiesSection: React.FC<ISectionProps> = ({
+export const ActivitiesSection: React.FC<ActivitiesSectionProps> = ({
   dict: { activitiesSection },
   lang,
+  activities,
 }) => {
-  const { title, description, link, items } = activitiesSection;
+  const { title, description, link } = activitiesSection;
 
   return (
     <section className="section">
@@ -32,23 +33,11 @@ export const ActivitiesSection: React.FC<ISectionProps> = ({
           </div>
         </div>
 
-        <ul className="flex flex-col gap-[16px] md:flex-row md:flex-wrap xl:flex-nowrap">
-          {items &&
-            items.map(({ quantity, text }, idx) => (
-              <li
-                key={idx}
-                className={cn(
-                  'rounded-2xl bg-bgLightSlate p-4 md:rounded-[20px] md:p-6',
-                  styles.item,
-                )}
-              >
-                <p className="mb-2 text-[30px]/[1.27] font-bold text-textMenuAccent md:text-[32px]/[1.13] xl:text-[36px]/normal">
-                  {quantity}
-                </p>
-
-                <p className="text-sm/normal font-semibold xl:text-base/normal">
-                  {text}
-                </p>
+        <ul className="flex flex-col gap-[16px] md:flex-row md:flex-wrap">
+          {activities &&
+            activities.map(({ quantity, text }, idx) => (
+              <li key={idx} className={styles.item}>
+                <ActivitiesCard quantity={quantity} text={text} />
               </li>
             ))}
         </ul>

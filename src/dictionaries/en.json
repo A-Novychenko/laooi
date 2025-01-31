@@ -464,25 +464,7 @@
         "href": "/main-areas",
         "externalLink": false
       }
-    },
-    "items": [
-      {
-        "quantity": "1 900",
-        "text": "beneficiaries received a cash assistance of 3,600 UAH per person for 3 months"
-      },
-      {
-        "quantity": "735",
-        "text": "households received a one-time assistance of 26,000 UAH for winter preparation"
-      },
-      {
-        "quantity": "920",
-        "text": "individuals received psychological counseling or legal assistance"
-      },
-      {
-        "quantity": "7",
-        "text": "inclusive public advisors are providing ongoing assistance"
-      }
-    ]
+    }
   },
   "heroSection": {
     "title": "Luhansk Association of Organizations of Persons with Disabilities",

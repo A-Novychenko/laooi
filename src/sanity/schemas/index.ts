@@ -12,6 +12,7 @@ import { projects } from './projects-schema';
 import { partners } from './partners-schema';
 import { donors } from './donors-schema';
 import { team } from './team-schema';
+import { activities } from './activities-schema';
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -27,5 +28,6 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     partners,
     team,
     donors,
+    activities,
   ],
 };

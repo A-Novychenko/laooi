@@ -148,12 +148,6 @@ interface IActivitiesSection {
       externalLink: boolean;
     };
   };
-  items: IActivitiesSectionItems[];
-}
-
-interface IActivitiesSectionItems {
-  quantity: string;
-  text: string;
 }
 
 interface IHeroSection {

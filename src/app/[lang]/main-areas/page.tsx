@@ -1,10 +1,11 @@
 import {
+  ActivitiesSection,
   MainAreasHeroSection,
   MainAreasSection,
   PartnersSection,
 } from '@/sections';
 
-import { getPartners } from '@/actions/sanity';
+import { getAllActivities, getPartners } from '@/actions/sanity';
 
 import { getDictionary } from '@/utils/dictionaries';
 
@@ -18,12 +19,17 @@ const MainAreasPage = async ({
   const dict = await getDictionary(lang);
 
   const { partners } = await getPartners(lang);
+  const activities = await getAllActivities(lang);
 
   return (
     <>
       <MainAreasHeroSection dict={dict} />
 
       <MainAreasSection dict={dict} />
+
+      {activities && activities.length > 0 && (
+        <ActivitiesSection dict={dict} lang={lang} activities={activities} />
+      )}
 
       {partners && <PartnersSection dict={dict} partners={partners} />}
     </>

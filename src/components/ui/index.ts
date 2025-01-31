@@ -38,3 +38,4 @@ export * from './ReadMoreBtn';
 export * from './TeamCard';
 export * from './Backdrop';
 export * from './PartnersGallery';
+export * from './ActivitiesCard';
