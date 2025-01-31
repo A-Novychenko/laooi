@@ -26,7 +26,7 @@ export const SingleAdvisorSection: React.FC<SingleAdvisorSectionProps> = ({
         <Title className="xl:mb-4">{name}</Title>
 
         <div className="flex flex-col gap-4 xl:flex-row">
-          <div className="overflow-hidden rounded-3xl md:size-[688px] xl:size-[632px]">
+          <div className="overflow-hidden rounded-3xl md:size-[688px] xl:sticky xl:top-[7.5rem] xl:size-[632px]">
             <Image
               src={photo}
               alt={alt}

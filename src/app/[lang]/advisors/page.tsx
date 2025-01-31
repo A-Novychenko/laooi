@@ -2,6 +2,8 @@ import { AdvisorsHeroSection, AdvisorsSection } from '@/sections';
 
 import { getDictionary } from '@/utils/dictionaries';
 
+export const revalidate = 0;
+
 const AdvisorsPage = async ({
   params: { lang },
 }: {
