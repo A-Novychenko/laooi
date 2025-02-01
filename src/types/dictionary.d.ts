@@ -4,6 +4,7 @@ interface IDictionary {
     logoAlt: string;
     searchInput: { placeholder: string };
     postFBLinkLabel: string;
+    postAdvisorFBLinkLabel: string;
     postBackLink: IPostBackLink;
     tenderBackLink: IPostBackLink;
     projectBackLink: IPostBackLink;

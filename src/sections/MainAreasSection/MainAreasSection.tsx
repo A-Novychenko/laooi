@@ -25,7 +25,7 @@ export const MainAreasSection: React.FC<MainAreasSectionProps> = ({ dict }) => {
             <li
               key={idx}
               className={cn(
-                'min-h-[279px] rounded-3xl bg-bgLightSlate p-[24px] md:min-h-[307px] md:w-[308px] md:p-[32px] xl:min-h-[296px] xl:w-[416px] xl:p-[40px]',
+                'rounded-3xl bg-bgLightSlate p-[24px] md:min-h-[307px] md:w-[308px] md:p-[32px] xl:min-h-[296px] xl:w-[416px] xl:p-[40px]',
                 styles.cardAreas,
               )}
             >
