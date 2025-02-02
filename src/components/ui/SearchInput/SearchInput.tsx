@@ -1,6 +1,7 @@
 'use client';
 
-import { useEffect, useRef, useState, ChangeEvent } from 'react';
+import { useEffect, useRef, useState, ChangeEvent, FormEvent } from 'react';
+import { useRouter } from 'next/navigation';
 
 import { Transition } from '@headlessui/react';
 
@@ -18,13 +19,29 @@ import styles from './SearchInput.module.css';
 export const SearchInput: React.FC<SearchInputProps> = ({
   placeholder,
   desktop,
+  lang,
 }) => {
   const [open, setOpen] = useState(false);
   const [inputValue, setInputValue] = useState('');
   const wrapperRef = useRef<HTMLDivElement>(null);
+  const router = useRouter();
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     setInputValue(event.target.value);
+  };
+
+  const handleSubmit = (e: FormEvent) => {
+    e.preventDefault();
+
+    if (inputValue.trim()) {
+      const params = new URLSearchParams();
+      params.set('searchQuery', inputValue.trim());
+
+      router.push(`/${lang}/search?${params.toString()}`);
+
+      console.log('inputValue', inputValue);
+      setInputValue('');
+    }
   };
 
   useEffect(() => {
@@ -69,17 +86,19 @@ export const SearchInput: React.FC<SearchInputProps> = ({
                 'data-[leave]:data-[closed]:translate-x-full data-[leave]:duration-300',
               ])}
             >
-              <input
-                className={cn(
-                  'h-[48px] w-[500px] rounded-[40px] border py-2 pl-10 pr-4 text-base/normal font-semibold outline-textFooterAccent placeholder:text-textSlate focus:border-transparent',
-                  styles.input,
-                )}
-                type="search"
-                name="header-search-input"
-                placeholder={placeholder}
-                value={inputValue}
-                onChange={handleInputChange}
-              />
+              <form onSubmit={handleSubmit}>
+                <input
+                  className={cn(
+                    'h-[48px] w-[500px] rounded-[40px] border py-2 pl-10 pr-4 text-base/normal font-semibold outline-textFooterAccent placeholder:text-textSlate focus:border-transparent',
+                    styles.input,
+                  )}
+                  type="search"
+                  name="header-search-input"
+                  placeholder={placeholder}
+                  value={inputValue}
+                  onChange={handleInputChange}
+                />
+              </form>
 
               <SearchIcon
                 width="16"
@@ -103,17 +122,19 @@ export const SearchInput: React.FC<SearchInputProps> = ({
         </div>
       ) : (
         <div className="relative xl:hidden">
-          <input
-            className={cn(
-              'h-[44px] w-full rounded-[40px] bg-bgLightSlate py-2 pl-10 pr-4 text-base/normal font-semibold text-textPrimary outline-textFooterAccent placeholder:text-textSlate md:h-[48px]',
-              styles.input,
-            )}
-            type="search"
-            name="header-search-input"
-            placeholder={placeholder}
-            value={inputValue}
-            onChange={handleInputChange}
-          />
+          <form onSubmit={handleSubmit}>
+            <input
+              className={cn(
+                'h-[44px] w-full rounded-[40px] bg-bgLightSlate py-2 pl-10 pr-4 text-base/normal font-semibold text-textPrimary outline-textFooterAccent placeholder:text-textSlate md:h-[48px]',
+                styles.input,
+              )}
+              type="search"
+              name="header-search-input"
+              placeholder={placeholder}
+              value={inputValue}
+              onChange={handleInputChange}
+            />
+          </form>
 
           <SearchIcon
             width="16"

@@ -456,3 +456,18 @@ interface ITransformedActivity {
   quantity: number;
   text: string;
 }
+
+interface ISearchArray {
+  _type?: string;
+  link?: string;
+  _id?: string;
+  title: { [key: string]: string };
+  slug?: object;
+  _createdAt?: string;
+  postType?: string;
+  _rev?: string;
+  body?: { [key: string]: string };
+  _updatedAt?: string;
+  publicationDate?: string;
+  images?: Array<object>;
+}

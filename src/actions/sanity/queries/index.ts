@@ -21,3 +21,4 @@ export * from './getAllDonorsQuery';
 export * from './getAdvisorBySlugQuery';
 export * from './getAllActivitiesQuery';
 export * from './getLatestActivitiesQuery';
+export * from './getSearchGlobalQuery';

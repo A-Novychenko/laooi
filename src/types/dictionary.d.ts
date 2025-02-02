@@ -42,6 +42,7 @@ interface IDictionary {
   mediaSection: IMediaSection;
   documentsSection: IDocumentsSection;
   researchSection: IResearchSection;
+  searchSection: ISearchSection;
   advisorsPage: {
     advisorsHeroSection: IAdvisorsHeroSection;
     advisorsSection: IAdvisorsSection;
@@ -452,5 +453,10 @@ interface IMainAreasSection {
 
 interface ISingleAdvisorSection {
   title: string;
+  errorData: IErrorData;
+}
+
+interface ISearchSection {
+  mainTitle: string;
   errorData: IErrorData;
 }

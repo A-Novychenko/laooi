@@ -738,6 +738,20 @@
       }
     }
   },
+  "searchSection": {
+    "mainTitle": "Результати пошуку:",
+
+    "errorData": {
+      "description": "На жаль, наразі не вдалось знайти нічого за вашим запитом. Спробуйте змінити ключові слова пошуку",
+      "link": {
+        "label": "Home",
+        "settings": {
+          "href": "/en/",
+          "externalLink": false
+        }
+      }
+    }
+  },
   "advisorsPage": {
     "advisorsHeroSection": {
       "title": "Інклюзивні громадські радники",

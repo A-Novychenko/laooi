@@ -31,7 +31,11 @@ export const Header: React.FC<HeaderProps> = async ({ lang }) => {
           </div>
 
           <div className="hidden items-center gap-[16px] xl:flex">
-            <SearchInput desktop placeholder={searchInput.placeholder} />
+            <SearchInput
+              desktop
+              placeholder={searchInput.placeholder}
+              lang={lang}
+            />
 
             <AccessMenu dict={accessibilityMenu} />
 

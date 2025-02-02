@@ -738,6 +738,20 @@
       }
     }
   },
+  "searchSection": {
+    "mainTitle": "Search results",
+
+    "errorData": {
+      "description": "We're sorry, but we couldn't find anything for your search. Try changing your search keywords",
+      "link": {
+        "label": "Home",
+        "settings": {
+          "href": "/en/",
+          "externalLink": false
+        }
+      }
+    }
+  },
   "advisorsPage": {
     "advisorsHeroSection": {
       "title": "Inclusive community advisors",

@@ -20,3 +20,4 @@ export * from './getAllDonors';
 export * from './getAdvisorBySlug';
 export * from './getLatestActivities';
 export * from './getAllActivities';
+export * from './getSearchGlobal';
