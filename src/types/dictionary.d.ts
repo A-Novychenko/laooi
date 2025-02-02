@@ -458,5 +458,10 @@ interface ISingleAdvisorSection {
 
 interface ISearchSection {
   mainTitle: string;
+  categoryTitles: ICategoryTitles;
   errorData: IErrorData;
+}
+
+interface ICategoryTitles {
+  [key: string]: string;
 }

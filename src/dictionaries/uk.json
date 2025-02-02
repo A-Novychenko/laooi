@@ -740,11 +740,24 @@
   },
   "searchSection": {
     "mainTitle": "Результати пошуку:",
+    "categoryTitles": {
+      "team": "Команда",
+      "projects": "Проєкти",
+      "blog": "Блог",
+      "tenders": "Тендери",
+      "documents": "Документи",
+      "research": "Дослідження",
+      "news": "Новини",
+      "advisors": "Радники",
+      "media": "Медіа",
+      "post": "Пост",
+      "other": "Інше"
+    },
 
     "errorData": {
       "description": "На жаль, наразі не вдалось знайти нічого за вашим запитом. Спробуйте змінити ключові слова пошуку",
       "link": {
-        "label": "Home",
+        "label": "Головна",
         "settings": {
           "href": "/en/",
           "externalLink": false

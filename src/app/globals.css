@@ -48,14 +48,11 @@ html {
 }
 
 .section {
-  @apply py-8 md:py-12 xl:py-16;
+  @apply pb-16 pt-8 md:pb-24 md:pt-10 xl:pb-32 xl:pt-14;
 }
 
-.section-media,
-.section-blog,
-.section-contacts,
 .section-documents {
-  @apply pb-16 pt-8 md:pb-24 md:pt-10 xl:pb-32 xl:pt-14;
+  @apply pb-12 pt-8 md:pb-[72px] md:pt-10 xl:pb-24 xl:pt-14;
 }
 
 .swiper-wrapper {

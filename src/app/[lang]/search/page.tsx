@@ -1,6 +1,6 @@
 import { getSearchGlobal } from '@/actions/sanity';
 
-import { PlaceholderSection } from '@/sections';
+import { PlaceholderSection, SearchSection } from '@/sections';
 
 import { getDictionary } from '@/utils/dictionaries';
 
@@ -17,7 +17,7 @@ const SearchPage = async ({
 }) => {
   const dict = await getDictionary(lang);
 
-  const { mainTitle, errorData } = dict.searchSection;
+  const { mainTitle, errorData, categoryTitles } = dict.searchSection;
 
   const searchQuery = searchParams.searchQuery || '';
 
@@ -27,7 +27,13 @@ const SearchPage = async ({
     <>
       {searchResults && searchResults.length > 0 ? (
         <>
-          <h1>{mainTitle}</h1>
+          <h1 className="visually-hidden">{mainTitle}</h1>
+
+          <SearchSection
+            lang={lang}
+            searchResults={searchResults}
+            categoryTitles={categoryTitles}
+          />
         </>
       ) : (
         <PlaceholderSection data={{ title: mainTitle, ...errorData }} />
