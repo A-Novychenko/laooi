@@ -95,6 +95,7 @@
     },
     "donorTitle": "Донор",
     "postFBLinkLabel": "Читати у Facebook",
+    "postAdvisorFBLinkLabel": "Дізнатися більше",
     "readMoreLabel": "Читати далі",
     "teamClosedLabel": "Закрити",
     "mainNav": [
@@ -732,6 +733,33 @@
         "label": "Home",
         "settings": {
           "href": "/uk/",
+          "externalLink": false
+        }
+      }
+    }
+  },
+  "searchSection": {
+    "mainTitle": "Результати пошуку:",
+    "categoryTitles": {
+      "team": "Команда",
+      "projects": "Проєкти",
+      "blog": "Блог",
+      "tenders": "Тендери",
+      "documents": "Документи",
+      "research": "Дослідження",
+      "news": "Новини",
+      "advisors": "Радники",
+      "media": "Медіа",
+      "post": "Пост",
+      "other": "Інше"
+    },
+
+    "errorData": {
+      "description": "На жаль, наразі не вдалось знайти нічого за вашим запитом. Спробуйте змінити ключові слова пошуку",
+      "link": {
+        "label": "Головна",
+        "settings": {
+          "href": "/en/",
           "externalLink": false
         }
       }

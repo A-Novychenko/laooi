@@ -95,6 +95,7 @@
     },
     "donorTitle": "Donor",
     "postFBLinkLabel": "Read on Facebook",
+    "postAdvisorFBLinkLabel": "Learn more",
     "readMoreLabel": "Read more",
     "teamClosedLabel": "Close",
     "mainNav": [
@@ -728,6 +729,32 @@
     },
     "errorData": {
       "description": "Unfortunately, there are no documents available for viewing at this time. You can come back later or view the latest information in other sections of our website.",
+      "link": {
+        "label": "Home",
+        "settings": {
+          "href": "/en/",
+          "externalLink": false
+        }
+      }
+    }
+  },
+  "searchSection": {
+    "mainTitle": "Search results",
+    "categoryTitles": {
+      "team": "Team",
+      "projects": "Projects",
+      "tenders": "Tenders",
+      "documents": "Documents",
+      "research": "Research",
+      "news": "News",
+      "advisors": "Advisors",
+      "media": "Media",
+      "post": "Post",
+      "other": "Other"
+    },
+
+    "errorData": {
+      "description": "We're sorry, but we couldn't find anything for your search. Try changing your search keywords",
       "link": {
         "label": "Home",
         "settings": {

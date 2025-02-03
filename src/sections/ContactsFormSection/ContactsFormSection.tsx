@@ -9,7 +9,7 @@ export const ContactsFormSection: React.FC<ISectionProps> = ({ dict }) => {
   const { contactsPage, socialLinks, socialListTitle, logoAlt } = dict.common;
 
   return (
-    <section className="section-contacts">
+    <section className="section">
       <div className="container">
         <Title tag="h1" className="mb-4">
           {contactsPage.title}

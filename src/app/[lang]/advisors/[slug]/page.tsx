@@ -27,7 +27,7 @@ const SingleAdvisorPage = async ({
 
   const advisor = await getAdvisorBySlug(lang, slug);
 
-  const { advisorsBackLink, postFBLinkLabel } = dict.common;
+  const { advisorsBackLink, postAdvisorFBLinkLabel } = dict.common;
   const { title, errorData } = dict.singleAdvisorSection;
 
   return (
@@ -36,7 +36,7 @@ const SingleAdvisorPage = async ({
         <SingleAdvisorSection
           advisorsBackLink={advisorsBackLink}
           advisor={advisor}
-          postFBLinkLabel={postFBLinkLabel}
+          postFBLinkLabel={postAdvisorFBLinkLabel}
         />
       ) : (
         <PlaceholderSection data={{ title, ...errorData }} />

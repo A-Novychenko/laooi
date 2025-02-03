@@ -4,6 +4,7 @@ interface IDictionary {
     logoAlt: string;
     searchInput: { placeholder: string };
     postFBLinkLabel: string;
+    postAdvisorFBLinkLabel: string;
     postBackLink: IPostBackLink;
     tenderBackLink: IPostBackLink;
     projectBackLink: IPostBackLink;
@@ -41,6 +42,7 @@ interface IDictionary {
   mediaSection: IMediaSection;
   documentsSection: IDocumentsSection;
   researchSection: IResearchSection;
+  searchSection: ISearchSection;
   advisorsPage: {
     advisorsHeroSection: IAdvisorsHeroSection;
     advisorsSection: IAdvisorsSection;
@@ -452,4 +454,14 @@ interface IMainAreasSection {
 interface ISingleAdvisorSection {
   title: string;
   errorData: IErrorData;
+}
+
+interface ISearchSection {
+  mainTitle: string;
+  categoryTitles: ICategoryTitles;
+  errorData: IErrorData;
+}
+
+interface ICategoryTitles {
+  [key: string]: string;
 }

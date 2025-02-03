@@ -32,7 +32,7 @@ export const BlogGallerySection: React.FC<BlogGallerySectionProps> = ({
   labelTitle,
 }) => {
   return (
-    <section className="section-blog">
+    <section className="section">
       <div className="container">
         <Title className="mb-4">{title}</Title>
 
