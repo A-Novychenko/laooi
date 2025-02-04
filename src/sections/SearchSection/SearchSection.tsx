@@ -5,9 +5,9 @@ import { Title } from '@/components/ui';
 
 import { getCategoriesSearchResult } from '@/utils/getCategoriesSearchResult';
 import { getPhotoUrl } from '@/utils/getSanityPhotoUrl';
+import { formatDate } from '@/utils/formatDate';
 
 import { SearchSectionProps } from './types';
-import { formatDate } from '@/utils/formatDate';
 
 export const SearchSection: React.FC<SearchSectionProps> = ({
   lang,
@@ -24,8 +24,6 @@ export const SearchSection: React.FC<SearchSectionProps> = ({
           const title = categoryTitles[category];
           const items = categorizedResults[category];
 
-          //   console.log('CATEGORY: ' + category);
-
           if (!items) return null;
 
           return (
@@ -40,8 +38,6 @@ export const SearchSection: React.FC<SearchSectionProps> = ({
 
               <ul className="flex w-full flex-wrap gap-4 rounded-3xl">
                 {items.map(item => {
-                  //   console.log('item:', item);
-
                   return (
                     <li
                       key={item._id}

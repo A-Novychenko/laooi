@@ -1,3 +1,5 @@
+import { Fragment } from 'react';
+
 import { MediaCard } from '@/components/ui';
 
 import { cn } from '@/utils/cn';
@@ -5,7 +7,6 @@ import { cn } from '@/utils/cn';
 import { MediaListProps } from './types';
 
 import styles from './MediaList.module.css';
-import { Fragment } from 'react';
 
 export const MediaList: React.FC<MediaListProps> = ({
   items,
