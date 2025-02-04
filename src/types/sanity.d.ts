@@ -469,7 +469,10 @@ interface ISearchArray {
   body?: { [key: string]: string };
   _updatedAt?: string;
   publicationDate?: string;
-  images?: Array<object>;
+  images?: {
+    asset: { _ref: string; _type: string };
+    caption: { [key: string]: string };
+  }[];
   description?: { [key: string]: string };
   name?: { [key: string]: string };
 }

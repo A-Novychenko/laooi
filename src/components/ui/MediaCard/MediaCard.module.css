@@ -1,6 +1,7 @@
 .overlay {
   @media screen and (max-width: 479px) {
-    width: calc(100vw - 32px);
+    /* width: calc(100vw - 32px); */
+    width: 100%;
   }
 
   @apply bg-gradient-to-b from-transparent to-black;

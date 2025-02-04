@@ -17,7 +17,8 @@ const SearchPage = async ({
 }) => {
   const dict = await getDictionary(lang);
 
-  const { mainTitle, errorData, categoryTitles } = dict.searchSection;
+  const { mainTitle, errorData, categoryTitles, linksTitle } =
+    dict.searchSection;
 
   const searchQuery = searchParams.searchQuery || '';
 
@@ -33,6 +34,7 @@ const SearchPage = async ({
             lang={lang}
             searchResults={searchResults}
             categoryTitles={categoryTitles}
+            linksTitle={linksTitle}
           />
         </>
       ) : (

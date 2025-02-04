@@ -740,6 +740,7 @@
   },
   "searchSection": {
     "mainTitle": "Search results",
+    "linksTitle": "All",
     "categoryTitles": {
       "team": "Team",
       "projects": "Projects",
@@ -749,8 +750,8 @@
       "news": "News",
       "advisors": "Advisors",
       "media": "Media",
-      "post": "Post",
-      "other": "Other"
+      "post": "Posts",
+      "other": "Others"
     },
 
     "errorData": {
