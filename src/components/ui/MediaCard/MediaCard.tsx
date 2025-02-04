@@ -27,9 +27,10 @@ export const MediaCard: React.FC<MediaCardProps> = ({
     >
       <div
         className={cn(
-          'h-[288px] w-full overflow-hidden rounded-[16px]',
+          'h-[448px] w-full overflow-hidden rounded-[16px]',
           'md:h-[219px] md:rounded-[20px]',
           'xl:h-[244px] xl:rounded-[24px]',
+          styles.imgWrap,
         )}
       >
         <Image

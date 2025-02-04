@@ -740,17 +740,17 @@
   },
   "searchSection": {
     "mainTitle": "Результати пошуку:",
+    "linksTitle": "Усі",
     "categoryTitles": {
       "team": "Команда",
       "projects": "Проєкти",
-      "blog": "Блог",
       "tenders": "Тендери",
       "documents": "Документи",
       "research": "Дослідження",
       "news": "Новини",
       "advisors": "Радники",
       "media": "Медіа",
-      "post": "Пост",
+      "post": "Пости",
       "other": "Інше"
     },
 
