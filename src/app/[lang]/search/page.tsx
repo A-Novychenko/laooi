@@ -19,7 +19,7 @@ const SearchPage = async ({
 
   const { mainTitle, errorData, categoryTitles, linksTitle } =
     dict.searchSection;
-  const { readMoreLabel } = dict.common;
+  const { readMoreLabel, teamClosedLabel, searchInput } = dict.common;
   const { fileLinks } = dict.documentsSection;
   const { labelTitle } = dict.tendersSection;
 
@@ -31,8 +31,6 @@ const SearchPage = async ({
     <>
       {searchResults && searchResults.length > 0 ? (
         <>
-          <h1 className="visually-hidden">{mainTitle}</h1>
-
           <SearchSection
             lang={lang}
             searchResults={searchResults}
@@ -41,6 +39,9 @@ const SearchPage = async ({
             readMoreLabel={readMoreLabel}
             fileLinks={fileLinks}
             labelTitle={labelTitle}
+            teamClosedLabel={teamClosedLabel}
+            mainTitle={mainTitle}
+            searchInputPlaceholder={searchInput.placeholder}
           />
         </>
       ) : (

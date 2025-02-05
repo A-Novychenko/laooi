@@ -484,4 +484,10 @@ interface ISearchArray {
     };
   };
   deadline?: string;
+  position?: { [key: string]: string };
+  photo: {
+    asset: { _ref: string; _type: string };
+    caption: { [key: string]: string };
+  };
+  index?: number;
 }

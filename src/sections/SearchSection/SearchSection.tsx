@@ -1,4 +1,11 @@
-import { ButtonLink, DocumentCard, PostCard, Title } from '@/components/ui';
+import {
+  ButtonLink,
+  DocumentCard,
+  PostCard,
+  SearchInput,
+  TeamCard,
+  Title,
+} from '@/components/ui';
 
 import { getCategoriesSearchResult } from '@/utils/getCategoriesSearchResult';
 import { getPhotoUrl } from '@/utils/getSanityPhotoUrl';
@@ -14,12 +21,31 @@ export const SearchSection: React.FC<SearchSectionProps> = ({
   readMoreLabel,
   fileLinks,
   labelTitle,
+  teamClosedLabel,
+  mainTitle,
+  searchInputPlaceholder,
 }) => {
   const categorizedResults = getCategoriesSearchResult(searchResults);
 
   return (
     <section className="section">
       <div className="container">
+        <div className="pb-8 md:pb-12 xl:pb-16">
+          <Title tag={'h1'} className="mb-4">
+            {mainTitle}
+          </Title>
+
+          <SearchInput
+            lang={lang}
+            placeholder={searchInputPlaceholder}
+            desktop={false}
+            searchPage={true}
+            className={
+              'border border-textActive bg-textLight outline-textActive placeholder:text-textSlate focus:border-transparent xl:h-[56px]'
+            }
+          />
+        </div>
+
         {Object.keys(categoryTitles).map(category => {
           const title = categoryTitles[category];
           const items = categorizedResults[category];
@@ -27,11 +53,15 @@ export const SearchSection: React.FC<SearchSectionProps> = ({
           if (!items) return null;
 
           return (
-            <div key={category} className="mb-10">
-              <div className="mb-4 flex items-center justify-between">
-                <Title className="">
-                  {title} ({items.length})
-                </Title>
+            <div key={category} className="py-8 md:py-12 xl:py-16">
+              <div className="mb-4 flex flex-col md:flex-row md:justify-between">
+                <div className="mb-2 flex items-center gap-2">
+                  <Title className="">{title}</Title>
+
+                  <p className="text-[30px]/normal text-textBlue md:text-[36px] xl:text-[40px]">
+                    {items.length}
+                  </p>
+                </div>
 
                 <ButtonLink
                   type={'link'}
@@ -47,9 +77,11 @@ export const SearchSection: React.FC<SearchSectionProps> = ({
 
               <ul className="flex w-full flex-wrap gap-4 rounded-3xl">
                 {items.slice(0, 6).map(item => {
-                  console.log('ITEM', item);
                   return (
-                    <li key={item._id} className="w-[416px]">
+                    <li
+                      key={item._id}
+                      className="w-full md:w-[336px] xl:w-[416px]"
+                    >
                       {category === 'projects' && (
                         <>
                           <PostCard
@@ -136,6 +168,24 @@ export const SearchSection: React.FC<SearchSectionProps> = ({
                               slug: item.slug?.current || '',
                               label: item.deadline || '',
                             }}
+                          />
+                        </>
+                      )}
+
+                      {category === 'team' && (
+                        <>
+                          <TeamCard
+                            teamMember={{
+                              name: item?.name?.[lang] || '',
+                              position: item.position?.[lang] || '',
+                              description: item.description?.[lang] || '',
+                              photo: getPhotoUrl(item.photo?.asset?._ref) || '',
+                              alt: item.photo?.caption?.[lang] || '',
+                              link: item.link || '',
+                              index: item.index || 1,
+                            }}
+                            readMoreLabel={readMoreLabel}
+                            teamClosedLabel={teamClosedLabel}
                           />
                         </>
                       )}

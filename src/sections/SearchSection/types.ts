@@ -6,4 +6,7 @@ export type SearchSectionProps = {
   readMoreLabel: string;
   fileLinks: IFileLinks;
   labelTitle?: string;
+  teamClosedLabel: string;
+  mainTitle: string;
+  searchInputPlaceholder: string;
 };
