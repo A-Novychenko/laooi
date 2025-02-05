@@ -1,11 +1,8 @@
-import Link from 'next/link';
-import Image from 'next/image';
-
-import { Title } from '@/components/ui';
+import { ButtonLink, DocumentCard, PostCard, Title } from '@/components/ui';
 
 import { getCategoriesSearchResult } from '@/utils/getCategoriesSearchResult';
 import { getPhotoUrl } from '@/utils/getSanityPhotoUrl';
-import { formatDate } from '@/utils/formatDate';
+import { getFileUrl } from '@/utils/getFileUrl';
 
 import { SearchSectionProps } from './types';
 
@@ -14,6 +11,9 @@ export const SearchSection: React.FC<SearchSectionProps> = ({
   searchResults,
   categoryTitles,
   linksTitle,
+  readMoreLabel,
+  fileLinks,
+  labelTitle,
 }) => {
   const categorizedResults = getCategoriesSearchResult(searchResults);
 
@@ -28,85 +28,115 @@ export const SearchSection: React.FC<SearchSectionProps> = ({
 
           return (
             <div key={category} className="mb-10">
-              <Title className="mb-4 text-base">
-                {title} ({items.length})
-              </Title>
+              <div className="mb-4 flex items-center justify-between">
+                <Title className="">
+                  {title} ({items.length})
+                </Title>
 
-              <Link href={`${category === 'post' ? 'blog' : category}`}>
-                {linksTitle}&nbsp;{categoryTitles[category]}
-              </Link>
+                <ButtonLink
+                  type={'link'}
+                  settings={{
+                    href: `${category === 'post' ? 'blog' : category}`,
+                    externalLink: false,
+                  }}
+                  typeStyle={'light'}
+                >
+                  {linksTitle}
+                </ButtonLink>
+              </div>
 
               <ul className="flex w-full flex-wrap gap-4 rounded-3xl">
-                {items.map(item => {
+                {items.slice(0, 6).map(item => {
+                  console.log('ITEM', item);
                   return (
-                    <li
-                      key={item._id}
-                      className="w-[400px] rounded-lg bg-gray-100 p-4 shadow-md"
-                    >
-                      {item.slug ? (
-                        <Link
-                          href={`${category === 'post' ? 'blog' : category}/${item.slug?.current}`}
-                        >
-                          <Title
-                            tag={'h3'}
-                            className="mb-4 line-clamp-4 text-xl/normal"
-                          >
-                            {item.name?.[lang] || item.title?.[lang]}
-                          </Title>
-
-                          {item.images?.[0] && (
-                            <div className="h-[240px] w-[300px]">
-                              <Image
-                                src={getPhotoUrl(item.images?.[0]?.asset._ref)}
-                                alt={item.images?.[0].caption?.[lang]}
-                                width={288}
-                                height={288}
-                                className="size-full object-cover"
-                              />
-                            </div>
-                          )}
-
-                          {item.description?.[lang] && (
-                            <p className="text-sm text-gray-600">
-                              {item.description[lang]}
-                            </p>
-                          )}
-
-                          {item.publicationDate && (
-                            <>
-                              <p>
-                                Date publication:
-                                {formatDate(item.publicationDate)}
-                              </p>
-                            </>
-                          )}
-                        </Link>
-                      ) : (
+                    <li key={item._id} className="w-[416px]">
+                      {category === 'projects' && (
                         <>
-                          <Title
-                            tag={'h3'}
-                            className="mb-4 line-clamp-4 text-xl/normal"
-                          >
-                            {item.name?.[lang] || item.title?.[lang]}
-                          </Title>
+                          <PostCard
+                            pageName={category}
+                            lang={lang}
+                            readMoreLabel={readMoreLabel}
+                            post={{
+                              projectYear: item.projectYear,
+                              image: getPhotoUrl(
+                                item.images?.[0]?.asset._ref || '',
+                              ),
+                              imageAlt: item.images?.[0].caption?.[lang],
+                              title: item.title?.[lang] || '',
+                              date: item.publicationDate || '',
+                              slug: item.slug?.current || '',
+                              label: item.title?.[lang] || '',
+                            }}
+                          />
+                        </>
+                      )}
 
-                          {item.images?.[0] && (
-                            <div className="h-[240px] w-[300px]">
-                              <Image
-                                src={getPhotoUrl(item.images?.[0]?.asset._ref)}
-                                alt={item.images?.[0].caption?.[lang]}
-                                width={288}
-                                height={288}
-                                className="size-full object-cover"
-                              />
-                            </div>
-                          )}
+                      {category === 'research' && (
+                        <>
+                          <DocumentCard
+                            doc={{
+                              title: item?.title?.[lang] || '',
+                              fileUrl: getFileUrl(item.file?.asset?._ref) || '',
+                            }}
+                            fileLinks={fileLinks}
+                          />
+                        </>
+                      )}
 
-                          {item.description?.[lang] && (
-                            <p className="line-clamp-4 text-sm">
-                              {item.description[lang]}
-                            </p>
-                          )}
+                      {category === 'documents' && (
+                        <>
+                          <DocumentCard
+                            doc={{
+                              title: item?.title?.[lang] || '',
+                              fileUrl: getFileUrl(item.file?.asset?._ref) || '',
+                            }}
+                            fileLinks={fileLinks}
+                          />
+                        </>
+                      )}
+
+                      {category === 'post' && (
+                        <>
+                          <PostCard
+                            pageName={'blog'}
+                            lang={lang}
+                            readMoreLabel={readMoreLabel}
+                            post={{
+                              type: item.postType,
+                              image: getPhotoUrl(
+                                item.images?.[0]?.asset._ref || '',
+                              ),
+                              imageAlt: item.images?.[0].caption?.[lang],
+                              title: item.title?.[lang] || '',
+                              // text: item.body?.[lang],
+                              date: item.publicationDate || '',
+                              slug: item.slug?.current || '',
+                              label: item.postType || '',
+                            }}
+                          />
+                        </>
+                      )}
+
+                      {category === 'tenders' && (
+                        <>
+                          <PostCard
+                            pageName={category}
+                            lang={lang}
+                            readMoreLabel={readMoreLabel}
+                            labelTitle={labelTitle}
+                            post={{
+                              deadline: item.deadline || '',
+                              image: getPhotoUrl(
+                                item.images?.[0]?.asset._ref || '',
+                              ),
+                              imageAlt: item.images?.[0].caption?.[lang],
+                              title: item.title?.[lang] || '',
+                              // text: item.body?.[lang],
+                              date: item.publicationDate || '',
+                              slug: item.slug?.current || '',
+                              label: item.deadline || '',
+                            }}
+                          />
                         </>
                       )}
                     </li>

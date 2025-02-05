@@ -19,6 +19,9 @@ const SearchPage = async ({
 
   const { mainTitle, errorData, categoryTitles, linksTitle } =
     dict.searchSection;
+  const { readMoreLabel } = dict.common;
+  const { fileLinks } = dict.documentsSection;
+  const { labelTitle } = dict.tendersSection;
 
   const searchQuery = searchParams.searchQuery || '';
 
@@ -35,6 +38,9 @@ const SearchPage = async ({
             searchResults={searchResults}
             categoryTitles={categoryTitles}
             linksTitle={linksTitle}
+            readMoreLabel={readMoreLabel}
+            fileLinks={fileLinks}
+            labelTitle={labelTitle}
           />
         </>
       ) : (

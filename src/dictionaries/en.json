@@ -740,17 +740,17 @@
   },
   "searchSection": {
     "mainTitle": "Search results",
-    "linksTitle": "All",
+    "linksTitle": "All publications",
     "categoryTitles": {
-      "team": "Team",
       "projects": "Projects",
-      "tenders": "Tenders",
-      "documents": "Documents",
       "research": "Research",
+      "media": "Media",
+      "documents": "Documents",
+      "post": "Posts",
+      "tenders": "Tenders",
+      "team": "Team",
       "news": "News",
       "advisors": "Advisors",
-      "media": "Media",
-      "post": "Posts",
       "other": "Others"
     },
 

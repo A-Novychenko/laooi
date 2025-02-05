@@ -24,7 +24,7 @@ export const MediaGallerySection: React.FC<MediaGallerySectionProps> = ({
   const { title } = dict.mediaSection;
 
   return (
-    <section className="section section-media">
+    <section className="section">
       <div className="container">
         <div className="mb-4 md:flex md:justify-between">
           <Title className="mb-4 md:mb-0">{title}</Title>
