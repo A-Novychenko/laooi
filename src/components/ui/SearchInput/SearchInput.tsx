@@ -20,6 +20,8 @@ export const SearchInput: React.FC<SearchInputProps> = ({
   placeholder,
   desktop,
   lang,
+  searchPage,
+  className,
 }) => {
   const [open, setOpen] = useState(false);
   const [inputValue, setInputValue] = useState('');
@@ -90,6 +92,7 @@ export const SearchInput: React.FC<SearchInputProps> = ({
                 <input
                   className={cn(
                     'h-[48px] w-[500px] rounded-[40px] border py-2 pl-10 pr-4 text-base/normal font-semibold outline-textFooterAccent placeholder:text-textSlate focus:border-transparent',
+
                     styles.input,
                   )}
                   type="search"
@@ -121,12 +124,13 @@ export const SearchInput: React.FC<SearchInputProps> = ({
           </Transition>
         </div>
       ) : (
-        <div className="relative xl:hidden">
+        <div className={`relative ${searchPage ? 'xl:block' : 'xl:hidden'}`}>
           <form onSubmit={handleSubmit}>
             <input
               className={cn(
                 'h-[44px] w-full rounded-[40px] bg-bgLightSlate py-2 pl-10 pr-4 text-base/normal font-semibold text-textPrimary outline-textFooterAccent placeholder:text-textSlate md:h-[48px]',
                 styles.input,
+                className,
               )}
               type="search"
               name="header-search-input"

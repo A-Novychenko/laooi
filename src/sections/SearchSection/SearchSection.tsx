@@ -1,11 +1,15 @@
-import Link from 'next/link';
-import Image from 'next/image';
-
-import { Title } from '@/components/ui';
+import {
+  ButtonLink,
+  DocumentCard,
+  PostCard,
+  SearchInput,
+  TeamCard,
+  Title,
+} from '@/components/ui';
 
 import { getCategoriesSearchResult } from '@/utils/getCategoriesSearchResult';
 import { getPhotoUrl } from '@/utils/getSanityPhotoUrl';
-import { formatDate } from '@/utils/formatDate';
+import { getFileUrl } from '@/utils/getFileUrl';
 
 import { SearchSectionProps } from './types';
 
@@ -14,12 +18,34 @@ export const SearchSection: React.FC<SearchSectionProps> = ({
   searchResults,
   categoryTitles,
   linksTitle,
+  readMoreLabel,
+  fileLinks,
+  labelTitle,
+  teamClosedLabel,
+  mainTitle,
+  searchInputPlaceholder,
 }) => {
   const categorizedResults = getCategoriesSearchResult(searchResults);
 
   return (
     <section className="section">
       <div className="container">
+        <div className="pb-8 md:pb-12 xl:pb-16">
+          <Title tag={'h1'} className="mb-4">
+            {mainTitle}
+          </Title>
+
+          <SearchInput
+            lang={lang}
+            placeholder={searchInputPlaceholder}
+            desktop={false}
+            searchPage={true}
+            className={
+              'border border-textActive bg-textLight outline-textActive placeholder:text-textSlate focus:border-transparent xl:h-[56px]'
+            }
+          />
+        </div>
+
         {Object.keys(categoryTitles).map(category => {
           const title = categoryTitles[category];
           const items = categorizedResults[category];
@@ -27,86 +53,140 @@ export const SearchSection: React.FC<SearchSectionProps> = ({
           if (!items) return null;
 
           return (
-            <div key={category} className="mb-10">
-              <Title className="mb-4 text-base">
-                {title} ({items.length})
-              </Title>
+            <div key={category} className="py-8 md:py-12 xl:py-16">
+              <div className="mb-4 flex flex-col md:flex-row md:justify-between">
+                <div className="mb-2 flex items-center gap-2">
+                  <Title className="">{title}</Title>
 
-              <Link href={`${category === 'post' ? 'blog' : category}`}>
-                {linksTitle}&nbsp;{categoryTitles[category]}
-              </Link>
+                  <p className="text-[30px]/normal text-textBlue md:text-[36px] xl:text-[40px]">
+                    {items.length}
+                  </p>
+                </div>
+
+                <ButtonLink
+                  type={'link'}
+                  settings={{
+                    href: `${category === 'post' ? 'blog' : category}`,
+                    externalLink: false,
+                  }}
+                  typeStyle={'light'}
+                >
+                  {linksTitle}
+                </ButtonLink>
+              </div>
 
               <ul className="flex w-full flex-wrap gap-4 rounded-3xl">
-                {items.map(item => {
+                {items.slice(0, 6).map(item => {
                   return (
                     <li
                       key={item._id}
-                      className="w-[400px] rounded-lg bg-gray-100 p-4 shadow-md"
+                      className="w-full md:w-[336px] xl:w-[416px]"
                     >
-                      {item.slug ? (
-                        <Link
-                          href={`${category === 'post' ? 'blog' : category}/${item.slug?.current}`}
-                        >
-                          <Title
-                            tag={'h3'}
-                            className="mb-4 line-clamp-4 text-xl/normal"
-                          >
-                            {item.name?.[lang] || item.title?.[lang]}
-                          </Title>
-
-                          {item.images?.[0] && (
-                            <div className="h-[240px] w-[300px]">
-                              <Image
-                                src={getPhotoUrl(item.images?.[0]?.asset._ref)}
-                                alt={item.images?.[0].caption?.[lang]}
-                                width={288}
-                                height={288}
-                                className="size-full object-cover"
-                              />
-                            </div>
-                          )}
-
-                          {item.description?.[lang] && (
-                            <p className="text-sm text-gray-600">
-                              {item.description[lang]}
-                            </p>
-                          )}
-
-                          {item.publicationDate && (
-                            <>
-                              <p>
-                                Date publication:
-                                {formatDate(item.publicationDate)}
-                              </p>
-                            </>
-                          )}
-                        </Link>
-                      ) : (
+                      {category === 'projects' && (
                         <>
-                          <Title
-                            tag={'h3'}
-                            className="mb-4 line-clamp-4 text-xl/normal"
-                          >
-                            {item.name?.[lang] || item.title?.[lang]}
-                          </Title>
+                          <PostCard
+                            pageName={category}
+                            lang={lang}
+                            readMoreLabel={readMoreLabel}
+                            post={{
+                              projectYear: item.projectYear,
+                              image: getPhotoUrl(
+                                item.images?.[0]?.asset._ref || '',
+                              ),
+                              imageAlt: item.images?.[0].caption?.[lang],
+                              title: item.title?.[lang] || '',
+                              date: item.publicationDate || '',
+                              slug: item.slug?.current || '',
+                              label: item.title?.[lang] || '',
+                            }}
+                          />
+                        </>
+                      )}
 
-                          {item.images?.[0] && (
-                            <div className="h-[240px] w-[300px]">
-                              <Image
-                                src={getPhotoUrl(item.images?.[0]?.asset._ref)}
-                                alt={item.images?.[0].caption?.[lang]}
-                                width={288}
-                                height={288}
-                                className="size-full object-cover"
-                              />
-                            </div>
-                          )}
+                      {category === 'research' && (
+                        <>
+                          <DocumentCard
+                            doc={{
+                              title: item?.title?.[lang] || '',
+                              fileUrl: getFileUrl(item.file?.asset?._ref) || '',
+                            }}
+                            fileLinks={fileLinks}
+                          />
+                        </>
+                      )}
 
-                          {item.description?.[lang] && (
-                            <p className="line-clamp-4 text-sm">
-                              {item.description[lang]}
-                            </p>
-                          )}
+                      {category === 'documents' && (
+                        <>
+                          <DocumentCard
+                            doc={{
+                              title: item?.title?.[lang] || '',
+                              fileUrl: getFileUrl(item.file?.asset?._ref) || '',
+                            }}
+                            fileLinks={fileLinks}
+                          />
+                        </>
+                      )}
+
+                      {category === 'post' && (
+                        <>
+                          <PostCard
+                            pageName={'blog'}
+                            lang={lang}
+                            readMoreLabel={readMoreLabel}
+                            post={{
+                              type: item.postType,
+                              image: getPhotoUrl(
+                                item.images?.[0]?.asset._ref || '',
+                              ),
+                              imageAlt: item.images?.[0].caption?.[lang],
+                              title: item.title?.[lang] || '',
+                              // text: item.body?.[lang],
+                              date: item.publicationDate || '',
+                              slug: item.slug?.current || '',
+                              label: item.postType || '',
+                            }}
+                          />
+                        </>
+                      )}
+
+                      {category === 'tenders' && (
+                        <>
+                          <PostCard
+                            pageName={category}
+                            lang={lang}
+                            readMoreLabel={readMoreLabel}
+                            labelTitle={labelTitle}
+                            post={{
+                              deadline: item.deadline || '',
+                              image: getPhotoUrl(
+                                item.images?.[0]?.asset._ref || '',
+                              ),
+                              imageAlt: item.images?.[0].caption?.[lang],
+                              title: item.title?.[lang] || '',
+                              // text: item.body?.[lang],
+                              date: item.publicationDate || '',
+                              slug: item.slug?.current || '',
+                              label: item.deadline || '',
+                            }}
+                          />
+                        </>
+                      )}
+
+                      {category === 'team' && (
+                        <>
+                          <TeamCard
+                            teamMember={{
+                              name: item?.name?.[lang] || '',
+                              position: item.position?.[lang] || '',
+                              description: item.description?.[lang] || '',
+                              photo: getPhotoUrl(item.photo?.asset?._ref) || '',
+                              alt: item.photo?.caption?.[lang] || '',
+                              link: item.link || '',
+                              index: item.index || 1,
+                            }}
+                            readMoreLabel={readMoreLabel}
+                            teamClosedLabel={teamClosedLabel}
+                          />
                         </>
                       )}
                     </li>

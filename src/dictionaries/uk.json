@@ -739,18 +739,18 @@
     }
   },
   "searchSection": {
-    "mainTitle": "Результати пошуку:",
-    "linksTitle": "Усі",
+    "mainTitle": "Результати пошуку",
+    "linksTitle": "Всі публікації",
     "categoryTitles": {
-      "team": "Команда",
       "projects": "Проєкти",
-      "tenders": "Тендери",
-      "documents": "Документи",
       "research": "Дослідження",
+      "media": "Медіа",
+      "documents": "Документи",
+      "post": "Пости",
+      "tenders": "Тендери",
+      "team": "Команда",
       "news": "Новини",
       "advisors": "Радники",
-      "media": "Медіа",
-      "post": "Пости",
       "other": "Інше"
     },
 

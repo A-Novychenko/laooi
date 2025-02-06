@@ -475,4 +475,19 @@ interface ISearchArray {
   }[];
   description?: { [key: string]: string };
   name?: { [key: string]: string };
+  projectYear?: string;
+  file?: {
+    _type: string;
+    asset: {
+      _ref: string;
+      _type: string;
+    };
+  };
+  deadline?: string;
+  position?: { [key: string]: string };
+  photo: {
+    asset: { _ref: string; _type: string };
+    caption: { [key: string]: string };
+  };
+  index?: number;
 }
