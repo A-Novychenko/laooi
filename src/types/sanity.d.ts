@@ -491,3 +491,62 @@ interface ISearchArray {
   };
   index?: number;
 }
+
+type LangType = 'uk' | 'en';
+
+interface ISearchItem {
+  _id: string;
+  title: string;
+  slug: string;
+  publicationDate?: string;
+  image?: string;
+  imageAlt?: string;
+  projectYear?: string;
+  type?: string;
+  deadline?: string;
+  fileUrl: string;
+  name: string;
+  position: string;
+  description: string;
+  photo: string;
+  alt: string;
+  link: string;
+  index: number;
+  label: string;
+  date: string;
+}
+
+interface ISanitySearchResult {
+  _id: string;
+  _type: string;
+  title?: Record<LangType, string>;
+  slug?: { current: string };
+  publicationDate?: string;
+  images?: { asset?: { _ref: string }; caption?: Record<LangType, string> }[];
+  projectYear?: string;
+  postType?: string;
+  deadline?: string;
+  file?: { asset?: { _ref: string } };
+  name?: Record<LangType, string>;
+  position?: Record<LangType, string>;
+  description?: Record<LangType, string>;
+  photo?: { asset?: { _ref: string }; caption?: Record<LangType, string> };
+  link?: string;
+  index?: number;
+  label?: string;
+  body?: { [key: string]: string };
+}
+
+type SearchCategory =
+  | 'projects'
+  | 'research'
+  | 'media'
+  | 'documents'
+  | 'post'
+  | 'tenders'
+  | 'team'
+  | 'news'
+  | 'advisors'
+  | 'other';
+
+type ISearchResults = Record<string, ISearchItem[]>;

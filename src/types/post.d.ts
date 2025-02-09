@@ -2,10 +2,10 @@
 interface IPostBlogGalleryPage {
   deadline?: string;
   type?: string;
-  label: string;
+  label?: string;
   text?: string;
-  image: string | undefined;
-  imageAlt: string | undefined;
+  image?: string | undefined;
+  imageAlt?: string | undefined;
   title: string;
   body?: string;
   date: string;

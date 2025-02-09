@@ -3,4 +3,5 @@ export type TeamCardProps = {
   readMoreLabel: string;
   isExpanded?: boolean;
   teamClosedLabel: string;
+  className?: string;
 };
