@@ -2,6 +2,7 @@ import { getSearchGlobal } from '@/actions/sanity';
 
 import { PlaceholderSection } from '@/sections';
 import {
+  AdvisorCard,
   ButtonLink,
   DocumentCard,
   PostCard,
@@ -30,19 +31,21 @@ const SearchPage = async ({
   const { readMoreLabel, teamClosedLabel, searchInput } = dict.common;
   const { fileLinks } = dict.documentsSection;
   const { labelTitle } = dict.tendersSection;
+  const { link } = dict.advisorsPage.advisorsSection;
 
   const searchQuery = searchParams.searchQuery || '';
 
   const searchResults = await getSearchGlobal(searchQuery, lang);
 
-  const { post, tenders, projects, documents, research, team } = searchResults;
+  const { post, tenders, projects, documents, research, team, advisors } =
+    searchResults;
 
   return (
     <>
       {searchResults && Object.keys(searchResults).length > 0 ? (
-        <section className="section">
-          <div className="container">
-            <div className="pb-8 md:pb-12 xl:pb-16">
+        <div>
+          <section className="section-search">
+            <div className="container pb-8 md:pb-12 xl:pb-16">
               <Title tag={'h1'} className="mb-4">
                 {mainTitle}
               </Title>
@@ -57,9 +60,11 @@ const SearchPage = async ({
                 }
               />
             </div>
+          </section>
 
-            {projects && projects.length > 0 && (
-              <div className="py-8 md:py-12 xl:py-16">
+          {projects && projects.length > 0 && (
+            <section>
+              <div className="container py-8 md:py-12 xl:py-16">
                 <div className="mb-4 flex flex-col md:flex-row md:justify-between">
                   <div className="mb-2 flex items-center gap-2">
                     <Title className="">{categoryTitles.projects}</Title>
@@ -99,10 +104,12 @@ const SearchPage = async ({
                   })}
                 </ul>
               </div>
-            )}
+            </section>
+          )}
 
-            {research && research.length > 0 && (
-              <div className="py-8 md:py-12 xl:py-16">
+          {research && research.length > 0 && (
+            <section>
+              <div className="container py-8 md:py-12 xl:py-16">
                 <div className="mb-4 flex flex-col md:flex-row md:justify-between">
                   <div className="mb-2 flex items-center gap-2">
                     <Title className="">{categoryTitles.research}</Title>
@@ -137,10 +144,12 @@ const SearchPage = async ({
                   })}
                 </ul>
               </div>
-            )}
+            </section>
+          )}
 
-            {documents && documents.length > 0 && (
-              <div className="py-8 md:py-12 xl:py-16">
+          {documents && documents.length > 0 && (
+            <section>
+              <div className="container py-8 md:py-12 xl:py-16">
                 <div className="mb-4 flex flex-col md:flex-row md:justify-between">
                   <div className="mb-2 flex items-center gap-2">
                     <Title className="">{categoryTitles.documents}</Title>
@@ -175,10 +184,12 @@ const SearchPage = async ({
                   })}
                 </ul>
               </div>
-            )}
+            </section>
+          )}
 
-            {post && post.length > 0 && (
-              <div className="py-8 md:py-12 xl:py-16">
+          {post && post.length > 0 && (
+            <section>
+              <div className="container py-8 md:py-12 xl:py-16">
                 <div className="mb-4 flex flex-col md:flex-row md:justify-between">
                   <div className="mb-2 flex items-center gap-2">
                     <Title className="">{categoryTitles.post}</Title>
@@ -218,10 +229,12 @@ const SearchPage = async ({
                   })}
                 </ul>
               </div>
-            )}
+            </section>
+          )}
 
-            {tenders && tenders.length > 0 && (
-              <div className="py-8 md:py-12 xl:py-16">
+          {tenders && tenders.length > 0 && (
+            <section>
+              <div className="container py-8 md:py-12 xl:py-16">
                 <div className="mb-4 flex flex-col md:flex-row md:justify-between">
                   <div className="mb-2 flex items-center gap-2">
                     <Title className="">{categoryTitles.tenders}</Title>
@@ -262,10 +275,12 @@ const SearchPage = async ({
                   })}
                 </ul>
               </div>
-            )}
+            </section>
+          )}
 
-            {team && team.length > 0 && (
-              <div className="py-8 md:py-12 xl:py-16">
+          {team && team.length > 0 && (
+            <section>
+              <div className="container py-8 md:py-12 xl:py-16">
                 <div className="mb-4 flex flex-col md:flex-row md:justify-between">
                   <div className="mb-2 flex items-center gap-2">
                     <Title className="">{categoryTitles.team}</Title>
@@ -301,9 +316,49 @@ const SearchPage = async ({
                   })}
                 </ul>
               </div>
-            )}
-          </div>
-        </section>
+            </section>
+          )}
+
+          {advisors && advisors.length > 0 && (
+            <section>
+              <div className="container py-8 md:py-12 xl:py-16">
+                <div className="mb-4 flex flex-col md:flex-row md:justify-between">
+                  <div className="mb-2 flex items-center gap-2">
+                    <Title className="">{categoryTitles.advisors}</Title>
+
+                    <p className="text-[30px]/normal text-textBlue md:text-[36px] xl:text-[40px]">
+                      {advisors.length}
+                    </p>
+                  </div>
+
+                  <ButtonLink
+                    type={'link'}
+                    settings={{
+                      href: 'advisors',
+                      externalLink: false,
+                    }}
+                    typeStyle={'light'}
+                  >
+                    {linksTitle}
+                  </ButtonLink>
+                </div>
+
+                <ul className="flex w-full flex-wrap gap-4 rounded-3xl">
+                  {advisors.slice(0, 6).map((item, idx) => {
+                    return (
+                      <li
+                        key={idx}
+                        className="w-full md:w-[336px] xl:w-[416px]"
+                      >
+                        <AdvisorCard advisor={item} lang={lang} link={link} />
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            </section>
+          )}
+        </div>
       ) : (
         <PlaceholderSection data={{ title: mainTitle, ...errorData }} />
       )}
