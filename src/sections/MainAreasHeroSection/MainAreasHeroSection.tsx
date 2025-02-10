@@ -28,6 +28,7 @@ export const MainAreasHeroSection: React.FC<MainAreasHeroSectionProps> = ({
               alt={alt}
               src={src}
               className="size-full shrink-0 object-cover"
+              priority
             />
           </div>
 

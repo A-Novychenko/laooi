@@ -35,6 +35,7 @@ export const AdvisorsHeroSection: React.FC<ISectionProps> = ({
                 width={416}
                 height={234}
                 className="size-full object-cover"
+                priority
               />
             </div>
 
@@ -45,6 +46,7 @@ export const AdvisorsHeroSection: React.FC<ISectionProps> = ({
                 width={416}
                 height={234}
                 className="size-full object-cover"
+                priority
               />
             </div>
           </div>

@@ -6,6 +6,7 @@ import { ButtonLink, PostLabel, PostText, Title } from '@/components/ui';
 import { cn } from '@/utils/cn';
 
 import ArrowIcon from '~/icons/arrowDown.svg';
+import staticData from '@/data/common.json';
 
 import { SingleAdvisorSectionProps } from './types';
 
@@ -16,6 +17,8 @@ export const SingleAdvisorSection: React.FC<SingleAdvisorSectionProps> = ({
   advisor: { photo, alt, name, city, phone, body, link },
   postFBLinkLabel,
 }) => {
+  const { poster, posterAlt } = staticData;
+
   return (
     <section className="section">
       <div className="container">
@@ -37,11 +40,12 @@ export const SingleAdvisorSection: React.FC<SingleAdvisorSectionProps> = ({
             )}
           >
             <Image
-              src={photo}
-              alt={alt}
+              src={photo ? photo : poster}
+              alt={alt ? alt : posterAlt}
               width={688}
               height={688}
               className="size-full object-cover"
+              priority
             />
           </div>
 

@@ -2,10 +2,14 @@ import Image from 'next/image';
 
 import { ButtonLink, Title } from '@/components/ui';
 
+import staticData from '@/data/common.json';
+
 export const AboutTeamSection: React.FC<ISectionProps> = ({ dict, lang }) => {
   const { title, img, alt, description, btn } = dict.aboutTeamSection;
   const { quotedText, firstParagraph, secondParagraph, thirdParagraph } =
     description;
+
+  const { poster, posterAlt } = staticData;
 
   return (
     <section className="section">
@@ -17,11 +21,12 @@ export const AboutTeamSection: React.FC<ISectionProps> = ({ dict, lang }) => {
         <div className="xl:flex xl:gap-[16px]">
           <div className="mb-2 shrink-0 overflow-hidden rounded-[16px] md:mb-4 md:size-[688px] md:rounded-[20px] xl:sticky xl:top-[7.5rem] xl:mb-0 xl:size-[632px] xl:rounded-[24px]">
             <Image
-              src={img}
-              alt={alt}
+              src={img ? img : poster}
+              alt={alt ? alt : posterAlt}
               width={688}
               height={688}
               className="size-full object-cover"
+              priority
             />
           </div>
 
