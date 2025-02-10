@@ -55,6 +55,10 @@ html {
   @apply pb-12 pt-8 md:pb-[72px] md:pt-10 xl:pb-24 xl:pt-14;
 }
 
+.section-search {
+  @apply pt-8 md:pt-10 xl:pt-14;
+}
+
 .swiper-wrapper {
   transition-timing-function: linear !important;
 

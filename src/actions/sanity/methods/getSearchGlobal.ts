@@ -39,6 +39,8 @@ const formatSearchResults = (
       alt: item.photo?.caption?.[lang] || '',
       link: item.link || '',
       index: item.index || 1,
+      phone: item.phone || '',
+      city: item.city?.[lang] || '',
     };
 
     if (['projects', 'post', 'tenders'].includes(category)) {
@@ -73,6 +75,11 @@ const formatSearchResults = (
       formattedItem.alt = item.photo?.caption?.[lang] || '';
       formattedItem.link = item.link || '';
       formattedItem.index = item.index || 1;
+    }
+
+    if (category === 'advisors') {
+      formattedItem.phone = item.phone || '';
+      formattedItem.city = item.city?.[lang] || '';
     }
 
     if (!acc[category]) {

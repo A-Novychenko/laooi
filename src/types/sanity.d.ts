@@ -490,6 +490,8 @@ interface ISearchArray {
     caption: { [key: string]: string };
   };
   index?: number;
+  phone?: string;
+  city?: { [key: string]: string };
 }
 
 type LangType = 'uk' | 'en';
@@ -514,6 +516,8 @@ interface ISearchItem {
   index: number;
   label: string;
   date: string;
+  phone: string;
+  city: string;
 }
 
 interface ISanitySearchResult {
@@ -535,6 +539,8 @@ interface ISanitySearchResult {
   index?: number;
   label?: string;
   body?: { [key: string]: string };
+  phone?: string;
+  city?: { [key: string]: string };
 }
 
 type SearchCategory =
