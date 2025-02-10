@@ -6,6 +6,7 @@ import { cn } from '@/utils/cn';
 
 import MarkerIcon from '~/icons/marker.svg';
 import PhoneIcon from '~/icons/phone.svg';
+import staticData from '@/data/common.json';
 
 import { AdvisorCardProps } from './types';
 
@@ -18,12 +19,14 @@ export const AdvisorCard: React.FC<AdvisorCardProps> = ({
 }) => {
   const advisorPath = `/${lang}${link.path}${slug}`;
 
+  const { poster, posterAlt } = staticData;
+
   return (
     <div className="flex h-full items-center gap-x-[8px] rounded-[24px] bg-bgLightSlate p-[16px] md:p-[24px] xl:gap-x-[16px]">
       <div className="size-[64px] shrink-0 overflow-hidden rounded-full md:size-[96px] xl:size-[120px]">
         <Image
-          src={photo}
-          alt={alt}
+          src={photo ? photo : poster}
+          alt={alt ? alt : posterAlt}
           width={96}
           height={96}
           className="size-full object-cover"

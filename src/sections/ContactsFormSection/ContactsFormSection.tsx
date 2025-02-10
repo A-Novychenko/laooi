@@ -22,7 +22,13 @@ export const ContactsFormSection: React.FC<ISectionProps> = ({ dict }) => {
             <ContactSocials links={socialLinks} title={socialListTitle} />
 
             <div className="shrink-0 xl:flex xl:w-[524px] xl:grow xl:items-center">
-              <Image src={bigLogo} width={688} height={684} alt={logoAlt} />
+              <Image
+                src={bigLogo}
+                width={688}
+                height={684}
+                alt={logoAlt}
+                priority
+              />
             </div>
           </div>
         </div>

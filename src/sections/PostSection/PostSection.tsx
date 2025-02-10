@@ -13,6 +13,8 @@ import { PostSliderWrap } from '@/components/base';
 
 import { formatDate } from '@/utils/formatDate';
 
+import staticData from '@/data/common.json';
+
 import ArrowIcon from '~/icons/arrowDown.svg';
 
 export const PostSection: React.FC<{
@@ -43,6 +45,8 @@ export const PostSection: React.FC<{
 
   const image = Array.isArray(images) && images[0];
 
+  const { poster, posterAlt } = staticData;
+
   const formattedDate = formatDate(date);
 
   return (
@@ -67,11 +71,12 @@ export const PostSection: React.FC<{
                 {image && (
                   <div className="overflow-hidden rounded-3xl md:size-[688px] xl:size-[632px]">
                     <Image
-                      src={image.src}
-                      alt={image.alt}
+                      src={image?.src ? image?.src : poster}
+                      alt={image?.alt ? image?.alt : posterAlt}
                       width={688}
                       height={688}
                       className="size-full object-cover"
+                      priority
                     />
                   </div>
                 )}

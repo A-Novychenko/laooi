@@ -8,6 +8,7 @@ import { ReadMoreBtn } from '@/components/ui';
 import { cn } from '@/utils/cn';
 
 import FacebookIcon from '~/icons/facebook.svg';
+import staticData from '@/data/common.json';
 
 import { TeamCardProps } from './types';
 
@@ -22,6 +23,8 @@ export const TeamCard: React.FC<TeamCardProps> = ({
 }) => {
   const { name, position, description, photo, alt, link, index } = teamMember;
 
+  const { poster, posterAlt } = staticData;
+
   return (
     <li className={cn('relative self-stretch', styles.card, className)}>
       <div
@@ -33,8 +36,8 @@ export const TeamCard: React.FC<TeamCardProps> = ({
           <div className="relative mx-auto mb-2 flex size-[96px] md:size-[128px] xl:size-[160px]">
             <div className="size-full shrink-0 overflow-hidden rounded-full">
               <Image
-                src={photo}
-                alt={alt}
+                src={photo ? photo : poster}
+                alt={alt ? alt : posterAlt}
                 width={160}
                 height={160}
                 className="size-full object-cover"

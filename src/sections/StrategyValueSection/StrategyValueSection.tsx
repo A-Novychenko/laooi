@@ -13,7 +13,7 @@ export const StrategyValueSection: React.FC<StrategyValueSectionProps> = ({
 }) => {
   const { title, values, templateValue } = dict.strategyValueSection;
 
-  const { strategyLogo } = staticData;
+  const { strategyLogo, poster, posterAlt } = staticData;
 
   const getMarkupArr = () => {
     const markupArray = [];
@@ -65,8 +65,8 @@ export const StrategyValueSection: React.FC<StrategyValueSectionProps> = ({
                 })}
               >
                 <Image
-                  src={value.logo}
-                  alt={templateValue.title}
+                  src={value?.logo ? value?.logo : poster}
+                  alt={templateValue?.title ? templateValue?.title : posterAlt}
                   width={308}
                   height={248}
                   className="size-full object-cover"

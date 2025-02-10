@@ -5,6 +5,7 @@ import { Title, PostLabel } from '@/components/ui';
 
 import ArrowIcon from '~/icons/arrowBtnIcon.svg';
 import NoImage from '~/no-image.svg';
+import staticData from '@/data/common.json';
 
 import { cn } from '@/utils/cn';
 import { formatDate } from '@/utils/formatDate';
@@ -33,6 +34,8 @@ export const PostCard: React.FC<PostCardProps> = ({
     projectYear,
   } = post;
 
+  const { poster, posterAlt } = staticData;
+
   const formattedDate = formatDate(date);
 
   const isDeadline = deadline ? new Date(deadline) < new Date() : false;
@@ -51,8 +54,8 @@ export const PostCard: React.FC<PostCardProps> = ({
 
         {image ? (
           <Image
-            src={image}
-            alt={imageAlt ? imageAlt : ''}
+            src={image ? image : poster}
+            alt={imageAlt ? imageAlt : posterAlt}
             width={416}
             height={264}
             className="block size-full object-cover"

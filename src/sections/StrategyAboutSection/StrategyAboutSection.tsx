@@ -24,6 +24,7 @@ export const StrategyAboutSection: React.FC<StrategyAboutSectionProps> = ({
               width={524}
               height={524}
               className="size-full object-cover xl:size-auto"
+              priority
             />
           </div>
 
