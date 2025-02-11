@@ -9,7 +9,11 @@ const fetchGlobalSearchResults = async (
   searchTerm: string,
   lang: LangType = 'uk',
 ): Promise<ISanitySearchResult[]> => {
-  const params: Record<string, unknown> = { query: `${searchTerm}`, lang };
+  const params: Record<string, unknown> = {
+    query: searchTerm,
+    lang,
+  };
+
   const data: ISanitySearchResult[] = await sanityClient.fetch(
     getSearchGlobalQuery,
     params,

@@ -1,9 +1,9 @@
 export const getSearchGlobalQuery = `
   *[
-    title[$lang] match $query || 
-    description[$lang] match $query || 
-    body[$lang] match $query || 
-    link match $query || 
-    name[$lang] match $query
+    string::lower(title[$lang]) match string::lower("*" + $query + "*") ||
+    string::lower(description[$lang]) match string::lower("*" + $query + "*") ||
+    body[$lang][] match string::lower("*" + $query + "*") ||
+    string::lower(link) match string::lower("*" + $query + "*") ||
+    string::lower(name[$lang]) match string::lower("*" + $query + "*")
   ]
 `;
