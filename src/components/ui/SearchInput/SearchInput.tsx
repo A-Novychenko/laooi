@@ -41,7 +41,6 @@ export const SearchInput: React.FC<SearchInputProps> = ({
 
       router.push(`/${lang}/search?${params.toString()}`);
 
-      console.log('inputValue', inputValue);
       setInputValue('');
     }
   };
@@ -103,11 +102,13 @@ export const SearchInput: React.FC<SearchInputProps> = ({
                 />
               </form>
 
-              <SearchIcon
-                width="16"
-                height="16"
+              <button
+                type="submit"
                 className="absolute left-4 top-1/2 -translate-y-1/2 text-textPrimary"
-              />
+                onClick={handleSubmit}
+              >
+                <SearchIcon width="16" height="16" />
+              </button>
 
               {inputValue.length < 1 && (
                 <button
@@ -140,11 +141,13 @@ export const SearchInput: React.FC<SearchInputProps> = ({
             />
           </form>
 
-          <SearchIcon
-            width="16"
-            height="16"
+          <button
+            type="submit"
             className="absolute left-4 top-1/2 -translate-y-1/2 text-textPrimary"
-          />
+            onClick={handleSubmit}
+          >
+            <SearchIcon width="16" height="16" />
+          </button>
         </div>
       )}
     </>

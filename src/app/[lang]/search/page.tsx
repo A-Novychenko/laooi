@@ -5,6 +5,7 @@ import {
   AdvisorCard,
   ButtonLink,
   DocumentCard,
+  MediaCard,
   PostCard,
   SearchInput,
   TeamCard,
@@ -39,8 +40,16 @@ const SearchPage = async ({
 
   const searchResults = await getSearchGlobal(searchQuery, lang);
 
-  const { post, tenders, projects, documents, research, team, advisors } =
-    searchResults;
+  const {
+    post,
+    tenders,
+    projects,
+    documents,
+    research,
+    team,
+    advisors,
+    media,
+  } = searchResults;
 
   return (
     <>
@@ -141,6 +150,47 @@ const SearchPage = async ({
                         className="w-full md:w-[336px] xl:w-[416px]"
                       >
                         <DocumentCard doc={item} fileLinks={fileLinks} />
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            </section>
+          )}
+
+          {media && media.length > 0 && (
+            <section>
+              <div className="container py-8 md:py-12 xl:py-16">
+                <div className="mb-4 flex flex-col md:flex-row md:justify-between">
+                  <div className="mb-2 flex items-center gap-2">
+                    <Title className="">{categoryTitles.media}</Title>
+
+                    <p className="text-[30px]/normal text-textBlue md:text-[36px] xl:text-[40px]">
+                      {media.length}
+                    </p>
+                  </div>
+
+                  <ButtonLink
+                    type={'link'}
+                    settings={{
+                      href: 'media',
+                      externalLink: false,
+                    }}
+                    typeStyle={'light'}
+                  >
+                    {linksTitle}
+                  </ButtonLink>
+                </div>
+
+                <ul className="flex flex-col gap-[16px] md:flex-row md:flex-wrap">
+                  {media.slice(0, 10).map((item, idx) => {
+                    return (
+                      <li key={idx} className="md:w-[219px] xl:w-[243px]">
+                        <MediaCard
+                          imageUrl={item.photo}
+                          imageAlt={item.alt}
+                          link={item.link}
+                        />
                       </li>
                     );
                   })}

@@ -50,6 +50,7 @@ const formatSearchResults = (
     if (['projects', 'post', 'tenders'].includes(category)) {
       formattedItem.image = getPhotoUrl(item.images?.[0]?.asset?._ref || '');
       formattedItem.imageAlt = item.images?.[0]?.caption?.[lang] || '';
+      formattedItem.text = item.body?.[lang][0]?.children[0]?.text || '';
     }
 
     if (category === 'projects') {
@@ -84,6 +85,13 @@ const formatSearchResults = (
     if (category === 'advisors') {
       formattedItem.phone = item.phone || '';
       formattedItem.city = item.city?.[lang] || '';
+    }
+
+    if (category === 'media') {
+      formattedItem.photo = item.img?.asset?._ref
+        ? getPhotoUrl(item.img.asset._ref)
+        : '';
+      formattedItem.alt = item.img?.caption?.[lang] || '';
     }
 
     if (!acc[category]) {
