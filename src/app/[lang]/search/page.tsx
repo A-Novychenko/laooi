@@ -13,6 +13,8 @@ import {
 
 import { getDictionary } from '@/utils/dictionaries';
 
+export const revalidate = 0;
+
 const SearchPage = async ({
   params: { lang },
   searchParams,
