@@ -2,7 +2,19 @@
 import { NextRequest, NextResponse } from 'next/server';
 
 export async function POST(req: NextRequest) {
+  console.log('!!!!');
   const secret = req.nextUrl.searchParams.get('secret');
+  console.log('secret', secret);
+  console.log(
+    'process.env.SANITY_REVALIDATE_SECRET',
+    process.env.SANITY_REVALIDATE_SECRET,
+  );
+
+  console.log(
+    'process.env.SANITY_REVALIDATE_SECRET===secret',
+    process.env.SANITY_REVALIDATE_SECRET === secret,
+  );
+
   if (secret !== process.env.SANITY_REVALIDATE_SECRET) {
     return NextResponse.json({ message: 'Invalid token' }, { status: 401 });
   }
