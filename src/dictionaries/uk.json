@@ -744,7 +744,7 @@
     "categoryTitles": {
       "projects": "Проєкти",
       "research": "Дослідження",
-      "media": "Медіа",
+      "media": "Медіа про нас",
       "documents": "Документи",
       "post": "Пости",
       "tenders": "Тендери",
@@ -759,7 +759,7 @@
       "link": {
         "label": "Головна",
         "settings": {
-          "href": "/en/",
+          "href": "/uk/",
           "externalLink": false
         }
       }

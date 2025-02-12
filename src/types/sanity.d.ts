@@ -518,6 +518,7 @@ interface ISearchItem {
   date: string;
   phone: string;
   city: string;
+  text?: string;
 }
 
 interface ISanitySearchResult {
@@ -538,9 +539,10 @@ interface ISanitySearchResult {
   link?: string;
   index?: number;
   label?: string;
-  body?: { [key: string]: string };
+  body?: ItemBody;
   phone?: string;
   city?: { [key: string]: string };
+  img?: { asset?: { _ref: string }; caption?: Record<LangType, string> };
 }
 
 type SearchCategory =
@@ -556,3 +558,9 @@ type SearchCategory =
   | 'other';
 
 type ISearchResults = Record<string, ISearchItem[]>;
+
+type ItemBody = {
+  [key: string]: Array<{
+    children: Array<{ text: string }>;
+  }>;
+};
