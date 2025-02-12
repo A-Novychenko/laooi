@@ -460,7 +460,7 @@ interface ISearchSection {
   mainTitle: string;
   linksTitle: string;
   categoryTitles: ICategoryTitles;
-  errorData: IErrorData;
+  errorData: { description: string };
 }
 
 interface ICategoryTitles {

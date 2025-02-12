@@ -22,6 +22,7 @@ export const SearchInput: React.FC<SearchInputProps> = ({
   lang,
   searchPage,
   className,
+  closeMenu,
 }) => {
   const [open, setOpen] = useState(false);
   const [inputValue, setInputValue] = useState('');
@@ -42,6 +43,10 @@ export const SearchInput: React.FC<SearchInputProps> = ({
       router.push(`/${lang}/search?${params.toString()}`);
 
       setInputValue('');
+
+      if (closeMenu) {
+        closeMenu(false);
+      }
     }
   };
 

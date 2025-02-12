@@ -755,14 +755,7 @@
     },
 
     "errorData": {
-      "description": "We're sorry, but we couldn't find anything for your search. Try changing your search keywords",
-      "link": {
-        "label": "Home",
-        "settings": {
-          "href": "/en/",
-          "externalLink": false
-        }
-      }
+      "description": "Your search didn’t return any results. Try using different keywords or explore other sections"
     }
   },
   "advisorsPage": {

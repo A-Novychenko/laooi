@@ -50,7 +50,6 @@ const formatSearchResults = (
     if (['projects', 'post', 'tenders'].includes(category)) {
       formattedItem.image = getPhotoUrl(item.images?.[0]?.asset?._ref || '');
       formattedItem.imageAlt = item.images?.[0]?.caption?.[lang] || '';
-      formattedItem.text = item.body?.[lang][0]?.children[0]?.text || '';
     }
 
     if (category === 'projects') {
@@ -63,6 +62,7 @@ const formatSearchResults = (
       formattedItem.label = item.postType || '';
       formattedItem.date = item.publicationDate || '';
       formattedItem.type = item.postType || '';
+      formattedItem.text = item.body?.[lang][0]?.children[0]?.text || '';
     }
 
     if (category === 'tenders') {
@@ -109,6 +109,8 @@ export const getSearchGlobal = async (
 ): Promise<ISearchResults> => {
   try {
     const results = await fetchGlobalSearchResults(searchTerm, lang);
+
+    console.log('RESULT', results);
 
     return formatSearchResults(results, lang);
   } catch (error) {
