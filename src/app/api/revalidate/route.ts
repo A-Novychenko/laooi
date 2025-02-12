@@ -29,6 +29,7 @@ export async function POST(req: NextRequest) {
 
     // Ревалідуємо всі змінені сторінки
     for (const path of pathsToRevalidate) {
+      console.log('path👀', path);
       await fetch(
         `${process.env.NEXT_PUBLIC_HOST}/api/revalidatePath?path=${path}&secret=${process.env.SANITY_REVALIDATE_SECRET}`,
       );

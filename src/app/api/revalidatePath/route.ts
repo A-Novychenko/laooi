@@ -12,6 +12,8 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({ message: 'Path is required' }, { status: 400 });
   }
 
+  console.log('path', path);
+
   revalidatePath(path);
   return NextResponse.json({ revalidated: true, path });
 }
