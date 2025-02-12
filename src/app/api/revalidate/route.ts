@@ -2,9 +2,15 @@
 import { NextRequest, NextResponse } from 'next/server';
 
 export async function POST(req: NextRequest) {
-  console.log('!!!!');
-  const secret = req.nextUrl.searchParams.get('secret');
-  console.log('secret', secret);
+  const secret = req.headers.get('x-sanity-webhook-signature');
+
+  console.log('🔹 Received X-Sanity-Webhook-Signature:', secret);
+  console.log('🔹 Expected:', process.env.SANITY_REVALIDATE_SECRET);
+
+  if (!secret || secret !== process.env.SANITY_REVALIDATE_SECRET) {
+    return NextResponse.json({ message: 'Invalid token' }, { status: 401 });
+  }
+
   console.log(
     'process.env.SANITY_REVALIDATE_SECRET',
     process.env.SANITY_REVALIDATE_SECRET,
