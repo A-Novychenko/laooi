@@ -14,6 +14,7 @@ export async function GET(req: NextRequest) {
 
   console.log('path', path);
 
-  revalidatePath(path);
+  await revalidatePath(path);
+
   return NextResponse.json({ revalidated: true, path });
 }
