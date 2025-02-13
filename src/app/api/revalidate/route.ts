@@ -197,7 +197,7 @@ function getPathsFromSanityWebhook(body: any): string[] {
   const paths: string[] = [];
 
   switch (type) {
-    case 'post':
+    case 'Post':
       if (slug) paths.push(...locales.map(locale => `/${locale}/blog/${slug}`));
       paths.push(...locales.map(locale => `/${locale}/blog`));
       break;
@@ -235,7 +235,7 @@ function getPathsFromSanityWebhook(body: any): string[] {
     case 'donors':
       if (slug)
         paths.push(...locales.map(locale => `/${locale}/projects/${slug}`));
-      paths.push(...locales.map(locale => `/${locale}/main-areas`));
+      paths.push(...locales.map(locale => `/${locale}/strategy`));
       break;
     case 'team':
       paths.push(...locales.map(locale => `/${locale}/team`));
@@ -244,8 +244,9 @@ function getPathsFromSanityWebhook(body: any): string[] {
       console.log(`⚠️ No revalidation rule for type: ${type}`);
   }
 
-  // Завжди ревалідовуємо головну сторінку
+  // Завжди ревалідовуємо головну сторінку і сторінку пошуку
   paths.push(...locales.map(locale => `/${locale}`));
+  paths.push(...locales.map(locale => `/${locale}/search`));
 
   return paths;
 }

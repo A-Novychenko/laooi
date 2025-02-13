@@ -3,6 +3,8 @@ import { PlaceholderSection, ResearchSection } from '@/sections';
 import { getResearchDocuments } from '@/actions/sanity';
 import { getDictionary } from '@/utils/dictionaries';
 
+export const revalidate = 3600;
+
 const ResearchPage = async ({
   params: { lang },
 }: {

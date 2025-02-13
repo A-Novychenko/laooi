@@ -3,6 +3,8 @@ import { PlaceholderSection, PrivacyPolicySection } from '@/sections';
 import { getPrivacyPolicy } from '@/actions/sanity';
 import { getDictionary } from '@/utils/dictionaries';
 
+export const revalidate = 3600;
+
 const PrivacyPolicyPage = async ({
   params: { lang },
 }: {

@@ -4,7 +4,7 @@ import { getAllPosts } from '@/actions/sanity';
 
 import { getDictionary } from '@/utils/dictionaries';
 
-export const revalidate = 0;
+export const revalidate = 3600;
 
 enum PostType {
   News = 'news',
