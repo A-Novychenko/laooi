@@ -98,6 +98,7 @@
     "postAdvisorFBLinkLabel": "Дізнатися більше",
     "readMoreLabel": "Читати далі",
     "teamClosedLabel": "Закрити",
+    "teamGalleryTitle": "Галерея карток команди",
     "mainNav": [
       {
         "name": "Головна",
@@ -753,7 +754,6 @@
       "advisors": "Радники",
       "other": "Інше"
     },
-
     "errorData": {
       "description": "Нічого не знайдено за вашим запитом. Спробуйте інші ключові слова або перегляньте інші розділи"
     }
