@@ -215,7 +215,7 @@ function getPathsFromSanityWebhook(body: any): string[] {
         paths.push(...locales.map(locale => `/${locale}/advisors/${slug}`));
       paths.push(...locales.map(locale => `/${locale}/advisors`));
       break;
-    case 'privacyPolicy':
+    case 'privacy-policy':
       paths.push(...locales.map(locale => `/${locale}/privacy-policy`));
       break;
     case 'tenders':
