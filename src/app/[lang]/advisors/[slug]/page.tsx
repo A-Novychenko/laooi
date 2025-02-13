@@ -5,6 +5,8 @@ import { getAdvisors } from '@/actions/sanity/methods/getAdvisors';
 import { getDictionary } from '@/utils/dictionaries';
 import { getAdvisorBySlug } from '@/actions/sanity';
 
+export const revalidate = 3600;
+
 export async function generateStaticParams() {
   const { advisors } = await getAdvisors();
 

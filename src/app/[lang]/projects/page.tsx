@@ -4,7 +4,7 @@ import { getAllProjects, getDonorsFromProjects } from '@/actions/sanity';
 
 import { getDictionary } from '@/utils/dictionaries';
 
-export const revalidate = 0;
+export const revalidate = 3600;
 
 const ProjectsPage = async ({
   params: { lang },

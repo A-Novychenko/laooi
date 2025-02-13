@@ -8,7 +8,7 @@ import {
 import { getAllDonors } from '@/actions/sanity';
 import { getDictionary } from '@/utils/dictionaries';
 
-export const revalidate = 0;
+export const revalidate = 3600;
 
 const StrategyPage = async ({
   params: { lang },

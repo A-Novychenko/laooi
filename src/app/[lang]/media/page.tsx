@@ -4,6 +4,8 @@ import { getAllMediaItems } from '@/actions/sanity';
 
 import { getDictionary } from '@/utils/dictionaries';
 
+export const revalidate = 3600;
+
 const MediaPage = async ({
   params: { lang },
   searchParams,

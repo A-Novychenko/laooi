@@ -9,7 +9,7 @@ import { getAllActivities, getPartners } from '@/actions/sanity';
 
 import { getDictionary } from '@/utils/dictionaries';
 
-export const revalidate = 0;
+export const revalidate = 3600;
 
 const MainAreasPage = async ({
   params: { lang },

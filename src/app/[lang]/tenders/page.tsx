@@ -4,6 +4,8 @@ import { getAllTenders } from '@/actions/sanity';
 
 import { getDictionary } from '@/utils/dictionaries';
 
+export const revalidate = 3600;
+
 const TendersPage = async ({
   params: { lang },
   searchParams,
