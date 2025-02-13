@@ -254,26 +254,29 @@ render anything.
 
 - #### FooterBasement
 
-A component that displays the footer's bottom section with customizable policy
-text, copyright information, and developer credits. This component is
-responsive, arranging content in a column layout on small screens and switching
-to a row layout on larger screens.
+A component that displays the footer's bottom section, including policy text,
+copyright information, and links to the design and development credits. This
+component adapts to different screen sizes by arranging content in a column
+layout on smaller screens and switching to a row layout on larger screens.
 
-| Prop   | Type              | Default     | Description                                                                                               |
-| ------ | ----------------- | ----------- | --------------------------------------------------------------------------------------------------------- |
-| `data` | `IFooterBasement` | `undefined` | **required**, an object containing `policy` and `developers` text content for the footer.                 |
-| `name` | `string`          | `undefined` | **required**, the name or title to be displayed as copyright text, preceded by a copyright symbol (`©`). |
+| Prop         | Type                 | Default     | Description                                                                                    |
+| ------------ | -------------------- | ----------- | ---------------------------------------------------------------------------------------------- |
+| `data`       | `FooterBasementData` | `undefined` | **required**, an object containing `policy`, `designer`, and `developers` text content.        |
+| `staticData` | `StaticFooterData`   | `undefined` | **required**, an object containing `organization`, `designUrl`, `developUrl`, and `policyUrl`. |
+| `lang`       | `string`             | `undefined` | **required**, the language code to dynamically construct the policy link URL.                  |
 
 - #### FooterSocialList
 
-A component that displays a list of social media icons in the footer section. It
-presents a title for the social media group and renders each icon as a clickable
-item linked to the corresponding social media platform.
+A component that displays a list of social media links with associated icons,
+along with a call-to-action link. This component is responsive and adapts its
+layout based on screen size.
 
-| Prop    | Default     | Description                                                                                                                                                                 |
-| ------- | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `title` | `undefined` | **required**, `string`, the title displayed for the social media list.                                                                                                      |
-| `data`  | `[]`        | **required**, `Array<{ settings: { href: string } }>` an array of objects containing the social media links. Each object must include a `settings` property with an `href`. |
+| Prop        | Type                 | Default     | Description                                                                 |
+| ----------- | -------------------- | ----------- | --------------------------------------------------------------------------- |
+| `title`     | `string`             | `undefined` | **required**, the heading displayed above the social links.                 |
+| `data`      | `FooterSocialItem[]` | `undefined` | **required**, an array of objects containing social media link information. |
+| `linkTitle` | `string`             | `undefined` | **required**, the text for the call-to-action link.                         |
+| `lang`      | `string`             | `undefined` | **required**, the language code to construct the contact page URL.          |
 
 - #### MainNavList
 
@@ -371,15 +374,29 @@ to expand or collapse content sections.
 | `data`      | `undefined` | required, `Array<{ title: string; text: string }>` - an array of objects containing `title` and `text` for each accordion item. |
 | `className` | `undefined` | optional, `string`, adds custom css class to the Button component.                                                              |
 
-- #### AdvisorCard Component
+- #### ActivitiesCard
 
-The `AdvisorCard` component displays detailed information about an advisor,
-including their photo, name, location, and phone number. It is designed to be
-visually appealing and responsive for use in directories or team listings.
+A component that displays a card with a numeric counter and descriptive text.
+The counter is animated on larger screens and formatted as a static number on
+smaller screens. This component is responsive and adapts its layout based on
+screen size.
 
-| Prop      | Type   | Default     | Description                                                                   |
-| --------- | ------ | ----------- | ----------------------------------------------------------------------------- |
-| `advisor` | Object | `undefined` | **Required.** An object containing the advisor's details (photo, name, etc.). |
+| Prop       | Type     | Default     | Description                                                    |
+| ---------- | -------- | ----------- | -------------------------------------------------------------- |
+| `quantity` | `number` | `undefined` | **required**, the numeric value to be displayed.               |
+| `text`     | `string` | `undefined` | **required**, the descriptive text displayed below the number. |
+
+- #### ## AdvisorCard
+
+A component that displays an advisor's profile with their photo, name, location,
+phone number, and a link to their profile page. The component is responsive and
+adapts its layout for different screen sizes.
+
+| Prop      | Type     | Default     | Description                                                  |
+| --------- | -------- | ----------- | ------------------------------------------------------------ |
+| `advisor` | `object` | `undefined` | **required**                                                 |
+| `lang`    | `string` | `undefined` | **required**, the language code for generating profile URLs. |
+| `link`    | `object` | `undefined` | **required**, contains `path` and `label` for profile links. |
 
 `advisor` Object Structure
 
@@ -881,12 +898,16 @@ and scroll event listeners.
 - #### SearchInput
 
 A component for entering search queries on a website. It has a separate state
-for desktop devices, a button that appears when clicked.
+for desktop devices, where a button appears that opens the search field when
+clicked.
 
-| Prop          | Default     | Description                                                      |
-| ------------- | ----------- | ---------------------------------------------------------------- |
-| `placeholder` | `undefined` | required, `string`, placeholder                                  |
-| `desktop`     | `undefined` | optional, `boolean` or `undefined`, enables desktop version mode |
+| Prop          | Default     | Description                                                        |
+| ------------- | ----------- | ------------------------------------------------------------------ |
+| `placeholder` | `undefined` | Required, `string`, sets the placeholder text for the input field. |
+| `desktop`     | `undefined` | Optional, `boolean`, enables desktop mode with a button trigger.   |
+| `lang`        | `undefined` | Required, `string`, determines the language for the search URL.    |
+| `searchPage`  | `false`     | Optional, `boolean`, ensures visibility on large screens (`xl`).   |
+| `className`   | `undefined` | Optional, `string`, additional CSS classes for styling.            |
 
 - #### SelectByDate
 
@@ -930,17 +951,17 @@ Component card for the Target section
 
 - #### TeamCard
 
-The `TeamCard` component is used to display a team member's information, such as
-their name, position, photo, and description. It also includes a "Read More"
-button for expanding the description and a link to the team member's social
-media profile (e.g., Facebook).
+A component for displaying team members, including their name, position,
+description, photo, and a link to their Facebook profile.
 
-| Field             | Type                     | Description                                                                                                                                 |
-| ----------------- | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------- |
-| `teamMember`      | `ITransformedTeamMember` | The object representing the team member, containing properties like `name`, `position`, `description`, `photo`, `alt`, `link`, and `index`. |
-| `readMoreLabel`   | `string`                 | The label displayed on the "Read More" button when the content is collapsed (e.g., "Read More").                                            |
-| `isExpanded`      | `boolean` _(optional)_   | Determines whether the team member's description is expanded initially (default: `false`).                                                  |
-| `teamClosedLabel` | `string`                 | The label displayed when the content is expanded (e.g., "Close").                                                                           |
+| Prop              | Default     | Description                                                              |
+| ----------------- | ----------- | ------------------------------------------------------------------------ |
+| `teamMember`      | `undefined` | Required, `object`, contains team member details (name, position, etc.). |
+| `readMoreLabel`   | `undefined` | Required, `string`, label for the "Read More" button.                    |
+| `isExpanded`      | `false`     | Optional, `boolean`, determines whether the card is expanded.            |
+| `teamClosedLabel` | `undefined` | Optional, `string`, label for closing the expanded state.                |
+| `className`       | `undefined` | Optional, `string`, additional CSS classes for styling.                  |
+|                   |
 
 **Component Behavior**
 

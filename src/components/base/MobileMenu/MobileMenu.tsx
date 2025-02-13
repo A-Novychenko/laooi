@@ -59,7 +59,11 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
                   </CircleButton>
                 </div>
 
-                <SearchInput placeholder={placeholder} lang={lang} />
+                <SearchInput
+                  placeholder={placeholder}
+                  lang={lang}
+                  closeMenu={setIsOpen}
+                />
 
                 <div className="grow overflow-y-auto">
                   <MainNavList
