@@ -102,6 +102,48 @@
 //   return paths;
 // }
 
+// /* eslint-disable @typescript-eslint/no-explicit-any */
+// import { NextRequest, NextResponse } from 'next/server';
+
+// export async function POST(req: NextRequest) {
+//   const secret = req.nextUrl.searchParams.get('secret');
+
+//   console.log('🟧 secret', secret);
+//   console.log(
+//     '🟩 process.env.SANITY_REVALIDATE_SECRET:',
+//     process.env.SANITY_REVALIDATE_SECRET,
+//   );
+
+//   if (secret !== process.env.SANITY_REVALIDATE_SECRET) {
+//     return NextResponse.json({ message: 'Invalid token' }, { status: 401 });
+//   }
+
+//   console.log(
+//     '🔥 process.env.SANITY_REVALIDATE_SECRET===secret',
+//     process.env.SANITY_REVALIDATE_SECRET === secret,
+//   );
+
+//   if (secret !== process.env.SANITY_REVALIDATE_SECRET) {
+//     return NextResponse.json({ message: 'Invalid token' }, { status: 401 });
+//   }
+
+//   try {
+//     console.log('🔄 Revalidating ALL pages...');
+
+//     await fetch(
+//       `${process.env.NEXT_PUBLIC_HOST}/api/revalidatePath?path=/&secret=${process.env.SANITY_REVALIDATE_SECRET}`,
+//     );
+
+//     return NextResponse.json({ revalidated: true });
+//   } catch (error) {
+//     console.error('❌ Error in revalidation:', error);
+//     return NextResponse.json(
+//       { message: 'Error revalidating', error },
+//       { status: 500 },
+//     );
+//   }
+// }
+
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { NextRequest, NextResponse } from 'next/server';
 
@@ -113,13 +155,8 @@ export async function POST(req: NextRequest) {
     '🟩 process.env.SANITY_REVALIDATE_SECRET:',
     process.env.SANITY_REVALIDATE_SECRET,
   );
-
-  if (secret !== process.env.SANITY_REVALIDATE_SECRET) {
-    return NextResponse.json({ message: 'Invalid token' }, { status: 401 });
-  }
-
   console.log(
-    '🔥 process.env.SANITY_REVALIDATE_SECRET===secret',
+    '🔥 process.env.SANITY_REVALIDATE_SECRET===secret:',
     process.env.SANITY_REVALIDATE_SECRET === secret,
   );
 
@@ -128,11 +165,18 @@ export async function POST(req: NextRequest) {
   }
 
   try {
-    console.log('🔄 Revalidating ALL pages...');
+    const body = await req.json();
+    const pathsToRevalidate = getPathsFromSanityWebhook(body);
 
-    await fetch(
-      `${process.env.NEXT_PUBLIC_HOST}/api/revalidatePath?path=/&secret=${process.env.SANITY_REVALIDATE_SECRET}`,
-    );
+    console.log('🧍‍♀️body', body);
+    console.log('🚗pathsToRevalidate', pathsToRevalidate);
+
+    for (const path of pathsToRevalidate) {
+      console.log('🔄 Revalidating path:', path);
+      await fetch(
+        `${process.env.NEXT_PUBLIC_HOST}/api/revalidatePath?path=${path}&secret=${process.env.SANITY_REVALIDATE_SECRET}`,
+      );
+    }
 
     return NextResponse.json({ revalidated: true });
   } catch (error) {
@@ -142,4 +186,66 @@ export async function POST(req: NextRequest) {
       { status: 500 },
     );
   }
+}
+
+function getPathsFromSanityWebhook(body: any): string[] {
+  if (!body || !body._type) return [];
+
+  const locales = ['en', 'uk'];
+  const slug = body.slug?.current;
+  const type = body._type;
+  const paths: string[] = [];
+
+  switch (type) {
+    case 'post':
+      if (slug) paths.push(...locales.map(locale => `/${locale}/blog/${slug}`));
+      paths.push(...locales.map(locale => `/${locale}/blog`));
+      break;
+    case 'media':
+      paths.push(...locales.map(locale => `/${locale}/media`));
+      break;
+    case 'documents':
+      paths.push(...locales.map(locale => `/${locale}/documents`));
+      break;
+    case 'research':
+      paths.push(...locales.map(locale => `/${locale}/research`));
+      break;
+    case 'advisors':
+      if (slug)
+        paths.push(...locales.map(locale => `/${locale}/advisors/${slug}`));
+      paths.push(...locales.map(locale => `/${locale}/advisors`));
+      break;
+    case 'privacyPolicy':
+      paths.push(...locales.map(locale => `/${locale}/privacy-policy`));
+      break;
+    case 'tenders':
+      if (slug)
+        paths.push(...locales.map(locale => `/${locale}/tenders/${slug}`));
+      paths.push(...locales.map(locale => `/${locale}/tenders`));
+      break;
+    case 'projects':
+      if (slug)
+        paths.push(...locales.map(locale => `/${locale}/projects/${slug}`));
+      paths.push(...locales.map(locale => `/${locale}/projects`));
+      break;
+    case 'partners':
+    case 'activities':
+      paths.push(...locales.map(locale => `/${locale}/main-areas`));
+      break;
+    case 'donors':
+      if (slug)
+        paths.push(...locales.map(locale => `/${locale}/projects/${slug}`));
+      paths.push(...locales.map(locale => `/${locale}/main-areas`));
+      break;
+    case 'team':
+      paths.push(...locales.map(locale => `/${locale}/team`));
+      break;
+    default:
+      console.log(`⚠️ No revalidation rule for type: ${type}`);
+  }
+
+  // Завжди ревалідовуємо головну сторінку
+  paths.push(...locales.map(locale => `/${locale}`));
+
+  return paths;
 }
