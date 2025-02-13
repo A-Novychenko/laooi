@@ -11,6 +11,7 @@ interface IDictionary {
     advisorsBackLink: IPostBackLink;
     readMoreLabel: string;
     teamClosedLabel: string;
+    teamGalleryTitle: string;
     mainNav: IMainNav[];
     accessibilityMenu: IAccessibilityMenu;
     footerNav: IFooterNav;

@@ -50,8 +50,6 @@ const SearchPage = async ({
     media,
   } = searchResults;
 
-  console.log(searchResults);
-
   return (
     <>
       <section className="section">

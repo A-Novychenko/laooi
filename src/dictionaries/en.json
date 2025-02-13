@@ -98,6 +98,7 @@
     "postAdvisorFBLinkLabel": "Learn more",
     "readMoreLabel": "Read more",
     "teamClosedLabel": "Close",
+    "teamGalleryTitle": "Teams gallery",
     "mainNav": [
       {
         "name": "Home",
@@ -753,7 +754,6 @@
       "advisors": "Advisors",
       "other": "Others"
     },
-
     "errorData": {
       "description": "Your search didn’t return any results. Try using different keywords or explore other sections"
     }

@@ -110,8 +110,6 @@ export const getSearchGlobal = async (
   try {
     const results = await fetchGlobalSearchResults(searchTerm, lang);
 
-    console.log('RESULT', results);
-
     return formatSearchResults(results, lang);
   } catch (error) {
     console.error('Помилка при виконанні глобального пошуку:', error);
