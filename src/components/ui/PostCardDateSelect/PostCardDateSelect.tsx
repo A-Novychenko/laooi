@@ -60,8 +60,8 @@ export const PostCardDateSelect: React.FC<SelectByDateProps> = ({
     <div
       className="relative w-full xl:min-w-[302px]"
       role="combobox"
-      aria-expanded="true"
-      aria-controls="type-options"
+      aria-expanded={isOpen}
+      aria-controls={isOpen ? 'sort-options-mobile' : 'sort-options-desktop'}
     >
       <div className="group relative">
         <div
@@ -80,9 +80,9 @@ export const PostCardDateSelect: React.FC<SelectByDateProps> = ({
         </div>
 
         <ul
-          id="sort-options"
+          id="sort-options-desktop"
           role="listbox"
-          aria-label="sort-label"
+          aria-labelledby="sort-title"
           className="absolute z-20 hidden w-full rounded-3xl bg-textLight p-4 xl:group-focus-within:block xl:group-hover:block"
         >
           <li key="newest">
@@ -91,10 +91,10 @@ export const PostCardDateSelect: React.FC<SelectByDateProps> = ({
               onClick={evt => handleSelect('newest', evt)}
               type="button"
               role="option"
-              aria-label="newest"
+              aria-labelledby="label-newest"
               aria-selected={selectedSort === 'newest'}
             >
-              {newTitleOption}
+              <span id="label-newest">{newTitleOption}</span>
             </button>
           </li>
 
@@ -104,44 +104,44 @@ export const PostCardDateSelect: React.FC<SelectByDateProps> = ({
               onClick={evt => handleSelect('oldest', evt)}
               type="button"
               role="option"
-              aria-label="oldest"
+              aria-labelledby="label-oldest"
               aria-selected={selectedSort === 'oldest'}
             >
-              {oldTitleOption}
+              <span id="label-oldest">{oldTitleOption}</span>
             </button>
           </li>
         </ul>
 
         {isOpen && (
           <ul
-            id="sort-options"
+            id="sort-options-mobile"
             role="listbox"
-            aria-label="sort-label"
+            aria-labelledby="sort-title"
             className="absolute z-20 w-full rounded-3xl bg-textLight p-4 xl:hidden"
           >
-            <li key="newest">
+            <li key="newest-mobile">
               <button
                 className="w-full cursor-pointer rounded-2xl p-4 text-left text-xs/normal font-semibold hover:bg-bgSlate"
                 onClick={evt => handleSelect('newest', evt)}
                 type="button"
                 role="option"
-                aria-label="newest"
+                aria-labelledby="label-newest-mobile"
                 aria-selected={selectedSort === 'newest'}
               >
-                {newTitleOption}
+                <span id="label-newest-mobile">{newTitleOption}</span>
               </button>
             </li>
 
-            <li key="oldest">
+            <li key="oldest-mobile">
               <button
                 className="w-full cursor-pointer rounded-2xl p-4 text-left text-xs/normal font-semibold hover:bg-bgSlate"
                 onClick={evt => handleSelect('oldest', evt)}
                 type="button"
                 role="option"
-                aria-label="oldest"
+                aria-labelledby="label-oldest-mobile"
                 aria-selected={selectedSort === 'oldest'}
               >
-                {oldTitleOption}
+                <span id="label-oldest-mobile">{oldTitleOption}</span>
               </button>
             </li>
           </ul>

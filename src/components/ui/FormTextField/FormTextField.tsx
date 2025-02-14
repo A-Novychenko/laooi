@@ -23,16 +23,18 @@ export const FormTextField: React.FC<FormTextFieldProps> = ({
   const errorMessage = errors?.[name]?.message;
 
   return (
-    <label className="flex h-auto flex-col">
-      <span className="mb-1 flex gap-1">
-        <span className="text-base/normal font-semibold text-textSecondary">
-          {label}
+    <>
+      <label htmlFor={name} className="mt-4 flex h-auto flex-col">
+        <span className="mb-1 flex gap-1">
+          <span className="text-base/normal font-semibold text-textSecondary">
+            {label}
+          </span>
+          {required && <RequiredIcon width={8} height={8} />}
         </span>
-
-        {required && <RequiredIcon width={8} height={8} />}
-      </span>
+      </label>
 
       <textarea
+        id={name}
         aria-required={required ? true : false}
         aria-invalid={isError ? 'true' : 'false'}
         aria-describedby={isError ? `errorMessage${name}` : undefined}
@@ -62,6 +64,6 @@ export const FormTextField: React.FC<FormTextFieldProps> = ({
           {symbolsCount}/{maxLength}
         </span>
       </div>
-    </label>
+    </>
   );
 };
