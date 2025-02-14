@@ -60,8 +60,11 @@ export const PostCardCategorySelect: React.FC<CategorySelectProps> = ({
     <div
       className="relative mb-2 md:mb-0 md:min-w-[336px] xl:min-w-[302px]"
       role="combobox"
-      aria-expanded="true"
-      aria-controls="options"
+      aria-expanded={isOpen}
+      aria-controls={
+        isOpen ? 'category-options-mobile' : 'category-options-desktop'
+      }
+      aria-labelledby="sort-title"
     >
       <div className="group relative">
         <div
@@ -71,7 +74,7 @@ export const PostCardCategorySelect: React.FC<CategorySelectProps> = ({
           className="flex w-full cursor-pointer justify-between rounded-full bg-bgLightSlate px-[24px] py-2.5 text-base/[1.5] font-semibold md:py-3 xl:whitespace-nowrap xl:py-4 xl:text-lg/[1.22] xl:focus-within:bg-bgSlate xl:hover:bg-bgSlate"
         >
           <p
-            id="sort-title"
+            id={`sort-title-${selectedValue}`}
             className="line-clamp-1 overflow-hidden md:max-w-[336px] xl:max-w-[220px]"
           >
             {getSelectedLabel()}
@@ -85,9 +88,8 @@ export const PostCardCategorySelect: React.FC<CategorySelectProps> = ({
         </div>
 
         <ul
-          id="options"
+          id="category-options-desktop"
           role="listbox"
-          aria-label="sort-label"
           className="absolute z-20 hidden max-h-[50vh] w-full overflow-y-auto rounded-3xl bg-textLight p-4 transition-all xl:group-focus-within:block xl:group-hover:block"
         >
           {options.map((option, index) => (
@@ -96,11 +98,11 @@ export const PostCardCategorySelect: React.FC<CategorySelectProps> = ({
                 className="w-full cursor-pointer rounded-2xl p-4 text-left text-xs/normal font-semibold hover:bg-bgSlate xl:text-sm"
                 type="button"
                 role="option"
-                aria-label={option.label}
+                aria-labelledby={`label-${option.value}`}
                 aria-selected={selectedValue === option.value}
                 onClick={evt => handleSelect(option.value, evt)}
               >
-                {option.label}
+                <span id={`label-${option.value}`}>{option.label}</span>
               </button>
             </li>
           ))}
@@ -108,22 +110,24 @@ export const PostCardCategorySelect: React.FC<CategorySelectProps> = ({
 
         {isOpen && (
           <ul
-            id="options"
+            id="category-options-mobile"
             role="listbox"
-            aria-label="sort-label"
+            aria-labelledby="sort-title"
             className="absolute z-20 max-h-[50vh] w-full overflow-y-auto rounded-3xl bg-textLight p-4 transition-all xl:hidden"
           >
-            {options.map(option => (
-              <li key={option.value}>
+            {options.map((option, index) => (
+              <li key={`${option.value}-mobile-${index}`}>
                 <button
                   className="w-full cursor-pointer rounded-2xl p-4 text-left text-xs/normal font-semibold hover:bg-bgSlate xl:text-sm"
                   type="button"
                   role="option"
-                  aria-label={option.label}
+                  aria-labelledby={`label-mobile-${option.value}`}
                   aria-selected={selectedValue === option.value}
                   onClick={evt => handleSelect(option.value, evt)}
                 >
-                  {option.label}
+                  <span id={`label-mobile-${option.value}`}>
+                    {option.label}
+                  </span>
                 </button>
               </li>
             ))}

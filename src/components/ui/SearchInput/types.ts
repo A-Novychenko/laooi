@@ -7,5 +7,4 @@ export type SearchInputProps = {
   searchPage?: boolean | undefined;
   className?: string;
   closeMenu?: Dispatch<SetStateAction<boolean>> | undefined;
-  mobile?: boolean | undefined;
 };

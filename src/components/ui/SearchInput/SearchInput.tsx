@@ -27,6 +27,7 @@ export const SearchInput: React.FC<SearchInputProps> = ({
   const [open, setOpen] = useState(false);
   const [inputValue, setInputValue] = useState('');
   const wrapperRef = useRef<HTMLDivElement>(null);
+
   const router = useRouter();
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -104,6 +105,7 @@ export const SearchInput: React.FC<SearchInputProps> = ({
                   placeholder={placeholder}
                   value={inputValue}
                   onChange={handleInputChange}
+                  enterKeyHint="search"
                 />
               </form>
 
@@ -143,6 +145,7 @@ export const SearchInput: React.FC<SearchInputProps> = ({
               placeholder={placeholder}
               value={inputValue}
               onChange={handleInputChange}
+              enterKeyHint="search"
             />
           </form>
 
