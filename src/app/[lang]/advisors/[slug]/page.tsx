@@ -1,9 +1,9 @@
 import { SingleAdvisorSection, PlaceholderSection } from '@/sections';
 
-import { getAdvisors } from '@/actions/sanity/methods/getAdvisors';
-
 import { getDictionary } from '@/utils/dictionaries';
-import { getAdvisorBySlug } from '@/actions/sanity';
+import { getAdvisorBySlug, getAdvisors } from '@/actions/sanity';
+
+import makeMetaData from '@/data/meta';
 
 export const revalidate = 3600;
 
@@ -18,6 +18,18 @@ export async function generateStaticParams() {
     }) || [];
 
   return staticParams;
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { lang: 'uk' | 'en'; slug: string };
+}) {
+  const lang = params.lang || 'uk';
+
+  const meta = await makeMetaData(lang, 'advisors', params.slug);
+
+  return meta;
 }
 
 const SingleAdvisorPage = async ({

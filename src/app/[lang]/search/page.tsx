@@ -13,7 +13,21 @@ import {
 
 import { getDictionary } from '@/utils/dictionaries';
 
+import makeMetaData from '@/data/meta';
+
 export const revalidate = 3600;
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { lang: 'uk' | 'en' };
+}) {
+  const lang = params.lang || 'uk';
+
+  const meta = await makeMetaData(lang, 'search');
+
+  return meta;
+}
 
 const SearchPage = async ({
   params: { lang },

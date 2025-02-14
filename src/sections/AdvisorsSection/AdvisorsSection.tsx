@@ -1,6 +1,6 @@
 import { AdvisorCard, Title } from '@/components/ui';
 
-import { getAdvisors } from '@/actions/sanity/methods/getAdvisors';
+import { getAdvisors } from '@/actions/sanity';
 
 import styles from './AdvisorsSection.module.css';
 
