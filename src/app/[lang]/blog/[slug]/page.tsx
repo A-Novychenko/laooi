@@ -3,6 +3,8 @@ import { BlogSection, PlaceholderSection, PostSection } from '@/sections';
 import { getPostBySlug, getAllPosts, getLatestPosts } from '@/actions/sanity';
 import { getDictionary } from '@/utils/dictionaries';
 
+import makeMetaData from '@/data/meta';
+
 export const revalidate = 3600;
 
 export async function generateStaticParams() {
@@ -16,6 +18,18 @@ export async function generateStaticParams() {
     }) || [];
 
   return staticParams;
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { lang: 'uk' | 'en'; slug: string };
+}) {
+  const lang = params.lang || 'uk';
+
+  const meta = await makeMetaData(lang, 'blog', params.slug);
+
+  return meta;
 }
 
 const PostPage = async ({

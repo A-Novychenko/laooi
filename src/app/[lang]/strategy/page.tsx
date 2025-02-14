@@ -8,7 +8,21 @@ import {
 import { getAllDonors } from '@/actions/sanity';
 import { getDictionary } from '@/utils/dictionaries';
 
+import makeMetaData from '@/data/meta';
+
 export const revalidate = 3600;
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { lang: 'uk' | 'en' };
+}) {
+  const lang = params.lang || 'uk';
+
+  const meta = await makeMetaData(lang, 'strategy');
+
+  return meta;
+}
 
 const StrategyPage = async ({
   params: { lang },

@@ -19,7 +19,7 @@ const nunito = Nunito({
 export async function generateMetadata({
   params,
 }: {
-  params: { lang: string };
+  params: { lang: 'uk' | 'en' };
 }) {
   const lang = params.lang || 'uk';
 

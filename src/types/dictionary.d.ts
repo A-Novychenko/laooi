@@ -64,6 +64,19 @@ interface IPostBackLink {
 
 interface IMeta {
   main: IMetaDataPage;
+  notFound: IMetaDataPage;
+  advisors: IMetaDataPage;
+  blog: IMetaDataPage;
+  contacts: IMetaDataPage;
+  documents: IMetaDataPage;
+  'main-areas': IMetaDataPage;
+  media: IMetaDataPage;
+  'privacy-policy': IMetaDataPage;
+  projects: IMetaDataPage;
+  search: IMetaDataPage;
+  strategy: IMetaDataPage;
+  team: IMetaDataPage;
+  tenders: IMetaDataPage;
 }
 
 interface IMetaDataPage {

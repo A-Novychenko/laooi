@@ -1,9 +1,191 @@
 {
   "meta": {
     "main": {
-      "title": "LAOOI",
+      "title": "Home | LAOOI",
       "description": "Our goal: to unite hearts and efforts to create a society of equal opportunities, where every person has the right to a dignified life, support and development. Even in the most difficult times, we build a world of hope, inclusion and accessibility",
-      "keywords": "",
+      "keywords": "LAOOI, Luhansk Association of Organizations of People with Disabilities, support for people with disabilities, protection of the rights of disabled people, social integration, accessible infrastructure, inclusion, social support, equal opportunities, psychological assistance, legal assistance, inclusive public advisors, charity, public organization, rights of people with disabilities, social projects",
+      "images": [
+        {
+          "url": "/meta/og-image.jpg",
+          "width": 1200,
+          "height": 630,
+          "alt": "LAOOI"
+        }
+      ]
+    },
+    "notFound": {
+      "title": "Not found | ЛАООІ",
+      "description": "Page not found",
+      "keywords": "LAOOI, ЛАООІ",
+      "images": [
+        {
+          "url": "/meta/og-image.jpg",
+          "width": 1200,
+          "height": 630,
+          "alt": "LAOOI"
+        }
+      ]
+    },
+    "advisors": {
+      "title": "Advisors | LAOOI",
+      "description": "Inclusive community advisors are specialists who assist people with disabilities in protecting their rights, addressing key issues in their communities, and actively participating in social life. They operate in various cities across Ukraine, providing support, consultations, and assistance in addressing a wide range of life matters",
+      "keywords": "LAOOI Advisors, Disability Advisors, Inclusive Advisors, Public Advisory Board, Experts in Disability Rights, Social Inclusion, Accessible Solutions, Disability Support, Equal Opportunities, Community Advisory Council, Expert Consultation, Professional Guidance, Inclusive Governance, Disability Advocacy, Advisory Experts",
+      "images": [
+        {
+          "url": "/meta/og-image.jpg",
+          "width": 1200,
+          "height": 630,
+          "alt": "LAOOI"
+        }
+      ]
+    },
+    "blog": {
+      "title": "News and events | LAOOI",
+      "description": "Explore LAOOI’s blog for the latest news, articles, and insights on disability rights, social inclusion, and accessible solutions. Join our community for expert advice and support in building an inclusive society.",
+      "keywords": "LAOOI, blog, disability rights, social inclusion, accessible solutions, disability support, inclusive community, advocacy, expert advice, social projects, disability news",
+      "images": [
+        {
+          "url": "/meta/og-image.jpg",
+          "width": 1200,
+          "height": 630,
+          "alt": "LAOOI"
+        }
+      ]
+    },
+    "contacts": {
+      "title": "Contacts | LAOOI",
+      "description": "Get in touch with LAOOI. Reach out to us for information, support, and inquiries about disability rights and inclusive initiatives. We’re here to help and look forward to hearing from you.",
+      "keywords": "LAOOI contacts, contact information, disability support, inquiries, disability rights, inclusive initiatives, community support, reach out, expert advice, LAOOI",
+      "images": [
+        {
+          "url": "/meta/og-image.jpg",
+          "width": 1200,
+          "height": 630,
+          "alt": "LAOOI"
+        }
+      ]
+    },
+    "documents": {
+      "title": "Documents | LAOOI",
+      "description": "Access a comprehensive collection of LAOOI documents including policies, reports, guidelines, and other resources that support disability rights, social inclusion, and community empowerment. Stay informed with our regularly updated materials.",
+      "keywords": "LAOOI documents, disability rights, policy guidelines, reports, inclusive resources, accessible documents, community empowerment, disability advocacy, LAOOI publications",
+      "images": [
+        {
+          "url": "/meta/og-image.jpg",
+          "width": 1200,
+          "height": 630,
+          "alt": "LAOOI"
+        }
+      ]
+    },
+    "main-areas": {
+      "title": "Main areas | LAOOI",
+      "description": "Discover LAOOI’s main areas of activity, where we drive initiatives in disability support, social inclusion, accessible infrastructure, and community empowerment. Learn how our efforts promote equal opportunities and an inclusive society.",
+      "keywords": "LAOOI, main areas, disability support, social inclusion, accessible infrastructure, community empowerment, equal opportunities, disability rights, advocacy, inclusive society",
+      "images": [
+        {
+          "url": "/meta/og-image.jpg",
+          "width": 1200,
+          "height": 630,
+          "alt": "LAOOI"
+        }
+      ]
+    },
+    "media": {
+      "title": "Media about us | LAOOI",
+      "description": "Explore LAOOI’s media section featuring the latest news, photos, and videos on disability rights, social inclusion, and community initiatives. Stay updated with our advocacy efforts and key events.",
+      "keywords": "LAOOI media, disability rights, social inclusion, advocacy, news, photos, videos, accessibility, inclusive society, community initiatives, LAOOI updates",
+      "images": [
+        {
+          "url": "/meta/og-image.jpg",
+          "width": 1200,
+          "height": 630,
+          "alt": "LAOOI"
+        }
+      ]
+    },
+    "privacy-policy": {
+      "title": "Privacy-policy | LAOOI",
+      "description": "privacy-policy",
+      "keywords": "privacy-policy",
+      "images": [
+        {
+          "url": "/meta/og-image.jpg",
+          "width": 1200,
+          "height": 630,
+          "alt": "LAOOI"
+        }
+      ]
+    },
+    "projects": {
+      "title": "Projects | LAOOI",
+      "description": "Discover LAOOI’s projects aimed at promoting disability rights, social inclusion, accessible infrastructure, and community development. Learn how our initiatives create a more inclusive and supportive society.",
+      "keywords": "LAOOI projects, disability rights, social inclusion, accessible infrastructure, community development, advocacy, equal opportunities, support programs, inclusive initiatives, NGO projects",
+      "images": [
+        {
+          "url": "/meta/og-image.jpg",
+          "width": 1200,
+          "height": 630,
+          "alt": "LAOOI"
+        }
+      ]
+    },
+    "research": {
+      "title": "Research | LAOOI",
+      "description": "Explore LAOOI’s research on disability rights, social inclusion, and accessibility. Our studies provide valuable insights into creating an inclusive society and improving the lives of people with disabilities.",
+      "keywords": "LAOOI research, disability rights, social inclusion, accessibility studies, inclusive society, advocacy, equality, disability policy, social research, community development",
+      "images": [
+        {
+          "url": "/meta/og-image.jpg",
+          "width": 1200,
+          "height": 630,
+          "alt": "LAOOI"
+        }
+      ]
+    },
+    "search": {
+      "title": "Search | LAOOI",
+      "description": "Search results on the LAOOI website. Find information on disability rights, social inclusion, accessible infrastructure, and community initiatives. Explore articles, projects, and research related to an inclusive society.",
+      "keywords": "LAOOI search, disability rights, social inclusion, accessibility, advocacy, equal opportunities, research, projects, articles, community initiatives",
+      "images": [
+        {
+          "url": "/meta/og-image.jpg",
+          "width": 1200,
+          "height": 630,
+          "alt": "LAOOI"
+        }
+      ]
+    },
+    "strategy": {
+      "title": "Strategy | LAOOI",
+      "description": "Discover LAOOI’s strategy for promoting disability rights, social inclusion, and accessibility. Learn about our long-term goals, key initiatives, and advocacy efforts to build an inclusive society.",
+      "keywords": "LAOOI strategy, disability rights, social inclusion, accessibility, advocacy, inclusive policies, equal opportunities, long-term goals, community development, NGO strategy",
+      "images": [
+        {
+          "url": "/meta/og-image.jpg",
+          "width": 1200,
+          "height": 630,
+          "alt": "LAOOI"
+        }
+      ]
+    },
+    "team": {
+      "title": "Team | LAOOI",
+      "description": "Meet the LAOOI team—dedicated experts and advocates working to protect disability rights, promote inclusion, and develop accessible solutions. Learn more about our specialists and their contributions to an inclusive society.",
+      "keywords": "LAOOI team, disability rights experts, inclusion advocates, accessibility specialists, NGO team, social inclusion, equal opportunities, community leadership, advocacy professionals",
+      "images": [
+        {
+          "url": "/meta/og-image.jpg",
+          "width": 1200,
+          "height": 630,
+          "alt": "LAOOI"
+        }
+      ]
+    },
+    "tenders": {
+      "title": "Tenders | LAOOI",
+      "description": "Explore current tenders and procurement opportunities at LAOOI. We collaborate with partners and suppliers to support initiatives for accessibility, inclusion, and disability rights. Find out how to participate in our projects.",
+      "keywords": "LAOOI tenders, procurement opportunities, NGO tenders, accessibility projects, inclusion initiatives, disability rights, supplier collaboration, public procurement, partnership opportunities",
       "images": [
         {
           "url": "/meta/og-image.jpg",

@@ -1,20 +1,44 @@
 {
-    "name": "LAOOI",
-    "short_name": "LAOOI",
-    "title": "LAOOI",
-    "description": "LAOOI",
-    "start_url": "/",
-    "locale": "uk_UA",
-    "keywords": "keywords",
-    "icons":[{"src":"/meta/android-chrome-192x192.png","sizes":"192x192","type":"image/png"},{"src":"/meta/android-chrome-512x512.png","sizes":"512x512","type":"image/png"}],
-    "images": [
-     {
+  "name": "LAOOI",
+  "short_name": "LAOOI",
+  "title": "LAOOI",
+  "lang": "uk",
+  "start_url": "/uk/",
+  "locales": {
+    "en": {
+      "name": "LAOOI",
+      "short_name": "LAOOI",
+      "description": "Our goal: to unite hearts and efforts to create a society of equal opportunities, where every person has the right to a dignified life, support and development. Even in the most difficult times, we build a world of hope, inclusion and accessibility",
+      "start_url": "/en/"
+    },
+    "uk": {
+      "name": "ЛАООІ",
+      "short_name": "ЛАООІ",
+      "description": "Наша мета: об’єднати серця та зусилля для створення суспільства рівних можливостей, де кожна людина має право на гідне життя, підтримку та розвиток. Навіть у найважчі часи ми будуємо світ надії, інклюзивності та доступності",
+      "start_url": "/uk/"
+    }
+  },
+  "keywords": "ЛАООІ LAOOI",
+  "icons": [
+    {
+      "src": "/meta/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/meta/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "images": [
+    {
       "url": "/meta/og-image.jpg",
       "width": 1200,
       "height": 630,
       "alt": "LAOOI_logo"
-     }
+    }
   ],
-    "background_color": "#ffffff",
-    "display": "browser"
+  "background_color": "#ffffff",
+  "display": "browser"
 }
