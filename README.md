@@ -67,52 +67,77 @@ skills development in eastern Ukraine.
 
 [Design layout on Figma](https://www.figma.com/design/v3lhwJRtxWSqhLP4KkTNgk/Сайт-для-ЛАООІ?node-id=2-10&t=tTa3RbrP3hQlmQOc-1)
 
-### Project structure
+#### Project Map
+
+- **Privacy Policy**
+- **Contacts**
+- **Strategy**
+- **Main Areas**
+- **Media**
+- **Blog**
+  - `blog/[slug]`
+- **Search**
+- **Search Page** (`search/[query]`)
+- **Documents**
+- **Team**
+- **Tenders**
+  - `tenders/[slug]`
+- **Projects**
+  - `projects/[slug]`
+- **Research**
+- **Advisors**
+  - `advisors/[slug]`
+
+# Project Structure
+
+| Section        | Description                  | Dynamic Route        |
+| -------------- | ---------------------------- | -------------------- |
+| Privacy Policy | Project privacy policy info  | ❌                   |
+| Contacts       | Contact information page     | ❌                   |
+| Strategy       | Project strategy overview    | ❌                   |
+| Main Areas     | Key focus areas              | ❌                   |
+| Media          | Media-related content        | ❌                   |
+| Blog           | Blog articles                | ✅ `blog/[slug]`     |
+| Search         | General search functionality | ❌                   |
+| Search Page    | Search results page          | ✅ `search/[query]`  |
+| Documents      | Project documents            | ❌                   |
+| Team           | Team members page            | ❌                   |
+| Tenders        | Open tenders list            | ✅ `tenders/[slug]`  |
+| Projects       | List of projects             | ✅ `projects/[slug]` |
+| Research       | Research and reports         | ❌                   |
+| Advisors       | Project advisors             | ✅ `advisors/[slug]` |
+
+## Structure Diagram
 
 ```mermaid
-graph LR
+graph TD;
+    A[Privacy Policy]
+    B[Contacts]
+    C[Strategy]
+    D[Main Areas]
+    E[Media]
+    F[Blog] --> G[blog[slug]]
+    H[Search]
+    I[Documents]
+    J[Team]
+    K[Tenders] --> L[tender[slug]]
+    M[Projects] --> N[projects[slug]]
+    O[Research]
+    P[Advisors] --> Q[advisor[slug]]
 
-Z{Enter} --> L(Layout)
-  L --> B(Header)
-  L --> A((Home page))
-  L --> C(Footer)
-  B --> BA[Menu]
+    A -->|Homepage| B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
+    F --> H
+    H --> I
+    I --> J
+    J --> K
+    K --> M
+    M --> O
+    O --> P
 
-  A --> AA[Section 1. Hero]
-  A --> AB[Section 2. Problems]
-  A --> AC[Section 3. Offer]
-  A --> AD[Section 4. Advantages]
-  A --> AE[Section 5. About]
-  A --> AF[Section 6. Cases]
-  A --> AG[Section 6. Reviews]
-  A --> AH[Section 6. Partners]
-  A --> AI[Section 6. FAQ]
-  A --> AK[Section 6. ContactUs]
-
-  BA --> D((Portfolio page))
-  D --> DA[Section 1. Portfolio Hero]
-  D --> DB[Section 2. Portfolio Cases]
-  D --> DC[Section 3. Reviews]
-  D --> DB[Section 4. ContactUs]
-
-
-  BA --> E((Business page))
-  E --> EA[Section 1. Hero]
-  E --> EB[Section 2. Advantages]
-  E --> EC[Section 3. BusinessClients]
-  E --> ED[Section 4. Collaboration]
-  E --> EE[Section 5. Cases]
-  E --> EF[Section 6. Partners]
-  E --> EG[Section 7. FAQ]
-  E --> EH[Section 8. ContactUs]
-
-
-  BA --> F((Single page))
-  F --> FA[Section 1. Hero]
-  F --> FB[Section 2. Overview]
-  F --> FC[Section 3. Cases]
-  F --> FD[Section 4. Review]
-  F --> FE[Section 5. ContactUs]
 
 ```
 
