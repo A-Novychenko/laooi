@@ -108,7 +108,7 @@ const makeMetaData = async (lang: 'uk' | 'en', page: string, slug?: string) => {
   const BASE_URL = NEXT_PUBLIC_BASE_URL as string;
   const url = slug
     ? `${BASE_URL}/${lang}/${page}/${slug}`
-    : `${BASE_URL}/${lang}/${page === 'main' ? '/' : page}`;
+    : `${BASE_URL}/${lang}/${page === 'main' ? '' : page}`;
 
   const meta: Metadata = {
     title,
