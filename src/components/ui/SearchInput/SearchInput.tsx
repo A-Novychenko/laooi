@@ -82,6 +82,9 @@ export const SearchInput: React.FC<SearchInputProps> = ({
         <div ref={wrapperRef} className="relative hidden xl:block">
           <CircleButton action={() => setOpen(open => !open)}>
             <SearchIcon width="16" height="16" />
+            <span className="visually-hidden">
+              open accessability menu button
+            </span>
           </CircleButton>
 
           <Transition show={open}>
@@ -121,6 +124,7 @@ export const SearchInput: React.FC<SearchInputProps> = ({
               {inputValue.length < 1 && (
                 <button
                   type="button"
+                  aria-label="search-button"
                   onClick={() => {
                     setOpen(false);
                   }}
@@ -154,6 +158,7 @@ export const SearchInput: React.FC<SearchInputProps> = ({
             type="submit"
             className="absolute left-4 top-1/2 -translate-y-1/2 text-textPrimary"
             onClick={handleSubmit}
+            aria-label="search submit button"
           >
             <SearchIcon width="16" height="16" />
           </button>

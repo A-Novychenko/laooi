@@ -49,6 +49,7 @@ export const ScrollToTopButton = () => {
         className="absolute right-0 top-0 ml-auto md:-right-4"
       >
         <Arrow className="-rotate-45" width={24} height={24} />
+        <span className="visually-hidden">scroll button button</span>
       </CircleButton>
     </div>
   );
