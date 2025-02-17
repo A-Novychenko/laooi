@@ -36,6 +36,7 @@ export const FooterSocialList: React.FC<FooterSocialListProps> = ({
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex size-full items-center justify-center"
+                  aria-label={item.name}
                 >
                   <IconComponent width={24} height={24} />
                 </Link>

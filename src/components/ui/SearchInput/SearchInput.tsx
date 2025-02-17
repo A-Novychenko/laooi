@@ -113,6 +113,7 @@ export const SearchInput: React.FC<SearchInputProps> = ({
                 type="submit"
                 className="absolute left-4 top-1/2 -translate-y-1/2 text-textPrimary"
                 onClick={handleSubmit}
+                aria-label="search-button"
               >
                 <SearchIcon width="16" height="16" />
               </button>
