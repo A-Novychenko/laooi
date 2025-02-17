@@ -32,6 +32,7 @@ export function middleware(request: NextRequest) {
     pathname.startsWith('/static') ||
     pathname.startsWith('/images') ||
     pathname.startsWith('/studio') ||
+    pathname.startsWith('/meta') ||
     pathname === '/sitemap.xml' ||
     pathname === '/robots.txt' ||
     pathname === '/favicon.ico' ||
