@@ -122,7 +122,7 @@ const makeMetaData = async (lang: 'uk' | 'en', page: string, slug?: string) => {
         en: `${BASE_URL}/en/${page}${slug ? `/${slug}` : ''}`,
       },
     },
-    manifest: '/meta/site.webmanifest',
+    // manifest: '/meta/site.webmanifest',
     openGraph: {
       title,
       description,
