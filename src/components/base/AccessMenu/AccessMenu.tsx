@@ -96,6 +96,7 @@ export const AccessMenu: React.FC<AccessMenuProps> = ({ dict }) => {
     <DropdownMenu dataForButtons={items} menuPosition="bottom">
       <button
         type="button"
+        aria-label="Accessibility menu button"
         className="flex size-[44px] items-center justify-center rounded-[40px] bg-bgSlate transition-colors hover:bg-bgDarkSlate focus:bg-bgDarkSlate data-[active]:bg-bgIconEyeDark data-[active]:text-textLight"
       >
         <EyeIcon
