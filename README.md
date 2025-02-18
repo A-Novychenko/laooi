@@ -76,8 +76,7 @@ skills development in eastern Ukraine.
 - **Media**
 - **Blog**
   - `blog/[slug]`
-- **Search**
-- **Search Page** (`search/[query]`)
+- **Search Page**
 - **Documents**
 - **Team**
 - **Tenders**
@@ -90,40 +89,28 @@ skills development in eastern Ukraine.
 
 # Project Structure
 
-| Section        | Description                  | Dynamic Route        |
-| -------------- | ---------------------------- | -------------------- |
-| Privacy Policy | Project privacy policy info  | ❌                   |
-| Contacts       | Contact information page     | ❌                   |
-| Strategy       | Project strategy overview    | ❌                   |
-| Main Areas     | Key focus areas              | ❌                   |
-| Media          | Media-related content        | ❌                   |
-| Blog           | Blog articles                | ✅ `blog/[slug]`     |
-| Search         | General search functionality | ❌                   |
-| Search Page    | Search results page          | ✅ `search/[query]`  |
-| Documents      | Project documents            | ❌                   |
-| Team           | Team members page            | ❌                   |
-| Tenders        | Open tenders list            | ✅ `tenders/[slug]`  |
-| Projects       | List of projects             | ✅ `projects/[slug]` |
-| Research       | Research and reports         | ❌                   |
-| Advisors       | Project advisors             | ✅ `advisors/[slug]` |
+| Section        | Description                 | Dynamic Route        |
+| -------------- | --------------------------- | -------------------- |
+| Privacy Policy | Project privacy policy info | ❌                   |
+| Contacts       | Contact information page    | ❌                   |
+| Strategy       | Project strategy overview   | ❌                   |
+| Main Areas     | Key focus areas             | ❌                   |
+| Media          | Media-related content       | ❌                   |
+| Blog           | Blog articles               | ✅ `blog/[slug]`     |
+| Search Page    | Search results page         | ❌                   |
+| Documents      | Project documents           | ❌                   |
+| Team           | Team members page           | ❌                   |
+| Tenders        | Open tenders list           | ✅ `tenders/[slug]`  |
+| Projects       | List of projects            | ✅ `projects/[slug]` |
+| Research       | Research and reports        | ❌                   |
+| Advisors       | Project advisors            | ✅ `advisors/[slug]` |
 
 ## Structure Diagram
 
-```mermaid
-graph TD;
-    A[Privacy Policy]
-    B[Contacts]
-    C[Strategy]
-    D[Main Areas]
-    E[Media]
-    F[Blog] --> G[blog[slug]]
-    H[Search]
-    I[Documents]
-    J[Team]
-    K[Tenders] --> L[tender[slug]]
-    M[Projects] --> N[projects[slug]]
-    O[Research]
-    P[Advisors] --> Q[advisor[slug]]
+graph TD; A[Privacy Policy] B[Contacts] C[Strategy] D[Main Areas] E[Media]
+F[Blog] --> G[blog /slug/] H[Search] I[Documents] J[Team] K[tenders /slug/] -->
+L[tender /slug/] M[projects /slug/] --> N[projects /slug/] O[Research]
+P[advisors /slug/] --> Q[advisor /slug/]
 
     A -->|Homepage| B
     B --> C
@@ -138,7 +125,6 @@ graph TD;
     M --> O
     O --> P
 
-
 ```
 
 <details>
@@ -149,27 +135,20 @@ graph TD;
 
 ```
 
-|-- public -> static files
-|-- src -> source directory with the main application code
-  |-- actions -> asynchronous functions that are executed on the server
-  |-- app -> pages and routing
-    |-- / --> routing group for main UI
-    |-- (portfolio) --> routing group for portfolio UI
-    |-- (business) --> routing group for business UI
-    |-- (single-page) --> routing group for dynamic page UI
-  |-- components -> folder with reusable components
-    |-- base -> base sections/block components (accordion, form, slider, etc.)
-    |-- ui -> small reusable components (button, modal, etc.)
-      |-- NameComponent -> folders for each component
-        |-- NameComponent.tsx -> main component
-        |-- NameComponent.module.css -> file for special components styles
-        |-- index.ts -> file for re-export
-        |-- types.ts -> file for special components types (props)
-  |-- layout -> components that are used as a main template (header, footer)
-  |-- sections -> folder with section components
-  |-- data -> static data for the project (json)
-  |-- types -> folder with reusable type definitions
-  |-- utils -> additional reusable functions
+|-- public -> static files |-- src -> source directory with the main application
+code |-- actions -> asynchronous functions that are executed on the server |--
+app -> pages and routing |-- / --> routing group for main UI |-- (portfolio) -->
+routing group for portfolio UI |-- (business) --> routing group for business UI
+|-- (single-page) --> routing group for dynamic page UI |-- components -> folder
+with reusable components |-- base -> base sections/block components (accordion,
+form, slider, etc.) |-- ui -> small reusable components (button, modal, etc.)
+|-- NameComponent -> folders for each component |-- NameComponent.tsx -> main
+component |-- NameComponent.module.css -> file for special components styles |--
+index.ts -> file for re-export |-- types.ts -> file for special components types
+(props) |-- layout -> components that are used as a main template (header,
+footer) |-- sections -> folder with section components |-- data -> static data
+for the project (json) |-- types -> folder with reusable type definitions |--
+utils -> additional reusable functions
 
 ```
 
@@ -1081,3 +1060,4 @@ To deploy this project, you need to perform the following steps:
 - **Website**: [webdevsynergy.com.ua](https://www.webdevsynergy.com.ua)
 - **Phone**: <a href="tel:+380665762413">+380665762413</a>
 - **Email**: [wds.webdevsynergy@gmail.com](mailto:wds.webdevsynergy@gmail.com)
+```
