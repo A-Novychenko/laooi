@@ -30,6 +30,8 @@ export const SearchInput: React.FC<SearchInputProps> = ({
 
   const router = useRouter();
 
+  const inputRef = useRef<HTMLInputElement>(null);
+
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     setInputValue(event.target.value);
   };
@@ -44,6 +46,8 @@ export const SearchInput: React.FC<SearchInputProps> = ({
       router.push(`/${lang}/search?${params.toString()}`);
 
       setInputValue('');
+
+      inputRef.current?.blur();
 
       if (closeMenu) {
         closeMenu(false);
@@ -140,6 +144,7 @@ export const SearchInput: React.FC<SearchInputProps> = ({
         <div className={`relative ${searchPage ? 'xl:block' : 'xl:hidden'}`}>
           <form onSubmit={handleSubmit}>
             <input
+              ref={inputRef}
               className={cn(
                 'h-[44px] w-full rounded-[40px] bg-bgLightSlate py-2 pl-10 pr-4 text-base/normal font-semibold text-textPrimary outline-textFooterAccent placeholder:text-textSlate md:h-[48px]',
                 styles.input,
