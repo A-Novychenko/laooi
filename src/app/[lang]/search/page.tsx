@@ -66,7 +66,7 @@ const SearchPage = async ({
 
   return (
     <>
-      <section className="section">
+      <section className="section-search">
         <div className="container">
           <Title tag={'h1'} className="mb-4">
             {mainTitle}
