@@ -1,7 +1,6 @@
-import { cn } from '@/utils/cn';
-
 import { MCounter } from '@/components/animation';
 
+import { cn } from '@/utils/cn';
 import { formatNumber } from '@/utils/formatNumber';
 
 import { ActivitiesCardProps } from './types';

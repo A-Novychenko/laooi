@@ -4,9 +4,9 @@ import { useEffect, useState } from 'react';
 
 import { CircleButton } from '@/components/ui';
 
-import Arrow from '~/icons/arrowBtnIcon.svg';
-
 import { cn } from '@/utils/cn';
+
+import Arrow from '~/icons/arrowBtnIcon.svg';
 
 export const ScrollToTopButton = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -49,6 +49,7 @@ export const ScrollToTopButton = () => {
         className="absolute right-0 top-0 ml-auto md:-right-4"
       >
         <Arrow className="-rotate-45" width={24} height={24} />
+
         <span className="visually-hidden">scroll button button</span>
       </CircleButton>
     </div>

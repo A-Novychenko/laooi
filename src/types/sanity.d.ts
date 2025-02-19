@@ -1,7 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-// import type { PortableTextBlock } from 'sanity';
-
 interface IPostPreview {
   _id: string;
   title: {

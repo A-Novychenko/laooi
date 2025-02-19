@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+
 import { getDictionary } from '@/utils/dictionaries';
 import {
   getAdvisorBySlug,
@@ -15,7 +16,6 @@ const makeMetaData = async (lang: 'uk' | 'en', page: string, slug?: string) => {
   let metaData: IMetaDataPage | undefined =
     dictionary.meta[page as keyof typeof dictionary.meta];
 
-  // Якщо є slug (динамічна сторінка), отримуємо мета-дані з Sanity
   if (slug && page === 'blog') {
     const postMeta = await getPostBySlug(slug, lang);
     if (postMeta) {
@@ -122,7 +122,7 @@ const makeMetaData = async (lang: 'uk' | 'en', page: string, slug?: string) => {
         en: `${BASE_URL}/en/${page}${slug ? `/${slug}` : ''}`,
       },
     },
-    // manifest: '/meta/site.webmanifest',
+
     openGraph: {
       title,
       description,

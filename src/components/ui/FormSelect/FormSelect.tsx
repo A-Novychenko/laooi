@@ -122,11 +122,7 @@ const FormSelect: React.FC<CustomSelectProp> = ({
         <RequiredIcon width={8} height={8} />
       </span>
 
-      <div
-        className="group relative"
-        tabIndex={0}
-        // onBlur={() => setIsOpen(false)}
-      >
+      <div className="group relative" tabIndex={0}>
         <div
           role="button"
           tabIndex={0}

@@ -60,6 +60,7 @@ export const FormTextField: React.FC<FormTextFieldProps> = ({
             {errorMessage}
           </span>
         )}
+
         <span className="ml-auto text-textActive">
           {symbolsCount}/{maxLength}
         </span>

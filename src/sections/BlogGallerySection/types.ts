@@ -1,7 +1,6 @@
 export type BlogGallerySectionProps = {
   title: string;
   readMoreLabel: string;
-  // posts: ITransformedPostPreview[] | ITransformedTenderPreview[];
   posts: IPostBlogGalleryPage[];
   lang: 'uk' | 'en';
   currentPage: number;

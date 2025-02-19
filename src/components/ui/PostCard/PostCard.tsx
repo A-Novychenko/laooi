@@ -3,12 +3,12 @@ import Link from 'next/link';
 
 import { Title, PostLabel } from '@/components/ui';
 
+import { cn } from '@/utils/cn';
+import { formatDate } from '@/utils/formatDate';
+
 import ArrowIcon from '~/icons/arrowBtnIcon.svg';
 import NoImage from '~/no-image.svg';
 import staticData from '@/data/common.json';
-
-import { cn } from '@/utils/cn';
-import { formatDate } from '@/utils/formatDate';
 
 import { PostCardProps } from './types';
 

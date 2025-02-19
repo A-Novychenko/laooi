@@ -1,7 +1,9 @@
 'use client';
 
 import ArrowIcon from '~/icons/arrowDown.svg';
+
 import { SliderButtonProps } from './types';
+
 export const SliderButton: React.FC<SliderButtonProps> = ({
   ariaLabel,
   customClassName,

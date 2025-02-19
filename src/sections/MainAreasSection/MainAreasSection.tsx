@@ -2,9 +2,9 @@ import { Title } from '@/components/ui';
 
 import { cn } from '@/utils/cn';
 
-import styles from './MainAreasSection.module.css';
-
 import { MainAreasSectionProps } from './types';
+
+import styles from './MainAreasSection.module.css';
 
 export const MainAreasSection: React.FC<MainAreasSectionProps> = ({ dict }) => {
   const {

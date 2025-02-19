@@ -2,14 +2,15 @@
 
 import { SwiperSlide, Swiper } from 'swiper/react';
 
+import { SliderButton } from '../SliderButton';
+
 import { makeSliderConfig } from '@/utils/makeSliderConfig';
+
+import { SliderProps } from './types';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-
-import { SliderProps } from './types';
-import { SliderButton } from '../SliderButton';
 
 export const Slider: React.FC<SliderProps> = ({
   slideClassName,
@@ -35,6 +36,7 @@ export const Slider: React.FC<SliderProps> = ({
           </SwiperSlide>
         ))}
       </Swiper>
+
       {type === 'post' && (
         <>
           <SliderButton
@@ -42,6 +44,7 @@ export const Slider: React.FC<SliderProps> = ({
             direction="prev"
             customClassName="slider-prev-btn-post bg-bgSlideBtn pointer-events-auto absolute left-3 top-1/2 z-10 flex size-11 -translate-y-1/2  items-center justify-center rounded-full md:size-12 xl:size-14"
           />
+
           <SliderButton
             ariaLabel="swipe-right"
             direction="next"

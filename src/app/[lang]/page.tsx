@@ -3,6 +3,7 @@ import {
   getLatestActivities,
   getLatestPosts,
 } from '@/actions/sanity';
+
 import {
   AboutSection,
   ActivitiesSection,
