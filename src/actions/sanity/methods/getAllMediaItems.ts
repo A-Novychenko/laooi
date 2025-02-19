@@ -1,4 +1,5 @@
 import { sanityClient } from '@/sanity/lib/client';
+
 import { getAllMediaItemsQuery } from '../queries';
 
 const fetchPosts = async (

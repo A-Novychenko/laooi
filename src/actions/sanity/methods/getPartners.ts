@@ -1,4 +1,5 @@
 import { sanityClient } from '@/sanity/lib/client';
+
 import { getPartnersQuery } from '../queries';
 
 const fetchPartners = async (): Promise<IPartner[]> => {

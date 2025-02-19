@@ -7,13 +7,6 @@ export const activities = defineType({
   title: 'Діяльність в цифрах',
   type: 'document',
 
-  // preview: {
-  //   select: {
-  //     title: `${'quantity'} ${'text.uk'}`,
-  //     subtitle: 'index',
-  //   },
-  // },
-
   preview: {
     select: {
       quantity: 'quantity',

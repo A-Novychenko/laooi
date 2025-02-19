@@ -62,6 +62,7 @@ export const getAllProjects = async (
     return { projects: transformedPosts, totalPages };
   } catch (error) {
     console.error('Помилка при отриманні ALL проєктів:', error);
+
     return { projects: [], totalPages: 0 };
   }
 };

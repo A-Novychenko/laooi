@@ -1,7 +1,9 @@
 import { ReactNode } from 'react';
 
 type Align = 'start' | 'end';
+
 type Placement = 'top' | 'right' | 'bottom' | 'left';
+
 type BaseAnchorProps = {
   gap: number | string;
   offset: number | string;

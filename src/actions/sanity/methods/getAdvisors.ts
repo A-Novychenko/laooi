@@ -1,4 +1,5 @@
 import { sanityClient } from '@/sanity/lib/client';
+
 import { getAdvisorsQuery } from '../queries';
 
 const fetchAdvisors = async (): Promise<IAdvisor[]> => {

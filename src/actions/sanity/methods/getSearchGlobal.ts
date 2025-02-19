@@ -1,9 +1,9 @@
 import { sanityClient } from '@/sanity/lib/client';
 
-import { getSearchGlobalQuery } from '../queries';
-
 import { getPhotoUrl } from '@/utils/getSanityPhotoUrl';
 import { getFileUrl } from '@/utils/getFileUrl';
+
+import { getSearchGlobalQuery } from '../queries';
 
 const fetchGlobalSearchResults = async (
   searchTerm: string,
@@ -113,6 +113,7 @@ export const getSearchGlobal = async (
     return formatSearchResults(results, lang);
   } catch (error) {
     console.error('Помилка при виконанні глобального пошуку:', error);
+
     return {};
   }
 };

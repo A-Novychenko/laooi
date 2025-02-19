@@ -1,4 +1,5 @@
 'use client';
+
 export const Backdrop = () => {
   const handleBackdropClose = () => {
     const expandedCard = document.querySelector('[data-expanded="true"]');

@@ -1,4 +1,5 @@
 import { sanityClient } from '@/sanity/lib/client';
+
 import { getTeamQuery } from '../queries';
 
 const fetchTeam = async (): Promise<ITeamMember[]> => {

@@ -27,12 +27,14 @@ export async function POST(req: Request) {
 
   try {
     await transporter.sendMail(mailOptions);
+
     return new Response(
       JSON.stringify({ message: 'Email sent successfully' }),
       { status: 200 },
     );
   } catch (error) {
     console.error('Error sending email:', error);
+
     return new Response(JSON.stringify({ message: 'Failed to send email' }), {
       status: 500,
     });

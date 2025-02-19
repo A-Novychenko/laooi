@@ -2,9 +2,9 @@
 
 import { useRouter, useSearchParams } from 'next/navigation';
 
-import ArrowIcon from '~/icons/arrowDown.svg';
-
 import { cn } from '@/utils/cn';
+
+import ArrowIcon from '~/icons/arrowDown.svg';
 
 import { PaginationProps } from './types';
 

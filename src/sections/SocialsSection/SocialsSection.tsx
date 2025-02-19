@@ -1,11 +1,12 @@
 import { ButtonLink, VideoPlayer, Title } from '@/components/ui';
 
+import { cn } from '@/utils/cn';
+
 import InstagramIcon from '~/icons/instagram.svg';
 import FacebookIcon from '~/icons/facebook.svg';
 import YouTubeIcon from '~/icons/youtube.svg';
 
 import { SocialsSectionProps } from './types';
-import { cn } from '@/utils/cn';
 
 export const SocialsSection: React.FC<SocialsSectionProps> = ({ dict }) => {
   const {
