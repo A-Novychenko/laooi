@@ -1,4 +1,5 @@
 import { sanityClient } from '@/sanity/lib/client';
+
 import { getAllDonorsQuery } from '../queries';
 
 const fetchDonors = async (): Promise<IDonor[]> => {

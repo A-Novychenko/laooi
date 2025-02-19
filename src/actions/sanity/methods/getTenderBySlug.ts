@@ -1,8 +1,8 @@
 import { sanityClient } from '@/sanity/lib/client';
 
-import { getTenderBySlugQuery } from '../queries';
-
 import { transformTender } from '@/utils/transformTender';
+
+import { getTenderBySlugQuery } from '../queries';
 
 export const getTenderBySlug = async (
   slug: string,

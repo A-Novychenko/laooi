@@ -1,4 +1,5 @@
 import { sanityClient } from '@/sanity/lib/client';
+
 import { getDonorsFromProjectsQuery } from '../queries';
 
 const fetchDonors = async (): Promise<IDonorFromFilter[]> => {
@@ -35,7 +36,6 @@ export const getDonorsFromProjects = async (
   } catch (error) {
     console.error('Помилка при отриманні donors from proj:', error);
 
-    // return { donors: [] };
     return [];
   }
 };

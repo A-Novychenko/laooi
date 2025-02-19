@@ -1,4 +1,5 @@
 import { sanityClient } from '@/sanity/lib/client';
+
 import { getAdvisorBySlugQuery } from '../queries';
 
 const fetchAdvisor = async (slug: string): Promise<IAdvisorBySlug> => {
