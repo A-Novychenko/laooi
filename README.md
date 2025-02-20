@@ -67,26 +67,6 @@ skills development in eastern Ukraine.
 
 [Design layout on Figma](https://www.figma.com/design/v3lhwJRtxWSqhLP4KkTNgk/Сайт-для-ЛАООІ?node-id=2-10&t=tTa3RbrP3hQlmQOc-1)
 
-#### Project Map
-
-- **Privacy Policy**
-- **Contacts**
-- **Strategy**
-- **Main Areas**
-- **Media**
-- **Blog**
-  - `blog/[slug]`
-- **Search Page**
-- **Documents**
-- **Team**
-- **Tenders**
-  - `tenders/[slug]`
-- **Projects**
-  - `projects/[slug]`
-- **Research**
-- **Advisors**
-  - `advisors/[slug]`
-
 # Project Structure
 
 | Section        | Description                 | Dynamic Route        |
@@ -104,55 +84,6 @@ skills development in eastern Ukraine.
 | Projects       | List of projects            | ✅ `projects/[slug]` |
 | Research       | Research and reports        | ❌                   |
 | Advisors       | Project advisors            | ✅ `advisors/[slug]` |
-
-## Structure Diagram
-
-graph TD; A[Privacy Policy] B[Contacts] C[Strategy] D[Main Areas] E[Media]
-F[Blog] --> G[blog /slug/] H[Search] I[Documents] J[Team] K[tenders /slug/] -->
-L[tender /slug/] M[projects /slug/] --> N[projects /slug/] O[Research]
-P[advisors /slug/] --> Q[advisor /slug/]
-
-    A -->|Homepage| B
-    B --> C
-    C --> D
-    D --> E
-    E --> F
-    F --> H
-    H --> I
-    I --> J
-    J --> K
-    K --> M
-    M --> O
-    O --> P
-
-```
-
-<details>
-
-<summary><b>Project Organization and File Colocation: </b></summary>
-
-<br/>
-
-```
-
-|-- public -> static files |-- src -> source directory with the main application
-code |-- actions -> asynchronous functions that are executed on the server |--
-app -> pages and routing |-- / --> routing group for main UI |-- (portfolio) -->
-routing group for portfolio UI |-- (business) --> routing group for business UI
-|-- (single-page) --> routing group for dynamic page UI |-- components -> folder
-with reusable components |-- base -> base sections/block components (accordion,
-form, slider, etc.) |-- ui -> small reusable components (button, modal, etc.)
-|-- NameComponent -> folders for each component |-- NameComponent.tsx -> main
-component |-- NameComponent.module.css -> file for special components styles |--
-index.ts -> file for re-export |-- types.ts -> file for special components types
-(props) |-- layout -> components that are used as a main template (header,
-footer) |-- sections -> folder with section components |-- data -> static data
-for the project (json) |-- types -> folder with reusable type definitions |--
-utils -> additional reusable functions
-
-```
-
-</details>
 
 ### Components API
 
@@ -1031,7 +962,9 @@ expected in the props
   - React Number Format
   - Zod
   - Clsx
-  - Googleapis
+  - Sanity-Next
+  - i18n
+  - Nodemailer
   - Graphql-request
   - Graphql
 
@@ -1060,4 +993,11 @@ To deploy this project, you need to perform the following steps:
 - **Website**: [webdevsynergy.com.ua](https://www.webdevsynergy.com.ua)
 - **Phone**: <a href="tel:+380665762413">+380665762413</a>
 - **Email**: [wds.webdevsynergy@gmail.com](mailto:wds.webdevsynergy@gmail.com)
+
+```
+Webstudio WDS
+- Website https://www.webdevsynergy.com.ua
+- Phone +380665762413
+- Email wds.webdevsynergy@gmail.com
+
 ```
