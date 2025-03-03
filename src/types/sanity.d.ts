@@ -50,7 +50,7 @@ interface ITransformedPost {
   title: string;
   body: string;
   date: string;
-  link: string;
+  link: string | undefined;
   slug: string;
   postUrl: string;
   linkTitle: string;

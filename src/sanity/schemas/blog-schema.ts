@@ -91,10 +91,7 @@ export const post = defineType({
       title: 'Посилання на публікацію (https://www.facebook.com/luhanskLAOLI/)',
       type: 'url',
       validation: Rule =>
-        Rule.required()
-          .error('Поле обовʼязкове')
-          .uri({ scheme: ['http', 'https'] })
-          .error('Введіть коректний URL'),
+        Rule.uri({ scheme: ['http', 'https'] }).error('Введіть коректний URL'),
     },
 
     {
