@@ -335,10 +335,6 @@
         "href": "/blog"
       },
       {
-        "name": "Tenders",
-        "href": "/tenders"
-      },
-      {
         "name": "Contacts",
         "href": "/contacts"
       }
@@ -643,7 +639,7 @@
     "title": "LAOOI's activities in numbers",
     "description": "From the very beginning, our organization has strived for a great goal: to improve the quality of life and protect the rights of people with disabilities, promote social inclusion, and support the awareness of the importance of a barrier-free environment",
     "link": {
-      "label": "Key directions",
+      "label": "Learn more",
       "settings": {
         "href": "/main-areas",
         "externalLink": false

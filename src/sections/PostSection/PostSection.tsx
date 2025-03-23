@@ -84,7 +84,7 @@ export const PostSection: React.FC<{
             )}
           </div>
 
-          <div>
+          <div className="xl:w-[632px]">
             <div className="mb-2 flex justify-between">
               <DateStamp>{formattedDate}</DateStamp>
 

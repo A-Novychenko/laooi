@@ -129,3 +129,7 @@ br {
   display: none !important;
   height: 0 !important;
 }
+
+#activities-list {
+  scroll-margin-top: 220px;
+}
