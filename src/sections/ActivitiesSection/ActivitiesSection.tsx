@@ -26,7 +26,7 @@ export const ActivitiesSection: React.FC<ActivitiesSectionProps> = ({
                 typeStyle="secondary"
                 settings={{
                   ...link.settings,
-                  href: `${lang}${link.settings.href}`,
+                  href: `${lang}${link.settings.href}#activities-list`,
                 }}
               >
                 {link.label}
@@ -35,7 +35,10 @@ export const ActivitiesSection: React.FC<ActivitiesSectionProps> = ({
           </div>
         )}
 
-        <ul className="flex flex-col gap-[16px] md:flex-row md:flex-wrap">
+        <ul
+          id="activities-list"
+          className="flex flex-col gap-[16px] md:flex-row md:flex-wrap"
+        >
           {activities &&
             activities.map(({ quantity, text }, idx) => (
               <li key={idx} className={styles.item}>

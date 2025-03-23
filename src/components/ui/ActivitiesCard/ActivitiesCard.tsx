@@ -11,7 +11,9 @@ export const ActivitiesCard: React.FC<ActivitiesCardProps> = ({
 }) => {
   return (
     <div
-      className={cn('rounded-2xl bg-bgLightSlate p-4 md:rounded-[20px] md:p-6')}
+      className={cn(
+        'rounded-2xl bg-bgLightSlate p-[16px] md:max-w-[336px] md:rounded-[20px] md:p-[24px] xl:max-w-[308px]',
+      )}
     >
       <p className="mb-2 text-[30px]/[1.27] font-bold text-textMenuAccent md:text-[32px]/[1.13] xl:text-[36px]/normal">
         <span className="hidden xl:inline">
@@ -21,7 +23,7 @@ export const ActivitiesCard: React.FC<ActivitiesCardProps> = ({
         <span className="xl:hidden">{formatNumber(quantity)}</span>
       </p>
 
-      <p className="line-clamp-3 text-sm/normal font-semibold md:h-12 xl:h-14 xl:text-base/normal">
+      <p className="line-clamp-5 text-sm/normal font-semibold md:h-16 xl:h-24 xl:text-base/normal">
         {text}
       </p>
     </div>
