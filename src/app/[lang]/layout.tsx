@@ -1,5 +1,5 @@
 import { Nunito } from 'next/font/google';
-import { GoogleAnalytics } from '@next/third-parties/google';
+import { GoogleTagManager } from '@next/third-parties/google';
 
 import { Footer, Header } from '@/layout';
 import { ScrollToTopButton } from '@/components/ui';
@@ -53,9 +53,9 @@ export default function RootLayout({
 
             <ScrollToTopButton />
           </div>
-
-          <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID as string} />
         </body>
+
+        <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GA_ID as string} />
       </html>
     </AccessibilityProvider>
   );
