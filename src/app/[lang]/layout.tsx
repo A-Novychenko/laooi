@@ -1,4 +1,5 @@
 import { Nunito } from 'next/font/google';
+import { GoogleAnalytics } from '@next/third-parties/google';
 
 import { Footer, Header } from '@/layout';
 import { ScrollToTopButton } from '@/components/ui';
@@ -52,6 +53,8 @@ export default function RootLayout({
 
             <ScrollToTopButton />
           </div>
+
+          <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID as string} />
         </body>
       </html>
     </AccessibilityProvider>

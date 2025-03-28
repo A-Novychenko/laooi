@@ -22,6 +22,7 @@
   "dependencies": {
     "@formatjs/intl-localematcher": "^0.5.4",
     "@headlessui/react": "^2.1.10",
+    "@next/third-parties": "^15.2.4",
     "@portabletext/react": "^3.1.0",
     "@sanity/client": "^6.21.3",
     "@sanity/icons": "^3.4.0",
